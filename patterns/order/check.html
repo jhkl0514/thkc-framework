@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/badge.html"
+                      >Badge (배지)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../../components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/label.html"
+                      >Label (레이블)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/modal.html"
+                      >Modal (모달)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/tab.html">Tab (탭)</a>
+                  </li>
+                  <li>
+                    <a href="../../components/layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/action/button.html"
+                      >Button (버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../../components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/switch.html"
+                      >Switch (토글)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../../components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li>
+                <a href="../../patterns/search.html">Search (검색)</a>
+              </li>
+              <li>
+                <a href="../../patterns/message.html">Message (알림)</a>
+              </li>
+              <li>
+                <a href="../../patterns/error.html">Error (오류)</a>
+              </li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../order/list.html"> 상품리스트</a>
+                  </li>
+                  <li><a href="../order/detail.html">상품상세</a></li>
+                  <li class="active">
+                    <a href="../order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li>
+                    <a href="../tables/mix.html">조합형</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>주문 정보확인</h2>
+              <ul class="indicator">
+                <li>Patterns</li>
+                <li>Order (주문)</li>
+                <li>주문 정보확인</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">PC</span>
+              <span>Mobile</span>
+            </div>
+            <div class="tabCon">
+              <section>
+                <h3>상품주문서 페이지</h3>
+                <div class="guide_text">
+                  <p>
+                    • 상품주문서 페이지는 구매를 결정한 상품의 정보와 함께
+                    배송지, 결제 정보 등을 입력하는 페이지이다.
+                  </p>
+                  <p>
+                    • 주문정보 등이 명확하게 표시 되어야 하며, 배송정보 입력란은
+                    주문 과정에서 가장 중요한 부분이므로 잘못된 정보 입력 시
+                    오류 메시지를 표시, 다시 한번 확인하도록 기능제공한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <!-- a -->
+                <h5>a. 대대여 기준 : 배송정보</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_01.png"
+                    alt="배송정보"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        ><em>1</em>수급자 목록 : Modal (모달) 사이즈 : LG-600,
+                        스크롤 정책 적용
+                        <a
+                          href="../../components/layout/modal.html"
+                          class="Tcolor_R Tunline"
+                          >컴포넌트 바로가기</a
+                        ></span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        ><em>2</em>주소 : 설치 건 (비 활성화), 택배 건 (활성화)
+                      </span>
+                    </li>
+                    <li>
+                      <span><em>3</em>필수 값 : 별표, 빨강색으로 표시 </span>
+                    </li>
+                    <li>
+                      <span
+                        ><em>4</em>배송 입력 : 패턴 - Error(오류) - 가로형
+                        테이블 참조
+                        <a
+                          href="../../patterns/error.html"
+                          class="Tcolor_R Tunline"
+                          >패턴 바로가기</a
+                        >,컴포넌트 - Text input(텍스트 입력 필드) 참조
+                        <a
+                          href="../../components/input/text_input.html"
+                          class="Tcolor_R Tunline"
+                          >컴포넌트 바로가기</a
+                        ></span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- b -->
+                <h5>b. 대대여 기준 : 주문정보, 청구정보</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_02.png"
+                    alt="주문정보, 청구정보"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 주문정보:</span>
+                      <div>
+                        <p>
+                          상품명, 상품 이미지, 옵션, 배송희망일 등 정보를
+                          보여준다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 청구정보:</span>
+                      <div>
+                        <p>청구 금액과 관련된 정보를 보여준다.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>시스템에 따른 상태표현</h3>
+                <!-- a -->
+                <h5>a. 주소 : 설치 건</h5>
+                <div class="guide_text">
+                  <p>
+                    설치 건은 상품리스트, 상품상세 페이지에서 ‘지역선택'을 하고
+                    주문 신청 페이지로 이동한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_03.png"
+                    alt="설치 건"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        ><em>1</em>수급자 목록 : [수급자 목록에서 불러오기]
+                        버튼을 눌러서 수급자 등록 하거나, 직접 등록 가능함.
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        ><em>2</em>지역선택 : 미리 선택한 지역 내에서만 주문
+                        가능함.
+                        <span class="Tcolor_R">(비활성화)</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span><em>3</em>주소 : 활성화/비활성화 기준 </span>
+                      <div>
+                        <p>(* 지역선택한 지역 내에서만 주소 변경 가능)</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 주소 입력 전 :</span>
+                      <div>
+                        <p>
+                          입력필드 어디를 눌러도 [우편번호] 버튼과 같은 기능 함.
+                          <em class="Tcolor_R">(활성화)</em>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 우편 번호를 통한 입력 : </span>
+                      <div>
+                        <p>
+                          입력필드 ‘우편번호 검색’, ‘주소 검색’
+                          <em class="Tcolor_R">(비활성화)</em>, ‘상세주소 입력
+                          <em class="Tcolor_R">(활성화)</em>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 수급자 목록을 통한 입력 :</span>
+                      <div>
+                        <p>
+                          입력필드 ‘우편번호 검색’, ‘주소 검색’
+                          <em class="Tcolor_R">(비활성화)</em>, ‘상세주소 입력
+                          <em class="Tcolor_R">(활성화)</em>
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_04.png"
+                    alt="활성화"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_05.png"
+                    alt="활성화 비활성화"
+                  />
+                </div>
+
+                <!-- b -->
+                <h5>b. 주소 : 택배 건</h5>
+                <div class="guide_text">
+                  <p>
+                    설치 건은 상품리스트, 상품상세 페이지에서 ‘지역선택'을 하고
+                    주문 신청 페이지로 이동한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_06.png"
+                    alt="택배 건"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        ><em>1</em>수급자 목록 : [수급자 목록에서 불러오기]
+                        버튼을 눌러서 수급자 등록 하거나, 직접 등록 가능함.
+                      </span>
+                    </li>
+                    <li>
+                      <span><em>2</em>주소 : 활성화/비활성화 기준 </span>
+                    </li>
+                    <li>
+                      <span>주소 입력 전 :</span>
+                      <div>
+                        <p>
+                          입력필드 어디를 눌러도 [우편번호] 버튼과 같은 기능 함.
+                          <em class="Tcolor_R">(활성화)</em>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 우편 번호를 통한 입력 : </span>
+                      <div>
+                        <p>
+                          입력필드 ‘우편번호 검색’, ‘주소 검색’
+                          <em class="Tcolor_R">(비활성화)</em>, ‘상세주소 입력
+                          <em class="Tcolor_R">(활성화)</em>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 수급자 목록을 통한 입력 :</span>
+                      <div>
+                        <p>
+                          입력필드 ‘우편번호 검색’, ‘주소 검색’
+                          <em class="Tcolor_R">(비활성화)</em>, ‘상세주소 입력
+                          <em class="Tcolor_R">(활성화)</em>
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_07.png"
+                    alt="활성화 비활성화"
+                  />
+                </div>
+              </section>
+            </div>
+            <div class="tabCon">
+              <section>
+                <h3>상품주문서 페이지</h3>
+                <div class="guide_text">
+                  <p>
+                    • 상품주문서 페이지는 구매를 결정한 상품의 정보와 함께
+                    배송지, 결제 정보 등을 입력하는 페이지이다.
+                  </p>
+                  <p>
+                    • 주문정보 등이 명확하게 표시 되어야 하며, 배송정보 입력란은
+                    주문 과정에서 가장 중요한 부분이므로 잘못된 정보 입력 시
+                    오류 메시지를 표시, 다시 한번 확인하도록 기능제공한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <!-- a -->
+                <h5>a. 대대여 기준 : 상품정보</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_01_1.png"
+                    alt="상품정보"
+                  />
+                </div>
+                <!-- b -->
+                <h5>b. 대대여 기준 : 배송정보</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_01_2.png"
+                    alt="배송정보"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        ><em>1</em>수급자 목록 : 해당 버튼을 터치 시, PC에서는
+                        모달, MO에서는 페이지로 구성하여 노출
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        ><em>2</em>주소 : 설치 건 (비 활성화), 택배 건 (활성화)
+                      </span>
+                    </li>
+                    <li>
+                      <span><em>3</em>필수 값 : 별표, 빨강색으로 표시</span>
+                    </li>
+                  </ul>
+                </div>
+                <h5>c. 대대여 기준 : 청구정보</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_01_3.png"
+                    alt="청구정보"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="guide_text">
+                  <p>• 입력 화면 : padding : 24px, 20px , gap : 24px</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/order/list03_01_4.png"
+                    alt="사이즈 및 간격"
+                  />
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

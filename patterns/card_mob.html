@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/badge.html">Badge (배지)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/label.html">Label (레이블)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/modal.html">Modal (모달)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../components/layout/tab.html">Tab (탭)</a></li>
+                  <li>
+                    <a href="../components/layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../components/action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/switch.html">Switch (토글)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li>
+                <a href="../patterns/search.html">Search (검색)</a>
+              </li>
+              <li>
+                <a href="../patterns/message.html">Message (알림)</a>
+              </li>
+              <li><a href="../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../patterns/forms.html">Forms (입력폼)</a></li>
+              <li class="active">
+                <a href="../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/order/list.html"> 상품리스트</a></li>
+                  <li><a href="../patterns/order/detail.html">상품상세</a></li>
+                  <li>
+                    <a href="../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/tables/default.html">기본형</a></li>
+                  <li>
+                    <a href="../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../page/error.html">Error</a></li>
+              <li><a href="../page/nodata.html">NoData</a></li>
+              <li><a href="../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Card(카드_모바일)</h2>
+              <ul class="indicator">
+                <li>Patterns</li>
+                <li>Card(카드_모바일)</li>
+              </ul>
+            </div>
+          </div>
+
+          <section>
+            <h3>모바일 카드 UI</h3>
+            <div class="guide_text">
+              <p>
+                모바일 웹에서 카드 UI는 정보나 콘텐츠를 시각적으로 분리된 개별
+                카드 형태로 배치하는 디자인 패턴이다. <br />
+                각 카드는 독립적인 정보 단위로, 텍스트, 이미지, 아이콘, 버튼
+                등의 요소를 포함할 수 있고 사용자와 상호작용할 수 있는 일관된
+                디자인 구조를 제공한다.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h3>구조</h3>
+            <!-- a -->
+            <h5>a. 정보 전달형</h5>
+            <div class="guide_text">
+              <p>
+                • 하나의 주제 내 정보를 요약하거나 관련된 정보 또는 기능을 함께
+                제공하는 경우 사용한다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/card_mob/card_mob01_01.png"
+                alt="정보 전달형 이미지"
+              />
+            </div>
+            <!-- b -->
+            <h5>b. 아이템형</h5>
+            <div class="guide_text">
+              <p>
+                • 사용자에게 상품 정보를 집약적으로 전달하기 위한 요소이다. 상품
+                정보(가격, 상품명, 혜택)를 명확하게 전달해 상세 페이지로
+                유도하는 목적을 가진다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/card_mob/card_mob01_02.png"
+                alt="아이템형 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h3>사이즈 및 간격</h3>
+            <h5>카드 UI</h5>
+            <div class="guide_text">
+              <p>• 기본(디폴트) : padding: 24px,16px</p>
+              <p>
+                • 예외화면 : 상단에 상태값이 노출되는 경우 : padding: 16px,
+                16px, 24px. 16px <br /><span class="pl10"></span>ex.이용현황->
+                주문내역, 출고처리 화면
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/card_mob/card_mob01_03.png"
+                alt="카드 UI 이미지"
+              />
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/card_mob/card_mob01_04.png"
+                alt="카드 UI02 이미지"
+              />
+            </div>
+
+            <h5>카드 UI 리스트</h5>
+            <div class="guide_text">
+              <p>
+                • 카운트 영역이 있는 경우 : 사이 간격 0px , 카운트 영역이 없는
+                경우 : 사이 간격 20px
+              </p>
+              <p>• 리스트 간격(gap) : 12px</p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/card_mob/card_mob01_05.png"
+                alt="카드 UI 리스트 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h3>사용법</h3>
+            <div class="guide_list">
+              <ul>
+                <li>
+                  <span
+                    >• 모바일에서 정보전달형 카드형은 가로 또는 세로로 나열 할
+                    수 있다.
+                  </span>
+                </li>
+                <li>
+                  <div>
+                    <p class="pl10">
+                      세로로 나열할 경우, infinite scroll 또는 더보기 버튼을
+                      통해 카드를 추가로 더 불러올 수 있도록 한다. <br />가로로
+                      나열할 경우, 인디게이터와 함께 사용할 것을 권장합니다.
+                      가로로 연속된 카드는 카드의 일부를 좌측 또는 우측에
+                      노출한다.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/card_mob/card_mob01_06.png"
+                alt="사용법 이미지"
+              />
+            </div>
+
+            <div class="guide_list">
+              <ul>
+                <li>
+                  <span
+                    >• 정보전달 카드형 내 터치 영역이 많을 경우 주요 업무는 카드
+                    자체를 눌러서 이동하며, 그 외의 기능은 버튼으로
+                    제공한다.</span
+                  >
+                </li>
+                <li>
+                  <div>
+                    <p class="pl10">
+                      버튼 선택 시 카드 정보와 연관된 기능을 제공하거나 해당
+                      정보의 상세 페이지로 이동한다. <br />
+                      하나의 카드 내 정보와 기능은 최대 5개까지 제공할 수 있다.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/card_mob/card_mob01_07.png"
+                alt="사용법02 이미지"
+              />
+            </div>
+          </section>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

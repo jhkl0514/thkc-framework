@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li class="active">
+                    <a href="../layout/badge.html">Badge (배지)</a>
+                  </li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Badge (배지)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Badge (배지)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Badge</h3>
+                <div class="guide_text">
+                  <p>
+                    • 컴포넌트에 대한 빠른 인지와 탐색을 돕기 위해 컴포넌트
+                    근처에 표시되는 작은 문자 또는 숫자 데이터이다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout03_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>Dot : </span>
+                      <div>
+                        <p>새로운 업데이트가 있을 경우 점으로 표현하는 유형</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>Container : </span>
+                      <div>
+                        <p>배지를 배경과 구분하는 윤곽선</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>Label : </span>
+                      <div>
+                        <p>배지를 통해 전달하고자 하는 데이터</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>Dot</h5>
+                <div class="guide_text">
+                  <p>• 아이콘과 함께 사용한다.</p>
+                  <p>• 텍스트 레이블 성격에는 사용하지 않습니다.</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout03_02.png"
+                    alt="Dot 이미지"
+                  />
+                </div>
+                <h5>숫자형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 서비스 항목의 업데이트 수, 새로운 알림 등을 숫자로
+                    카운팅하여 노출하는 유형
+                  </p>
+                  <p>
+                    • 아이콘과 함께 사용한다. 텍스트와 함께 사용하지 않는다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout03_03.png"
+                    alt="숫자형 이미지"
+                  />
+                </div>
+
+                <h5>텍스트형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 데이터의 상태 정보를 제공하고자 할 경우 텍스트로 노출하는
+                    유형
+                  </p>
+                  <p>• 아이콘과 함께 사용하지 않는다.</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout03_04.png"
+                    alt="텍스트형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout03_05.png"
+                    alt="사용법01 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 배지의 색상은 지정된 색상으로만 사용한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          배지 레이블이 전달하는 정보가 특정 색상이 가진
+                          일반적인 의미 체계와 일치하는 경우에 맞춰 색상을
+                          사용한다. 색상은 지정된 색상 이외의 색은 사용하지
+                          않는다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout03_06.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 숫자형일 경우 최대 노출 표시 숫자는 99+까지로
+                        한정한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          컨텐츠 확인 시 배지는 확인 처리되어 사라진다. 컨텐츠
+                          미확인 시 배지는 계속 노출 상태를 유지한다. <br />
+                          컨텐츠 미확인 시 배지 노출 기간에 대한 정의는 각
+                          서비스 정책에서 정의한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span>• 한가지 종류의 배지만 사용한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          배지를 조합하여 두가지 이상의 종류는 함께 사용하지
+                          않도록 한다. (텍스트형+Dot, 텍스트형+숫자 사용 불가)
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형태</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <!-- 숫자형 -->
+                    <span class="DDY_badge number DDY_badge_Black">999+</span>
+                    <!-- 텍스트형 - squre_outline -->
+                    <span class="DDY_badge squre_line DDY_badge_Blue"
+                      >Badge</span
+                    >
+                    <!-- 텍스트형 - squre_fill -->
+                    <span class="DDY_badge squre_fill DDY_badge_Red"
+                      >Badge</span
+                    >
+                    <!-- 텍스트형 - round_fill -->
+                    <span class="DDY_badge round_fill DDY_badge_Green"
+                      >Badge</span
+                    >
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;!-- &#xC22B;&#xC790;&#xD615; --&#x3E;
+&#x3C;span class=&#x22;DDY_badge number DDY_badge_Black&#x22;&#x3E;999+&#x3C;/span&#x3E;
+&#x3C;!-- &#xD14D;&#xC2A4;&#xD2B8;&#xD615; - squre_outline --&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Blue&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;!-- &#xD14D;&#xC2A4;&#xD2B8;&#xD615; - squre_fill --&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Red&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;!-- &#xD14D;&#xC2A4;&#xD2B8;&#xD615; - round_fill --&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Green&#x22;&#x3E;Badge&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_badge ------------------------------------
+
+.DDY_badge {
+  display: inline-block;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+
+  // 숫자형
+  &.number {
+    padding: 0 8px;
+    border-radius: 100px;
+    line-height: 18px;
+    color: var(--clr-FFFFFF);
+    
+    &.DDY_badge_Blue {
+      background-color: var(--clr-1D4ED8);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Green {
+      background-color: var(--clr-15803D);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Red {
+      background-color: var(--clr-D32F2F);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Grey {
+      background-color: var(--clr-F5F5F5);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Navy {
+      color: var(--clr-FFFFFF);
+      background-color: var(--clr-323DA3);
+    }
+  }
+
+  // 라운드형
+  &.squre_fill {
+    height: 24px;
+
+    &.DDY_badge_Black {
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Blue {
+      background-color: var(--clr-1D4ED8);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Green {
+      background-color: var(--clr-15803D);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Red {
+      background-color: var(--clr-D32F2F);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Grey {
+      background-color: var(--clr-F5F5F5);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Navy {
+      background-color: var(--clr-323DA3);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Orange {
+      background-color: #ffa000;
+      color: var(--clr-1A1A1A);
+    }
+  }
+
+  //원형
+  &.round_fill {
+    height: 24px;
+    border-radius: 100px;
+    color: var(--clr-FFFFFF);
+
+    &.DDY_badge_Blue {
+      background-color: #eff6ff;
+      color: #1e40af;
+    }
+    &.DDY_badge_Navy {
+      background-color: var(--clr-323DA3);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Green {
+      background-color: #e8f5e9;
+      color: #166534;
+    }
+    &.DDY_badge_Red {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+    &.DDY_badge_Orange {
+      background-color: #fff8e1;
+      color: #ffa000;
+    }
+    &.DDY_badge_Grey {
+      background-color: var(--clr-F5F5F5);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-1A1A1A);
+    }
+  }
+
+  // 라인형
+  &.squre_line {
+    height: 24px;
+    border: 1px solid var(--clr-DDDDDD);
+    line-height: 18px;
+
+    &.DDY_badge_Black {
+      background-color: var(--clr-F5F5F5);
+      border-color: var(--clr-333333);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Blue {
+      color: #1477f8;
+      border-color: #dbeafe;
+      background-color: #eff6ff;
+    }
+    &.DDY_badge_Green {
+      color: var(--clr-43A047);
+      border-color: #c8e6c9;
+      background-color: var(--clr-E8F5E9);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-09AF00);
+      border-color: var(--clr-09AF00);
+      background-color: var(--clr-F2FDE4);
+    }
+  }
+
+  //기본컬러셋
+  &.DDY_badge_Black {
+    background-color: var(--clr-1A1A1A);
+  }
+  &.DDY_badge_Blue {
+    background-color: var(--clr-323DA3);
+  }
+  &.DDY_badge_Red {
+    color: var(--clr-E53935);
+    border-color: #ffcdd2;
+    background-color: var(--clr-FFEBEE);
+  }
+  &.DDY_badge_Green {
+    color: var(--clr-09AF00);
+    border-color: var(--clr-09AF00);
+    background-color: var(--clr-F2FDE4);
+  }
+  &.DDY_badge_Navy {
+    background-color: var(--clr-E3E5F5);
+    border-color: var(--clr-CED2F4);
+    color: var(--clr-323DA3);
+  }
+  &.DDY_badge_LightGreen {
+    background-color: var(--clr-90EE02);
+  }
+  &.DDY_badge_Grey {
+    color: var(--clr-1A1A1A);
+    border-color: var(--clr-EEEEEE);
+    background-color: var(--clr-F5F5F5);
+  }
+  &.DDY_badge_Orange {
+    color: #f47100;
+    border-color: #ffc77d;
+    background-color: #fff5e6;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>숫자형</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="DDY_badge number DDY_badge_Black"> 999+ </span>
+                    <span class="DDY_badge number DDY_badge_Blue"> 999+ </span>
+                    <span class="DDY_badge number DDY_badge_Red"> 999+ </span>
+                    <span class="DDY_badge number DDY_badge_Green"> 999+ </span>
+                    <span class="DDY_badge number DDY_badge_Navy"> 999+ </span>
+                    <span class="DDY_badge number DDY_badge_LightGreen"
+                      >999+</span
+                    >
+                    <span class="DDY_badge number DDY_badge_Grey"> 999+ </span>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;DDY_badge number DDY_badge_Black&#x22;&#x3E; 999+ &#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge number DDY_badge_Blue&#x22;&#x3E; 999+ &#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge number DDY_badge_Red&#x22;&#x3E; 999+ &#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge number DDY_badge_Green&#x22;&#x3E; 999+ &#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge number DDY_badge_Navy&#x22;&#x3E; 999+ &#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge number DDY_badge_LightGreen&#x22;&#x3E;999+&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge number DDY_badge_Grey&#x22;&#x3E; 999+ &#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_badge ------------------------------------
+
+.DDY_badge {
+  display: inline-block;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+
+  // 숫자형
+  &.number {
+    padding: 0 8px;
+    border-radius: 100px;
+    line-height: 18px;
+    color: var(--clr-FFFFFF);
+
+    &.DDY_badge_Blue {
+      background-color: var(--clr-1D4ED8);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Green {
+      background-color: var(--clr-15803D);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Red {
+      background-color: var(--clr-D32F2F);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Grey {
+      background-color: var(--clr-F5F5F5);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Navy {
+      color: var(--clr-FFFFFF);
+      background-color: var(--clr-323DA3);
+    }
+  }
+
+  //기본컬러셋
+  &.DDY_badge_Black {
+    background-color: var(--clr-1A1A1A);
+  }
+  &.DDY_badge_Blue {
+    background-color: var(--clr-323DA3);
+  }
+  &.DDY_badge_Red {
+    color: var(--clr-E53935);
+    border-color: #ffcdd2;
+    background-color: var(--clr-FFEBEE);
+  }
+  &.DDY_badge_Green {
+    color: var(--clr-09AF00);
+    border-color: var(--clr-09AF00);
+    background-color: var(--clr-F2FDE4);
+  }
+  &.DDY_badge_Navy {
+    background-color: var(--clr-E3E5F5);
+    border-color: var(--clr-CED2F4);
+    color: var(--clr-323DA3);
+  }
+  &.DDY_badge_LightGreen {
+    background-color: var(--clr-90EE02);
+  }
+  &.DDY_badge_Grey {
+    color: var(--clr-1A1A1A);
+    border-color: var(--clr-EEEEEE);
+    background-color: var(--clr-F5F5F5);
+  }
+  &.DDY_badge_Orange {
+    color: #f47100;
+    border-color: #ffc77d;
+    background-color: #fff5e6;
+  }
+}
+                      </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>라인형</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="DDY_badge squre_line DDY_badge_Black">
+                      Badge
+                    </span>
+                    <span class="DDY_badge squre_line DDY_badge_Blue">
+                      Badge
+                    </span>
+                    <span class="DDY_badge squre_line DDY_badge_Red">
+                      Badge
+                    </span>
+                    <span class="DDY_badge squre_line DDY_badge_Green">
+                      Badge
+                    </span>
+                    <span class="DDY_badge squre_line DDY_badge_Navy">
+                      Badge
+                    </span>
+                    <span class="DDY_badge squre_line DDY_badge_LightGreen">
+                      Badge
+                    </span>
+                    <span class="DDY_badge squre_line DDY_badge_Grey">
+                      Badge
+                    </span>
+                    <span class="DDY_badge squre_line DDY_badge_Orange">
+                      Badge
+                    </span>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Black&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Blue&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Red&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Green&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Navy&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_LightGreen&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Grey&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Orange&#x22;&#x3E;Badge&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_badge ------------------------------------
+
+.DDY_badge {
+  display: inline-block;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+
+  // 라인형
+  &.squre_line {
+    height: 24px;
+    border: 1px solid var(--clr-DDDDDD);
+    line-height: 18px;
+
+    &.DDY_badge_Black {
+      background-color: var(--clr-F5F5F5);
+      border-color: var(--clr-333333);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Blue {
+      color: #1477f8;
+      border-color: #dbeafe;
+      background-color: #eff6ff;
+    }
+    &.DDY_badge_Green {
+      color: var(--clr-43A047);
+      border-color: #c8e6c9;
+      background-color: var(--clr-E8F5E9);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-09AF00);
+      border-color: var(--clr-09AF00);
+      background-color: var(--clr-F2FDE4);
+    }
+  }
+
+  //기본컬러셋
+  &.DDY_badge_Black {
+    background-color: var(--clr-1A1A1A);
+  }
+  &.DDY_badge_Blue {
+    background-color: var(--clr-323DA3);
+  }
+  &.DDY_badge_Red {
+    color: var(--clr-E53935);
+    border-color: #ffcdd2;
+    background-color: var(--clr-FFEBEE);
+  }
+  &.DDY_badge_Green {
+    color: var(--clr-09AF00);
+    border-color: var(--clr-09AF00);
+    background-color: var(--clr-F2FDE4);
+  }
+  &.DDY_badge_Navy {
+    background-color: var(--clr-E3E5F5);
+    border-color: var(--clr-CED2F4);
+    color: var(--clr-323DA3);
+  }
+  &.DDY_badge_LightGreen {
+    background-color: var(--clr-90EE02);
+  }
+  &.DDY_badge_Grey {
+    color: var(--clr-1A1A1A);
+    border-color: var(--clr-EEEEEE);
+    background-color: var(--clr-F5F5F5);
+  }
+  &.DDY_badge_Orange {
+    color: #f47100;
+    border-color: #ffc77d;
+    background-color: #fff5e6;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>라운드형</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="DDY_badge squre_fill DDY_badge_Black"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge squre_fill DDY_badge_Blue"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge squre_fill DDY_badge_Red"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge squre_fill DDY_badge_Green"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge squre_fill DDY_badge_Navy"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge squre_fill DDY_badge_LightGreen"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge squre_fill DDY_badge_Grey"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge squre_fill DDY_badge_Orange"
+                      >Badge</span
+                    >
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Black&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Blue&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Red&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Green&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Navy&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_LightGreen&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Grey&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge squre_fill DDY_badge_Orange&#x22;&#x3E;Badge&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_badge ------------------------------------
+
+.DDY_badge {
+  display: inline-block;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+
+  // 라운드형
+  &.squre_fill {
+    height: 24px;
+
+    &.DDY_badge_Black {
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Blue {
+      background-color: var(--clr-1D4ED8);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Green {
+      background-color: var(--clr-15803D);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Red {
+      background-color: var(--clr-D32F2F);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Grey {
+      background-color: var(--clr-F5F5F5);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Navy {
+      background-color: var(--clr-323DA3);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_Orange {
+      background-color: #ffa000;
+      color: var(--clr-1A1A1A);
+    }
+  }
+
+  //기본컬러셋
+  &.DDY_badge_Black {
+    background-color: var(--clr-1A1A1A);
+  }
+  &.DDY_badge_Blue {
+    background-color: var(--clr-323DA3);
+  }
+  &.DDY_badge_Red {
+    color: var(--clr-E53935);
+    border-color: #ffcdd2;
+    background-color: var(--clr-FFEBEE);
+  }
+  &.DDY_badge_Green {
+    color: var(--clr-09AF00);
+    border-color: var(--clr-09AF00);
+    background-color: var(--clr-F2FDE4);
+  }
+  &.DDY_badge_Navy {
+    background-color: var(--clr-E3E5F5);
+    border-color: var(--clr-CED2F4);
+    color: var(--clr-323DA3);
+  }
+  &.DDY_badge_LightGreen {
+    background-color: var(--clr-90EE02);
+  }
+  &.DDY_badge_Grey {
+    color: var(--clr-1A1A1A);
+    border-color: var(--clr-EEEEEE);
+    background-color: var(--clr-F5F5F5);
+  }
+  &.DDY_badge_Orange {
+    color: #f47100;
+    border-color: #ffc77d;
+    background-color: #fff5e6;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>원형</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="DDY_badge round_fill DDY_badge_Black"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge round_fill DDY_badge_Blue"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge round_fill DDY_badge_Red"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge round_fill DDY_badge_Green"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge round_fill DDY_badge_Navy"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge round_fill DDY_badge_LightGreen"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge round_fill DDY_badge_Grey"
+                      >Badge</span
+                    >
+                    <span class="DDY_badge round_fill DDY_badge_Orange"
+                      >Badge</span
+                    >
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Black&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Blue&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Red&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Green&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Navy&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_LightGreen&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Grey&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Orange&#x22;&#x3E;Badge&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_badge ------------------------------------
+
+.DDY_badge {
+  display: inline-block;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+
+  //원형
+  &.round_fill {
+    height: 24px;
+    border-radius: 100px;
+    color: var(--clr-FFFFFF);
+
+    &.DDY_badge_Blue {
+      background-color: #eff6ff;
+      color: #1e40af;
+    }
+    &.DDY_badge_Navy {
+      background-color: var(--clr-323DA3);
+      color: var(--clr-FFFFFF);
+    }
+    &.DDY_badge_Green {
+      background-color: #e8f5e9;
+      color: #166534;
+    }
+    &.DDY_badge_Red {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+    &.DDY_badge_Orange {
+      background-color: #fff8e1;
+      color: #ffa000;
+    }
+    &.DDY_badge_Grey {
+      background-color: var(--clr-F5F5F5);
+      color: var(--clr-1A1A1A);
+    }
+    &.DDY_badge_LightGreen {
+      color: var(--clr-1A1A1A);
+    }
+  }
+
+  //기본컬러셋
+  &.DDY_badge_Black {
+    background-color: var(--clr-1A1A1A);
+  }
+  &.DDY_badge_Blue {
+    background-color: var(--clr-323DA3);
+  }
+  &.DDY_badge_Red {
+    color: var(--clr-E53935);
+    border-color: #ffcdd2;
+    background-color: var(--clr-FFEBEE);
+  }
+  &.DDY_badge_Green {
+    color: var(--clr-09AF00);
+    border-color: var(--clr-09AF00);
+    background-color: var(--clr-F2FDE4);
+  }
+  &.DDY_badge_Navy {
+    background-color: var(--clr-E3E5F5);
+    border-color: var(--clr-CED2F4);
+    color: var(--clr-323DA3);
+  }
+  &.DDY_badge_LightGreen {
+    background-color: var(--clr-90EE02);
+  }
+  &.DDY_badge_Grey {
+    color: var(--clr-1A1A1A);
+    border-color: var(--clr-EEEEEE);
+    background-color: var(--clr-F5F5F5);
+  }
+  &.DDY_badge_Orange {
+    color: #f47100;
+    border-color: #ffc77d;
+    background-color: #fff5e6;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

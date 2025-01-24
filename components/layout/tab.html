@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <!-- <script src="/framework/assets/js/common.js"></script> -->
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .item_view .DDY_list .tabTop span.active:before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--clr-FAFAFA);
+      z-index: 1;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li class="active">
+                    <a href="../layout/tab.html">Tab (탭)</a>
+                  </li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Tab (탭)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Tab (탭)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Tab</h3>
+                <div class="guide_text">
+                  <p>
+                    • 동일 계층의 콘텐츠를 그룹화해 화면 이동 없이 빠르게 여러
+                    개의 콘텐츠 섹션을 전환할 수 있는 컴포넌트이다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>탭 : </span>
+                      <div>
+                        <p>
+                          사용자와의 상호작용에 반응하는 박스 영역으로 실행 시
+                          각 탭에 상응하는 콘텐츠가 탭 패널에 표시됨
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>레이블 :</span>
+                      <div>
+                        <p>표시할 탭 항목</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>선택된 탭 인디케이터 : </span>
+                      <div>
+                        <p>탭이 선택된 상태임을 알려주는 시각적인 식별자</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>Underlined형</h5>
+                <div class="guide_text">
+                  <p>
+                    • PC,Mobile 모두 공통으로 사용하며, 항목의 수가 많아질 경우
+                    좌우 scroll로 항목을 이동한다.
+                  </p>
+                </div>
+
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_02.png"
+                    alt="Underlined형 이미지"
+                  />
+                </div>
+                <h5>Outlined형</h5>
+                <div class="guide_text">
+                  <p>
+                    • PC에서만 사용하며, 항목의 너비는 동일한 비율로 적용한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_03.png"
+                    alt="Outlined형 이미지"
+                  />
+                </div>
+                <h5>Round형</h5>
+                <div class="guide_text">
+                  <p>
+                    • Mobile에서만 사용하며, 2depth에서 사용하며 항목의 수가
+                    많아질 경우 좌우 scroll로 항목을 이동한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_03_01.png"
+                    alt="Round형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <h5>Underlined형</h5>
+                <div class="guide_text">
+                  <p>
+                    항목 간의 패딩 값을 유지하고, 항목 너비는 텍스트 길이에 따라
+                    유동적으로 적용한다.
+                  </p>
+                </div>
+
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_04.png"
+                    alt="Underlined형 이미지"
+                  />
+                </div>
+                <h5>Outlined형</h5>
+                <div class="guide_text">
+                  <p>
+                    한 화면 내 탭이 모두 노출되도록 사용하며, 탭 항목의 너비는
+                    동일한 비율로 적용한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_05.png"
+                    alt="Outlined형 이미지"
+                  />
+                </div>
+                <h5>Round형</h5>
+                <div class="guide_text">
+                  <p>
+                    항목 간의 패딩 값을 유지하고, 항목 너비는 텍스트 길이에 따라
+                    유동적으로 적용한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_05_01.png"
+                    alt="Round형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• PC에서 두 개의 탭을 중첩으로 사용할 경우</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          Outlined형이 1순위가 되며 대분류, Underlined 형이
+                          소분류로 사용한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_06.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• Mobile에서 두 개의 탭을 중첩으로 사용할 경우</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          Underlined 형은 1depth로 사용하고, Round형은 2depth로
+                          사용한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_06_01.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 상태값에 따른 탭 형태를 사용하도록 한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          Underlined형에서는 Hover값을 가지며, Outlined형에서는
+                          앞 뒤 탭에서는 라운드 값을 가집니다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout10_07.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 탭에 사용 불가 상태를 사용하지 않는다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          탭에 표시될 콘텐츠가 없는 경우, 해당 탭을 삭제하거나
+                          탭을 선택했을 때 패널에 콘텐츠가 없는 이유에 대한
+                          설명을 제공하여 사용자가 혼동을 느끼지 않도록 해야
+                          한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>타입</h3>
+                <h4>Underlined형</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="display: flex; flex-wrap: wrap">
+                      <div class="tableTabTop">
+                        <span class="active">타이틀 <em>01</em></span>
+                        <span>타이틀 <em>02</em></span>
+                        <span>타이틀 <em>03</em></span>
+                      </div>
+                      <div style="width: 100%">
+                        <div class="tableCon">타이틀 01 - 내용</div>
+                        <div class="tableCon">타이틀 02 - 내용</div>
+                        <div class="tableCon">타이틀 03 - 내용</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div&#x3E;
+  &#x3C;div class=&#x22;tableTabTop&#x22;&#x3E;
+    &#x3C;span class=&#x22;active&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0; &#x3C;em&#x3E;01&#x3C;/em&#x3E;&#x3C;/span&#x3E;
+    &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0; &#x3C;em&#x3E;02&#x3C;/em&#x3E;&#x3C;/span&#x3E;
+    &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0; &#x3C;em&#x3E;03&#x3C;/em&#x3E;&#x3C;/span&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;tableCon&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0; 01 - &#xB0B4;&#xC6A9;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;tableCon&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0; 02 - &#xB0B4;&#xC6A9;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;tableCon&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0; 03 - &#xB0B4;&#xC6A9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tableTabTop ------------------------------------
+// TabTop
+.tableTabTop {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-BDBDBD);
+  span {
+    position: relative;
+    display: block;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--clr-999999);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 0;
+      height: 3px;
+      background-color: var(--clr-FFFFFF);
+      transition: all 0.2s;
+    }
+    em {
+      color: var(--clr-09AF00);
+      font-weight: 600;
+    }
+
+    &.active {
+      font-weight: 700;
+      color: var(--clr-1A1A1A);
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        height: 2px;
+        background-color: var(--clr-333333);
+      }
+      em {
+        color: var(--clr-09AF00);
+        font-weight: 700;
+      }
+    }
+
+    &:hover {
+      font-weight: 700;
+      color: var(--clr-1A1A1A);
+      em {
+        color: var(--clr-09AF00);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.tableCon {
+  position: relative;
+  .btnWrap {
+    position: absolute;
+    top: -45px;
+    right: 0;
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tab -------------------------------------
+// common tab
+$(".tabCon").hide();
+$(".tabCon").eq(0).show(0);
+$(".tabTop span").on("click", function () {
+  const idx = $(this).index();
+  $(".tabTop span").removeClass("active");
+  $(this).addClass("active");
+  $(".tabCon").hide();
+  $(".tabCon").eq(idx).show();
+
+  //tabTop span 클릭시 tableCon 조정 09_DDYlist
+  $(".tabCon").children(".tableTabTop").find("span").removeClass("active");
+  $(".tabCon")
+    .eq(idx)
+    .children(".tableTabTop")
+    .find("span")
+    .eq(0)
+    .addClass("active");
+
+  $(".tabCon").eq(idx).children(".tableCon").hide();
+  $(".tabCon").eq(idx).children(".tableCon").eq(0).show();
+
+  //searchBox
+  $(".searchBox").removeClass("active");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>Outlined형</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_list" style="width: 500px">
+                      <div class="tabTop">
+                        <span class="active">타이틀01</span>
+                        <span>타이틀02</span>
+                        <span>타이틀03</span>
+                      </div>
+                      <!-- tabContent 01-->
+                      <div class="tabCon">타이틀01 - 내용</div>
+                      <!-- tabContent 02-->
+                      <div class="tabCon">타이틀02 - 내용</div>
+                      <!-- tabContent 03-->
+                      <div class="tabCon">타이틀03 - 내용</div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_list&#x22;&#x3E;
+  &#x3C;div class=&#x22;tabTop&#x22;&#x3E;
+    &#x3C;span class=&#x22;active&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0;01&#x3C;/span&#x3E;
+    &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;02&#x3C;/span&#x3E;
+    &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;03&#x3C;/span&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;!-- tabContent 01--&#x3E;
+  &#x3C;div class=&#x22;tabCon&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0;01 - &#xB0B4;&#xC6A9;&#x3C;/div&#x3E;
+  &#x3C;!-- tabContent 02--&#x3E;
+  &#x3C;div class=&#x22;tabCon&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0;02 - &#xB0B4;&#xC6A9;&#x3C;/div&#x3E;
+  &#x3C;!-- tabContent 03--&#x3E;
+  &#x3C;div class=&#x22;tabCon&#x22;&#x3E;&#xD0C0;&#xC774;&#xD2C0;03 - &#xB0B4;&#xC6A9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre class="line-numbers"><code class="language-scss">
+                        // ----------------------------- DDY_list ------------------------------------
+
+.DDY_list {
+  .tabTop {
+    position: relative;
+    display: flex;
+    margin-bottom: 32px;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--clr-333333);
+      z-index: 1;
+    }
+    span {
+      position: relative;
+      padding: 12px 20px;
+      width: 100%;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.24px;
+      border: 1px solid var(--clr-EEEEEE);
+      border-left: none;
+      border-bottom: 1px solid var(--clr-333333);
+      margin-right: -1px;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      &:first-child {
+        border-left: 1px solid var(--clr-EEEEEE);
+      }
+      &:first-child.active {
+        border-top-left-radius: 4px;
+        border-left: 2px solid var(--clr-333333);
+      }
+      &:last-child.active {
+        border-top-right-radius: 4px;
+      }
+      &.active {
+        border: 2px solid var(--clr-333333);
+        margin-right: 0;
+        font-weight: 700;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: var(--clr-FFFFFF);
+          z-index: 1;
+        }
+      }
+    }
+  }
+  .list_Dec {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+    img {
+      height: 20px;
+    }
+  }
+
+  .searchBox {
+    position: relative;
+    border: 1px solid var(--clr-BDBDBD);
+    background-color: var(--clr-FAFAFA);
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 48px;
+
+    &.active {
+      .foldBtn {
+        img {
+          transform: rotate(0);
+        }
+      }
+      > ul {
+        margin-bottom: 16px;
+        > li {
+          display: flex;
+          &:first-child {
+            border-bottom: 1px solid var(--clr-EEEEEE);
+          }
+        }
+      }
+      .searchBtn {
+        display: flex;
+      }
+    }
+
+    .foldBtn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--clr-555555);
+      min-width: 0;
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    > ul {
+      margin-bottom: 0;
+      > li {
+        display: none;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--clr-EEEEEE);
+        min-height: 64px;
+
+        &:first-child {
+          display: flex;
+          border-bottom: none;
+        }
+        .searchWrap {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          > span {
+            width: 120px;
+            min-width: 120px;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .DDY_btn {
+            min-width: auto;
+          }
+          .tui-datepicker-input {
+            width: 160px;
+          }
+        }
+      }
+    }
+    .searchBtn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      button {
+        min-width: 130px;
+      }
+    }
+    .DDY_select + .DDY_input {
+      width: 100%;
+    }
+  }
+
+  .listWrap {
+    .selectBox {
+      justify-content: right;
+    }
+    select {
+      width: 150px;
+      border: 1px solid var(--clr-FFFFFF);
+      margin-bottom: 8px;
+    }
+  }
+
+  .itemList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    align-items: flex-start;
+    > li {
+      width: 250px;
+      .imgWrap {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        border: 1px solid var(--clr-EEEEEE);
+        box-sizing: border-box;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        background-color: var(--clr-FFFFFF);
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 100%;
+          transition: all 0.3s;
+        }
+        &:hover {
+          img {
+            transform: translate(-50%, -50%) scale(1.02);
+          }
+        }
+      }
+
+      .textBox {
+        strong {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 26px;
+          letter-spacing: -0.27px;
+        }
+        .itemHash {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          margin-bottom: 16px;
+          span {
+            font-size: 14px;
+          }
+        }
+        .itemPrice {
+          margin-bottom: 8px;
+          p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: -0.24px;
+          }
+        }
+        .itemType {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 4px;
+        }
+      }
+    }
+  }
+
+  .noData {
+    text-align: center;
+    height: 78px;
+    line-height: 76px;
+    width: 100%;
+    border: 1px solid var(--clr-BDBDBD);
+    background-color: var(--clr-FAFAFA);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin: 32px 0;
+  }
+
+  .itemInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+}
+</code></pre>
+                    </div>
+
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // tableTabTop
+$(".tableCon").hide();
+$(".tableCon").eq(0).show(0);
+$(".tableTabTop span").on("click", function () {
+  const idx = $(this).index();
+
+  //tableTabTop span
+  $(this).siblings("span").removeClass("active");
+  $(this).addClass("active");
+
+  //tableCon
+  $(".tableCon").hide();
+  $(".tableCon").eq(idx).show(0);
+  $(this).parent().siblings(".tableCon").eq(idx).show();
+
+  //table shadow
+  $(".divideTable table").removeClass("shadow");
+  //추가
+  $(".divideTable .DDY_checkBox input").prop("checked", false);
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>
+<script>
+  //guide 전용
+  // nav
+  $("nav > ul > li > a").on("click", function () {
+    $(this).next("ul").stop().slideToggle();
+    $(this).parent("li").toggleClass("on");
+  });
+
+  $("nav > ul > li > ul > li > a").on("click", function () {
+    $(this).next("ul").stop().slideToggle();
+    $(this).parent("li").toggleClass("on");
+  });
+  // common tab
+  $(".tabCon").hide();
+  $(".tabCon").eq(0).show(0);
+  $(".item_view .DDY_list .tabCon").eq(0).show(0);
+
+  $(".guide_wrap > .DDY_list > .tabTop span").on("click", function () {
+    const idx = $(this).index();
+    $(".guide_wrap > .DDY_list > .tabTop span").removeClass("active");
+    $(this).addClass("active");
+    $(this).parent().siblings(".tabCon").hide();
+    $(this).parent().siblings(".tabCon").eq(idx).show();
+  });
+
+  $(".item_view > .DDY_list > .tabTop span").on("click", function () {
+    const idx = $(this).index();
+    $(".item_view > .DDY_list > .tabTop span").removeClass("active");
+    $(this).addClass("active");
+    $(this).parent().siblings(".tabCon").hide();
+    $(this).parent().siblings(".tabCon").eq(idx).show();
+  });
+
+  // tableTabTop
+  $(".tableCon").hide();
+  $(".tableCon").eq(0).show(0);
+  $(".tableTabTop span").on("click", function () {
+    const idx = $(this).index();
+
+    //tableTabTop span
+    $(this).siblings("span").removeClass("active");
+    $(this).addClass("active");
+
+    //tableCon
+    $(".tableCon").hide();
+    $(".tableCon").eq(idx).show(0);
+    $(this).parent().siblings(".tableCon").eq(idx).show();
+  });
+
+  // 코드보기
+  $(".code").click(function () {
+    $(this).toggleClass("on");
+    $(this).parent().children(".guide_tab_wrap").toggleClass("on");
+
+    $(this).siblings(".guide_tab_wrap ").children(".guide_item").hide();
+    $(this).siblings(".guide_tab_wrap ").children(".guide_item").eq(0).show(0);
+
+    $(this)
+      .parent()
+      .children(".guide_tab_wrap")
+      .children(".guide_tabTop")
+      .children("span")
+      .removeClass("active");
+
+    $(this)
+      .parent()
+      .children(".guide_tab_wrap")
+      .children(".guide_tabTop")
+      .children("span")
+      .eq(0)
+      .addClass("active");
+
+    $(this)
+      .parent()
+      .children(".guide_tab_wrap")
+      .children(".guide_tabTop")
+      .children("span")
+      .click(function () {
+        var idx = $(this).index();
+        $(this).parent(".guide_tabTop").children("span").removeClass("active");
+        $(this).addClass("active");
+        $(this).parent().siblings(".guide_item").hide();
+        $(this).parent().siblings(".guide_item").eq(idx).show();
+      });
+  });
+  //hambar
+  $(".hambar").on("click", function () {
+    $(this).toggleClass("on");
+    $("nav").toggleClass("on");
+    $("main").toggleClass("on");
+  });
+  //guide 검색기능
+  $("#guide_keyword").keyup(function () {
+    const k = $(this).val().toLowerCase();
+    if (k === "") {
+      $("nav ul, nav li, nav ul li ul").show();
+    } else {
+      $("nav ul, nav li, nav ul li ul").hide();
+      const findK = $("nav a").filter(function () {
+        return $(this).text().toLowerCase().includes(k);
+      });
+      findK.each(function () {
+        $(this).parentsUntil("nav", "ul, li").show();
+      });
+    }
+  });
+</script>

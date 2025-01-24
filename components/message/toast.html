@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .alert {
+      position: static;
+      transform: translate(0, 0);
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li>
+                    <a href="../select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li class="active">
+                    <a href="../message/toast.html">Toast (토스트)</a>
+                  </li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Toast (토스트)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Message (알림)</li>
+                <li>Toast (토스트)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Toast</h3>
+                <div class="guide_text">
+                  <p>
+                    간단한 알림 메시지로 즉각적이고 일시적인 피드백을 제공한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message01_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>컨데이너 :</span>
+                      <div>
+                        <p>알림이 표시되는 영역</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>아이콘 :</span>
+                      <div>
+                        <p>
+                          알림상태를 나타내는 아이콘 (디폴트 : 체크, 오류:X)
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>텍스트 :</span>
+                      <div>
+                        <p>전달하고 하는 알림 메시지 노출</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>설명 텍스트(옵션) : </span>
+                      <div>
+                        <p>부가적인 설명 텍스트</p>
+                      </div>
+                    </li>
+
+                    <li>
+                      <span><em>5</em>액션버튼(옵션) :</span>
+                      <div>
+                        <p>액션이 필요한 경우 액션버튼 노출</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>6</em>닫기 (옵션)</span>
+                      <div>
+                        <p>토스트 메시지를 사용자가 직접 닫을 수 있는 버튼</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>Single LIne</h5>
+                <div class="guide_text">
+                  <p>
+                    • 한 줄을 기본 값으로 가지며 최대 글자수는 공백포함
+                    “36자"(PC 기준), “16자(MO)”입니다. 두 줄을 넘어가지 않도록
+                    한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message01_02.png"
+                    alt="Single LIne 이미지"
+                  />
+                </div>
+                <h5>Single LIne with Action</h5>
+                <div class="guide_text">
+                  <p>
+                    • 부가적인 설명이 필요할 때 사용되며 메인 텍스트, 디스크립션
+                    모두 한 줄을 기본값으로 가진다.
+                  </p>
+                  <p>
+                    • Action 버튼과 닫기 버튼은 상황에 맞게 비노출 할 수 있다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message01_03.png"
+                    alt="Single LIne with Action 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>색상</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message01_04.png"
+                    alt="색상 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message01_05.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 토스트 메세지는 노출 2초 후 사라지도록
+                        설정한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          단, 서비스에 따라 노출 시간을 다르게 설정할 수 있다.
+                          액션버튼과 닫기 버튼이 노출 되는 경우는 자동으로
+                          사라지는 것이 아닌 사용자가 직접 제어하도록 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span>• PC, 모바일 모두 같은 컴포넌트를 사용한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          PC에서는 가로값: 520px 고정값을 가지며, 모바일은 가로
+                          화면의 80%를 사용한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message01_06.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 메시지는 화면 가운데 하단에 정렬하고, Z값의 최상위에
+                        노출한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          PC는 하단 기준 48px. 모바일은 28px 위에 노출 한다.
+                          또한 토스트는 버튼을 가리지 않도록 배치한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 토스트 메시지가 2개 이상 노출 될 때에는 겹치지 않도록
+                        한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          토스트들 사이의 간격은 PC는 16px, 모바일은 12px로
+                          설정한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message01_07.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>PC Success</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="alert">
+                      <p>메세지</p>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;alert&#x22;&#x3E;
+  &#x3C;p&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/part_alarm_check.svg&#x22; alt=&#x22;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;&#xBA54;&#xC138;&#xC9C0;
+  &#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- 알림 팝업 --------------------------------
+
+.alert {
+  position: fixed;
+  bottom: 48px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  z-index: 900;
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    border: 1px solid var(--clr-43A047);
+    background-color: var(--clr-E8F5E9);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    min-width: 520px;
+    min-height: 58px;
+    margin-top: 16px;
+
+    &.error {
+      border-color: var(--clr-E53935);
+      background-color: var(--clr-FFEBEE);
+    }
+    img {
+      margin-right: 8px;
+    }
+    // 바코드설명 영역
+    span {
+      display: block;
+      width: 100%;
+      padding-left: 28px;
+      font-size: 14px;
+      color: var(--clr-616161);
+      margin-top: 4px;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">function Alert() {
+  const previewLength = $("#preview_list > div").length;
+  if (previewLength == 0) {
+    $(".alert").addClass("on");
+    let licustom = $(`&#x3C;p class=&#x22;error&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/part_alarm_check.svg&#x22; alt=&#x22;&#xBA54;&#xC138;&#xC9C0;&#x22; /&#x3E;메세지&#x3C;/p&#x3E;`);
+    $(".alert").append(licustom);
+    setTimeout(function () {
+      $(licustom).remove();
+      $(".alert").removeClass("on");
+    }, 2000);
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>PC Error</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="alert">
+                      <p class="error">메세지</p>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;alert&#x22;&#x3E;
+  &#x3C;p class=&#x22;error&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/part_alarm_error.svg&#x22; alt=&#x22;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;&#xBA54;&#xC138;&#xC9C0;
+  &#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- 알림 팝업 --------------------------------
+
+.alert {
+  position: fixed;
+  bottom: 48px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  z-index: 900;
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    border: 1px solid var(--clr-43A047);
+    background-color: var(--clr-E8F5E9);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    min-width: 520px;
+    min-height: 58px;
+    margin-top: 16px;
+
+    &.error {
+      border-color: var(--clr-E53935);
+      background-color: var(--clr-FFEBEE);
+    }
+    img {
+      margin-right: 8px;
+    }
+    // 바코드설명 영역
+    span {
+      display: block;
+      width: 100%;
+      padding-left: 28px;
+      font-size: 14px;
+      color: var(--clr-616161);
+      margin-top: 4px;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">function Alert() {
+  const previewLength = $("#preview_list > div").length;
+  if (previewLength == 0) {
+    $(".alert").addClass("on");
+    let licustom = $(`&#x3C;p class=&#x22;error&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/part_alarm_error.svg&#x22; alt=&#x22;&#xBA54;&#xC138;&#xC9C0;&#x22; /&#x3E;메세지&#x3C;/p&#x3E;`);
+    $(".alert").append(licustom);
+    setTimeout(function () {
+      $(licustom).remove();
+      $(".alert").removeClass("on");
+    }, 2000);
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Mobile Success</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="guide_mob">
+                      <div class="alert">
+                        <p>메세지</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;alert&#x22;&#x3E;
+  &#x3C;p&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/part_alarm_check.svg&#x22; alt=&#x22;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;&#xBA54;&#xC138;&#xC9C0;
+  &#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- alert --------------------------------
+
+.alert {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  z-index: 20;
+  width: 80%;
+  display: none;
+  &.btnOn {
+    bottom: 106px;
+  }
+  &.on {
+    display: flex;
+  }
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    border: 1px solid var(--clr-43A047);
+    background-color: var(--clr-E8F5E9);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    min-width: 288px;
+    height: 58px;
+    margin-top: 16px;
+
+    &.error {
+      border-color: var(--clr-E53935);
+      background-color: var(--clr-FFEBEE);
+    }
+    img {
+      margin-right: 8px;
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Mobile Error</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="guide_mob">
+                      <div class="alert">
+                        <p class="error">메세지</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;alert&#x22;&#x3E;
+  &#x3C;p class=&#x22;error&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/part_alarm_error.svg&#x22; alt=&#x22;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;&#xBA54;&#xC138;&#xC9C0;
+  &#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- alert --------------------------------
+
+.alert {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  z-index: 20;
+  width: 80%;
+  display: none;
+  &.btnOn {
+    bottom: 106px;
+  }
+  &.on {
+    display: flex;
+  }
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    border: 1px solid var(--clr-43A047);
+    background-color: var(--clr-E8F5E9);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    min-width: 288px;
+    height: 58px;
+    margin-top: 16px;
+
+    &.error {
+      border-color: var(--clr-E53935);
+      background-color: var(--clr-FFEBEE);
+    }
+    img {
+      margin-right: 8px;
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

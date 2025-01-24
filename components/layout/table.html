@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .dataTable {
+      width: 1200px;
+      margin: 0;
+    }
+    .reportTable {
+      width: 1200px;
+    }
+    .divideTable {
+      width: 1200px;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li class="active">
+                    <a href="../layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Table (표)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Table (표)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Table</h3>
+                <div class="guide_text">
+                  <p>
+                    • 데이터를 하나 이상의 행과 열로 조직화하여 표현하는
+                    형식으로 표를 사용해 많은 양의 데이터를 효율적으로 정리하고
+                    빠르게 파악할 수 있게 도와준다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>헤더 :</span>
+                      <div>
+                        <p>각 데이터 셀의 제목</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>행 : </span>
+                      <div>
+                        <p>서로 다른 유형의 데이터를 보여줌</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>정렬 버튼(선택):</span>
+                      <div>
+                        <p>
+                          특정 열을 오름차순/내림차순으로 정렬하기 위한 버튼으로
+                          삼각형 아이콘으로 제공됨
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>디바이더 : </span>
+                      <div>
+                        <p>행과 행 사이를 시각적으로 구분하는 수단</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>데이터 셀 : </span>
+                      <div>
+                        <p>행을 구성하는 데이터 요소</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>세로형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 헤더가 상단에 고정되고 하단에 여러 행으로 구성되어있는
+                    가장 일반적인 테이블 형태
+                  </p>
+                </div>
+
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_02.png"
+                    alt="세로형 이미지"
+                  />
+                </div>
+                <h5>가로형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 헤더가 왼쪽, 행이 오른쪽으로 구성되어 있는 테이블 형태
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_03.png"
+                    alt="가로형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <h5>세로형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_04.png"
+                    alt="세로형 이미지"
+                  />
+                </div>
+                <h5>가로형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_05.png"
+                    alt="가로형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 화면 너비가 충분하지 않은 경우 표 영역에 가로
+                        스크롤을 사용한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          테이블이 길어질경우 스크롤 처리를 하며, 중요도에 따라
+                          일부 셀을 고정하고 스크롤 처리 할 수 있습니다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          셀 고정 기준 : 최대 3개를 넘지 않는다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_06.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 열의 최소 너비는 콘텐츠의 길이를 고려하여
+                        설정한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          데이터 셀을 구성하는 텍스트는 2줄을 넘어가지 않도록
+                          하고 행과 행 사이의 간격을 적절하게 제공하여 사용자가
+                          한 번에 많은 데이터를 비교할 수 있도록 해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 열 구분선의 사용을 지양한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          열 구분선은 표 콘텐츠를 구조화하거나 구분하는 데
+                          도움이 될 수 있으나 시각적인 복잡성을 높이므로 반드시
+                          필요한 경우를 제외하고 사용하지 않는 것이 바람직하다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 사용자가 원하는 대로 데이터를 정렬할 수 있는 필터
+                        기능을 제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          데이터의 수가 많은 경우 데이터를 논리적인 순서에 따라
+                          정렬하거나 검색, 필터링, 탐색하는 기능을 제공하면
+                          사용자가 효율적으로 원하는 데이터를 발견할 수 있다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 데이터값이 존재하지 않는 경우 셀을 비워두지 않고
+                        대시(-)를 제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          데이터 셀에 아무런 텍스트가 표시되지 않으면 사용자에게
+                          혼동을 줄 수 있으므로 빈 셀에는 대시 기호를 표시하여
+                          이용할 수 있는 정보가 존재하지 않음을 안내해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 테이블 기본 정렬은 왼쪽 정렬이다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          뱃지(라벨), 상태 값, 버튼, 체크박스, Y or N, 숫자는
+                          가운데 정렬, 금액은 오른쪽 정렬을 사용한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_07.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 테이블 셀에서는 최대 2개의 버튼만 표시된다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          필요한 주요 작업을 위해 최대 두 개의 버튼이 노출한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout11_08.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>세로형 (LG)</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <table class="dataTable">
+                      <colgroup>
+                        <col width="0.3" />
+                        <col width="1" />
+                        <col width="1" />
+                        <col width="1" />
+                        <col width="1" />
+                        <col width="1" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th class="Tcenter">NO</th>
+                          <th><span class="table_sort">제목</span></th>
+                          <th>제목</th>
+                          <th class="Tcenter">Tcenter</th>
+                          <th class="Tcenter">Tcenter</th>
+                          <th class="Tright">Tright</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="Tcenter">1</td>
+                          <td>내용</td>
+                          <td>
+                            <em><a href="#">내용</a></em>
+                          </td>
+                          <td class="Tcenter">
+                            <span class="DDY_badge squre_line DDY_badge_Navy"
+                              >뱃지</span
+                            >
+                          </td>
+                          <td class="Tcenter">
+                            <div class="selectBox">
+                              <div class="DDY_btn teritiary high_S">버튼</div>
+                            </div>
+                          </td>
+                          <td class="Tright">10,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;table class=&#x22;dataTable&#x22;&#x3E;
+  &#x3C;colgroup&#x3E;
+    &#x3C;col width=&#x22;0.3&#x22; /&#x3E;
+    &#x3C;col width=&#x22;1&#x22; /&#x3E;
+    &#x3C;col width=&#x22;1&#x22; /&#x3E;
+    &#x3C;col width=&#x22;1&#x22; /&#x3E;
+    &#x3C;col width=&#x22;1&#x22; /&#x3E;
+    &#x3C;col width=&#x22;1&#x22; /&#x3E;
+  &#x3C;/colgroup&#x3E;
+  &#x3C;thead&#x3E;
+    &#x3C;tr&#x3E;
+      &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;NO&#x3C;/th&#x3E;
+      &#x3C;span class=&#x22;table_sort&#x22;&#x3E;&#xC81C;&#xBAA9;&#x3C;/span&#x3E;
+      &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+      &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;Tcenter&#x3C;/th&#x3E;
+      &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;Tcenter&#x3C;/th&#x3E;
+      &#x3C;th class=&#x22;Tright&#x22;&#x3E;Tright&#x3C;/th&#x3E;
+    &#x3C;/tr&#x3E;
+  &#x3C;/thead&#x3E;
+  &#x3C;tbody&#x3E;
+    &#x3C;tr&#x3E;
+      &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;1&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;&#x3C;em&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;&#xB0B4;&#xC6A9;&#x3C;/a&#x3E;&#x3C;/em&#x3E;&#x3C;/td&#x3E;
+      &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+        &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Navy&#x22;&#x3E;&#xBC43;&#xC9C0;&#x3C;/span&#x3E;
+      &#x3C;/td&#x3E;
+      &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+        &#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+          &#x3C;div class=&#x22;DDY_btn teritiary high_S&#x22;&#x3E;&#xBC84;&#xD2BC;&#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/td&#x3E;
+      &#x3C;td class=&#x22;Tright&#x22;&#x3E;10,000&#x3C;/td&#x3E;
+    &#x3C;/tr&#x3E;
+  &#x3C;/tbody&#x3E;
+&#x3C;/table&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- dataTable ------------------------------------
+
+.dataTable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--clr-1A1A1A);
+  thead {
+    tr {
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      background-color: var(--clr-F5F5F5);
+      th {
+        padding: 0 12px;
+        font-weight: 600;
+        word-break: keep-all;
+        height: 52px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--clr-EEEEEE);
+      &:hover {
+        background-color: var(--clr-EFF1FD);
+      }
+      &.add {
+        background-color: var(--clr-F2FDE4);
+      }
+      td {
+        padding: 0 12px;
+        height: 52px;
+        .selectBox {
+          gap: 8px;
+          .DDY_select {
+            width: 100%;
+            .select {
+              min-width: 0;
+            }
+          }
+        }
+        em {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .table_delete {
+    cursor: pointer;
+    img {
+      vertical-align: middle;
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>세로형 (SM)</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <table class="dataTable size_SM">
+                      <colgroup>
+                        <col width="40px" />
+                        <col width="100px" />
+                        <col width="60px" />
+                        <col width="60px" />
+                        <col width="80px" />
+                        <col width="auto" />
+                        <col width="60px" />
+                        <col width="60px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th class="Tcenter">NO</th>
+                          <th>설치파트너</th>
+                          <th class="Tcenter">구분</th>
+                          <th>품목</th>
+                          <th>방문시간</th>
+                          <th>주소</th>
+                          <th class="Tcenter">해피콜</th>
+                          <th class="Tcenter">완료</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="Tcenter">1</td>
+                          <td>CMK-1팀</td>
+                          <td class="Tcenter">
+                            <span class="DDY_badge squre_line DDY_badge_Navy"
+                              >설치</span
+                            >
+                          </td>
+                          <td>침대</td>
+                          <td>09:00</td>
+                          <td>내용</td>
+                          <td class="Tcenter">
+                            <span class="call_Y">Y</span>
+                          </td>
+                          <td class="Tcenter">
+                            <span class="call_N">N</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="Tcenter">1</td>
+                          <td>CMK-1팀</td>
+                          <td class="Tcenter">
+                            <span class="DDY_badge squre_line DDY_badge_Red"
+                              >회수</span
+                            >
+                          </td>
+                          <td>침대</td>
+                          <td>09:00</td>
+                          <td>내용</td>
+                          <td class="Tcenter">
+                            <span class="call_N">N</span>
+                          </td>
+                          <td class="Tcenter">
+                            <span class="call_N">N</span>
+                          </td>
+                        </tr>
+                        <tr class="on">
+                          <td class="Tcenter">1</td>
+                          <td>CMK-1팀</td>
+                          <td class="Tcenter">
+                            <span class="DDY_badge squre_line DDY_badge_Navy"
+                              >설치</span
+                            >
+                          </td>
+                          <td>침대</td>
+                          <td>09:00</td>
+                          <td>내용</td>
+                          <td class="Tcenter">
+                            <span class="call_Y">Y</span>
+                          </td>
+                          <td class="Tcenter">
+                            <span class="call_Y">N</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;table class=&#x22;dataTable size_SM&#x22;&#x3E;
+&#x3C;colgroup&#x3E;
+  &#x3C;col width=&#x22;40px&#x22; /&#x3E;
+  &#x3C;col width=&#x22;100px&#x22; /&#x3E;
+  &#x3C;col width=&#x22;60px&#x22; /&#x3E;
+  &#x3C;col width=&#x22;60px&#x22; /&#x3E;
+  &#x3C;col width=&#x22;80px&#x22; /&#x3E;
+  &#x3C;col width=&#x22;auto&#x22; /&#x3E;
+  &#x3C;col width=&#x22;60px&#x22; /&#x3E;
+  &#x3C;col width=&#x22;60px&#x22; /&#x3E;
+&#x3C;/colgroup&#x3E;
+&#x3C;thead&#x3E;
+  &#x3C;tr&#x3E;
+    &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;NO&#x3C;/th&#x3E;
+    &#x3C;th&#x3E;&#xC124;&#xCE58;&#xD30C;&#xD2B8;&#xB108;&#x3C;/th&#x3E;
+    &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;&#xAD6C;&#xBD84;&#x3C;/th&#x3E;
+    &#x3C;th&#x3E;&#xD488;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;th&#x3E;&#xBC29;&#xBB38;&#xC2DC;&#xAC04;&#x3C;/th&#x3E;
+    &#x3C;th&#x3E;&#xC8FC;&#xC18C;&#x3C;/th&#x3E;
+    &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;&#xD574;&#xD53C;&#xCF5C;&#x3C;/th&#x3E;
+    &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;&#xC644;&#xB8CC;&#x3C;/th&#x3E;
+  &#x3C;/tr&#x3E;
+&#x3C;/thead&#x3E;
+&#x3C;tbody&#x3E;
+  &#x3C;tr&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;1&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;CMK-1&#xD300;&#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Navy&#x22;&#x3E;&#xC124;&#xCE58;&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;td&#x3E;&#xCE68;&#xB300;&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;09:00&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;call_Y&#x22;&#x3E;Y&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;call_N&#x22;&#x3E;N&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+  &#x3C;/tr&#x3E;
+  &#x3C;tr&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;1&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;CMK-1&#xD300;&#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Red&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;td&#x3E;&#xCE68;&#xB300;&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;09:00&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;call_N&#x22;&#x3E;N&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;call_N&#x22;&#x3E;N&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+  &#x3C;/tr&#x3E;
+  &#x3C;tr class=&#x22;on&#x22;&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;1&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;CMK-1&#xD300;&#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Navy&#x22;&#x3E;&#xC124;&#xCE58;&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;td&#x3E;&#xCE68;&#xB300;&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;09:00&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;call_Y&#x22;&#x3E;Y&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+      &#x3C;span class=&#x22;call_Y&#x22;&#x3E;N&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+  &#x3C;/tr&#x3E;
+&#x3C;/tbody&#x3E;
+&#x3C;/table&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- dataTable ------------------------------------
+
+.dataTable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--clr-1A1A1A);
+
+  &.size_SM {
+    .DDY_checkBox {
+      label {
+        margin: 0;
+        padding-left: 20px;
+      }
+    }
+    thead {
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      th {
+        background-color: var(--clr-F5F5F5);
+        font-weight: 700;
+        padding: 0 8px;
+        height: 44px;
+        a {
+          font-weight: 700;
+          img {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid var(--clr-EEEEEE);
+        height: 44px;
+        cursor: pointer;
+        td {
+          padding: 0 8px;
+          text-overflow: ellipsis;
+          text-wrap: nowrap;
+          overflow: hidden;
+
+          .call_Y {
+            display: inline-block;
+            width: 25px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: var(--clr-323DA3);
+            color: var(--clr-FFFFFF);
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+          }
+          .call_N {
+            display: inline-block;
+            width: 25px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: var(--clr-F5F5F5);
+            border: 1px solid var(--clr-EEEEEE);
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+          }
+        }
+
+        &:hover {
+          background-color: var(--clr-EFF1FD);
+          .call_N {
+            background-color: var(--clr-EFF1FD);
+            border: 1px solid var(--clr-CED2F4);
+            color: var(--clr-323DA3);
+          }
+        }
+        &.on {
+          background-color: var(--clr-EFF1FD);
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>가로형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <table class="reportTable">
+                      <tbody>
+                        <tr>
+                          <th>제목</th>
+                          <td>내용</td>
+                          <th>제목</th>
+                          <td>내용</td>
+                        </tr>
+                        <tr>
+                          <th>제목</th>
+                          <td>
+                            <span class="DDY_badge round_fill DDY_badge_Navy"
+                              >Badge</span
+                            >
+                          </td>
+                          <th>제목</th>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <th>제목</th>
+                          <td>
+                            내용<button class="DDY_btn teritiary high_S">
+                              Button
+                              <img
+                                src="/framework/assets/images/outlink_icon.svg"
+                                alt="Button"
+                              />
+                            </button>
+                          </td>
+                          <th>제목</th>
+                          <td>
+                            내용
+                            <button class="DDY_btn teritiary high_S disable">
+                              Button
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;table class=&#x22;reportTable&#x22;&#x3E;
+&#x3C;tbody&#x3E;
+  &#x3C;tr&#x3E;
+    &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+    &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+  &#x3C;/tr&#x3E;
+  &#x3C;tr&#x3E;
+    &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;td&#x3E;
+      &#x3C;span class=&#x22;DDY_badge round_fill DDY_badge_Navy&#x22;&#x3E;Badge&#x3C;/span&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;td&#x3E;-&#x3C;/td&#x3E;
+  &#x3C;/tr&#x3E;
+  &#x3C;tr&#x3E;
+    &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;td&#x3E;
+      &#xB0B4;&#xC6A9;
+      &#x3C;button class=&#x22;DDY_btn teritiary high_S&#x22;&#x3E;Button&#x3C;img src=&#x22;/framework/assets/images/outlink_icon.svg&#x22; alt=&#x22;Button&#x22;/&#x3E;
+      &#x3C;/button&#x3E;
+    &#x3C;/td&#x3E;
+    &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;td&#x3E;
+      &#xB0B4;&#xC6A9;
+      &#x3C;button class=&#x22;DDY_btn teritiary high_S disable&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/td&#x3E;
+  &#x3C;/tr&#x3E;
+&#x3C;/tbody&#x3E;
+&#x3C;/table&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- reportTable ------------------------------------
+
+.reportTable {
+  width: 100%;
+  margin-bottom: 16px;
+  border-collapse: collapse;
+  tbody {
+    > tr {
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      display: flex;
+      align-items: center;
+      > th {
+        width: 138px;
+        height: 52px;
+        line-height: 52px;
+        font-weight: 600;
+        padding: 0 12px;
+        background-color: var(--clr-F5F5F5);
+      }
+      > td {
+        flex: 1;
+        padding: 0 12px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>스크롤형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="divideTable">
+                      <table style="width: 40%">
+                        <colgroup>
+                          <col width="0.5" />
+                          <col width="1.5" />
+                          <col width="2" />
+                        </colgroup>
+                        <thead>
+                          <th class="Tcenter">
+                            <div class="DDY_checkBox">
+                              <input type="checkbox" id="checkAll" />
+                              <label for="checkAll"></label>
+                            </div>
+                          </th>
+                          <th>제목</th>
+                          <th>제목</th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="Tcenter">
+                              <div class="DDY_checkBox">
+                                <input type="checkbox" id="Tlab01_1" />
+                                <label for="Tlab01_1"></label>
+                              </div>
+                            </td>
+                            <td>내용</td>
+                            <td>
+                              <em><a href="#">내용</a></em>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="Tcenter">
+                              <div class="DDY_checkBox">
+                                <input type="checkbox" id="Tlab01_2" />
+                                <label for="Tlab01_2"></label>
+                              </div>
+                            </td>
+                            <td>내용</td>
+                            <td>
+                              <em><a href="#">내용</a></em>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="tableDiv" style="width: 60%">
+                        <table>
+                          <colgroup>
+                            <col width="80px" />
+                            <col width="120px" />
+                            <col width="120px" />
+                            <col width="200px" />
+                            <col width="200px" />
+                            <col width="80px" />
+                          </colgroup>
+                          <thead>
+                            <th>제목</th>
+                            <th><span class="table_sort">제목</span></th>
+                            <th><span class="table_sort">제목</span></th>
+                            <th>제목</th>
+                            <th>제목</th>
+                            <th class="Tcenter">제목</th>
+                          </thead>
+                          <tbody class="drag_prevent">
+                            <tr>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td class="Tcenter">
+                                <button class="DDY_btn teritiary high_S">
+                                  버튼
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td>내용</td>
+                              <td class="Tcenter">
+                                <button class="DDY_btn teritiary high_S">
+                                  버튼
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;divideTable&#x22;&#x3E;
+  &#x3C;table style=&#x22;width: 40%&#x22;&#x3E;
+    &#x3C;colgroup&#x3E;
+      &#x3C;col width=&#x22;0.5&#x22; /&#x3E;
+      &#x3C;col width=&#x22;1.5&#x22; /&#x3E;
+      &#x3C;col width=&#x22;2&#x22; /&#x3E;
+    &#x3C;/colgroup&#x3E;
+    &#x3C;thead&#x3E;
+      &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;
+        &#x3C;div class=&#x22;DDY_checkBox&#x22;&#x3E;
+          &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;checkAll&#x22; /&#x3E;
+          &#x3C;label for=&#x22;checkAll&#x22;&#x3E;&#x3C;/label&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/th&#x3E;
+      &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+      &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+    &#x3C;/thead&#x3E;
+    &#x3C;tbody&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+          &#x3C;div class=&#x22;DDY_checkBox&#x22;&#x3E;
+            &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;Tlab01_1&#x22; /&#x3E;
+            &#x3C;label for=&#x22;Tlab01_1&#x22;&#x3E;&#x3C;/label&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;em&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;&#xB0B4;&#xC6A9;&#x3C;/a&#x3E;&#x3C;/em&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+          &#x3C;div class=&#x22;DDY_checkBox&#x22;&#x3E;
+            &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;Tlab01_2&#x22; /&#x3E;
+            &#x3C;label for=&#x22;Tlab01_2&#x22;&#x3E;&#x3C;/label&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;em&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;&#xB0B4;&#xC6A9;&#x3C;/a&#x3E;&#x3C;/em&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+    &#x3C;/tbody&#x3E;
+  &#x3C;/table&#x3E;
+  &#x3C;div class=&#x22;tableDiv&#x22; style=&#x22;width: 60%&#x22;&#x3E;
+    &#x3C;table&#x3E;
+      &#x3C;colgroup&#x3E;
+        &#x3C;col width=&#x22;80px&#x22; /&#x3E;
+        &#x3C;col width=&#x22;120px&#x22; /&#x3E;
+        &#x3C;col width=&#x22;120px&#x22; /&#x3E;
+        &#x3C;col width=&#x22;200px&#x22; /&#x3E;
+        &#x3C;col width=&#x22;200px&#x22; /&#x3E;
+        &#x3C;col width=&#x22;80px&#x22; /&#x3E;
+      &#x3C;/colgroup&#x3E;
+      &#x3C;thead&#x3E;
+        &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#x3C;span class=&#x22;table_sort&#x22;&#x3E;&#xC81C;&#xBAA9;&#x3C;/span&#x3E;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#x3C;span class=&#x22;table_sort&#x22;&#x3E;&#xC81C;&#xBAA9;&#x3C;/span&#x3E;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+        &#x3C;th class=&#x22;Tcenter&#x22;&#x3E;&#xC81C;&#xBAA9;&#x3C;/th&#x3E;
+      &#x3C;/thead&#x3E;
+      &#x3C;tbody class=&#x22;drag_prevent&#x22;&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+            &#x3C;button class=&#x22;DDY_btn teritiary high_S&#x22;&#x3E;
+              &#xBC84;&#xD2BC;
+            &#x3C;/button&#x3E;
+          &#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#xB0B4;&#xC6A9;&#x3C;/td&#x3E;
+          &#x3C;td class=&#x22;Tcenter&#x22;&#x3E;
+            &#x3C;button class=&#x22;DDY_btn teritiary high_S&#x22;&#x3E;
+              &#xBC84;&#xD2BC;
+            &#x3C;/button&#x3E;
+          &#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+      &#x3C;/tbody&#x3E;
+    &#x3C;/table&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- divideTable ------------------------------------
+
+.divideTable {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  overflow: hidden;
+  > table {
+    z-index: 1;
+    &.shadow {
+      box-shadow: 10px -2px 14px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &.removeHover {
+    table {
+      tbody {
+        tr {
+          &.hover {
+            td {
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+  }
+  table {
+    thead {
+      th {
+        font-weight: 600;
+        border-bottom: 1px solid var(--clr-BDBDBD);
+      }
+      tr {
+        &.Tbg_R {
+          td {
+            background-color: #ffebee;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        &.hover {
+          td {
+            background-color: var(--clr-EFF1FD);
+            cursor: pointer;
+          }
+        }
+        &.Tbg_R {
+          td {
+            background-color: #ffebee;
+          }
+        }
+        td {
+          border-bottom: 1px solid var(--clr-EEEEEE);
+          em {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+          &.Tcolor_R {
+            color: #e53935;
+            em {
+              color: #e53935;
+              a {
+                color: #e53935;
+              }
+            }
+          }
+        }
+      }
+    }
+    td,
+    th {
+      width: 110px;
+      background-color: var(--clr-F5F5F5);
+      height: 52px;
+      padding: 0 12px;
+      line-height: 20px;
+    }
+  }
+  > table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    tbody {
+      td {
+        background-color: var(--clr-FFFFFF);
+        margin-top: 1px;
+      }
+    }
+  }
+  .tableDiv {
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--clr-EEEEEE);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--clr-333333);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--clr-333333);
+    }
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      width: 100%;
+      tbody {
+        td {
+          background-color: var(--clr-FFFFFF);
+        }
+      }
+    }
+    .DDY_badge {
+      min-width: 52px;
+    }
+    .DDY_checkBox {
+      padding-left: 20px;
+      margin-right: 0;
+    }
+    .drag_prevent {
+      -ms-user-select: none;
+      -moz-user-select: -moz-none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// table scroll
+  // 모달 preview_list scroll
+  var scrTbl, scrTblLeft, scrTblDown;
+  $(".tableDiv , .modalContent .preview_list, #preview_list")
+    .on("mouseenter", function () {
+      $(this).on({
+        mousedown: function (e) {
+          e.preventDefault();
+          scrTblDown = true;
+          scrTbl = e.pageX;
+          scrTblLeft = $(this).scrollLeft();
+        },
+        mousemove: function (e) {
+          if (scrTblDown) {
+            const newX = e.pageX;
+            $(this).scrollLeft(scrTblLeft - newX + scrTbl);
+          }
+        },
+        mouseup: function (e) {
+          scrTblDown = false;
+        },
+      });
+    })
+    .on("mouseleave", function () {
+      $(this).off("mousedown mousemove mouseup");
+      scrTbl = null;
+      scrTblLeft = null;
+      scrTblDown = false;
+    });
+
+  //tableDiv shadow
+  const container = $(".tableDiv");
+  const containerScroll = $(".divideTable table");
+
+  container.on("scroll", function () {
+    if (this.scrollLeft == 0) {
+      containerScroll.removeClass("shadow");
+    } else {
+      containerScroll.addClass("shadow");
+    }
+  });
+
+  //table tr hover
+  const divideTable = $(".divideTable > table > tbody > tr");
+  const tableDiv = $(".tableDiv > table > tbody > tr");
+
+  $(divideTable).hover(function () {
+    const index = $(this).index();
+    $(this).toggleClass("hover");
+    $(this)
+      .parent()
+      .parent()
+      .next()
+      .find("table > tbody > tr")
+      .eq(index)
+      .toggleClass("hover");
+  });
+
+  $(tableDiv).hover(function () {
+    const index = $(this).index();
+    $(this).toggleClass("hover");
+    $(this)
+      .parent()
+      .parent()
+      .parent()
+      .parent()
+      .find("table > tbody > tr")
+      .eq(index)
+      .toggleClass("hover");
+  });
+
+  //table sort motion
+  $(".table_sort").on("click", function () {
+    const sort = $(this).hasClass("asc") ? "desc" : "asc";
+    $(this).removeClass("asc desc");
+    $(this).addClass(sort);
+  });
+
+  //table delete
+  $(".table_delete").on("click", function () {
+    $(this).parent().hide();
+  });</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

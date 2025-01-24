@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Overview</a></li>
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li><a href="./color.html">Color (색상)</a></li>
+              <li>
+                <a href="./typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="./shape.html">Shape (형태)</a></li>
+              <li class="active">
+                <a href="./layout.html">Layout (배치)</a>
+              </li>
+              <li><a href="./system_icon.html">System Icon (아이콘)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/badge.html">Badge (배지)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/label.html">Label (레이블)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/modal.html">Modal (모달)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../components/layout/tab.html">Tab (탭)</a></li>
+                  <li>
+                    <a href="../components/layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../components/action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/switch.html">Switch (토글)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../patterns/forms.html">Forms (입력폼)</a></li>
+              <li><a href="../patterns/card_mob.html">Card(카드_모바일)</a></li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/order/list.html"> 상품리스트</a></li>
+                  <li><a href="../patterns/order/detail.html">상품상세</a></li>
+                  <li>
+                    <a href="../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/tables/default.html">기본형</a></li>
+                  <li>
+                    <a href="../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../page/error.html">Error</a></li>
+              <li><a href="../page/nodata.html">NoData</a></li>
+              <li><a href="../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Layout (배치)</h2>
+              <ul class="indicator">
+                <li>Foundation</li>
+                <li>Layout (배치)</li>
+              </ul>
+            </div>
+          </div>
+
+          <section>
+            <h3>Screen</h3>
+            <div class="guide_text">
+              <p>
+                • 웹 환경 및 앱 환경에 대응하기 위해 아크보드 크기를 참고한다.
+              </p>
+            </div>
+            <h4>Web Desktop</h4>
+            <div class="guide_text">
+              <p>
+                • 일반적인 브라우저 해상도인 1440 x 960 (px)을 기준으로 한다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_01.png"
+                alt="Web Desktop 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h4>Web Mobile</h4>
+            <div class="guide_text">
+              <p>
+                • 360 x 800 (px) 을 기준으로 하되, 가능하다면 최소 해상도인 360
+                x 640 (px)를 고려한다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_02.png"
+                alt="Web Mobile 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h3>Grid</h3>
+            <div class="guide_text">
+              <p>
+                • 그리드는 UI 구성 시 가장 근간이 되는 기준이다. 요소들의 배치를
+                돕는 그리드 시스템의 구성 요소인 Column, Margin, Gutter 값을
+                정의한다.
+              </p>
+              <p>
+                • 그리드를 사용하여 작게는 화면 안에서의 시각적인 일관성을
+                제공하고, 크게는 다양한 디바이스에서도 최적의 상태로 통일감 있는
+                경험을 제공한다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_03.png"
+                alt="Grid 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h4>Screen margin</h4>
+            <div class="guide_text">
+              <p>
+                • Desktop, Tablet, Mobile 각 스크린 마진을 지정하여 사용한다.
+              </p>
+              <p>
+                • Screen margin 값은 모바일 최소 16px, PC 최소 24px 이상
+                사용한다.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h4>Column</h4>
+            <div class="guide_text">
+              <p>
+                • PC, Tablet, Mobile 각 디바이스에 최적화된 Column을 사용한다.
+              </p>
+              <p>
+                • Column의 너비는 고정값이 아닌 백분율을 사용하며, 콘텐츠가
+                연속적인 화면 크기에 유연하게 적응할 수 있도록 한다.
+              </p>
+              <p>
+                • Desktop은 12 Column을 기본으로 하며 16까지 적용할 수 있다.
+              </p>
+              <p>• Tablet은 8 Column을 기본으로 하며 12까지 적용할 수 있다.</p>
+              <p>• Mobile은 4 Column을 기본으로 하며 6까지 적용할 수 있다.</p>
+            </div>
+          </section>
+          <section>
+            <h4>Gutter</h4>
+            <div class="guide_text">
+              <p>
+                • 칼럼과 칼럼 사이의 간격이며, 디바이스별 최소 크기를 정의한다.
+              </p>
+              <p>
+                • Desktop은 최소 16px / 최적 24px 적용할 수 있다. (권장
+                20Gutter)
+              </p>
+              <p>
+                • Tablet은 최소 16px / 최적 24px 적용할 수 있다. (권장 16Gutter)
+              </p>
+              <p>
+                • Mobile은 최소 8px / 최적 16px 적용할 수 있다. (권장 8Gutter)
+              </p>
+            </div>
+          </section>
+          <section>
+            <h3>Responsive layout grid</h3>
+            <h4>Breakpoint</h4>
+            <div class="guide_text">
+              <p>
+                • 웹에서 적응형으로 디자인할 때 너비 범위별 규칙을 정의한다.
+              </p>
+            </div>
+            <table class="dataTable">
+              <colgroup>
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Device</th>
+                  <th class="Tcenter">Breakpoint</th>
+                  <th class="Tcenter">대표화면 사이즈</th>
+                  <th class="Tcenter">Column 수</th>
+                  <th class="Tcenter">최적화된 Column 수</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PC/Desktop</td>
+                  <td class="Tcenter">1200~1440px</td>
+                  <td class="Tcenter">1440 (1200)</td>
+                  <td class="Tcenter">12 or 16</td>
+                  <td class="Tcenter">12</td>
+                </tr>
+                <tr>
+                  <td>Mobile (Tablet)</td>
+                  <td class="Tcenter">360 - 768px</td>
+                  <td class="Tcenter">360 (768)</td>
+                  <td class="Tcenter">4 or 8</td>
+                  <td class="Tcenter">4</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_04.png"
+                alt="Breakpoint 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h4>PC Layout</h4>
+            <div class="guide_text">
+              <p>
+                <span>• 기본 100% Fluid Layout / Container 1440px (Fixed)</span>
+              </p>
+              <p>
+                <span>• Container 1440px 이상</span> :show /
+                <span>Container 1440px 이하 </span>: hidden
+              </p>
+              <p>
+                <span>• Content 1200px (Fixed) - Container 1440px 이상 </span>:
+                Fluid방식
+              </p>
+              <p>
+                <span>• Container 1440px 이하 </span>: Fixed 방식, SNB hidden
+              </p>
+              <p><span>• Content 1200px 이하 </span>: 가로 스크롤바</p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_add01.png"
+                alt="pc layout 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h4>Mobile Layout</h4>
+            <div class="guide_text">
+              <p>• 모바일 : 적응형</p>
+              <p>• 기준 : ~ 767px (Fixed) / 768px ~ (Fluid)</p>
+              <p>• 최소 : 360px까지 대응</p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_add02.png"
+                alt="Mobile layout 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h4>Contents area</h4>
+            <div class="guide_text">
+              <p>
+                • 다양한 디바이스에서 보이는 화면의 최대 콘텐츠 영역을 설정하여
+                사용한다.
+              </p>
+              <p>• 콘텐츠 영역 최댓값 1200px(고정)을 적용한다.</p>
+              <p>
+                • 적응형을 기반으로 레이아웃을 구성하며 디바이스 축소 시에는
+                콘텐츠가 재배치된다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_05.png"
+                alt="Contents area 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h3>Spacing</h3>
+            <div class="guide_text">
+              <p>
+                • 균일한 요소와 간격을 사용하여 UI의 체계적인 배열을 도와준다.
+              </p>
+              <p>
+                • 8-Point grid를 원칙으로 하며 작게는 카드나 테이블 등의
+                컴포넌트부터 레이아웃까지 적절한 간격을 유지하기 위해 사용한다.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h4>Unit</h4>
+            <div class="guide_text">
+              <p>
+                • 8px(8-Point grid)의 배수를 사용하며, 상황에 따라 4px의 배수
+                간격을 사용할 수 있다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_06.png"
+                alt="Unit 이미지"
+              />
+            </div>
+            <div class="imgFlex">
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation04_07.png"
+                  alt="Device 적용예시 이미지"
+                />
+              </div>
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation04_08.png"
+                  alt="Card 적용예시 이미지"
+                />
+              </div>
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation04_09.png"
+                  alt="Component 적용예시 이미지"
+                />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Layout</h3>
+            <div class="guide_text">
+              <p>
+                • 서브 페이지 내의 레이아웃은 크게 GNB 영역, LNB 영역, Body
+                영역, Footer 영역으로 나누어지며 아래와 같이 간격을 준수하여
+                사용한다.
+              </p>
+              <p>
+                • Body 영역은 크게 대타이틀 영역과 Contents 영역으로 구분되며
+                콘텐츠 단락 사이의 간격을 아래와 같이 준수하여 사용한다.
+              </p>
+            </div>
+            <table class="dataTable">
+              <colgroup>
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th class="Tcenter">Desktop(Based on 1440)</th>
+                  <th class="Tcenter">Mobile(390기준)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>GNB - Body</td>
+                  <td class="Tcenter">32px</td>
+                  <td class="Tcenter">-</td>
+                </tr>
+                <tr>
+                  <td>LNB - Body</td>
+                  <td class="Tcenter">32px</td>
+                  <td class="Tcenter">-</td>
+                </tr>
+                <tr>
+                  <td>Heading - Body</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">24px</td>
+                </tr>
+                <tr>
+                  <td>(Body) Contents - Contents</td>
+                  <td class="Tcenter">48px</td>
+                  <td class="Tcenter">8px</td>
+                </tr>
+                <tr>
+                  <td>LNB - Footer</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">-</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="dataTable">
+              <colgroup>
+                <col width="1" />
+                <col width="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>Desktop(Based on 1440)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>GNB</td>
+                  <td>
+                    대표적 공통 영역으로서 표준가이드를 준수하여 일관성을
+                    유지한다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>LNB or SNB</td>
+                  <td>
+                    서비스 특성을 반영하는 정보와 컴포넌트를 유연하게 배치,
+                    구성할 수 있다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Body</td>
+                  <td>
+                    서비스 특성을 반영하는 정보와 컴포넌트를 유연하게 배치,
+                    구성할 수 있다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Footer</td>
+                  <td>
+                    대표적 공통 영역으로서 표준가이드를 준수하여 일관성을
+                    유지한다.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_10.png"
+                alt="Layout 이미지"
+              />
+            </div>
+          </section>
+
+          <section>
+            <h3>Content area spacing</h3>
+            <div class="guide_text">
+              <p>• 서브 페이지 내 콘텐츠 영역은 아래와 같은 간격을 유지한다.</p>
+            </div>
+            <table class="dataTable">
+              <colgroup>
+                <col width="1" />
+                <col width="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th class="Tcenter">Desktop (Based on 1440)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Heading (h1) - Body</td>
+                  <td class="Tcenter">24px</td>
+                </tr>
+                <tr>
+                  <td>Section area - Section area</td>
+                  <td class="Tcenter">48px</td>
+                </tr>
+                <tr>
+                  <td>Section Tap(type01) - Contents</td>
+                  <td class="Tcenter">32px</td>
+                </tr>
+                <tr>
+                  <td>Content area - Content area</td>
+                  <td class="Tcenter">24px</td>
+                </tr>
+                <tr>
+                  <td>Data 선택 area - Data 리스트 area - Data 결과값 area</td>
+                  <td class="Tcenter">16px</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation04_11.png"
+                alt="Content area spacing 이미지"
+              />
+            </div>
+          </section>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

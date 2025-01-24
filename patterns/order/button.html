@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li class="active">
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="javascript:void(0)">Search (검색)</a></li>
+              <li><a href="javascript:void(0)">Message (알림)</a></li>
+              <li><a href="../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../patterns/forms.html">Forms (입력폼)</a></li>
+              <li><a href="../patterns/card_mob.html">Card(카드_모바일)</a></li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="javascript:void(0)"> 상품리스트</a></li>
+                  <li><a href="javascript:void(0)">상품상세</a></li>
+                  <li><a href="javascript:void(0)">주문정보확인</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="javascript:void(0)">기본형</a></li>
+                  <li><a href="javascript:void(0)">데이터 입력형</a></li>
+                  <li><a href="javascript:void(0)">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../page/error.html">Error</a></li>
+              <li><a href="../page/nodata.html">NoData</a></li>
+              <li><a href="../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Button (버튼)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Action (액션)</li>
+                <li>Button (버튼)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Button</h3>
+                <div class="guide_text">
+                  <p>
+                    • 버튼은 어떤 기능이나 동작을 실행하거나 기능을 사용하기
+                    위한 상태로 변경하는 요소이다.
+                  </p>
+                  <p>
+                    • 사용자가 서비스를 이용하는 과정에서 어떤 행동이 중요한지에
+                    따라 관련된 버튼이 다양한 스타일로 표현된다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>텍스트 레이블 : </span>
+                      <div>
+                        <p>버튼을 눌렀을 때 실행되는 기능에 대한 설명</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>컨테이너(선택) : </span>
+                      <div>
+                        <p>
+                          버튼을 배경과 구분하는 시각적인 수단으로 면 또는
+                          선으로 표현됨
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>아이콘(선택) : </span>
+                      <div>
+                        <p>
+                          버튼을 눌렀을 때 실행되는 기능을 텍스트 대신 시각적인
+                          상징으로 표현한 것
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>계층</h3>
+                <div class="guide_text">
+                  <p>• Primary : 가장 중요한 명령을 실행 시킬 때 사용하다.</p>
+                  <p>
+                    • Secondary : Primary 버튼과 함께 사용할 수 있으며 시각적
+                    주목도가 Primary 버튼보다 낮다.
+                  </p>
+                  <p>
+                    • Tertiary : 주로 판단에 영향을 주지 않는 경우 사용한다.
+                  </p>
+                </div>
+                <h5>Filled</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_02.png"
+                    alt="Filled 이미지"
+                  />
+                </div>
+                <h5>Outline</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_03.png"
+                    alt="Outline 이미지"
+                  />
+                </div>
+                <h5>Transparent</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_04.png"
+                    alt="Transparent 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>상태</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_05.png"
+                    alt="상태 이미지"
+                  />
+                </div>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>Default :</span>
+                      <div>
+                        <p>기본</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>Hover:Active :</span>
+                      <div>
+                        <p>호버/눌림/포커스</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>Disabled :</span>
+                      <div>
+                        <p>비활성화</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
+                <h3>조합</h3>
+                <h5>Default (텍스트)</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_06.png"
+                    alt="Default (텍스트) 이미지"
+                  />
+                </div>
+                <h5>아이콘 + 텍스트</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_07.png"
+                    alt="아이콘 + 텍스트 이미지"
+                  />
+                </div>
+                <h5>텍스트 + 아이콘</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_08.png"
+                    alt="텍스트 + 아이콘 이미지"
+                  />
+                </div>
+                <h5>아이콘 + 텍스트 + 아이콘</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_09.png"
+                    alt="아이콘 + 텍스트 + 아이콘 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈&간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_10.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_11.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/action/action01_12.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형태</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn default high_M">Button</div>
+                      <div class="DDY_btn default high_M disable">Button</div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M disable&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+
+  &.default {
+    background-color: var(--clr-323DA3);
+    color: var(--clr-FFFFFF);
+    img {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+        brightness(103%) contrast(102%);
+    }
+    &:hover {
+      background-color: var(--clr-141E76);
+      img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+          brightness(103%) contrast(102%);
+      }
+    }
+    &.online {
+      background-color: var(--clr-FFFFFF);
+      color: var(--clr-323DA3);
+      border: 1px solid var(--clr-323DA3);
+      img {
+        filter: invert(19%) sepia(56%) saturate(2550%) hue-rotate(223deg)
+          brightness(99%) contrast(95%);
+      }
+      &:hover {
+        background-color: var(--clr-CED2F4);
+        border: 1px solid var(--clr-141E76);
+        img {
+          filter: invert(13%) sepia(28%) saturate(7376%) hue-rotate(231deg)
+            brightness(89%) contrast(106%);
+        }
+      }
+      &.disable {
+        background-color: var(--clr-FFFFFF);
+        border: 1px solid var(--clr-E0E0E0);
+        color: var(--clr-BDBDBD);
+      }
+    }
+
+    &.offline {
+      color: var(--clr-323DA3);
+      border: 0 none;
+      background-color: transparent;
+      img {
+        filter: invert(20%) sepia(88%) saturate(1476%) hue-rotate(220deg)
+          brightness(94%) contrast(99%);
+      }
+      &:hover {
+        background-color: var(--clr-CED2F4);
+        color: var(--clr-141E76);
+        img {
+          filter: invert(13%) sepia(52%) saturate(3757%) hue-rotate(229deg)
+            brightness(89%) contrast(108%);
+        }
+      }
+      &.disable {
+        background-color: transparent;
+        color: var(--clr-BDBDBD);
+      }
+    }
+  }
+
+  &.secondary {
+    color: var(--clr-555555);
+    background-color: var(--clr-EEEEEE);
+    &:hover {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.active {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.disable {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+      img {
+        filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+          brightness(105%) contrast(89%);
+      }
+      &:hover {
+        background-color: var(--clr-EEEEEE);
+        color: var(--clr-BDBDBD);
+      }
+    }
+    &.online {
+      background-color: var(--clr-FFFFFF);
+      border: 1px solid var(--clr-616161);
+      &:hover {
+        background-color: var(--clr-E0E0E0);
+      }
+      &.disable {
+        background-color: var(--clr-FFFFFF);
+        border: 1px solid var(--clr-BDBDBD);
+        color: var(--clr-BDBDBD);
+        img {
+          filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+            brightness(105%) contrast(89%);
+        }
+      }
+    }
+
+    &.offline {
+      background-color: transparent;
+      border: 0 none;
+      &:hover {
+        background-color: var(--clr-E0E0E0);
+      }
+      &.disable {
+        background-color: transparent;
+        color: var(--clr-BDBDBD);
+        img {
+          filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+            brightness(105%) contrast(89%);
+        }
+      }
+    }
+  }
+
+  &.teritiary {
+    color: var(--clr-323DA3);
+    background-color: var(--clr-E3E5F5);
+    &:hover {
+      background-color: var(--clr-CED2F4);
+      color: var(--clr-141E76);
+    }
+    &.active {
+      background-color: var(--clr-CED2F4);
+      color: var(--clr-141E76);
+    }
+    &.disable {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+      img {
+        filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+          brightness(105%) contrast(89%);
+      }
+      &:hover {
+        background-color: var(--clr-EEEEEE);
+        color: var(--clr-BDBDBD);
+      }
+    }
+  }
+
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h3>Size</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn default high_S">Button</div>
+                      <div class="DDY_btn default high_M">Button</div>
+                      <div class="DDY_btn default high_L">Button</div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_S&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_L&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.high_S {
+  height: 36px !important;
+  font-size: 14px;
+  line-height: 36px;
+  gap: 4px;
+}
+.high_M {
+  height: 46px;
+  font-size: 16px;
+  line-height: 45px;
+  gap: 8px;
+}
+.high_L {
+  height: 54px;
+  font-size: 18px;
+  line-height: 54px;
+  gap: 8px;
+}
+</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h3>Filed</h3>
+                <h4>Filed - Default</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn default high_M">Button</div>
+                      <div class="DDY_btn default high_M disable">Button</div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M disable&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+
+  &.default {
+    background-color: var(--clr-323DA3);
+    color: var(--clr-FFFFFF);
+    img {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+        brightness(103%) contrast(102%);
+    }
+    &:hover {
+      background-color: var(--clr-141E76);
+      img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+          brightness(103%) contrast(102%);
+      }
+    }
+  }
+  
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Filed - Secondary</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn secondary high_M">Button</div>
+                      <div class="DDY_btn secondary high_M disable">Button</div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn secondary high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn secondary high_M disable&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+
+  &.secondary {
+    color: var(--clr-555555);
+    background-color: var(--clr-EEEEEE);
+    &:hover {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.active {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.disable {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+      img {
+        filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+          brightness(105%) contrast(89%);
+      }
+      &:hover {
+        background-color: var(--clr-EEEEEE);
+        color: var(--clr-BDBDBD);
+      }
+    }
+  }
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Filed - Teritiary</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn teritiary high_M">Button</div>
+                      <div class="DDY_btn teritiary high_M disable">Button</div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn teritiary high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn teritiary high_M disable&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+  
+  &.teritiary {
+    color: var(--clr-323DA3);
+    background-color: var(--clr-E3E5F5);
+    &:hover {
+      background-color: var(--clr-CED2F4);
+      color: var(--clr-141E76);
+    }
+    &.active {
+      background-color: var(--clr-CED2F4);
+      color: var(--clr-141E76);
+    }
+    &.disable {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+      img {
+        filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+          brightness(105%) contrast(89%);
+      }
+      &:hover {
+        background-color: var(--clr-EEEEEE);
+        color: var(--clr-BDBDBD);
+      }
+    }
+  }
+
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Outline</h3>
+                <h4>Outline - Default</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn default online high_M">Button</div>
+                      <div class="DDY_btn default online high_M disable">
+                        Button
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default online high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default online high_M disable&#x22;&#x3E;Button &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+
+  &.default {
+    background-color: var(--clr-323DA3);
+    color: var(--clr-FFFFFF);
+    img {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+        brightness(103%) contrast(102%);
+    }
+    &:hover {
+      background-color: var(--clr-141E76);
+      img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+          brightness(103%) contrast(102%);
+      }
+    }
+
+    &.online {
+      background-color: var(--clr-FFFFFF);
+      color: var(--clr-323DA3);
+      border: 1px solid var(--clr-323DA3);
+      img {
+        filter: invert(19%) sepia(56%) saturate(2550%) hue-rotate(223deg)
+          brightness(99%) contrast(95%);
+      }
+      &:hover {
+        background-color: var(--clr-CED2F4);
+        border: 1px solid var(--clr-141E76);
+        img {
+          filter: invert(13%) sepia(28%) saturate(7376%) hue-rotate(231deg)
+            brightness(89%) contrast(106%);
+        }
+      }
+      &.disable {
+        background-color: var(--clr-FFFFFF);
+        border: 1px solid var(--clr-E0E0E0);
+        color: var(--clr-BDBDBD);
+      }
+    }
+  }
+  
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Outline - Secondary</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn secondary online high_M">Button</div>
+                      <div class="DDY_btn secondary online high_M disable">
+                        Button
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn secondary online high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn secondary online high_M disable&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+  
+  &.secondary {
+    color: var(--clr-555555);
+    background-color: var(--clr-EEEEEE);
+    &:hover {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.active {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.disable {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+      img {
+        filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+          brightness(105%) contrast(89%);
+      }
+      &:hover {
+        background-color: var(--clr-EEEEEE);
+        color: var(--clr-BDBDBD);
+      }
+    }
+
+    &.online {
+      background-color: var(--clr-FFFFFF);
+      border: 1px solid var(--clr-616161);
+      &:hover {
+        background-color: var(--clr-E0E0E0);
+      }
+      &.disable {
+        background-color: var(--clr-FFFFFF);
+        border: 1px solid var(--clr-BDBDBD);
+        color: var(--clr-BDBDBD);
+        img {
+          filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+            brightness(105%) contrast(89%);
+        }
+      }
+    }
+  }
+
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Transparent</h3>
+                <h4>Transparent - Default</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn default offline high_M">Button</div>
+                      <div class="DDY_btn default offline high_M disable">
+                        Button
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default offline high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default offline high_M disable&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+
+  &.default {
+    background-color: var(--clr-323DA3);
+    color: var(--clr-FFFFFF);
+    img {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+        brightness(103%) contrast(102%);
+    }
+    &:hover {
+      background-color: var(--clr-141E76);
+      img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(304deg)
+          brightness(103%) contrast(102%);
+      }
+    }
+
+    &.offline {
+      color: var(--clr-323DA3);
+      border: 0 none;
+      background-color: transparent;
+      img {
+        filter: invert(20%) sepia(88%) saturate(1476%) hue-rotate(220deg)
+          brightness(94%) contrast(99%);
+      }
+      &:hover {
+        background-color: var(--clr-CED2F4);
+        color: var(--clr-141E76);
+        img {
+          filter: invert(13%) sepia(52%) saturate(3757%) hue-rotate(229deg)
+            brightness(89%) contrast(108%);
+        }
+      }
+      &.disable {
+        background-color: transparent;
+        color: var(--clr-BDBDBD);
+      }
+    }
+  }
+
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>Transparent - Secondary</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn secondary offline high_M">Button</div>
+                      <div class="DDY_btn secondary offline high_M disable">
+                        Button
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn secondary offline high_M&#x22;&#x3E;Button&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn secondary offline high_M disable&#x22;&#x3E;Button&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+
+  &.secondary {
+    color: var(--clr-555555);
+    background-color: var(--clr-EEEEEE);
+    &:hover {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.active {
+      background-color: var(--clr-E0E0E0);
+      img {
+        filter: invert(6%) sepia(68%) saturate(12%) hue-rotate(335deg)
+          brightness(104%) contrast(93%);
+      }
+    }
+    &.disable {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+      img {
+        filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+          brightness(105%) contrast(89%);
+      }
+      &:hover {
+        background-color: var(--clr-EEEEEE);
+        color: var(--clr-BDBDBD);
+      }
+    }
+
+    &.offline {
+      background-color: transparent;
+      border: 0 none;
+      &:hover {
+        background-color: var(--clr-E0E0E0);
+      }
+      &.disable {
+        background-color: transparent;
+        color: var(--clr-BDBDBD);
+        img {
+          filter: invert(70%) sepia(0%) saturate(4015%) hue-rotate(127deg)
+            brightness(105%) contrast(89%);
+        }
+      }
+    }
+  }
+
+  &.disable {
+    background-color: var(--clr-EEEEEE);
+    color: var(--clr-BDBDBD);
+    &:hover {
+      background-color: var(--clr-EEEEEE);
+      color: var(--clr-BDBDBD);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Icon</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox">
+                      <div class="DDY_btn default high_M">
+                        <img
+                          src="/framework/assets/images/button_icon.svg"
+                          alt="버튼
+                        아이콘"
+                        />
+                        Button
+                      </div>
+                      <div class="DDY_btn default high_M">
+                        Button
+                        <img
+                          src="/framework/assets/images/button_icon.svg"
+                          alt="버튼 아이콘"
+                        />
+                      </div>
+                      <div class="DDY_btn default high_M">
+                        <img
+                          src="/framework/assets/images/button_icon.svg"
+                          alt="버튼 아이콘"
+                        />
+                        Button
+                        <img
+                          src="/framework/assets/images/button_icon.svg"
+                          alt="버튼 아이콘"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox&#x22;&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/button_icon.svg&#x22; alt=&#x22;&#xBC84;&#xD2BC; &#xC544;&#xC774;&#xCF58;&#x22; /&#x3E;
+    Button
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M&#x22;&#x3E;
+    Button
+    &#x3C;img src=&#x22;/framework/assets/images/button_icon.svg&#x22; alt=&#x22;&#xBC84;&#xD2BC; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_btn default high_M&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/button_icon.svg&#x22; alt=&#x22;&#xBC84;&#xD2BC; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    Button
+    &#x3C;img src=&#x22;/framework/assets/images/button_icon.svg&#x22; alt=&#x22;&#xBC84;&#xD2BC; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY btn ------------------------------------
+.DDY_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  cursor: pointer;
+}
+.high_S {
+  height: 36px !important;
+  font-size: 14px;
+  line-height: 36px;
+  gap: 4px;
+}
+.high_M {
+  height: 46px;
+  font-size: 16px;
+  line-height: 45px;
+  gap: 8px;
+}
+.high_L {
+  height: 54px;
+  font-size: 18px;
+  line-height: 54px;
+  gap: 8px;
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

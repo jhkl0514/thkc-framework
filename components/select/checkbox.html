@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .DDY_checkBox.disabled input[type="checkBox"]:checked + label:before {
+      border: 1px solid var(--clr-BDBDBD);
+      background: var(--clr-EEEEEE)
+        url("/framework/assets/images/checkbox_disable.svg") center no-repeat;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li class="active">
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Checkbox (체크박스)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Select (선택)</li>
+                <li>Checkbox (체크박스)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Checkbox</h3>
+                <div class="guide_text">
+                  <p>
+                    • 체크박스는 사용자가 여러 개의 옵션 중 한 개 이상의 값을
+                    선택할 수 있도록 하는 경우에 사용한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select01_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>그룹 레이블(선택) :</span>
+                      <div>
+                        <p>링크와 연결된 대상을 안내하는 텍스트</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>체크박스 양식 : </span>
+                      <div>
+                        <p>체크박스의 현재 선택 상태를 보여줌</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>체크박스 레이블 :</span>
+                      <div>
+                        <p>선택하거나 선택 해제할 정보를 나타냄</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>상태</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select01_02.png"
+                    alt="상태 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>Default :</span>
+                      <div>
+                        <p>기본</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>Hover:Active :</span>
+                      <div>
+                        <p>호버/눌림/포커스</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>Disabled :</span>
+                      <div>
+                        <p>비활성화</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>Selected :</span>
+                      <div>
+                        <p>선택됨</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>UnSelected :</span>
+                      <div>
+                        <p>선택되지않음</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
+                <h3>가이드</h3>
+                <div class="guide_text">
+                  <p>
+                    • 사용자가 한 개의 옵션을 선택할 수 있도록 하는 경우 :
+                    라디오 버튼을 사용해야 한다.
+                  </p>
+                  <p>
+                    • 체크박스는 적용, 제출과 같은 별도의 확정 행위가 필요한
+                    하나의 큰 과업 플로(Flow) 내에서 부분적으로 옵션을 선택하는
+                    경우에 사용하기 적합하다.
+                  </p>
+                  <p>• 체크박스 레이블은 양식의 오른쪽에 배치한다.</p>
+                </div>
+                <h5>가로형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select01_03.png"
+                    alt="가로형 이미지"
+                  />
+                </div>
+                <h5>세로형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select01_04.png"
+                    alt="세로형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈&간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select01_05.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select01_06.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div
+                      class="searchWrap"
+                      style="display: flex; align-items: center"
+                    >
+                      <div class="DDY_checkBox checkAll">
+                        <input type="checkbox" id="checkAll" />
+                        <label for="checkAll"> 전체</label>
+                      </div>
+                      <div class="DDY_checkBox">
+                        <input type="checkbox" id="lab02" />
+                        <label for="lab02"> 선택</label>
+                      </div>
+                      <div class="DDY_checkBox">
+                        <input type="checkbox" id="lab03" checked />
+                        <label for="lab03"> 선택</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_checkBox checkAll&#x22;&#x3E;
+  &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;checkAll&#x22; /&#x3E;
+  &#x3C;label for=&#x22;checkAll&#x22;&#x3E; &#xC804;&#xCCB4;&#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;DDY_checkBox&#x22;&#x3E;
+  &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;lab02&#x22; /&#x3E;
+  &#x3C;label for=&#x22;lab02&#x22;&#x3E; &#xC120;&#xD0DD;&#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;DDY_checkBox&#x22;&#x3E;
+  &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;lab03&#x22; checked /&#x3E;
+  &#x3C;label for=&#x22;lab03&#x22;&#x3E; &#xC120;&#xD0DD;&#x3C;/label&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_checkBox ------------------------------------
+
+// input
+.DDY_checkBox {
+  label {
+    position: relative;
+    padding-left: 28px;
+    margin-right: 16px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 1px solid var(--clr-616161);
+      background-color: var(--clr-FFFFFF);
+    }
+  }
+  input[type="checkBox"] {
+    display: none;
+    &:checked + label:before {
+      border: 1px solid var(--clr-323DA3);
+      background: var(--clr-323DA3) url("/framework/assets/images/checkbox_icon.svg") center
+        no-repeat;
+    }
+  }
+
+  //disabled
+  input:disabled {
+    display: none;
+    & + label:before {
+      border: 1px solid var(--clr-BDBDBD);
+      background: var(--clr-EEEEEE);
+    }
+  }
+
+  &.disabled {
+    input[type="checkBox"] {
+      display: none;
+      &:checked + label:before {
+        border: 1px solid var(--clr-BDBDBD);
+        background: var(--clr-EEEEEE) url("/framework/assets/images/checkbox_disable.svg")
+          center no-repeat;
+      }
+    }
+  }
+
+  input[type="checkBox"] {
+    display: none;
+    &:disabled + label:before {
+      border: 1px solid var(--clr-BDBDBD);
+      background: var(--clr-EEEEEE);
+    }
+  }
+
+  //hover
+  &:hover {
+    label {
+      position: relative;
+      padding-left: 28px;
+      margin-right: 16px;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-FFFFFF);
+      }
+    }
+    input[type="checkBox"] {
+      display: none;
+      &:checked + label:before {
+        border: 1px solid var(--clr-323DA3);
+        background: var(--clr-141E76) url("/framework/assets/images/checkbox_icon.svg")
+          center no-repeat;
+      }
+    }
+    &.disabled {
+      input[type="checkBox"] {
+        display: none;
+        &:checked + label:before {
+          border: 1px solid var(--clr-BDBDBD);
+          background: var(--clr-EEEEEE) url("/framework/assets/images/checkbox_disable.svg")
+            center no-repeat;
+        }
+      }
+    }
+    input[type="checkBox"] {
+      display: none;
+      &:disabled + label:before {
+        border: 1px solid var(--clr-BDBDBD);
+        background: var(--clr-EEEEEE);
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- DDY_checkBox -------------------------------------
+// DDY_checkBox
+$(".searchWrap .DDY_checkBox.checkAll").click(function () {
+  var isChecked = $(this).find("input").is(":checked");
+  $(this)
+    .closest(".searchWrap")
+    .find(".DDY_checkBox:not(.checkAll) input")
+    .prop("checked", isChecked);
+});
+
+$(".searchWrap .DDY_checkBox:not(.checkAll) input").click(function () {
+  var container = $(this).closest(".searchWrap");
+  var allChecked =
+    container.find(".DDY_checkBox:not(.checkAll) input").length ===
+    container.find(".DDY_checkBox:not(.checkAll) input:checked").length;
+  container.find(".DDY_checkBox.checkAll input").prop("checked", allChecked);
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Disable</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_checkBox">
+                      <input type="checkbox" id="lab04" disabled />
+                      <label for="lab04"> 선택</label>
+                    </div>
+                    <div class="DDY_checkBox disabled">
+                      <input type="checkbox" id="lab05" checked disabled />
+                      <label for="lab05"> 선택</label>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_checkBox&#x22;&#x3E;
+  &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;lab04&#x22; disabled /&#x3E;
+  &#x3C;label for=&#x22;lab04&#x22;&#x3E; &#xC120;&#xD0DD;&#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;DDY_checkBox disabled&#x22;&#x3E;
+  &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;lab05&#x22; checked disabled /&#x3E;
+  &#x3C;label for=&#x22;lab05&#x22;&#x3E; &#xC120;&#xD0DD;&#x3C;/label&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_checkBox ------------------------------------
+
+// input
+.DDY_checkBox {
+  label {
+    position: relative;
+    padding-left: 28px;
+    margin-right: 16px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 1px solid var(--clr-616161);
+      background-color: var(--clr-FFFFFF);
+    }
+  }
+  input[type="checkBox"] {
+    display: none;
+    &:checked + label:before {
+      border: 1px solid var(--clr-323DA3);
+      background: var(--clr-323DA3) url("/framework/assets/images/checkbox_icon.svg") center
+        no-repeat;
+    }
+  }
+
+  //disabled
+  input:disabled {
+    display: none;
+    & + label:before {
+      border: 1px solid var(--clr-BDBDBD);
+      background: var(--clr-EEEEEE);
+    }
+  }
+
+  &.disabled {
+    input[type="checkBox"] {
+      display: none;
+      &:checked + label:before {
+        border: 1px solid var(--clr-BDBDBD);
+        background: var(--clr-EEEEEE) url("/framework/assets/images/checkbox_disable.svg")
+          center no-repeat;
+      }
+    }
+  }
+
+  input[type="checkBox"] {
+    display: none;
+    &:disabled + label:before {
+      border: 1px solid var(--clr-BDBDBD);
+      background: var(--clr-EEEEEE);
+    }
+  }
+
+  //hover
+  &:hover {
+    label {
+      position: relative;
+      padding-left: 28px;
+      margin-right: 16px;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-FFFFFF);
+      }
+    }
+    input[type="checkBox"] {
+      display: none;
+      &:checked + label:before {
+        border: 1px solid var(--clr-323DA3);
+        background: var(--clr-141E76) url("/framework/assets/images/checkbox_icon.svg")
+          center no-repeat;
+      }
+    }
+    &.disabled {
+      input[type="checkBox"] {
+        display: none;
+        &:checked + label:before {
+          border: 1px solid var(--clr-BDBDBD);
+          background: var(--clr-EEEEEE) url("/framework/assets/images/checkbox_disable.svg")
+            center no-repeat;
+        }
+      }
+    }
+    input[type="checkBox"] {
+      display: none;
+      &:disabled + label:before {
+        border: 1px solid var(--clr-BDBDBD);
+        background: var(--clr-EEEEEE);
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3399 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li>
+                    <a href="../select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li class="active">
+                    <a href="../message/tooltip.html">Tooltip (툴팁)</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Tooltip (툴팁)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Message (알림)</li>
+                <li>Tooltip (툴팁)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Tooltip</h3>
+                <div class="guide_text">
+                  <p>
+                    컴포넌트 주변에 배치되어 해당 컴포넌트의 상태나 관련된 상세
+                    정보를 제공하는 컴포넌트이다. 정보 아이콘이나 도움 아이콘
+                    버튼을 통해 사용자가 요청하는 경우에만 화면에 표시된다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>아이콘 버튼 :</span>
+                      <div>
+                        <p>
+                          도움말 콘텐츠의 표시하는버튼. 정보의 유형에 따라
+                          정보(i) 아이콘, 물음표(?) 아이콘으로 사용
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>컨테이너 :</span>
+                      <div>
+                        <p>도움말 영역과 배경을 구분하는 요소</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>제목(옵션) :</span>
+                      <div>
+                        <p>도움말의 제목</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>본문 :</span>
+                      <div>
+                        <p>구체적인 설명 텍스트</p>
+                      </div>
+                    </li>
+
+                    <li>
+                      <span><em>5</em>닫기 (옵션) :</span>
+                      <div>
+                        <p>
+                          자동으로 닫히지 않은 경우, x 아이콘 버튼을 통해 닫음
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>박스형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_02.png"
+                    alt="박스형 이미지"
+                  />
+                </div>
+                <h5>말풍선형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_03.png"
+                    alt="말풍선형 이미지"
+                  />
+                </div>
+                <h5>바텀시트형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 모바일에서는 시각적 집중도를 위해 바텀 시트를 사용하여
+                    정보를 전달한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_03_add01.png"
+                    alt="바텀시트형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>색상</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_04.png"
+                    alt="색상 이미지"
+                  />
+                </div>
+              </section>
+
+              <section>
+                <h3>상태</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_05.png"
+                    alt="상태 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>하단으로 노출 :</span>
+                      <div>
+                        <p>도움말 아이콘 아래쪽으로 노출됨</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>상단으로 노출 :</span>
+                      <div>
+                        <p>도움말 아이콘 위쪽으로 노출됨</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>오른쪽으로 노출 :</span>
+                      <div>
+                        <p>도움말 아이콘 오른쪽으로 노출됨</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>왼쪽으로 노출 :</span>
+                      <div>
+                        <p>도움말 아이콘 왼쪽으로 노출됨</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_06.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_06_add01.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/message/message02_07.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 툴팁의 자동 닫침 시간은 2초로 설정한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          닫기 버튼이 없는 툴팁의 경우 2초 후 자동으로 툴팁이
+                          닫히도록 설정한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span>• 텍스트는 간결하게 사용하도록 한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          제목 텍스트는 최대 한줄, 본문텍스트는 최대 3줄을
+                          넘어가지 않도록 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 아이콘 버튼은 도움 정보를 제공하고자 하는 요소 주변에
+                        배치한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          정보를 제공하고자 하는 컴포넌트나 레이블 옆에 배치하여
+                          관련 요소와의 연관성이 명확하게 인지될 수 있도록 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 팝오버 영역이 본문의 중요 콘텐츠를 가리지 않도록
+                        표현한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          팝오버 영역이 활성화 버튼과 맥락적으로 도움을
+                          제공하고자 하는 본문 콘텐츠 요소를 가리지 않도록
+                          적절한 표시 방향을 설정한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="tipIcon">
+                      <p>기본형</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xAE30;&#xBCF8;&#xD615;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tooltip ------------------------------------
+
+// tooltip
+.tipIcon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 50px;
+  gap: 4px;
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.24px;
+  }
+  > a {
+    display: block;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tooltipWrap {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  height: auto;
+  z-index: 10;
+  border: 1px solid var(--clr-333333);
+  background-color: var(--clr-F2FDE4);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+
+  &.on {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolText {
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+    }
+  }
+
+  &.tipDark {
+    background-color: var(--clr-333333);
+    .closeBtn {
+      img {
+        filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+          brightness(98%) contrast(108%);
+      }
+    }
+    .toolText {
+      p,
+      strong {
+        color: var(--clr-FFFFFF);
+      }
+    }
+    > img {
+      filter: invert(0%) sepia(2%) saturate(1825%) hue-rotate(318deg)
+        brightness(0%) contrast(87%);
+    }
+  }
+
+  &.tipWhite {
+    background-color: var(--clr-FFFFFF);
+  }
+
+  > img {
+    position: absolute;
+    display: none;
+  }
+
+  &.topL {
+    > img {
+      display: block;
+      top: -6px;
+      left: 0;
+    }
+  }
+  &.topC {
+    > img {
+      display: block;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  &.topR {
+    > img {
+      display: block;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  &.bottomL {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      left: 0;
+    }
+  }
+  &.bottomC {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: translate(-50%, 0) rotate(180deg);
+      bottom: -6px;
+      left: 50%;
+    }
+  }
+  &.bottomR {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      right: 0;
+    }
+  }
+
+  &.leftT {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      top: 18px;
+      left: -23px;
+    }
+  }
+  &.leftC {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-90deg);
+      top: 50%;
+      left: -23px;
+    }
+  }
+  &.leftB {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      bottom: 18px;
+      left: -23px;
+    }
+  }
+
+  &.rightT {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      top: 18px;
+      right: -23px;
+    }
+  }
+  &.rightC {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-270deg);
+      top: 50%;
+      right: -23px;
+    }
+  }
+  &.rightB {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      bottom: 18px;
+      right: -23px;
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tooltip -------------------------------------
+
+$(".tipIcon a").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+  $(this).next(".tooltipWrap").addClass("on");
+});
+$(".closeBtn").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".tipIcon").length > 0) {
+  return;
+}
+  $(".tooltipWrap").removeClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>색상</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="tipIcon">
+                      <p>배경색 흰색</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap tipWhite">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>배경색 검정</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap tipDark">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>배경색 초록</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xBC30;&#xACBD;&#xC0C9; &#xD770;&#xC0C9;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap tipWhite&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xBC30;&#xACBD;&#xC0C9; &#xAC80;&#xC815;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap tipDark&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xBC30;&#xACBD;&#xC0C9; &#xCD08;&#xB85D;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tooltip ------------------------------------
+
+// tooltip
+.tipIcon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 50px;
+  gap: 4px;
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.24px;
+  }
+  > a {
+    display: block;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tooltipWrap {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  height: auto;
+  z-index: 10;
+  border: 1px solid var(--clr-333333);
+  background-color: var(--clr-F2FDE4);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+
+  &.on {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolText {
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+    }
+  }
+
+  &.tipDark {
+    background-color: var(--clr-333333);
+    .closeBtn {
+      img {
+        filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+          brightness(98%) contrast(108%);
+      }
+    }
+    .toolText {
+      p,
+      strong {
+        color: var(--clr-FFFFFF);
+      }
+    }
+    > img {
+      filter: invert(0%) sepia(2%) saturate(1825%) hue-rotate(318deg)
+        brightness(0%) contrast(87%);
+    }
+  }
+
+  &.tipWhite {
+    background-color: var(--clr-FFFFFF);
+  }
+
+  > img {
+    position: absolute;
+    display: none;
+  }
+
+  &.topL {
+    > img {
+      display: block;
+      top: -6px;
+      left: 0;
+    }
+  }
+  &.topC {
+    > img {
+      display: block;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  &.topR {
+    > img {
+      display: block;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  &.bottomL {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      left: 0;
+    }
+  }
+  &.bottomC {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: translate(-50%, 0) rotate(180deg);
+      bottom: -6px;
+      left: 50%;
+    }
+  }
+  &.bottomR {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      right: 0;
+    }
+  }
+
+  &.leftT {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      top: 18px;
+      left: -23px;
+    }
+  }
+  &.leftC {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-90deg);
+      top: 50%;
+      left: -23px;
+    }
+  }
+  &.leftB {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      bottom: 18px;
+      left: -23px;
+    }
+  }
+
+  &.rightT {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      top: 18px;
+      right: -23px;
+    }
+  }
+  &.rightC {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-270deg);
+      top: 50%;
+      right: -23px;
+    }
+  }
+  &.rightB {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      bottom: 18px;
+      right: -23px;
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tooltip -------------------------------------
+
+$(".tipIcon a").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+  $(this).next(".tooltipWrap").addClass("on");
+});
+$(".closeBtn").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".tipIcon").length > 0) {
+  return;
+}
+  $(".tooltipWrap").removeClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>위치</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="tipIcon">
+                      <p>상</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap bottomL">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>하</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap topL">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>좌</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap rightT">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>우</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap leftT">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText leftT">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xC0C1;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap bottomL&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD558;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap topL&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xC88C;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap rightT&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xC6B0;&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap leftT&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText leftT&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tooltip ------------------------------------
+
+// tooltip
+.tipIcon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 50px;
+  gap: 4px;
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.24px;
+  }
+  > a {
+    display: block;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tooltipWrap {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  height: auto;
+  z-index: 10;
+  border: 1px solid var(--clr-333333);
+  background-color: var(--clr-F2FDE4);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+
+  &.on {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolText {
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+    }
+  }
+
+  &.tipDark {
+    background-color: var(--clr-333333);
+    .closeBtn {
+      img {
+        filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+          brightness(98%) contrast(108%);
+      }
+    }
+    .toolText {
+      p,
+      strong {
+        color: var(--clr-FFFFFF);
+      }
+    }
+    > img {
+      filter: invert(0%) sepia(2%) saturate(1825%) hue-rotate(318deg)
+        brightness(0%) contrast(87%);
+    }
+  }
+
+  &.tipWhite {
+    background-color: var(--clr-FFFFFF);
+  }
+
+  > img {
+    position: absolute;
+    display: none;
+  }
+
+  &.topL {
+    > img {
+      display: block;
+      top: -6px;
+      left: 0;
+    }
+  }
+  &.topC {
+    > img {
+      display: block;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  &.topR {
+    > img {
+      display: block;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  &.bottomL {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      left: 0;
+    }
+  }
+  &.bottomC {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: translate(-50%, 0) rotate(180deg);
+      bottom: -6px;
+      left: 50%;
+    }
+  }
+  &.bottomR {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      right: 0;
+    }
+  }
+
+  &.leftT {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      top: 18px;
+      left: -23px;
+    }
+  }
+  &.leftC {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-90deg);
+      top: 50%;
+      left: -23px;
+    }
+  }
+  &.leftB {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      bottom: 18px;
+      left: -23px;
+    }
+  }
+
+  &.rightT {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      top: 18px;
+      right: -23px;
+    }
+  }
+  &.rightC {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-270deg);
+      top: 50%;
+      right: -23px;
+    }
+  }
+  &.rightB {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      bottom: 18px;
+      right: -23px;
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tooltip -------------------------------------
+
+$(".tipIcon a").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+  $(this).next(".tooltipWrap").addClass("on");
+});
+$(".closeBtn").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".tipIcon").length > 0) {
+  return;
+}
+  $(".tooltipWrap").removeClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>상태 (right)</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="tipIcon">
+                      <p>화살표 위치-top</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap leftT">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-center</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap leftC">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-bottom</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap leftB">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-top&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap leftT&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-center&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap leftC&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-bottom&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap leftB&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tooltip ------------------------------------
+
+// tooltip
+.tipIcon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 50px;
+  gap: 4px;
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.24px;
+  }
+  > a {
+    display: block;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tooltipWrap {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  height: auto;
+  z-index: 10;
+  border: 1px solid var(--clr-333333);
+  background-color: var(--clr-F2FDE4);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+
+  &.on {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolText {
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+    }
+  }
+
+  &.tipDark {
+    background-color: var(--clr-333333);
+    .closeBtn {
+      img {
+        filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+          brightness(98%) contrast(108%);
+      }
+    }
+    .toolText {
+      p,
+      strong {
+        color: var(--clr-FFFFFF);
+      }
+    }
+    > img {
+      filter: invert(0%) sepia(2%) saturate(1825%) hue-rotate(318deg)
+        brightness(0%) contrast(87%);
+    }
+  }
+
+  &.tipWhite {
+    background-color: var(--clr-FFFFFF);
+  }
+
+  > img {
+    position: absolute;
+    display: none;
+  }
+
+  &.topL {
+    > img {
+      display: block;
+      top: -6px;
+      left: 0;
+    }
+  }
+  &.topC {
+    > img {
+      display: block;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  &.topR {
+    > img {
+      display: block;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  &.bottomL {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      left: 0;
+    }
+  }
+  &.bottomC {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: translate(-50%, 0) rotate(180deg);
+      bottom: -6px;
+      left: 50%;
+    }
+  }
+  &.bottomR {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      right: 0;
+    }
+  }
+
+  &.leftT {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      top: 18px;
+      left: -23px;
+    }
+  }
+  &.leftC {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-90deg);
+      top: 50%;
+      left: -23px;
+    }
+  }
+  &.leftB {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      bottom: 18px;
+      left: -23px;
+    }
+  }
+
+  &.rightT {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      top: 18px;
+      right: -23px;
+    }
+  }
+  &.rightC {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-270deg);
+      top: 50%;
+      right: -23px;
+    }
+  }
+  &.rightB {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      bottom: 18px;
+      right: -23px;
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tooltip -------------------------------------
+
+$(".tipIcon a").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+  $(this).next(".tooltipWrap").addClass("on");
+});
+$(".closeBtn").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".tipIcon").length > 0) {
+  return;
+}
+  $(".tooltipWrap").removeClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>상태 (left)</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="tipIcon">
+                      <p>화살표 위치-top</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap rightT">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-center</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap rightC">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-bottom</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap rightB">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-top&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap rightT&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-center&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap rightC&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-bottom&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap rightB&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tooltip ------------------------------------
+
+// tooltip
+.tipIcon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 50px;
+  gap: 4px;
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.24px;
+  }
+  > a {
+    display: block;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tooltipWrap {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  height: auto;
+  z-index: 10;
+  border: 1px solid var(--clr-333333);
+  background-color: var(--clr-F2FDE4);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+
+  &.on {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolText {
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+    }
+  }
+
+  &.tipDark {
+    background-color: var(--clr-333333);
+    .closeBtn {
+      img {
+        filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+          brightness(98%) contrast(108%);
+      }
+    }
+    .toolText {
+      p,
+      strong {
+        color: var(--clr-FFFFFF);
+      }
+    }
+    > img {
+      filter: invert(0%) sepia(2%) saturate(1825%) hue-rotate(318deg)
+        brightness(0%) contrast(87%);
+    }
+  }
+
+  &.tipWhite {
+    background-color: var(--clr-FFFFFF);
+  }
+
+  > img {
+    position: absolute;
+    display: none;
+  }
+
+  &.topL {
+    > img {
+      display: block;
+      top: -6px;
+      left: 0;
+    }
+  }
+  &.topC {
+    > img {
+      display: block;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  &.topR {
+    > img {
+      display: block;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  &.bottomL {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      left: 0;
+    }
+  }
+  &.bottomC {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: translate(-50%, 0) rotate(180deg);
+      bottom: -6px;
+      left: 50%;
+    }
+  }
+  &.bottomR {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      right: 0;
+    }
+  }
+
+  &.leftT {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      top: 18px;
+      left: -23px;
+    }
+  }
+  &.leftC {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-90deg);
+      top: 50%;
+      left: -23px;
+    }
+  }
+  &.leftB {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      bottom: 18px;
+      left: -23px;
+    }
+  }
+
+  &.rightT {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      top: 18px;
+      right: -23px;
+    }
+  }
+  &.rightC {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-270deg);
+      top: 50%;
+      right: -23px;
+    }
+  }
+  &.rightB {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      bottom: 18px;
+      right: -23px;
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tooltip -------------------------------------
+
+$(".tipIcon a").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+  $(this).next(".tooltipWrap").addClass("on");
+});
+$(".closeBtn").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".tipIcon").length > 0) {
+  return;
+}
+  $(".tooltipWrap").removeClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>상태 (top)</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="tipIcon">
+                      <p>화살표 위치-left</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap bottomL">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-center</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap bottomC">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-right</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap bottomR">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-left&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap bottomL&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-center&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap bottomC&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-right&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap bottomR&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tooltip ------------------------------------
+
+// tooltip
+.tipIcon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 50px;
+  gap: 4px;
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.24px;
+  }
+  > a {
+    display: block;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tooltipWrap {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  height: auto;
+  z-index: 10;
+  border: 1px solid var(--clr-333333);
+  background-color: var(--clr-F2FDE4);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+
+  &.on {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolText {
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+    }
+  }
+
+  &.tipDark {
+    background-color: var(--clr-333333);
+    .closeBtn {
+      img {
+        filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+          brightness(98%) contrast(108%);
+      }
+    }
+    .toolText {
+      p,
+      strong {
+        color: var(--clr-FFFFFF);
+      }
+    }
+    > img {
+      filter: invert(0%) sepia(2%) saturate(1825%) hue-rotate(318deg)
+        brightness(0%) contrast(87%);
+    }
+  }
+
+  &.tipWhite {
+    background-color: var(--clr-FFFFFF);
+  }
+
+  > img {
+    position: absolute;
+    display: none;
+  }
+
+  &.topL {
+    > img {
+      display: block;
+      top: -6px;
+      left: 0;
+    }
+  }
+  &.topC {
+    > img {
+      display: block;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  &.topR {
+    > img {
+      display: block;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  &.bottomL {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      left: 0;
+    }
+  }
+  &.bottomC {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: translate(-50%, 0) rotate(180deg);
+      bottom: -6px;
+      left: 50%;
+    }
+  }
+  &.bottomR {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      right: 0;
+    }
+  }
+
+  &.leftT {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      top: 18px;
+      left: -23px;
+    }
+  }
+  &.leftC {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-90deg);
+      top: 50%;
+      left: -23px;
+    }
+  }
+  &.leftB {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      bottom: 18px;
+      left: -23px;
+    }
+  }
+
+  &.rightT {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      top: 18px;
+      right: -23px;
+    }
+  }
+  &.rightC {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-270deg);
+      top: 50%;
+      right: -23px;
+    }
+  }
+  &.rightB {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      bottom: 18px;
+      right: -23px;
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tooltip -------------------------------------
+
+$(".tipIcon a").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+  $(this).next(".tooltipWrap").addClass("on");
+});
+$(".closeBtn").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".tipIcon").length > 0) {
+  return;
+}
+  $(".tooltipWrap").removeClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>상태 (bottom)</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="tipIcon">
+                      <p>화살표 위치-left</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap topL">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-center</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap topC">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tipIcon">
+                      <p>화살표 위치-right</p>
+                      <a href="javascript:void(0);">
+                        <img
+                          src="/framework/assets/images/question_mark.svg"
+                          alt="물음표 아이콘"
+                        />
+                      </a>
+                      <div class="tooltipWrap topR">
+                        <img
+                          src="/framework/assets/images/tooltip_icon_green.svg"
+                          alt="툴팁아이콘"
+                        />
+                        <div class="toolText">
+                          <strong>툴팁 타이틀</strong>
+                          <p>툴팁 내용</p>
+                        </div>
+                        <div class="closeBtn">
+                          <img
+                            src="/framework/assets/images/close_icon.svg"
+                            alt="닫기"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-left&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap topL&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-center&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap topC&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;tipIcon&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD654;&#xC0B4;&#xD45C; &#xC704;&#xCE58;-right&#x3C;/p&#x3E;
+  &#x3C;a href=&#x22;javascript:void(0);&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/question_mark.svg&#x22; alt=&#x22;&#xBB3C;&#xC74C;&#xD45C; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;tooltipWrap topR&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/tooltip_icon_green.svg&#x22; alt=&#x22;&#xD234;&#xD301;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;div class=&#x22;toolText&#x22;&#x3E;
+      &#x3C;strong&#x3E;&#xD234;&#xD301; &#xD0C0;&#xC774;&#xD2C0;&#x3C;/strong&#x3E;
+      &#x3C;p&#x3E;&#xD234;&#xD301; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;closeBtn&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- tooltip ------------------------------------
+
+// tooltip
+.tipIcon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 50px;
+  gap: 4px;
+  > p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.24px;
+  }
+  > a {
+    display: block;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.tooltipWrap {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  height: auto;
+  z-index: 10;
+  border: 1px solid var(--clr-333333);
+  background-color: var(--clr-F2FDE4);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+
+  &.on {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolText {
+    strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+    }
+  }
+
+  &.tipDark {
+    background-color: var(--clr-333333);
+    .closeBtn {
+      img {
+        filter: invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+          brightness(98%) contrast(108%);
+      }
+    }
+    .toolText {
+      p,
+      strong {
+        color: var(--clr-FFFFFF);
+      }
+    }
+    > img {
+      filter: invert(0%) sepia(2%) saturate(1825%) hue-rotate(318deg)
+        brightness(0%) contrast(87%);
+    }
+  }
+
+  &.tipWhite {
+    background-color: var(--clr-FFFFFF);
+  }
+
+  > img {
+    position: absolute;
+    display: none;
+  }
+
+  &.topL {
+    > img {
+      display: block;
+      top: -6px;
+      left: 0;
+    }
+  }
+  &.topC {
+    > img {
+      display: block;
+      top: -6px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  &.topR {
+    > img {
+      display: block;
+      top: -6px;
+      right: 0;
+    }
+  }
+
+  &.bottomL {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      left: 0;
+    }
+  }
+  &.bottomC {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: translate(-50%, 0) rotate(180deg);
+      bottom: -6px;
+      left: 50%;
+    }
+  }
+  &.bottomR {
+    top: auto;
+    bottom: 35px;
+    left: 0;
+    > img {
+      display: block;
+      transform: rotate(180deg);
+      bottom: -6px;
+      right: 0;
+    }
+  }
+
+  &.leftT {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      top: 18px;
+      left: -23px;
+    }
+  }
+  &.leftC {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-90deg);
+      top: 50%;
+      left: -23px;
+    }
+  }
+  &.leftB {
+    top: -10px;
+    left: 100%;
+    margin-left: 10px;
+    > img {
+      display: block;
+      transform: rotate(-90deg);
+      bottom: 18px;
+      left: -23px;
+    }
+  }
+
+  &.rightT {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      top: 18px;
+      right: -23px;
+    }
+  }
+  &.rightC {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: translate(0, -50%) rotate(-270deg);
+      top: 50%;
+      right: -23px;
+    }
+  }
+  &.rightB {
+    top: -10px;
+    left: auto;
+    right: 100%;
+    margin-right: 20px;
+    > img {
+      display: block;
+      transform: rotate(-270deg);
+      bottom: 18px;
+      right: -23px;
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- tooltip -------------------------------------
+
+$(".tipIcon a").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+  $(this).next(".tooltipWrap").addClass("on");
+});
+$(".closeBtn").on("click", function () {
+  $(".tooltipWrap").removeClass("on");
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".tipIcon").length > 0) {
+  return;
+}
+  $(".tooltipWrap").removeClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

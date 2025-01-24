@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/mobile_style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .mapList {
+      position: static;
+      width: 360px;
+    }
+    .mapList ul {
+      height: 100%;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li class="active">
+                    <a href="../layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Card (카드)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Card (카드)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Card</h3>
+                <div class="guide_text">
+                  <p>
+                    • 정보 제공을 목적으로 한 컨테이너입니다. 다양한 정보, 기능
+                    및 컴포넌트를 구성요소로 포함할 수 있으며, 포함된 구성요소에
+                    따라 컨테이너의 크기가 달라질 수 있다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout06_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em> Badge(Optional) :</span>
+                      <div>
+                        <p>
+                          사용자에게 정보를 강조하거나 특정 요소에 주의를 끌기
+                          위해 아이콘 또는 텍스트에 추가적인 요소를 사용하여
+                          표시한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>텍스트 : </span>
+                      <div>
+                        <p>
+                          카드 내 메인 텍스트가 노출되며, 상품카드의 경우 상품
+                          타이틀명을 표시한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>보조 텍스트(Optional) : </span>
+                      <div>
+                        <p>
+                          보조 텍스트에는 아이템에 대한 부가적인 정보, 설명과
+                          같은 텍스트를 표시한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>버튼 : </span>
+                      <div>
+                        <p>카드에는 액션버튼이 포함될 수 있다.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>썸네일 : </span>
+                      <div>
+                        <p>해당 아이템의 이미지가 들어간다.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>6</em>금액 : </span>
+                      <div>
+                        <p>해당 아이템에 대한 금액이 노출된다.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>정보 전달형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 하나의 주제 내 정보를 요약하거나 관련된 정보 또는 기능을
+                    함께 제공하는 경우 사용한다.
+                  </p>
+                  <p>
+                    • 하나의 카드 내 정보와 기능은 최대 5개까지 제공할 수 있다.
+                  </p>
+                  <p>
+                    • 컴포넌트를 조합하거나 카드를 확장하여 추가 정보를 제공할
+                    수 있다.
+                  </p>
+                </div>
+
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout06_02.png"
+                    alt="정보 전달형 이미지"
+                  />
+                </div>
+                <h5>아이템형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 사용자에게 상품 정보를 집약적으로 전달하기 위한
+                    요소입니다. 상품 정보(가격, 상품명, 혜택)를 명확하게 전달해
+                    상세 페이지로 유도하는 목적을 가진다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout06_03.png"
+                    alt="아이템형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 모바일에서 정보전달형 카드형은 가로 또는 세로로 나열
+                        할 수 있다.
+                      </span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          세로로 나열할 경우, infinite scroll 또는 더보기 버튼을
+                          통해 카드를 추가로 더 불러올 수 있도록 한다.
+                          <br />
+                          가로로 나열할 경우, 인디게이터와 함께 사용할 것을
+                          권장합니다. 가로로 연속된 카드는 카드의 일부를 좌측
+                          또는 우측에 노출한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 정보전달 카드형 내 터치 영역이 많을 경우 주요 업무는
+                        카드 자체를 눌러서 이동하며, 그 외의 기능은 버튼으로
+                        제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          버튼 선택 시 카드 정보와 연관된 기능을 제공하거나 해당
+                          정보의 상세 페이지로 이동한다. <br />
+                          버튼을 포함한 터치 가능 항목은 최대 5개를 넘지 않도록
+                          한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>PC 기본형</h3>
+                <h4>아이템형</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_list">
+                      <ul class="itemList">
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="imgWrap">
+                              <img
+                                src="/framework/assets/images/test01.png"
+                                alt="테스트이미지"
+                              />
+                            </div>
+                            <div class="textBox">
+                              <strong>까미노</strong>
+                              <div class="itemHash">
+                                <span
+                                  >#성인용보행기 #바퀴워커 #카미노 #카미노
+                                  #카미노</span
+                                >
+                              </div>
+                              <div class="itemPrice">
+                                <p>
+                                  <span class="DDY_badge number DDY_badge_Navy"
+                                    >임대료(월)</span
+                                  >55,000원
+                                </p>
+                              </div>
+                              <div class="itemType">
+                                <span class="DDY_badge squre_line DDY_badge_Red"
+                                  >일시품절</span
+                                >
+                                <span
+                                  class="DDY_badge squre_line DDY_badge_Green"
+                                  >예약가능</span
+                                >
+                                <span
+                                  class="DDY_badge squre_line DDY_badge_Navy"
+                                  >설치</span
+                                >
+                                <span
+                                  class="DDY_badge squre_line DDY_badge_Navy"
+                                  >설치중</span
+                                >
+                                <span class="DDY_badge squre_line DDY_badge_Red"
+                                  >일시품절</span
+                                >
+                                <span
+                                  class="DDY_badge squre_line DDY_badge_Green"
+                                  >예약가능</span
+                                >
+                                <span class="DDY_badge squre_line DDY_badge_Red"
+                                  >일시품절</span
+                                >
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_list&#x22;&#x3E;
+  &#x3C;ul class=&#x22;itemList&#x22;&#x3E;
+    &#x3C;li&#x3E;
+      &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;div class=&#x22;imgWrap&#x22;&#x3E;
+          &#x3C;img src=&#x22;/framework/assets/images/test01.png&#x22; alt=&#x22;&#xD14C;&#xC2A4;&#xD2B8;&#xC774;&#xBBF8;&#xC9C0;&#x22;/&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;textBox&#x22;&#x3E;
+          &#x3C;strong&#x3E;&#xAE4C;&#xBBF8;&#xB178;&#x3C;/strong&#x3E;
+          &#x3C;div class=&#x22;itemHash&#x22;&#x3E;
+            &#x3C;span&#x3E;#&#xC131;&#xC778;&#xC6A9;&#xBCF4;&#xD589;&#xAE30; #&#xBC14;&#xD034;&#xC6CC;&#xCEE4; #&#xCE74;&#xBBF8;&#xB178; #&#xCE74;&#xBBF8;&#xB178; #&#xCE74;&#xBBF8;&#xB178;&#x3C;/span&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;div class=&#x22;itemPrice&#x22;&#x3E;
+            &#x3C;p&#x3E;
+              &#x3C;span class=&#x22;DDY_badge number DDY_badge_Navy&#x22;&#x3E;&#xC784;&#xB300;&#xB8CC;(&#xC6D4;)&#x3C;/span&#x3E;55,000&#xC6D0;
+            &#x3C;/p&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;div class=&#x22;itemType&#x22;&#x3E;
+            &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Red&#x22;&#x3E;&#xC77C;&#xC2DC;&#xD488;&#xC808;&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Green&#x22;&#x3E;&#xC608;&#xC57D;&#xAC00;&#xB2A5;&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Navy&#x22;&#x3E;&#xC124;&#xCE58;&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Navy&#x22;&#x3E;&#xC124;&#xCE58;&#xC911;&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Red&#x22;&#x3E;&#xC77C;&#xC2DC;&#xD488;&#xC808;&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Green&#x22;&#x3E;&#xC608;&#xC57D;&#xAC00;&#xB2A5;&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Red&#x22;&#x3E;&#xC77C;&#xC2DC;&#xD488;&#xC808;&#x3C;/span&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_list ------------------------------------
+
+.DDY_list {
+  .itemList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    align-items: flex-start;
+    > li {
+      width: 250px;
+      .imgWrap {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        border: 1px solid var(--clr-EEEEEE);
+        box-sizing: border-box;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        background-color: var(--clr-FFFFFF);
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 100%;
+          transition: all 0.3s;
+        }
+        &:hover {
+          img {
+            transform: translate(-50%, -50%) scale(1.02);
+          }
+        }
+      }
+
+      .textBox {
+        strong {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 26px;
+          letter-spacing: -0.27px;
+        }
+        .itemHash {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          margin-bottom: 16px;
+          span {
+            font-size: 14px;
+          }
+        }
+        .itemPrice {
+          margin-bottom: 8px;
+          p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: -0.24px;
+          }
+        }
+        .itemType {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 4px;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Mobile 기본형</h3>
+                <h4>정보 전달형 (타입A)</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="mapList">
+                      <ul id="sortable">
+                        <li class="install">
+                          <a href="javascript:void(0)">
+                            <div class="mapNum">2</div>
+                            <div class="contents">
+                              <div>
+                                <div>
+                                  <div class="liTop">
+                                    <span
+                                      class="DDY_badge squre_line DDY_badge_Navy"
+                                      >설치</span
+                                    >
+                                    <span>침대</span>
+                                    <span>Rapport-ㅣ</span>
+                                  </div>
+                                  <div class="liMid">
+                                    <p>
+                                      서울시 강서구 강서로 532 106동 1505호
+                                      (가양동,대아아파트)
+                                    </p>
+                                  </div>
+                                  <div class="liBtm">
+                                    <div>
+                                      <p>해피콜<span class="call_Y">Y</span></p>
+                                      09:00
+                                    </div>
+                                    <p>완료<span class="call_N">N</span></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mapChange">
+                              <img
+                                src="/framework/assets/images/part_mapChange.svg"
+                                alt="순서변경버튼"
+                              />
+                            </div>
+                          </a>
+                        </li>
+                        <li class="return">
+                          <a href="javascript:void(0)">
+                            <div class="mapNum">10</div>
+                            <div class="contents">
+                              <div>
+                                <div>
+                                  <div class="liTop">
+                                    <span
+                                      class="DDY_badge squre_line DDY_badge_Red"
+                                      >회수</span
+                                    >
+                                    <span>침대</span>
+                                    <span>Rapport-ㅣ</span>
+                                  </div>
+                                  <div class="liMid">
+                                    <p>
+                                      서울시 강서구 강서로 532 106동 1505호
+                                      (가양동,대아아파트)
+                                    </p>
+                                  </div>
+                                  <div class="liBtm">
+                                    <div>
+                                      <p>해피콜<span class="call_Y">Y</span></p>
+                                      09:00
+                                    </div>
+                                    <p>완료<span class="call_N">N</span></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mapChange">
+                              <img
+                                src="/framework/assets/images/part_mapChange.svg"
+                                alt="순서변경버튼"
+                              />
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;mapList&#x22;&#x3E;
+  &#x3C;ul id=&#x22;sortable&#x22;&#x3E;
+    &#x3C;li class=&#x22;install&#x22;&#x3E;
+      &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;div class=&#x22;mapNum&#x22;&#x3E;2&#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;div class=&#x22;liTop&#x22;&#x3E;
+                &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Navy&#x22;&#x3E;&#xC124;&#xCE58;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;&#xCE68;&#xB300;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;Rapport-&#x3163;&#x3C;/span&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;liMid&#x22;&#x3E;
+                &#x3C;p&#x3E;&#xC11C;&#xC6B8;&#xC2DC; &#xAC15;&#xC11C;&#xAD6C; &#xAC15;&#xC11C;&#xB85C; 532 106&#xB3D9; 1505&#xD638;(&#xAC00;&#xC591;&#xB3D9;,&#xB300;&#xC544;&#xC544;&#xD30C;&#xD2B8;)&#x3C;/p&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;liBtm&#x22;&#x3E;
+                &#x3C;div&#x3E;
+                  &#x3C;p&#x3E;&#xD574;&#xD53C;&#xCF5C;&#x3C;span class=&#x22;call_Y&#x22;&#x3E;Y&#x3C;/span&#x3E;&#x3C;/p&#x3E;09:00
+                &#x3C;/div&#x3E;
+                &#x3C;p&#x3E;&#xC644;&#xB8CC;&#x3C;span class=&#x22;call_N&#x22;&#x3E;N&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;mapChange&#x22;&#x3E;
+          &#x3C;img src=&#x22;/framework/assets/images/part_mapChange.svg&#x22; alt=&#x22;&#xC21C;&#xC11C;&#xBCC0;&#xACBD;&#xBC84;&#xD2BC;&#x22;/&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;return&#x22;&#x3E;
+      &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;div class=&#x22;mapNum&#x22;&#x3E;10&#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;div class=&#x22;liTop&#x22;&#x3E;
+                &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Red&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;&#xCE68;&#xB300;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;Rapport-&#x3163;&#x3C;/span&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;liMid&#x22;&#x3E;
+              &#x3C;p&#x3E;&#xC11C;&#xC6B8;&#xC2DC; &#xAC15;&#xC11C;&#xAD6C; &#xAC15;&#xC11C;&#xB85C; 532 106&#xB3D9; 1505&#xD638;(&#xAC00;&#xC591;&#xB3D9;,&#xB300;&#xC544;&#xC544;&#xD30C;&#xD2B8;)&#x3C;/p&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;liBtm&#x22;&#x3E;
+                &#x3C;div&#x3E;
+                  &#x3C;p&#x3E;&#xD574;&#xD53C;&#xCF5C;&#x3C;span class=&#x22;call_Y&#x22;&#x3E;Y&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                  09:00
+                &#x3C;/div&#x3E;
+                &#x3C;p&#x3E;&#xC644;&#xB8CC;&#x3C;span class=&#x22;call_N&#x22;&#x3E;N&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;mapChange&#x22;&#x3E;
+          &#x3C;img src=&#x22;/framework/assets/images/part_mapChange.svg&#x22; alt=&#x22;&#xC21C;&#xC11C;&#xBCC0;&#xACBD;&#xBC84;&#xD2BC;&#x22;/&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- mapList --------------------------------
+
+  .mapList {
+    width: 100%;
+    background-color: var(--clr-FFFFFF);
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  
+    ul {
+      padding: 8px 20px;
+      overflow-x: auto;
+      height: calc(var(--vh, 1vh) * 100 - 462px);
+      transition: height 0.3s;
+      &.active {
+        height: calc(100vh - 133px);
+      }
+      &.editSort {
+        li {
+          .mapChange {
+            display: block;
+          }
+        }
+      }
+      li {
+        margin-bottom: 12px;
+        &.return {
+          a {
+            .mapNum {
+              background-color: var(--clr-D32F2F);
+            }
+          }
+        }
+  
+        &.on {
+          .contents {
+            border: 1px solid var(--clr-323DA3);
+            background-color: var(--clr-EFF1FD);
+          }
+        }
+        a {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          .mapNum {
+            flex-basis: 24px;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 100px;
+            background-color: var(--clr-323DA3);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--clr-FFFFFF);
+          }
+          .contents {
+            flex: 1;
+            background: var(--clr-FFFFFF);
+            border: 1px solid var(--clr-FFFFFF);
+            border-radius: 8px;
+            box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.08),
+              0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+            padding: 24px 8px 24px 16px;
+  
+            > div {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              > div {
+                flex: 1;
+              }
+            }
+            .allocate {
+              width: 50px;
+              text-align: center;
+              font-weight: 600;
+              color: var(--clr-323DA3);
+              flex: none;
+            }
+            .liTop {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 8px;
+              font-size: 16px;
+              margin-bottom: 8px;
+              span:not(:first-of-type) {
+                color: var(--clr-555555);
+              }
+            }
+            .liMid {
+              margin-bottom: 8px;
+              p {
+                font-size: 16px;
+                height: 44px;
+                line-height: 22px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-wrap: wrap;
+              }
+            }
+            .liBtm {
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              font-size: 16px;
+              color: var(--clr-555555);
+              div {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--clr-555555);
+              }
+              p {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                color: var(--clr-555555);
+              }
+            }
+          }
+          .mapChange {
+            display: none;
+            flex-basis: 24px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        &.timeSort {
+          display: none;
+          &.on {
+            display: block;
+          }
+        }
+      }
+    }
+  }</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>정보 전달형 (타입B)</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="mapList">
+                      <ul class="returnList">
+                        <li>
+                          <a href="javascript:void(0)">
+                            <div class="contents">
+                              <div>
+                                <div>
+                                  <div class="liTop">
+                                    <span
+                                      class="DDY_badge squre_line DDY_badge_Red"
+                                      >회수</span
+                                    >
+                                    <span>침대</span>
+                                    <span>Rapport-ㅣ</span>
+                                  </div>
+                                  <div class="liMid">
+                                    <p>
+                                      서울시 강서구 강서로 532 106동 1505호
+                                      (가양동,대아아파트)
+                                    </p>
+                                  </div>
+                                  <div class="liBtm">
+                                    <div>
+                                      <p>회수 신청일 : 2024-03-26</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="allocate">배정<br />하기</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;mapList&#x22;&#x3E;
+  &#x3C;ul class=&#x22;returnList&#x22;&#x3E;
+    &#x3C;li&#x3E;
+      &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;div class=&#x22;liTop&#x22;&#x3E;
+                &#x3C;span class=&#x22;DDY_badge squre_line DDY_badge_Red&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;&#xCE68;&#xB300;&#x3C;/span&#x3E;
+                &#x3C;span&#x3E;Rapport-&#x3163;&#x3C;/span&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;liMid&#x22;&#x3E;
+                &#x3C;p&#x3E;&#xC11C;&#xC6B8;&#xC2DC; &#xAC15;&#xC11C;&#xAD6C; &#xAC15;&#xC11C;&#xB85C; 532 106&#xB3D9; 1505&#xD638;(&#xAC00;&#xC591;&#xB3D9;,&#xB300;&#xC544;&#xC544;&#xD30C;&#xD2B8;)&#x3C;/p&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;liBtm&#x22;&#x3E;
+                &#x3C;div&#x3E;
+                  &#x3C;p&#x3E;&#xD68C;&#xC218; &#xC2E0;&#xCCAD;&#xC77C; : 2024-03-26&#x3C;/p&#x3E;
+                &#x3C;/div&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;allocate&#x22;&#x3E;&#xBC30;&#xC815;&#x3C;br /&#x3E;&#xD558;&#xAE30;&#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- mapList --------------------------------
+
+  .mapList {
+    width: 100%;
+    background-color: var(--clr-FFFFFF);
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  
+    ul {
+      padding: 8px 20px;
+      overflow-x: auto;
+      height: calc(var(--vh, 1vh) * 100 - 462px);
+      transition: height 0.3s;
+      &.active {
+        height: calc(100vh - 133px);
+      }
+      &.editSort {
+        li {
+          .mapChange {
+            display: block;
+          }
+        }
+      }
+      li {
+        margin-bottom: 12px;
+        &.return {
+          a {
+            .mapNum {
+              background-color: var(--clr-D32F2F);
+            }
+          }
+        }
+  
+        &.on {
+          .contents {
+            border: 1px solid var(--clr-323DA3);
+            background-color: var(--clr-EFF1FD);
+          }
+        }
+        a {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          .mapNum {
+            flex-basis: 24px;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 100px;
+            background-color: var(--clr-323DA3);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--clr-FFFFFF);
+          }
+          .contents {
+            flex: 1;
+            background: var(--clr-FFFFFF);
+            border: 1px solid var(--clr-FFFFFF);
+            border-radius: 8px;
+            box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.08),
+              0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+            padding: 24px 8px 24px 16px;
+  
+            > div {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              > div {
+                flex: 1;
+              }
+            }
+            .allocate {
+              width: 50px;
+              text-align: center;
+              font-weight: 600;
+              color: var(--clr-323DA3);
+              flex: none;
+            }
+            .liTop {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 8px;
+              font-size: 16px;
+              margin-bottom: 8px;
+              span:not(:first-of-type) {
+                color: var(--clr-555555);
+              }
+            }
+            .liMid {
+              margin-bottom: 8px;
+              p {
+                font-size: 16px;
+                height: 44px;
+                line-height: 22px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-wrap: wrap;
+              }
+            }
+            .liBtm {
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              font-size: 16px;
+              color: var(--clr-555555);
+              div {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--clr-555555);
+              }
+              p {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                color: var(--clr-555555);
+              }
+            }
+          }
+          .mapChange {
+            display: none;
+            flex-basis: 24px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        &.timeSort {
+          display: none;
+          &.on {
+            display: block;
+          }
+        }
+      }
+    }
+  }</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

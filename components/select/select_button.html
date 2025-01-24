@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <!-- <script src="/framework/assets/js/common.js"></script> -->
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .mob_high_M {
+      height: 48px !important;
+      font-size: 16px;
+      line-height: 46px;
+    }
+    .mob_high_M input {
+      font-size: inherit;
+    }
+    .mob_high_M button {
+      font-size: inherit;
+    }
+
+    section .DDY_select .select.offline button {
+      color: #1a1a1a;
+    }
+    section .DDY_select .select.offline::after {
+      content: "";
+      background: url("/framework/assets/images/select_arrow.svg") center
+        no-repeat;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li class="active">
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Select (셀렉트)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Select (선택)</li>
+                <li>Select (셀렉트)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Select</h3>
+                <div class="guide_text">
+                  <p>
+                    • 셀렉트는 사용자에게 여러 개의 옵션 목록을 팝업으로
+                    제공하여 그 중 한 개의 값을 선택할 수 있도록 하는 경우에
+                    사용함
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>레이블 : </span>
+                      <div>
+                        <p>
+                          사용자가 옵션 목록의 카테고리에 대한 설명 또는 옵션
+                          선택에 대한 도움말을 제공하는 문구
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>컨테이너 : </span>
+                      <div>
+                        <p>
+                          셀렉트와 배경을 구분하는 시각적인 수단으로 면 또는
+                          선으로 표현함
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>도움 텍스트 : </span>
+                      <div>
+                        <p>
+                          입력 내용, 입력 방식에 대한 도움말 또는 오류 메시지를
+                          제공함
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>플레이스홀더 :</span>
+                      <div>
+                        <p>
+                          어떤 값을 선택해야 하는지에 대한 힌트 또는 예시를
+                          제공함
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>선택값 :</span>
+                      <div>
+                        <p>사용자가 옵션 목록에서 선택한 값을 보여줌</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>옵션 :</span>
+                      <div>
+                        <p>
+                          사용자가 선택할 수 있는 값 또는 사용자에게 제안된 값의
+                          목록
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>상태</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_02.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>Inactive :</span>
+                      <div>
+                        <p>선택되지 않은 선택</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>Default :</span>
+                      <div>
+                        <p>입력이 완료된 상태</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>Focused :</span>
+                      <div>
+                        <p>선택되거나 입력중인 상태</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>Disabled : </span>
+                      <div>
+                        <p>비활성화</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>Error :</span>
+                      <div>
+                        <p>에러</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>스타일</h3>
+                <div class="guide_text">
+                  <p>• 옵션 텍스트를 간결하게 제공한다.</p>
+                  <p>• 모든 셀렉트에는 레이블을 제공한다.</p>
+                  <p>
+                    • 셀렉트에 값을 변경하였을 때 폼이 제출되어서는 안 된다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_03.png"
+                    alt="세로형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈&간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_04.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_05.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_06.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 셀렉트 필드는 텍스트의 길이를 고려하여 적절한 크기로
+                        제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          기본적으로 셀렉트 필드의 크기를 그리드, 화면 크기에
+                          따라 유동적이나 전체 섹션 영역을 차지하도록 구현한다.
+                          그러나 검색, 시간 등 입력값의 길이를 예측할 수 있는
+                          경우 최대 길이에 맞추어 입력 필드의 너비를 고정하고,
+                          사용자가 더 작은 크기의 화면에서도 잘림 없이 입력값을
+                          확인할 수 있는지를 점검해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_07.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 모든 텍스트 입력 필드에는 레이블을 제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          셀렉트 필드에 레이블이 제공되지 않으면 사용자는 어떤
+                          정보를 입력해야 하는지 알 수 없다. 레이블을 생략하고자
+                          하는 경우에는 레이블 없이도 사용자가 값을 선택하는 데
+                          문제가 없다는 근거가 명확해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select05_08.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_select">
+                      <p>타이틀</p>
+                      <div class="select">
+                        <button type="button">전체</button>
+                      </div>
+                      <div class="option">
+                        <ul>
+                          <li class="disable">
+                            <button type="button">선택</button>
+                          </li>
+                          <li class="checked">
+                            <button type="button">선택</button>
+                          </li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                        </ul>
+                      </div>
+                      <p class="errorText">오류 텍스트</p>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+  &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+  &#x3C;div class=&#x22;select&#x22;&#x3E;
+    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;option&#x22;&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li class=&#x22;checked&#x22;&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;p class=&#x22;errorText&#x22;&#x3E;&#xC624;&#xB958; &#xD14D;&#xC2A4;&#xD2B8;&#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_select ------------------------------------
+
+// DDY select common
+.DDY_select {
+  position: relative;
+  .select {
+    position: relative;
+    min-width: 160px;
+    height: 40px;
+    background-color: var(--clr-FFFFFF);
+    box-sizing: border-box;
+    border-radius: 4px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 24px;
+      height: 25px;
+      transform: translate(0, -50%);
+      background: url("/framework/assets/images/select_arrow.svg") center no-repeat;
+      cursor: pointer;
+    }
+    &.offline {
+      width: 150px;
+      min-width: 150px;
+      background-color: transparent;
+      button {
+        border: none;
+      }
+    }
+
+    &.disable {
+      button {
+        color: var(--clr-BDBDBD);
+        background-color: var(--clr-EEEEEE);
+        border-color: var(--clr-BDBDBD);
+      }
+      &::after {
+        content: "";
+        background: url("/framework/assets/images/select_arrow_disable.svg") center no-repeat;
+      }
+      &.font_c {
+        button {
+          color: var(--clr-BDBDBD);
+        }
+      }
+    }
+    &.error {
+      button {
+        border: 2px solid var(--clr-E53935);
+        outline: var(--clr-E53935);
+      }
+      &.font_c {
+        button {
+          color: var(--clr-555555);
+        }
+      }
+      & ~ .errorText {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 4px;
+        color: var(--clr-E53935);
+        font-size: 14px;
+      }
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      color: var(--clr-BDBDBD);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+      padding: 8px 34px 8px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--clr-616161);
+    }
+    &.font_c {
+      button {
+        color: var(--clr-555555);
+      }
+    }
+    &.active {
+      border-color: transparent;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--clr-323DA3);
+        border-radius: 4px;
+      }
+      &::after {
+        content: "";
+        transform: translate(0, -50%) rotate(180deg);
+      }
+    }
+    & ~ .errorText {
+      display: none;
+    }
+  }
+
+  .option {
+    display: none;
+    padding: 8px;
+    margin-top: 8px;
+    background-color: var(--clr-FFFFFF);
+    position: absolute;
+    top: auto;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    border: 1px solid var(--clr-616161);
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+      0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+    max-height: 250px;
+    &.active {
+      display: block;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        height: 10px;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      height: 100%;
+      max-height: 232px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 4px; /* 세로축 스크롤바 폭 너비 */
+        height: 120px; /* 가로축 스크롤바 폭 너비 */
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--clr-E0E0E0); /* 스크롤바 막대 색상 */
+        border-radius: 12px 12px 12px 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--clr-333333); /*스크롤바 뒷 배경 색상*/
+      }
+
+      li {
+        width: 100%;
+        line-height: 20px;
+        &:hover {
+          border-radius: 4px;
+          background-color: var(--clr-EFF1FD);
+          transition: all 0.2s;
+          border-radius: 4px;
+        }
+        &.checked {
+          background: var(--clr-EFF1FD) url("/framework/assets/images/DDY_select_checked.svg")
+            center right 8px no-repeat;
+          border-radius: 4px;
+          button {
+            color: var(--clr-323DA3);
+            font-weight: 700;
+          }
+        }
+
+        &.disable {
+          background-color: var(--clr-EEEEEE);
+          border-radius: 4px;
+          button {
+            color: var(--clr-BDBDBD);
+          }
+        }
+        button {
+          width: 100%;
+          height: 100%;
+          text-align: left;
+          padding: 9px 12px 9px 8px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  > p:first-child {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--clr-616161);
+    font-size: 14px;
+  }
+}</code></pre>
+                    </div>
+
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- select -------------------------------------
+
+//selectBox jquery
+$(".DDY_select .select").on("click", function () {
+  const option = $(this).siblings(".option");
+  $(this).toggleClass("active");
+  option.toggleClass("active");
+  if ($(this).hasClass("disable")) {
+    $(this).removeClass("active");
+    option.removeClass("active");
+  }
+  if ($(".DDY_select .select").not(this).hasClass("active")) {
+    $(".DDY_select .select")
+      .not(this)
+      .removeClass("active")
+      .siblings(".option")
+      .removeClass("active");
+  }
+});
+
+//option 클릭시 remove
+$(".option button").on("click", function () {
+  const text = $(this).text();
+  $(this).closest(".DDY_select").find(".select button").text(text);
+  $(this).closest(".option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+  $(this).closest(".DDY_select").find(".select").addClass("font_c");
+  $(this).closest(".DDY_select").find(".select").removeClass("error");
+  if ($(this).parent().hasClass("disable")) {
+    $(this)
+      .closest(".DDY_select")
+      .find(".select")
+      .removeClass("font_c")
+      .find("button")
+      .text("전체");
+  }
+});
+
+//영역밖 클릭시 remove
+$(document).on("click", function (e) {
+  if ($(e.target).closest(".DDY_select").length > 0) {
+    return;
+  }
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>사이즈</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_select">
+                      <div class="select">
+                        <button type="button">전체</button>
+                      </div>
+                      <div class="option">
+                        <ul>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="DDY_select">
+                      <div class="select mob_high_M">
+                        <button type="button">전체</button>
+                      </div>
+                      <div class="option">
+                        <ul>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+  &#x3C;div class=&#x22;select&#x22;&#x3E;
+    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;option&#x22;&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+  &#x3C;div class=&#x22;select mob_high_M&#x22;&#x3E;
+    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;option&#x22;&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- mobile size ------------------------------------
+
+.mob_high_M {
+  height: 48px !important;
+  font-size: 16px;
+  line-height: 46px;
+  button,
+  input {
+    font-size: inherit;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>스타일</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_select">
+                      <div class="select offline">
+                        <button type="button">전체</button>
+                      </div>
+                      <div class="option">
+                        <ul>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+  &#x3C;div class=&#x22;select offline&#x22;&#x3E;
+    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;option&#x22;&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_select ------------------------------------
+
+// DDY select common
+.DDY_select {
+  position: relative;
+  .select {
+    position: relative;
+    min-width: 160px;
+    height: 40px;
+    background-color: var(--clr-FFFFFF);
+    box-sizing: border-box;
+    border-radius: 4px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 24px;
+      height: 25px;
+      transform: translate(0, -50%);
+      background: url("/framework/assets/images/select_arrow.svg") center no-repeat;
+      cursor: pointer;
+    }
+    &.offline {
+      width: 150px;
+      min-width: 150px;
+      background-color: transparent;
+      button {
+        border: none;
+        color: var(--clr-1A1A1A);
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Disable</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_select">
+                      <div class="select disable">
+                        <button type="button">전체</button>
+                      </div>
+                      <div class="option">
+                        <ul>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+  &#x3C;div class=&#x22;select disable&#x22;&#x3E;
+    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;option&#x22;&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_select ------------------------------------
+
+// DDY select common
+.DDY_select {
+  position: relative;
+  .select {
+    position: relative;
+    min-width: 160px;
+    height: 40px;
+    background-color: var(--clr-FFFFFF);
+    box-sizing: border-box;
+    border-radius: 4px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 24px;
+      height: 25px;
+      transform: translate(0, -50%);
+      background: url("/framework/assets/images/select_arrow.svg") center no-repeat;
+      cursor: pointer;
+    }
+
+    &.disable {
+      button {
+        color: var(--clr-BDBDBD);
+        background-color: var(--clr-EEEEEE);
+        border-color: var(--clr-BDBDBD);
+      }
+      &::after {
+        content: "";
+        background: url("/framework/assets/images/select_arrow_disable.svg") center no-repeat;
+      }
+      &.font_c {
+        button {
+          color: var(--clr-BDBDBD);
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Error</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_select">
+                      <div class="select error">
+                        <button type="button">전체</button>
+                      </div>
+                      <div class="option">
+                        <ul>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                          <li><button type="button">선택</button></li>
+                        </ul>
+                      </div>
+                      <p class="errorText">오류 텍스트</p>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+  &#x3C;div class=&#x22;select error&#x22;&#x3E;
+    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;option&#x22;&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;&#xC120;&#xD0DD;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;p class=&#x22;errorText&#x22;&#x3E;&#xC624;&#xB958; &#xD14D;&#xC2A4;&#xD2B8;&#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_select ------------------------------------
+
+// DDY select common
+.DDY_select {
+  position: relative;
+  .select {
+    position: relative;
+    min-width: 160px;
+    height: 40px;
+    background-color: var(--clr-FFFFFF);
+    box-sizing: border-box;
+    border-radius: 4px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 24px;
+      height: 25px;
+      transform: translate(0, -50%);
+      background: url("/framework/assets/images/select_arrow.svg") center no-repeat;
+      cursor: pointer;
+    }
+   
+    &.error {
+      button {
+        border: 2px solid var(--clr-E53935);
+        outline: var(--clr-E53935);
+      }
+      &.font_c {
+        button {
+          color: var(--clr-555555);
+        }
+      }
+      & ~ .errorText {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 4px;
+        color: var(--clr-E53935);
+        font-size: 14px;
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Select Option</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="width: 320px">
+                      <div class="DDY_select">
+                        <div class="select">
+                          <button type="button">내용을 선택해주세요</button>
+                        </div>
+                        <div class="option">
+                          <ul>
+                            <li>
+                              <button type="button">
+                                1.내용을 선택해주세요
+                              </button>
+                            </li>
+                            <li>
+                              <button type="button">
+                                2.내용을 선택해주세요
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                        <p class="errorText">
+                          <img
+                            src="/framework/assets/images/error_icon.svg"
+                            alt="오류메세지"
+                          />{항목명} 내용을 입력해 주세요.
+                        </p>
+                      </div>
+                      <div class="infoOption">
+                        <ul></ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+  &#x3C;div class=&#x22;select&#x22;&#x3E;
+    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xB0B4;&#xC6A9;&#xC744; &#xC120;&#xD0DD;&#xD574;&#xC8FC;&#xC138;&#xC694;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;option&#x22;&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;
+        &#x3C;button type=&#x22;button&#x22;&#x3E;1.&#xB0B4;&#xC6A9;&#xC744; &#xC120;&#xD0DD;&#xD574;&#xC8FC;&#xC138;&#xC694;&#x3C;/button&#x3E;
+      &#x3C;/li&#x3E;
+      &#x3C;li&#x3E;
+        &#x3C;button type=&#x22;button&#x22;&#x3E;2.&#xB0B4;&#xC6A9;&#xC744; &#xC120;&#xD0DD;&#xD574;&#xC8FC;&#xC138;&#xC694;&#x3C;/button&#x3E;
+      &#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;p class=&#x22;errorText&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/error_icon.svg&#x22; alt=&#x22;&#xC624;&#xB958;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;
+    {&#xD56D;&#xBAA9;&#xBA85;} &#xB0B4;&#xC6A9;&#xC744; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;.
+  &#x3C;/p&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;infoOption&#x22;&#x3E;
+  &#x3C;ul&#x3E;&#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">//select info박스
+.infoOption {
+  border: 1px solid var(--clr-EEEEEE);
+  background-color: var(--clr-FAFAFA);
+  margin-top: 8px;
+  padding: 16px 8px 16px 16px;
+  border-radius: 4px;
+
+  ul {
+    height: 100%;
+    min-height: 36px;
+    max-height: 150px;
+    padding-right: 4px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px; /* 세로축 스크롤바 폭 너비 */
+      height: 120px; /* 가로축 스크롤바 폭 너비 */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--clr-E0E0E0); /* 스크롤바 막대 색상 */
+      border-radius: 12px 12px 12px 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--clr-333333); /*스크롤바 뒷 배경 색상*/
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 7px 0;
+      p {
+        font-size: 14px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        color: var(--clr-555555);
+        span {
+          font-weight: 900;
+          min-width: 70px;
+          line-height: 21px;
+          letter-spacing: -0.21px;
+          color: var(--clr-555555);
+        }
+      }
+      a {
+        display: block;
+        height: 24px;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">$(".infoOption").hide();
+  // 설치옵션
+  $(".option ul li").on("click", function () {
+    const getText = $(this).find("button").text();
+
+    $(this)
+      .parent()
+      .parent()
+      .parent()
+      .next(".infoOption")
+      .find("ul")
+      .append(
+        `&#x3C;li&#x3E;&#x3C;p&#x3E;` +
+          getText +
+          ` &#x3C;span&#x3E;&#xB0B4;&#xC6A9;&#x3C;/span&#x3E;&#x3C;/p&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;&#x3C;img src=&#x22;/framework/assets/images/close_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;&#x3E;&#x3C;/a&#x3E;&#x3C;/li&#x3E;`
+      );
+    //infoOption 추가
+    const len = $(".infoOption ul li").length;
+    if (len > 0) {
+      $(".infoOption").show();
+    }
+  });
+
+  //infoOption 삭제
+  $(document).on("click", ".infoOption ul li a", function () {
+    $(this).parent().remove();
+    const len = $(".infoOption ul li").length;
+    if (len === 0) {
+      $(".infoOption").hide();
+    }
+  });</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>
+<script>
+  //guide 전용
+  // nav
+  $("nav > ul > li > a").on("click", function () {
+    $(this).next("ul").stop().slideToggle();
+    $(this).parent("li").toggleClass("on");
+  });
+
+  $("nav > ul > li > ul > li > a").on("click", function () {
+    $(this).next("ul").stop().slideToggle();
+    $(this).parent("li").toggleClass("on");
+  });
+  // common tab
+  $(".tabCon").hide();
+  $(".tabCon").eq(0).show(0);
+  $(".item_view .DDY_list .tabCon").eq(0).show(0);
+
+  $(".guide_wrap > .DDY_list > .tabTop span").on("click", function () {
+    const idx = $(this).index();
+    $(".guide_wrap > .DDY_list > .tabTop span").removeClass("active");
+    $(this).addClass("active");
+    $(this).parent().siblings(".tabCon").hide();
+    $(this).parent().siblings(".tabCon").eq(idx).show();
+  });
+
+  $(".item_view > .DDY_list > .tabTop span").on("click", function () {
+    const idx = $(this).index();
+    $(".item_view > .DDY_list > .tabTop span").removeClass("active");
+    $(this).addClass("active");
+    $(this).parent().siblings(".tabCon").hide();
+    $(this).parent().siblings(".tabCon").eq(idx).show();
+  });
+
+  // ------------------------------------- select -------------------------------------
+
+  //selectBox jquery
+  $(".DDY_select .select").on("click", function () {
+    const option = $(this).siblings(".option");
+    $(this).toggleClass("active");
+    option.toggleClass("active");
+    if ($(this).hasClass("disable")) {
+      $(this).removeClass("active");
+      option.removeClass("active");
+    }
+    if ($(".DDY_select .select").not(this).hasClass("active")) {
+      $(".DDY_select .select")
+        .not(this)
+        .removeClass("active")
+        .siblings(".option")
+        .removeClass("active");
+    }
+  });
+
+  //option 클릭시 remove
+  $(".option button").on("click", function () {
+    const text = $(this).text();
+    $(this).closest(".DDY_select").find(".select button").text(text);
+    $(this).closest(".option").removeClass("active");
+    $(".DDY_select .select").removeClass("active");
+    $(this).closest(".DDY_select").find(".select").addClass("font_c");
+    $(this).closest(".DDY_select").find(".select").removeClass("error");
+    if ($(this).parent().hasClass("disable")) {
+      $(this)
+        .closest(".DDY_select")
+        .find(".select")
+        .removeClass("font_c")
+        .find("button")
+        .text("전체");
+    }
+  });
+
+  //영역밖 클릭시 remove
+  $(document).on("click", function (e) {
+    if ($(e.target).closest(".DDY_select").length > 0) {
+      return;
+    }
+    $(".DDY_select .option").removeClass("active");
+    $(".DDY_select .select").removeClass("active");
+  });
+
+  $(".infoOption").hide();
+  // 설치옵션
+  $(".option ul li").on("click", function () {
+    const getText = $(this).find("button").text();
+
+    $(this)
+      .parent()
+      .parent()
+      .parent()
+      .next(".infoOption")
+      .find("ul")
+      .append(
+        `<li><p>` +
+          getText +
+          ` </p><a href="javascript:void(0)"><img src="/framework/assets/images/close_icon.svg" alt="닫기"></a></li>`
+      );
+    //infoOption 추가
+    const len = $(".infoOption ul li").length;
+    if (len > 0) {
+      $(".infoOption").show();
+    }
+  });
+
+  //infoOption 삭제
+  $(document).on("click", ".infoOption ul li a", function () {
+    $(this).parent().remove();
+    const len = $(".infoOption ul li").length;
+    if (len === 0) {
+      $(".infoOption").hide();
+    }
+  });
+
+  // 코드보기
+  $(".code").click(function () {
+    $(this).toggleClass("on");
+    $(this).parent().children(".guide_tab_wrap").toggleClass("on");
+
+    $(this).siblings(".guide_tab_wrap ").children(".guide_item").hide();
+    $(this).siblings(".guide_tab_wrap ").children(".guide_item").eq(0).show(0);
+
+    $(this)
+      .parent()
+      .children(".guide_tab_wrap")
+      .children(".guide_tabTop")
+      .children("span")
+      .removeClass("active");
+
+    $(this)
+      .parent()
+      .children(".guide_tab_wrap")
+      .children(".guide_tabTop")
+      .children("span")
+      .eq(0)
+      .addClass("active");
+
+    $(this)
+      .parent()
+      .children(".guide_tab_wrap")
+      .children(".guide_tabTop")
+      .children("span")
+      .click(function () {
+        var idx = $(this).index();
+        $(this).parent(".guide_tabTop").children("span").removeClass("active");
+        $(this).addClass("active");
+        $(this).parent().siblings(".guide_item").hide();
+        $(this).parent().siblings(".guide_item").eq(idx).show();
+      });
+  });
+  //hambar
+  $(".hambar").on("click", function () {
+    $(this).toggleClass("on");
+    $("nav").toggleClass("on");
+    $("main").toggleClass("on");
+  });
+  //guide 검색기능
+  $("#guide_keyword").keyup(function () {
+    const k = $(this).val().toLowerCase();
+    if (k === "") {
+      $("nav ul, nav li, nav ul li ul").show();
+    } else {
+      $("nav ul, nav li, nav ul li ul").hide();
+      const findK = $("nav a").filter(function () {
+        return $(this).text().toLowerCase().includes(k);
+      });
+      findK.each(function () {
+        $(this).parentsUntil("nav", "ul, li").show();
+      });
+    }
+  });
+</script>

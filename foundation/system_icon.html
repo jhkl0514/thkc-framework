@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Overview</a></li>
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li><a href="./color.html">Color (색상)</a></li>
+              <li>
+                <a href="./typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="./shape.html">Shape (형태)</a></li>
+              <li>
+                <a href="./layout.html">Layout (배치)</a>
+              </li>
+              <li class="active">
+                <a href="./system_icon.html">System Icon (아이콘)</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/badge.html">Badge (배지)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/label.html">Label (레이블)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/modal.html">Modal (모달)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../components/layout/tab.html">Tab (탭)</a></li>
+                  <li>
+                    <a href="../components/layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../components/action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/switch.html">Switch (토글)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../patterns/forms.html">Forms (입력폼)</a></li>
+              <li><a href="../patterns/card_mob.html">Card(카드_모바일)</a></li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/order/list.html"> 상품리스트</a></li>
+                  <li><a href="../patterns/order/detail.html">상품상세</a></li>
+                  <li>
+                    <a href="../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/tables/default.html">기본형</a></li>
+                  <li>
+                    <a href="../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../page/error.html">Error</a></li>
+              <li><a href="../page/nodata.html">NoData</a></li>
+              <li><a href="../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>System icon (아이콘)</h2>
+              <ul class="indicator">
+                <li>Foundation</li>
+                <li>System icon (아이콘)</li>
+              </ul>
+            </div>
+          </div>
+          <section>
+            <h3>Guidelines</h3>
+            <div class="guide_text">
+              <p>
+                • 시스템 아이콘은 간단한 동작, 기능을 나타내거나 사물의 상징을
+                기호로 만든 시각 언어로 한정된 공간에서 효율적으로 정보를
+                전달하는 역할을 한다.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h4>Size</h4>
+            <div class="guide_text">
+              <p>
+                • 표준 아이콘의 사이즈는 24px이며, 16px, 20px, 24px, 30px, 36px
+                사이즈를 사용한다.
+              </p>
+              <p>
+                • 아이콘의 사이즈는 4px, 또는 8px의 배수로 크기를 정의하며
+                홀수나 소수로 만들지 않도록 주의한다.
+              </p>
+            </div>
+            <div class="imgFlex">
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_01.png"
+                  alt="Grid 이미지"
+                />
+              </div>
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_02.png"
+                  alt="Basic size 이미지"
+                />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Grid</h3>
+            <div class="guide_text">
+              <p>
+                • 아이콘을 그리기위한 기본 사이즈를 24px로 잡아서 그리드에 맞춰
+                제작한다.
+              </p>
+            </div>
+            <div class="imgFlex">
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_03.png"
+                  alt="기본 그리드 이미지"
+                />
+              </div>
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_04.png"
+                  alt="기본 정렬 이미지"
+                />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Keyline</h3>
+            <div class="guide_text">
+              <p>
+                • 같은 크기 아이콘에서 정사각형, 원형, 직사각형의 형태가
+                시각적으로 동일한 면적으로 표현하기 위한 가이드라인이다.
+              </p>
+              <p>
+                • 모든 아이콘이 시각적으로 일관된 비율을 유지할 수 있도록
+                Keyline shapes를 참고하여 제작한다.
+              </p>
+              <p>
+                • 아래 비율은 24x24의 1000% 사이즈 Keyline이며, 사이즈별 비율에
+                맞게 변형하여 사용한다.
+              </p>
+            </div>
+            <div class="imgFlex">
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_05.png"
+                  alt="square 이미지"
+                />
+              </div>
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_06.png"
+                  alt="circle 이미지"
+                />
+              </div>
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_07.png"
+                  alt="rectangular 이미지"
+                />
+              </div>
+              <div class="imgWrap">
+                <img
+                  src="/framework/assets/images/guide/foundation/foundation05_08.png"
+                  alt="rectangular 이미지"
+                />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>Screen margin</h4>
+            <div class="guide_text">
+              <p>
+                • Desktop, Tablet, Mobile 각 스크린 마진을 지정하여 사용한다.
+              </p>
+              <p>
+                • Screen margin 값은 모바일 최소 16px, PC 최소 24px 이상
+                사용한다.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h4>Icon size</h4>
+            <div class="guide_text">
+              <p>
+                • 기본 아이콘을 24사이즈로 제작 후 컴포넌트화 하여 가이드된
+                사이즈로 조정하여 사용한다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation05_09.png"
+                alt="Icon size 이미지"
+              />
+            </div>
+          </section>
+          <section>
+            <h3>Guidelines</h3>
+            <div class="guide_text">
+              <p>
+                • 시스템 아이콘에 한정된 Radius 값을 정의한다. 둥글기 값 설정에
+                따라 아이덴티티를 표현할 수 있다.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h4>Stroke</h4>
+            <div class="guide_text">
+              <p>
+                • Iicon은 12~16=1px, 20~32=1.5px, 36=2px의 Weight를 사용한다.
+              </p>
+              <p>
+                • Icon Stroke는 기본적으로 1.5px을 사용하지만, 강조 케이스가
+                필요할 경우 2px까지 사용하도록 하며, 획의 정렬은 Center를
+                사용한다.
+              </p>
+              <p>• Icon Stroke end caps는 Round를 사용한다.</p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation05_10.png"
+                alt="Stroke 이미지"
+              />
+            </div>
+          </section>
+
+          <section>
+            <h4>Basic radius</h4>
+            <div class="guide_text">
+              <p>• Shape에 맞춰 Icon radius 값을 설정하여 사용한다.</p>
+              <p>
+                • Radius 값은 낮을수록 정적이고 신뢰감 있는 이미지를, 높을수록
+                친근감 있고 부드러운 인상을 줄 수 있다.
+              </p>
+              <p>
+                • 전체적인 톤 앤 매너를 맞추기 위해 Radius 값을 0,1,2 값을
+                제한한다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation05_11.png"
+                alt="Basic radius 이미지"
+              />
+            </div>
+          </section>
+
+          <section>
+            <h4>Consistency in visual</h4>
+            <div class="guide_text">
+              <p>
+                • Radius를 사용할 때 아이콘의 크기에 따라 시각적으로 적절한
+                Radius 값을 맞춰가며 사용한다.
+              </p>
+              <p>• 아이콘을 담는 컨테이너가 커질수록 Radius 값도 커진다.</p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation05_12.png"
+                alt="Consistency in visual 이미지"
+              />
+            </div>
+          </section>
+
+          <section>
+            <h3>Usage</h3>
+            <div class="guide_text">
+              <p>
+                • 단순하고 간결하게 사용되는 System icon은 일관성 있는 품질
+                유지와 효율적인 측면에서 SVG 파일로 사용하는 것을 권장한다.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h4>SVG 파일</h4>
+            <div class="guide_text">
+              <p>
+                • 크기를 줄이거나 늘리더라도 화질에 영향을 받지 않아 다양한
+                해상도에서 품질 유지에 뛰어나다.
+              </p>
+              <p>
+                • 마크업 언어로 이루어져 있어 CSS와 JavaScript 수정할 수 있으며
+                이미지 편집 툴 없이도 색상과 두께 등 스타일의 변경이 용이하다.
+              </p>
+              <p>• 용량이 적어 출력 속도가 빠르다.</p>
+            </div>
+          </section>
+
+          <section>
+            <h3>주의 사항</h3>
+            <div class="guide_text">
+              <p>
+                • 대부분 브라우저는 SVG 파일을 지원하지만, 브라우저와 브라우저
+                버전에 따라 SVG 파일을 지원하지 않는 경우(익스플로어 8 이하,
+                안드로이드 2.3 이하 버전 등) 이미지가 보이지 않으므로 브라우저
+                버전별 지원기능과 호환성을 고려하여 작업하도록 한다.
+              </p>
+              <a href="https://caniuse.com/svg"
+                >호환성 체크 참고 : caniuse.com/svg</a
+              >
+            </div>
+          </section>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,328 @@
+// -------------------------------- partner_map_modal --------------------------------
+
+// 파트너 맵 모달
+.partner_map_modal {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      top: -320px;
+    }
+  }
+  .modalWrap {
+    position: absolute;
+    top: -300px;
+    left: 18px;
+    transform: translate(-50%, 0);
+    min-width: 332px;
+    max-width: 332px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+      0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 32px;
+      height: 16px;
+      background: url("/framework/assets/images/part_modal_arrow.svg") top center no-repeat;
+    }
+
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 12px;
+      p {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+        color: var(--clr-1a1a1a);
+      }
+      img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      button {
+        min-width: 150px;
+      }
+    }
+    > ul {
+      padding: 16px 0 20px;
+      > li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        padding: 4px 0;
+        font-size: 14px;
+        color: var(--clr-1A1A1A);
+        > span {
+          color: var(--clr-616161);
+          width: 92px;
+          flex-basis: 100px;
+          min-width: 100px;
+          & + div {
+            flex: 1;
+          }
+        }
+        p {
+          flex: 1;
+          width: 100%;
+          line-height: 20px;
+        }
+      }
+    }
+    .tui-datepicker {
+      min-width: 300px;
+      left: -120px;
+    }
+  }
+}
+
+// -------------------------------- description --------------------------------
+
+.description {
+  color: var(--clr-616161);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--clr-616161);
+  padding-top: 8px;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// -------------------------------- toggleWrap --------------------------------
+
+// tableTabTop custom
+.tableTabTopcustom {
+  border-radius: 20px;
+  background: var(--clr-EEEEEE);
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  position: relative;
+  height: 40px;
+  padding: 4px;
+  .bar {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translate(0, -50%);
+    background-color: var(--clr-141E76);
+    height: 32px;
+    border-radius: 100px;
+    transition: left 0.3s, width 0.3s;
+    z-index: 1;
+  }
+  span {
+    position: relative;
+    display: block;
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--clr-999999);
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2;
+    &.active {
+      font-weight: 700;
+      color: var(--clr-FFFFFF);
+    }
+    &.on {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        background-color: var(--clr-141E76);
+        height: 32px;
+        width: 100%;
+        border-radius: 100px;
+        transition: all 0.5s;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+// -------------------------------- 이미지 추가 --------------------------------
+
+.preview_g {
+  display: flex;
+  gap: 8px;
+
+  #previewWrap {
+    display: flex;
+    gap: 12px;
+    flex-basis: 84px;
+    cursor: pointer;
+    label {
+      cursor: pointer;
+      width: 88px;
+      height: 88px;
+      background: var(--clr-EEEEEE) url("/framework/assets/images/part_plus.svg") center
+        no-repeat;
+      border-radius: 4px;
+    }
+    input {
+      display: none;
+    }
+  }
+
+  #preview_list {
+    display: flex;
+    overflow: auto;
+    padding-bottom: 4px;
+    gap: 12px;
+    flex: 1;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--clr-EEEEEE);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--clr-333333);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--clr-333333);
+    }
+    .imgWrap {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      min-width: 88px;
+      height: 88px;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: var(--clr-EEEEEE);
+      .closeBtn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        &::before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: var(--clr-333333) url("/framework/assets/images/part_closeBtn.svg")
+            center no-repeat;
+          opacity: 0.8;
+        }
+      }
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// -------------------------------- 알림 팝업 --------------------------------
+
+.alert {
+  position: fixed;
+  bottom: 48px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  z-index: 900;
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    border: 1px solid var(--clr-43A047);
+    background-color: var(--clr-E8F5E9);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px 8px 44px;
+    min-width: 520px;
+    min-height: 58px;
+    margin-top: 16px;
+    // 추가
+    position: relative;
+    &:before {
+      content: "";
+      width: 20px;
+      height: 14px;
+      background: url("/framework/assets/images/part_alarm_check.svg") center no-repeat;
+      position: absolute;
+      left: 16px;
+      top: 22px;
+    }
+    &.error {
+      border-color: var(--clr-E53935);
+      background-color: var(--clr-FFEBEE);
+
+      padding: 8px 16px 8px 48px;
+      &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background: url("/framework/assets/images/part_alarm_error.svg") center no-repeat;
+        position: absolute;
+        left: 16px;
+        top: 16px;
+      }
+    }
+
+    // 바코드설명 영역
+    span {
+      display: block;
+      width: 100%;
+      padding-left: 28px;
+      font-size: 14px;
+      color: var(--clr-616161);
+      margin-top: 4px;
+    }
+  }
+}

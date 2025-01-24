@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/mobile_style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- toast datapicker -->
+    <link rel="stylesheet" href="/framework/assets/css/tui-date-picker.css" />
+    <script src="/framework/assets/js/tui.date-picker-production/dist/tui-date-picker.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <style>
+      .tui-datepicker {
+        width: 100%;
+        max-width: 260px;
+      }
+    </style>
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li class="active">
+                    <a href="../layout/calendar.html">Calendar (달력)</a>
+                  </li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Calendar (달력)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Calendar (달력)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Calendar</h3>
+                <div class="guide_text">
+                  <p>
+                    • 달력은 날짜와 관련된 정보와 기능을 제공하는 데 사용한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>연/월 :</span>
+                      <div>
+                        <p>
+                          달력의 연도, 월 정보 달력 유형에 따라 연도나 월을
+                          선택하기 위한 컨트롤이 제공될 수 있음
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>연/월 탐색 버튼 : </span>
+                      <div>
+                        <p>이전 또는 다음 연도, 월을 탐색하기 위한 버튼</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>요일 :</span>
+                      <div>
+                        <p>한 주의 요일 정보</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>활성화되지 않은 날짜 :</span>
+                      <div>
+                        <p>이전 달 또는 다음 달에 속한 날짜</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>날짜 :</span>
+                      <div>
+                        <p>
+                          가장 기본적인 상태의 날짜(이번 달) 정보로 따라
+                          버튼으로 사용될 수 있음
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>6</em>선택된 날짜(선택) : </span>
+                      <div>
+                        <p>
+                          사용자가 선택한 날짜로 다른 상태의 날짜와 구분하기
+                          위한 별도의 식별자와 함께 사용됨
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>7</em>호버 상태 날짜 :</span>
+                      <div>
+                        <p>
+                          날짜를 호버 했을때 다른 상태의 날짜와 구분하기 위해
+                          사용됨
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>날짜 선택형</h5>
+                <div class="guide_text">
+                  <p>• 특정 일자를 선택하기 위해 사용하는 유형</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_02.png"
+                    alt="날짜 선택형 이미지"
+                  />
+                </div>
+                <h5>스케줄형</h5>
+                <div class="guide_text">
+                  <p>• 일자별 설치/회수 스케쥴을 확인하기 위해 사용하는 유형</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_03.png"
+                    alt="스케줄형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <h5>날짜 표기</h5>
+                <div class="guide_text">
+                  <p>
+                    • 기본적으로 연월일 및 요일은 YYYY-MM-DD (W)으로 표기한다.
+                  </p>
+                  <p>
+                    • 서술형 문장에는 숫자 뒤에 년, 월, 일을 기재하며, 월과 일이
+                    한자리 숫자인 경우 앞에 0을 표기하지 않는다. (ex. 오늘은
+                    2023년 5월 5월입니다.)
+                  </p>
+                  <p>
+                    • [1개월],[+30일]은 시작 날짜로부터 전 달 동일 날짜의
+                    전날까지를 의미한다. (ex. 23.03.15~23.02.14)
+                  </p>
+                  <p>
+                    • [이번달]은 이번달 1일부터 말일까지를 의미한다. (ex.
+                    23.04.01~23.04.30)
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_04.png"
+                    alt="날짜 표기 날짜 선택 이미지"
+                  />
+                </div>
+                <h5>디바이스별 날짜 선택</h5>
+                <div class="guide_text">
+                  <p>• PC에서는 Dropdown 형태를 활용하여 날짜를 선택한다.</p>
+                  <p>• 모바일에서는 바텀시트를 활용하여 날짜를 선택한다.</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_05.png"
+                    alt="디바이스별 날짜 선택 이미지"
+                  />
+                </div>
+
+                <h5>디바이스별 월 선택</h5>
+                <div class="guide_text">
+                  <p>• PC에서는 Dropdown 형태를 활용하여 월을 선택한다.</p>
+                  <p>• 모바일에서는 바텀시트를 활용하여 날짜를 선택한다.</p>
+                  <p>
+                    • 모바일에서 “전체" 항목이 포함되어야 하는 경우 리스트
+                    형태를 사용한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_06.png"
+                    alt="디바이스별 월 선택 pc 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_07.png"
+                    alt="디바이스별 월 선택 mobile 이미지"
+                  />
+                </div>
+
+                <h5>디바이스별 년도 선택</h5>
+                <div class="guide_text">
+                  <p>• PC에서는 Dropdown 형태를 활용하여 월을 선택한다.</p>
+                  <p>• 모바일에서는 바텀시트를 활용하여 날짜를 선택한다.</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout04_08.png"
+                    alt="디바이스별 년도 선택 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>Datepicker</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="width: 260px">
+                      <div
+                        class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                      >
+                        <input
+                          type="text"
+                          id="datepicker-input"
+                          aria-label="Date-Time"
+                          readonly
+                        />
+                        <span class="tui-ico-date"></span>
+                      </div>
+                      <div id="wrapper"></div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div
+  class=&#x22;tui-datepicker-input tui-datetime-input tui-has-focus&#x22;
+&#x3E;
+  &#x3C;input
+    type=&#x22;text&#x22;
+    id=&#x22;datepicker-input&#x22;
+    aria-label=&#x22;Date-Time&#x22;
+    readonly
+  /&#x3E;
+  &#x3C;span class=&#x22;tui-ico-date&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div id=&#x22;wrapper&#x22;&#x3E;&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">var today = new Date();
+// 오늘 날짜로부터 일주일 후의 날짜를 계산합니다.
+var oneWeekLater = new Date();
+oneWeekLater.setDate(today.getDate() + 7);
+//달력
+tui.DatePicker.localeTexts["ko custom"] = {
+  titles: {
+    DD: ["일", "월", "화", "수", "목", "금", "토"],
+    D: ["일", "월", "화", "수", "목", "금", "토"],
+    MMM: [
+      "1월",
+      "2월",
+      "3월",
+      "4월",
+      "5월",
+      "6월",
+      "7월",
+      "8월",
+      "9월",
+      "10월",
+      "11월",
+      "12월",
+    ],
+    MMMM: [
+      "일월",
+      "이월",
+      "삼월",
+      "사월",
+      "오월",
+      "육월",
+      "칠월",
+      "팔월",
+      "구월",
+      "십월",
+      "십일월",
+      "십이월",
+    ],
+  },
+  titleFormat: "yyyy-MM",
+  todayFormat: "yyyy-MM-dd",
+};
+
+var calMonthKo = new tui.DatePicker("#wrapper", {
+  date: new Date(),
+  language: "ko custom",
+  input: {
+    element: "#datepicker-input",
+    format: "yyyy-MM-dd (D)",
+  },
+  selectableRanges: [[today, oneWeekLater]], // 선택 가능한 범위를 오늘부터 일주일 후까지로 설정합니다.
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Month Datepicker</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="width: 260px">
+                      <div
+                        class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                      >
+                        <input
+                          type="text"
+                          id="datepicker-input-month"
+                          aria-label="Date-Time"
+                          readonly
+                        />
+                        <span class="tui-ico-date"></span>
+                      </div>
+                      <div id="datepicker-month"></div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div
+  class=&#x22;tui-datepicker-input tui-datetime-input tui-has-focus&#x22;
+&#x3E;
+  &#x3C;input
+    type=&#x22;text&#x22;
+    id=&#x22;datepicker-input-month&#x22;
+    aria-label=&#x22;Date-Time&#x22;
+    readonly
+  /&#x3E;
+  &#x3C;span class=&#x22;tui-ico-date&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div id=&#x22;datepicker-month&#x22;&#x3E;&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// month 달력
+var datepicker = new tui.DatePicker("#datepicker-month", {
+  language: "ko",
+  date: new Date(),
+  type: "month",
+  input: {
+    element: "#datepicker-input-month",
+    format: "yyyy-MM",
+  },
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Range Datepicker</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="c_flex" style="width: auto">
+                      <div
+                        class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                      >
+                        <input
+                          id="startpicker-input"
+                          type="text"
+                          aria-label="Date"
+                          readonly
+                        />
+                        <span class="tui-ico-date"></span>
+                        <div
+                          id="startpicker-container"
+                          style="margin-left: -1px"
+                        ></div>
+                      </div>
+                      <span>~</span>
+                      <div
+                        class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                      >
+                        <input
+                          id="endpicker-input"
+                          type="text"
+                          aria-label="Date"
+                          readonly
+                        />
+                        <span class="tui-ico-date"></span>
+                        <div
+                          id="endpicker-container"
+                          style="margin-left: -1px"
+                        ></div>
+                      </div>
+                      <ul class="labelTab">
+                        <li onclick="onToday()">오늘</li>
+                        <li onclick="onYesterday()">어제</li>
+                        <li onclick="onWeek()">일주일</li>
+                        <li onclick="onMonth()">이번달</li>
+                        <li onclick="onLastMonth()">지난달</li>
+                        <li onclick="onThreeMonth()">3개월</li>
+                        <li onclick="onLastYear()">1년</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;c_flex&#x22; style=&#x22;width: auto&#x22;&#x3E;
+  &#x3C;div
+    class=&#x22;tui-datepicker-input tui-datetime-input tui-has-focus&#x22;
+  &#x3E;
+    &#x3C;input
+      id=&#x22;startpicker-input&#x22;
+      type=&#x22;text&#x22;
+      aria-label=&#x22;Date&#x22;
+      readonly
+    /&#x3E;
+    &#x3C;span class=&#x22;tui-ico-date&#x22;&#x3E;&#x3C;/span&#x3E;
+    &#x3C;div
+      id=&#x22;startpicker-container&#x22;
+      style=&#x22;margin-left: -1px&#x22;
+    &#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;span&#x3E;~&#x3C;/span&#x3E;
+  &#x3C;div
+    class=&#x22;tui-datepicker-input tui-datetime-input tui-has-focus&#x22;
+  &#x3E;
+    &#x3C;input
+      id=&#x22;endpicker-input&#x22;
+      type=&#x22;text&#x22;
+      aria-label=&#x22;Date&#x22;
+      readonly
+    /&#x3E;
+    &#x3C;span class=&#x22;tui-ico-date&#x22;&#x3E;&#x3C;/span&#x3E;
+    &#x3C;div
+      id=&#x22;endpicker-container&#x22;
+      style=&#x22;margin-left: -1px&#x22;
+    &#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;ul class=&#x22;labelTab&#x22;&#x3E;
+    &#x3C;li onclick=&#x22;onToday()&#x22;&#x3E;&#xC624;&#xB298;&#x3C;/li&#x3E;
+    &#x3C;li onclick=&#x22;onYesterday()&#x22;&#x3E;&#xC5B4;&#xC81C;&#x3C;/li&#x3E;
+    &#x3C;li onclick=&#x22;onWeek()&#x22;&#x3E;&#xC77C;&#xC8FC;&#xC77C;&#x3C;/li&#x3E;
+    &#x3C;li onclick=&#x22;onMonth()&#x22;&#x3E;&#xC774;&#xBC88;&#xB2EC;&#x3C;/li&#x3E;
+    &#x3C;li onclick=&#x22;onLastMonth()&#x22;&#x3E;&#xC9C0;&#xB09C;&#xB2EC;&#x3C;/li&#x3E;
+    &#x3C;li onclick=&#x22;onThreeMonth()&#x22;&#x3E;3&#xAC1C;&#xC6D4;&#x3C;/li&#x3E;
+    &#x3C;li onclick=&#x22;onLastYear()&#x22;&#x3E;1&#xB144;&#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">//달력
+tui.DatePicker.localeTexts["ko custom"] = {
+  titles: {
+    DD: ["일", "월", "화", "수", "목", "금", "토"],
+    D: ["일", "월", "화", "수", "목", "금", "토"],
+    MMM: [
+      "1월",
+      "2월",
+      "3월",
+      "4월",
+      "5월",
+      "6월",
+      "7월",
+      "8월",
+      "9월",
+      "10월",
+      "11월",
+      "12월",
+    ],
+    MMMM: [
+      "일월",
+      "이월",
+      "삼월",
+      "사월",
+      "오월",
+      "육월",
+      "칠월",
+      "팔월",
+      "구월",
+      "십월",
+      "십일월",
+      "십이월",
+    ],
+  },
+  titleFormat: "yyyy-MM",
+  todayFormat: "yyyy-MM-dd",
+};
+
+const today = new Date();
+const picker = tui.DatePicker.createRangePicker({
+  language: "ko custom",
+  startpicker: {
+    date: today,
+    input: "#startpicker-input",
+    container: "#startpicker-container",
+  },
+  endpicker: {
+    date: today,
+    input: "#endpicker-input",
+    container: "#endpicker-container",
+  },
+  selectableRanges: [
+    [
+      new Date(today.getFullYear() - 1, today.getMonth(), today.getDate()),
+      today,
+    ],
+  ],
+  format: "YYYY-MM-dd",
+  input: {
+    element: "#datepicker-input",
+    format: "yyyy-MM-dd (D)",
+  },
+});
+
+function onToday() {
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: today,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: today,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+  });
+}
+
+function onYesterday() {
+  const yesterday = new Date(today);
+  yesterday.setDate(today.getDate() - 1);
+
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: yesterday,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: yesterday,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+  });
+}
+
+function onWeek() {
+  const week = new Date(today);
+  week.setDate(today.getDate() - 7);
+
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: week,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: today,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+  });
+}
+
+function onMonth() {
+  const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: firstDay,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: today,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+  });
+}
+
+function onLastMonth() {
+  const firstDay = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+  const lastDay = new Date(today.getFullYear(), today.getMonth(), 0);
+
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: firstDay,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: lastDay,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+  });
+}
+
+function onThreeMonth() {
+  const lastMonth = new Date(today);
+  lastMonth.setMonth(today.getMonth() + -3);
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: lastMonth,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: today,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+  });
+}
+
+function onLastYear() {
+  const lastMonth = new Date(today);
+  lastMonth.setFullYear(today.getFullYear() + -1);
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: lastMonth,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: today,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+  });
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Calendar</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="calendar">
+                      <table>
+                        <colgroup>
+                          <col width="1" />
+                          <col width="1" />
+                          <col width="1" />
+                          <col width="1" />
+                          <col width="1" />
+                          <col width="1" />
+                          <col width="1" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                            <th>토</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="lastDay">
+                              <div>
+                                <em>25</em>
+                              </div>
+                            </td>
+                            <td class="lastDay">
+                              <div>
+                                <em>26</em>
+                              </div>
+                            </td>
+                            <td class="lastDay">
+                              <div><em>27</em></div>
+                            </td>
+                            <td class="lastDay">
+                              <div><em>28</em></div>
+                            </td>
+                            <td class="lastDay">
+                              <div><em>29</em></div>
+                            </td>
+                            <td>
+                              <div>
+                                <em>1</em>
+                                <a href="javascript:void(0)">
+                                  <p class="in">설치 <span>6</span></p>
+                                  <p class="out">회수<span>2</span></p>
+                                </a>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>2</em></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>
+                                <em>3</em>
+                                <a href="#">
+                                  <p class="in">설치 <span>6</span></p>
+                                  <p class="out">회수<span>2</span></p>
+                                </a>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>4</em></div>
+                            </td>
+                            <td>
+                              <div>
+                                <em>5</em>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>6</em></div>
+                            </td>
+                            <td>
+                              <div><em>7</em></div>
+                            </td>
+                            <td>
+                              <div><em>8</em></div>
+                            </td>
+                            <td>
+                              <div><em>9</em></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>
+                                <em>10</em>
+                                <a href="#">
+                                  <p class="in">설치 <span>6</span></p>
+                                  <p class="out">회수<span>2</span></p>
+                                </a>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>11</em></div>
+                            </td>
+                            <td>
+                              <div><em>12</em></div>
+                            </td>
+                            <td>
+                              <div><em>13</em></div>
+                            </td>
+                            <td>
+                              <div><em>14</em></div>
+                            </td>
+                            <td>
+                              <div>
+                                <em>15</em>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>16</em></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>
+                                <em>17</em>
+                                <a href="#">
+                                  <p class="in">설치 <span>6</span></p>
+                                  <p class="out">회수<span>2</span></p>
+                                </a>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>18</em></div>
+                            </td>
+                            <td>
+                              <div>
+                                <em>19</em>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <em>20</em>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>21</em></div>
+                            </td>
+                            <td>
+                              <div><em>22</em></div>
+                            </td>
+                            <td>
+                              <div><em>23</em></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>
+                                <em>24</em>
+                                <a href="#">
+                                  <p class="in">설치 <span>6</span></p>
+                                  <p class="out">회수<span>2</span></p>
+                                </a>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <em>25</em>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <em>26</em>
+                              </div>
+                            </td>
+                            <td class="today">
+                              <div>
+                                <em>27</em>
+                                <a href="#">
+                                  <p class="in">설치 <span>6</span></p>
+                                  <p class="out">회수<span>2</span></p>
+                                </a>
+                              </div>
+                            </td>
+                            <td>
+                              <div><em>28</em></div>
+                            </td>
+                            <td>
+                              <div><em>29</em></div>
+                            </td>
+                            <td>
+                              <div><em>30</em></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>
+                                <em>31</em>
+                                <a href="#">
+                                  <p class="in">설치 <span>6</span></p>
+                                  <p class="out">회수<span>2</span></p>
+                                </a>
+                              </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;calendar&#x22;&#x3E;
+  &#x3C;table&#x3E;
+    &#x3C;colgroup&#x3E;
+      &#x3C;col width=&#x22;1&#x22; /&#x3E;
+      &#x3C;col width=&#x22;1&#x22; /&#x3E;
+      &#x3C;col width=&#x22;1&#x22; /&#x3E;
+      &#x3C;col width=&#x22;1&#x22; /&#x3E;
+      &#x3C;col width=&#x22;1&#x22; /&#x3E;
+      &#x3C;col width=&#x22;1&#x22; /&#x3E;
+      &#x3C;col width=&#x22;1&#x22; /&#x3E;
+    &#x3C;/colgroup&#x3E;
+    &#x3C;thead&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;th&#x3E;&#xC77C;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xC6D4;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xD654;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xC218;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xBAA9;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xAE08;&#x3C;/th&#x3E;
+        &#x3C;th&#x3E;&#xD1A0;&#x3C;/th&#x3E;
+      &#x3C;/tr&#x3E;
+    &#x3C;/thead&#x3E;
+    &#x3C;tbody&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;25&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;26&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;27&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;28&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;29&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;1&#x3C;/em&#x3E;
+            &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+              &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;2&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;3&#x3C;/em&#x3E;
+            &#x3C;a href=&#x22;#&#x22;&#x3E;
+              &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;4&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;5&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;6&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;7&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;8&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;9&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;10&#x3C;/em&#x3E;
+            &#x3C;a href=&#x22;#&#x22;&#x3E;
+              &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;11&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;12&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;13&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;14&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;15&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;16&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;17&#x3C;/em&#x3E;
+            &#x3C;a href=&#x22;#&#x22;&#x3E;
+              &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;18&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;19&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;20&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;21&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;22&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;23&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;24&#x3C;/em&#x3E;
+            &#x3C;a href=&#x22;#&#x22;&#x3E;
+              &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;25&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;26&#x3C;/em&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td class=&#x22;today&#x22;&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;27&#x3C;/em&#x3E;
+            &#x3C;a href=&#x22;#&#x22;&#x3E;
+              &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;28&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;29&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;&#x3C;em&#x3E;30&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;div&#x3E;
+            &#x3C;em&#x3E;31&#x3C;/em&#x3E;
+            &#x3C;a href=&#x22;#&#x22;&#x3E;
+              &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+            &#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+    &#x3C;/tbody&#x3E;
+  &#x3C;/table&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.calendar {
+> table {
+  height: calc(100vh - 262px);
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--clr-FFFFFF);
+  thead {
+    height: 32px;
+    background-color: var(--clr-F5F5F5);
+    tr {
+      border: 1px solid var(--clr-F5F5F5);
+    }
+    th {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+  tbody {
+    td {
+      border: 1px solid var(--clr-F5F5F5);
+      text-align: center;
+      &:hover {
+        div {
+          background-color: var(--clr-FAFAFA);
+        }
+      }
+      &.lastDay {
+        em {
+          font-weight: 600;
+          color: var(--clr-BDBDBD);
+        }
+      }
+      &.today {
+        em {
+          background-color: var(--clr-90EE02);
+          border-radius: 100px;
+          font-weight: 600;
+          color: var(--clr-1A1A1A);
+        }
+      }
+      div {
+        height: 100%;
+        padding: 2px;
+      }
+      em {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        margin-bottom: 12px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 32px;
+        color: var(--clr-616161);
+      }
+      p {
+        height: 22px;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2px 4px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 2px;
+        span {
+          border-radius: 2px;
+          min-width: 14px;
+          height: 14px;
+          line-height: 14px;
+          text-align: center;
+          font-size: 10px;
+          font-weight: 500;
+          color: var(--clr-FFFFFF);
+        }
+
+        &.in {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-323DA3);
+          span {
+            background-color: var(--clr-323DA3);
+          }
+        }
+        &.out {
+          background-color: var(--clr-FFEBEE);
+          color: var(--clr-E53935);
+          span {
+            background-color: var(--clr-E53935);
+          }
+        }
+      }
+    }
+  }
+}
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Mobile Calendar</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="mobile_sub_partner_wrap" style="width: 360px">
+                      <div class="calendar">
+                        <table>
+                          <colgroup>
+                            <col width="1" />
+                            <col width="1" />
+                            <col width="1" />
+                            <col width="1" />
+                            <col width="1" />
+                            <col width="1" />
+                            <col width="1" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>일</th>
+                              <th>월</th>
+                              <th>화</th>
+                              <th>수</th>
+                              <th>목</th>
+                              <th>금</th>
+                              <th>토</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="lastDay">
+                                <div>
+                                  <em>25</em>
+                                </div>
+                              </td>
+                              <td class="lastDay">
+                                <div>
+                                  <em>26</em>
+                                </div>
+                              </td>
+                              <td class="lastDay">
+                                <div><em>27</em></div>
+                              </td>
+                              <td class="lastDay">
+                                <div><em>28</em></div>
+                              </td>
+                              <td class="lastDay">
+                                <div><em>29</em></div>
+                              </td>
+                              <td>
+                                <div>
+                                  <em>1</em>
+                                  <a href="javascript:void(0)">
+                                    <p class="in">설치 <span>6</span></p>
+                                    <p class="out">회수<span>2</span></p>
+                                  </a>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>2</em></div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div>
+                                  <em>3</em>
+                                  <a href="#">
+                                    <p class="in">설치 <span>6</span></p>
+                                    <p class="out">회수<span>2</span></p>
+                                  </a>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>4</em></div>
+                              </td>
+                              <td>
+                                <div>
+                                  <em>5</em>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>6</em></div>
+                              </td>
+                              <td>
+                                <div><em>7</em></div>
+                              </td>
+                              <td>
+                                <div><em>8</em></div>
+                              </td>
+                              <td>
+                                <div><em>9</em></div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div>
+                                  <em>10</em>
+                                  <a href="#">
+                                    <p class="in">설치 <span>6</span></p>
+                                    <p class="out">회수<span>2</span></p>
+                                  </a>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>11</em></div>
+                              </td>
+                              <td>
+                                <div><em>12</em></div>
+                              </td>
+                              <td>
+                                <div><em>13</em></div>
+                              </td>
+                              <td>
+                                <div><em>14</em></div>
+                              </td>
+                              <td>
+                                <div>
+                                  <em>15</em>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>16</em></div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div>
+                                  <em>17</em>
+                                  <a href="#">
+                                    <p class="in">설치 <span>6</span></p>
+                                    <p class="out">회수<span>2</span></p>
+                                  </a>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>18</em></div>
+                              </td>
+                              <td>
+                                <div>
+                                  <em>19</em>
+                                </div>
+                              </td>
+                              <td>
+                                <div>
+                                  <em>20</em>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>21</em></div>
+                              </td>
+                              <td>
+                                <div><em>22</em></div>
+                              </td>
+                              <td>
+                                <div><em>23</em></div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div>
+                                  <em>24</em>
+                                  <a href="#">
+                                    <p class="in">설치 <span>6</span></p>
+                                    <p class="out">회수<span>2</span></p>
+                                  </a>
+                                </div>
+                              </td>
+                              <td>
+                                <div>
+                                  <em>25</em>
+                                </div>
+                              </td>
+                              <td>
+                                <div>
+                                  <em>26</em>
+                                </div>
+                              </td>
+                              <td class="today">
+                                <div>
+                                  <em>27</em>
+                                  <a href="#">
+                                    <p class="in">설치 <span>6</span></p>
+                                    <p class="out">회수<span>2</span></p>
+                                  </a>
+                                </div>
+                              </td>
+                              <td>
+                                <div><em>28</em></div>
+                              </td>
+                              <td>
+                                <div><em>29</em></div>
+                              </td>
+                              <td>
+                                <div><em>30</em></div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div>
+                                  <em>31</em>
+                                  <a href="#">
+                                    <p class="in">설치 <span>6</span></p>
+                                    <p class="out">회수<span>2</span></p>
+                                  </a>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;mobile_sub_partner_wrap&#x22; style=&#x22;width: 360px&#x22;&#x3E;
+  &#x3C;div class=&#x22;calendar&#x22;&#x3E;
+    &#x3C;table&#x3E;
+      &#x3C;colgroup&#x3E;
+        &#x3C;col width=&#x22;1&#x22; /&#x3E;
+        &#x3C;col width=&#x22;1&#x22; /&#x3E;
+        &#x3C;col width=&#x22;1&#x22; /&#x3E;
+        &#x3C;col width=&#x22;1&#x22; /&#x3E;
+        &#x3C;col width=&#x22;1&#x22; /&#x3E;
+        &#x3C;col width=&#x22;1&#x22; /&#x3E;
+        &#x3C;col width=&#x22;1&#x22; /&#x3E;
+      &#x3C;/colgroup&#x3E;
+      &#x3C;thead&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;th&#x3E;&#xC77C;&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;&#xC6D4;&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;&#xD654;&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;&#xC218;&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;&#xBAA9;&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;&#xAE08;&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;&#xD1A0;&#x3C;/th&#x3E;
+        &#x3C;/tr&#x3E;
+      &#x3C;/thead&#x3E;
+      &#x3C;tbody&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;25&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;26&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;27&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;28&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td class=&#x22;lastDay&#x22;&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;29&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;1&#x3C;/em&#x3E;
+              &#x3C;a href=&#x22;./mobile01_assign_list.html&#x22;&#x3E;
+                &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/a&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;2&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;3&#x3C;/em&#x3E;
+              &#x3C;a href=&#x22;#&#x22;&#x3E;
+                &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/a&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;4&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;5&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;6&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;7&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;8&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;9&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;10&#x3C;/em&#x3E;
+              &#x3C;a href=&#x22;#&#x22;&#x3E;
+                &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/a&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;11&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;12&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;13&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;14&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;15&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;16&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;17&#x3C;/em&#x3E;
+              &#x3C;a href=&#x22;#&#x22;&#x3E;
+                &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/a&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;18&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;19&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;20&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;21&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;22&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;23&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;24&#x3C;/em&#x3E;
+              &#x3C;a href=&#x22;#&#x22;&#x3E;
+                &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/a&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;25&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;26&#x3C;/em&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td class=&#x22;today&#x22;&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;27&#x3C;/em&#x3E;
+              &#x3C;a href=&#x22;#&#x22;&#x3E;
+                &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/a&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;28&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;29&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;&#x3C;em&#x3E;30&#x3C;/em&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;td&#x3E;
+            &#x3C;div&#x3E;
+              &#x3C;em&#x3E;31&#x3C;/em&#x3E;
+              &#x3C;a href=&#x22;#&#x22;&#x3E;
+                &#x3C;p class=&#x22;in&#x22;&#x3E;&#xC124;&#xCE58; &#x3C;span&#x3E;6&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+                &#x3C;p class=&#x22;out&#x22;&#x3E;&#xD68C;&#xC218;&#x3C;span&#x3E;2&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+              &#x3C;/a&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#x3C;/td&#x3E;
+          &#x3C;td&#x3E;&#x3C;/td&#x3E;
+        &#x3C;/tr&#x3E;
+      &#x3C;/tbody&#x3E;
+    &#x3C;/table&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.mobile_sub_partner_wrap {
+.calendar {
+  overflow: auto;
+  margin-bottom: 20px;
+  
+  > table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    thead {
+      height: 22px;
+      background-color: var(--clr-F5F5F5);
+      margin-bottom: 4px;
+      th {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+    tbody {
+      tr:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+      td {
+        border-bottom: 1px solid var(--clr-F5F5F5);
+        text-align: center;
+        &:hover {
+          div {
+            background-color: var(--clr-FAFAFA);
+          }
+        }
+        &.lastDay {
+          em {
+            font-weight: 600;
+            color: var(--clr-BDBDBD);
+          }
+        }
+        &.today {
+          em {
+            background-color: var(--clr-90EE02);
+            border-radius: 100px;
+            font-weight: 600;
+            color: var(--clr-1A1A1A);
+          }
+        }
+        div {
+          height: 100%;
+          padding: 2px;
+        }
+        em {
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          margin-bottom: 8px;
+          text-align: center;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 32px;
+          color: var(--clr-616161);
+        }
+        p {
+          height: 22px;
+          border-radius: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 2px 4px;
+          font-size: 12px;
+          font-weight: 500;
+          margin-bottom: 2px;
+          span {
+            border-radius: 2px;
+            min-width: 14px;
+            height: 14px;
+            text-align: center;
+            font-size: 10.667px;
+            font-weight: 500;
+            line-height: 14px;
+            color: var(--clr-FFFFFF);
+          }
+
+          &.in {
+            background-color: var(--clr-E3E5F5);
+            color: var(--clr-323DA3);
+            span {
+              background-color: var(--clr-323DA3);
+            }
+          }
+          &.out {
+            background-color: var(--clr-FFEBEE);
+            color: var(--clr-E53935);
+            span {
+              background-color: var(--clr-E53935);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // datepicker
+  .tui-calendar-body {
+    padding: 0;
+  }
+  .tui-calendar .tui-calendar-header {
+    margin-bottom: 8px;
+  }
+  .tui-calendar .tui-calendar-header-inner {
+    padding: 0;
+  }
+  .tui-datepicker .tui-calendar-title {
+    height: 40px;
+    line-height: 40px;
+    display: block;
+  }
+  .tui-calendar .tui-calendar-btn-prev-month {
+    left: 0;
+    height: 40px;
+  }
+  .tui-calendar .tui-calendar-btn-next-month {
+    right: 0;
+    height: 40px;
+  }
+}
+</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>
+<script>
+  // month 달력
+  var datepicker = new tui.DatePicker("#datepicker-month", {
+    language: "ko",
+    date: new Date(),
+    type: "month",
+    input: {
+      element: "#datepicker-input-month",
+      format: "yyyy-MM",
+    },
+  });
+</script>
+
+<script>
+  //달력
+  tui.DatePicker.localeTexts["ko custom"] = {
+    titles: {
+      DD: ["일", "월", "화", "수", "목", "금", "토"],
+      D: ["일", "월", "화", "수", "목", "금", "토"],
+      MMM: [
+        "1월",
+        "2월",
+        "3월",
+        "4월",
+        "5월",
+        "6월",
+        "7월",
+        "8월",
+        "9월",
+        "10월",
+        "11월",
+        "12월",
+      ],
+      MMMM: [
+        "일월",
+        "이월",
+        "삼월",
+        "사월",
+        "오월",
+        "육월",
+        "칠월",
+        "팔월",
+        "구월",
+        "십월",
+        "십일월",
+        "십이월",
+      ],
+    },
+    titleFormat: "yyyy-MM",
+    todayFormat: "yyyy-MM-dd",
+  };
+
+  const today = new Date();
+  const picker = tui.DatePicker.createRangePicker({
+    language: "ko custom",
+    startpicker: {
+      date: today,
+      input: "#startpicker-input",
+      container: "#startpicker-container",
+    },
+    endpicker: {
+      date: today,
+      input: "#endpicker-input",
+      container: "#endpicker-container",
+    },
+    selectableRanges: [
+      [
+        new Date(today.getFullYear() - 1, today.getMonth(), today.getDate()),
+        today,
+      ],
+    ],
+    format: "YYYY-MM-dd",
+    input: {
+      element: "#datepicker-input",
+      format: "yyyy-MM-dd (D)",
+    },
+  });
+
+  function onToday() {
+    const picker = tui.DatePicker.createRangePicker({
+      language: "ko custom",
+      startpicker: {
+        date: today,
+        input: "#startpicker-input",
+        container: "#startpicker-container",
+      },
+      endpicker: {
+        date: today,
+        input: "#endpicker-input",
+        container: "#endpicker-container",
+      },
+    });
+  }
+
+  function onYesterday() {
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
+
+    const picker = tui.DatePicker.createRangePicker({
+      language: "ko custom",
+      startpicker: {
+        date: yesterday,
+        input: "#startpicker-input",
+        container: "#startpicker-container",
+      },
+      endpicker: {
+        date: yesterday,
+        input: "#endpicker-input",
+        container: "#endpicker-container",
+      },
+    });
+  }
+
+  function onWeek() {
+    const week = new Date(today);
+    week.setDate(today.getDate() - 7);
+
+    const picker = tui.DatePicker.createRangePicker({
+      language: "ko custom",
+      startpicker: {
+        date: week,
+        input: "#startpicker-input",
+        container: "#startpicker-container",
+      },
+      endpicker: {
+        date: today,
+        input: "#endpicker-input",
+        container: "#endpicker-container",
+      },
+    });
+  }
+
+  function onMonth() {
+    const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+
+    const picker = tui.DatePicker.createRangePicker({
+      language: "ko custom",
+      startpicker: {
+        date: firstDay,
+        input: "#startpicker-input",
+        container: "#startpicker-container",
+      },
+      endpicker: {
+        date: today,
+        input: "#endpicker-input",
+        container: "#endpicker-container",
+      },
+    });
+  }
+
+  function onLastMonth() {
+    const firstDay = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+    const lastDay = new Date(today.getFullYear(), today.getMonth(), 0);
+
+    const picker = tui.DatePicker.createRangePicker({
+      language: "ko custom",
+      startpicker: {
+        date: firstDay,
+        input: "#startpicker-input",
+        container: "#startpicker-container",
+      },
+      endpicker: {
+        date: lastDay,
+        input: "#endpicker-input",
+        container: "#endpicker-container",
+      },
+    });
+  }
+
+  function onThreeMonth() {
+    const lastMonth = new Date(today);
+    lastMonth.setMonth(today.getMonth() + -3);
+    const picker = tui.DatePicker.createRangePicker({
+      language: "ko custom",
+      startpicker: {
+        date: lastMonth,
+        input: "#startpicker-input",
+        container: "#startpicker-container",
+      },
+      endpicker: {
+        date: today,
+        input: "#endpicker-input",
+        container: "#endpicker-container",
+      },
+    });
+  }
+
+  function onLastYear() {
+    const lastMonth = new Date(today);
+    lastMonth.setFullYear(today.getFullYear() + -1);
+    const picker = tui.DatePicker.createRangePicker({
+      language: "ko custom",
+      startpicker: {
+        date: lastMonth,
+        input: "#startpicker-input",
+        container: "#startpicker-container",
+      },
+      endpicker: {
+        date: today,
+        input: "#endpicker-input",
+        container: "#endpicker-container",
+      },
+    });
+  }
+</script>
+
+<script>
+  // 오늘 날짜로부터 일주일 후의 날짜를 계산합니다.
+  var oneWeekLater = new Date();
+  oneWeekLater.setDate(today.getDate() + 7);
+  //달력
+  tui.DatePicker.localeTexts["ko custom"] = {
+    titles: {
+      DD: ["일", "월", "화", "수", "목", "금", "토"],
+      D: ["일", "월", "화", "수", "목", "금", "토"],
+      MMM: [
+        "1월",
+        "2월",
+        "3월",
+        "4월",
+        "5월",
+        "6월",
+        "7월",
+        "8월",
+        "9월",
+        "10월",
+        "11월",
+        "12월",
+      ],
+      MMMM: [
+        "일월",
+        "이월",
+        "삼월",
+        "사월",
+        "오월",
+        "육월",
+        "칠월",
+        "팔월",
+        "구월",
+        "십월",
+        "십일월",
+        "십이월",
+      ],
+    },
+    titleFormat: "yyyy-MM",
+    todayFormat: "yyyy-MM-dd",
+  };
+
+  var calMonthKo = new tui.DatePicker("#wrapper", {
+    date: new Date(),
+    language: "ko custom",
+    input: {
+      element: "#datepicker-input",
+      format: "yyyy-MM-dd (D)",
+    },
+    selectableRanges: [[today, oneWeekLater]], // 선택 가능한 범위를 오늘부터 일주일 후까지로 설정합니다.
+  });
+</script>

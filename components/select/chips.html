@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .item_view > div > ul {
+      width: 100%;
+      justify-content: center;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li class="active">
+                    <a href="../select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Chips (칩)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Select (선택)</li>
+                <li>Chips (칩)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Chips</h3>
+                <div class="guide_text">
+                  <p>
+                    • 칩은 사용자로 하여금 정보, 선택, 콘텐츠의 필터링, 그리고
+                    특정 액션을 유도한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em> 텍스트 레이블 : </span>
+                      <div>
+                        <p>칩을 눌렀을 때 실행되는 기능에 대한 설명</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>컨테이너(선택) : </span>
+                      <div>
+                        <p>
+                          칩을 배경과 구분하는 시각적인 수단으로 면 또는 선으로
+                          표현됨
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>아이콘(선택) : </span>
+                      <div>
+                        <p>
+                          첩을 눌렀을 때 실행되는 기능을 텍스트 대신 시각적인
+                          상징으로 표현한 것
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <h5>Option chips</h5>
+                <div class="guide_text">
+                  <p>
+                    • 사용자가 여러 옵션 중 하나를 선택하도록 하는 데 사용한다.
+                  </p>
+                  <p>
+                    • Active 시 즉각적으로 반영된 액션과 변화가 저장되며 완료
+                    버튼을 누르기 전까지 유지된다.
+                  </p>
+                  <p>
+                    • 사용자가 옵션 칩을 클릭하면 선택되고 해당 옵션이
+                    활성화한다. (단일 선택, 클릭하면 선택됨)
+                  </p>
+                  <p>
+                    • 칩 중 하나를 선택 시, 변화가 없는 경우가 Basic Option
+                    Chips이다.
+                  </p>
+                  <p>• 카테고리 선택, 설정 변경 등에서 활용가능하다.</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_02.png"
+                    alt="옵션 이미지"
+                  />
+                </div>
+                <h5>Filter chips</h5>
+                <div class="guide_text">
+                  <p>• 사용자가 콘텐츠를 필터링하도록 하는 데 사용한다.</p>
+                  <p>
+                    • 사용자가 필터 칩을 선택하면 해당 필터링 조건이 즉각적으로
+                    반영된 액션과 테이터가 나타난다.
+                  </p>
+                  <p>• 다중 선택 가능하다.</p>
+                  <p>• 검색 결과 필터링, 상품 목록 정렬 등에서 활용가능하다.</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_03.png"
+                    alt="필터 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>계층</h3>
+                <!-- <div class="guide_text">
+                  <p>• Brand : 가장 중요한 명령을 실행 시킬 때 사용하다.</p>
+                  <p>• SubBrand : 명확한 명령을 실행 시킬 때 사용하다.</p>
+                  <p>
+                    • Neutral : 시각적 주목도가 Brand 칩보다 낮을 겨우 사용한다.
+                  </p>
+                </div> -->
+                <h4>Brand</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_04.png"
+                    alt="Brand 이미지"
+                  />
+                </div>
+                <h4>SubBrand</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_05.png"
+                    alt="SubBrand 이미지"
+                  />
+                </div>
+                <h4>Neutral</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_06.png"
+                    alt="Neutral 이미지"
+                  />
+                </div>
+                <h4>Black</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_06_add01.png"
+                    alt="Black 이미지"
+                  />
+                </div>
+                <h4>Important</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_06_add02.png"
+                    alt="Important 이미지"
+                  />
+                </div>
+              </section>
+
+              <section>
+                <h3>상태</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_07.png"
+                    alt="상태 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>Default :</span>
+                      <div>
+                        <p>기본</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>Hover:Active :</span>
+                      <div>
+                        <p>호버/눌림/포커스</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>Disabled :</span>
+                      <div>
+                        <p>비활성화</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>조합</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_08.png"
+                    alt="조합 이미지"
+                  />
+                </div>
+                <!-- <h4>아이콘 + 텍스트</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_09.png"
+                    alt="아이콘 + 텍스트 이미지"
+                  />
+                </div>
+                <h4>텍스트 + 아이콘</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_10.png"
+                    alt="텍스트 + 아이콘 이미지"
+                  />
+                </div>
+                <h4>아이콘 + 텍스트 + 아이콘</h4>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_11.png"
+                    alt="아이콘 + 텍스트 + 아이콘 이미지"
+                  />
+                </div> -->
+              </section>
+
+              <section>
+                <h3>사이즈&간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_12.png"
+                    alt="사이즈 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_13.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/select/select02_14.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px">
+                      <ul class="DDY_chips chips_blue size_S">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                      <ul class="DDY_chips chips_navy size_S shape_R">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;ul class=&#x22;DDY_chips chips_blue size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+&#x3C;ul class=&#x22;DDY_chips chips_navy size_S shape_R&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_chips ------------------------------------
+
+.DDY_chips {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &.chips_blue {
+    li {
+      &.active {
+        border: 1px solid var(--clr-141E76);
+        background-color: var(--clr-EFF1FD);
+        a {
+          font-weight: 600;
+          color: var(--clr-141E76);
+          img {
+            display: block;
+            filter: invert(10%) sepia(70%) saturate(4009%) hue-rotate(233deg)
+              brightness(83%) contrast(100%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-141E76);
+          background-color: var(--clr-CED2F4);
+          a {
+            color: var(--clr-141E76);
+            img {
+              filter: invert(10%) sepia(70%) saturate(4009%) hue-rotate(233deg)
+                brightness(83%) contrast(100%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_green {
+    li {
+      &.active {
+        border: 1px solid var(--clr-09AF00);
+        background-color: var(--clr-F2FDE4);
+        a {
+          font-weight: 600;
+          color: var(--clr-09AF00);
+          img {
+            display: block;
+            filter: invert(40%) sepia(98%) saturate(2391%) hue-rotate(85deg)
+              brightness(104%) contrast(103%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-09AF00);
+          background-color: var(--clr-90EE02);
+          a {
+            color: var(--clr-333333);
+            img {
+              filter: invert(0%) sepia(33%) saturate(1749%) hue-rotate(81deg)
+                brightness(95%) contrast(80%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_navy {
+    li {
+      &.active {
+        border: 1px solid var(--clr-323DA3);
+        background-color: var(--clr-323DA3);
+        a {
+          font-weight: 600;
+          color: var(--clr-FFFFFF);
+          img {
+            display: block;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(14deg)
+              brightness(104%) contrast(101%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-141E76);
+          background-color: var(--clr-141E76);
+          a {
+            color: var(--clr-FFFFFF);
+            img {
+              filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(14deg)
+                brightness(104%) contrast(101%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_black {
+    li {
+      &.active {
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-333333);
+        a {
+          font-weight: 600;
+          color: var(--clr-FFFFFF);
+          img {
+            display: block;
+            filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(353deg)
+              brightness(110%) contrast(104%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-333333);
+          background-color: var(--clr-1A1A1A);
+          a {
+            color: var(--clr-FFFFFF);
+            img {
+              display: block;
+              filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(353deg)
+                brightness(110%) contrast(104%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_gray {
+    li {
+      &.active {
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-EEEEEE);
+        a {
+          color: var(--clr-555555);
+          font-weight: 600;
+          img {
+            display: block;
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-333333);
+          background-color: var(--clr-E0E0E0);
+          a {
+            color: var(--clr-333333);
+          }
+        }
+      }
+    }
+  }
+
+  &.size_S {
+    li {
+      height: 32px;
+      a {
+        padding: 0 16px;
+        font-size: 14px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &.size_L {
+    li {
+      height: 42px;
+      a {
+        padding: 0 16px;
+        font-size: 16px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  &.shape_R {
+    li {
+      border-radius: 999px;
+    }
+  }
+
+  li {
+    border: 1px solid var(--clr-616161);
+    background-color: var(--clr-FFFFFF);
+    border-radius: 4px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+    }
+    &:hover {
+      border: 1px solid var(--clr-616161);
+      background-color: var(--clr-EEEEEE);
+      a {
+        color: var(--clr-555555);
+      }
+    }
+
+    &.disable {
+      border: 1px solid var(--clr-BDBDBD);
+      background-color: var(--clr-EEEEEE);
+      a {
+        color: var(--clr-BDBDBD);
+        img {
+          filter: invert(64%) sepia(97%) saturate(6%) hue-rotate(15deg)
+            brightness(97%) contrast(98%);
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- DDY_chips -------------------------------------
+
+//공통 라벨
+$(".DDY_chips li").on("click", function () {
+  $(this).toggleClass("active");
+  if ($(this).hasClass("disable")) {
+    $(this).removeClass("active");
+  }
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>사이즈</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <ul class="DDY_chips chips_blue size_S">
+                      <li><a href="javascript:void(0)">Label</a></li>
+                      <li class="active">
+                        <a href="javascript:void(0)">Label</a>
+                      </li>
+                      <li class="disable">
+                        <a href="javascript:void(0)">disable</a>
+                      </li>
+                    </ul>
+                    <ul class="DDY_chips chips_blue size_L">
+                      <li><a href="javascript:void(0)">Label</a></li>
+                      <li class="active">
+                        <a href="javascript:void(0)">Label</a>
+                      </li>
+                      <li class="disable">
+                        <a href="javascript:void(0)">disable</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;ul class=&#x22;DDY_chips chips_blue size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+&#x3C;ul class=&#x22;DDY_chips chips_blue size_L&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_chips ------------------------------------
+
+.DDY_chips {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &.size_S {
+    li {
+      height: 32px;
+      a {
+        padding: 0 16px;
+        font-size: 14px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &.size_L {
+    li {
+      height: 42px;
+      a {
+        padding: 0 16px;
+        font-size: 16px;
+        line-height: 40px;
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- DDY_chips -------------------------------------
+
+//공통 라벨
+$(".DDY_chips li").on("click", function () {
+  $(this).toggleClass("active");
+  if ($(this).hasClass("disable")) {
+    $(this).removeClass("active");
+  }
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Brand</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px">
+                      <ul class="DDY_chips chips_blue size_S">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                      <ul class="DDY_chips chips_navy size_S shape_R">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;ul class=&#x22;DDY_chips chips_blue size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+&#x3C;ul class=&#x22;DDY_chips chips_navy size_S shape_R&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_chips ------------------------------------
+
+.DDY_chips {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &.chips_blue {
+    li {
+      &.active {
+        border: 1px solid var(--clr-141E76);
+        background-color: var(--clr-EFF1FD);
+        a {
+          font-weight: 600;
+          color: var(--clr-141E76);
+          img {
+            display: block;
+            filter: invert(10%) sepia(70%) saturate(4009%) hue-rotate(233deg)
+              brightness(83%) contrast(100%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-141E76);
+          background-color: var(--clr-CED2F4);
+          a {
+            color: var(--clr-141E76);
+            img {
+              filter: invert(10%) sepia(70%) saturate(4009%) hue-rotate(233deg)
+                brightness(83%) contrast(100%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_navy {
+    li {
+      &.active {
+        border: 1px solid var(--clr-323DA3);
+        background-color: var(--clr-323DA3);
+        a {
+          font-weight: 600;
+          color: var(--clr-FFFFFF);
+          img {
+            display: block;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(14deg)
+              brightness(104%) contrast(101%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-141E76);
+          background-color: var(--clr-141E76);
+          a {
+            color: var(--clr-FFFFFF);
+            img {
+              filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(14deg)
+                brightness(104%) contrast(101%);
+            }
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- DDY_chips -------------------------------------
+
+//공통 라벨
+$(".DDY_chips li").on("click", function () {
+  $(this).toggleClass("active");
+  if ($(this).hasClass("disable")) {
+    $(this).removeClass("active");
+  }
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>SubBrand</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px">
+                      <ul class="DDY_chips chips_green size_S">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                      <ul class="DDY_chips chips_green size_S shape_R">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;ul class=&#x22;DDY_chips chips_green size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+&#x3C;ul class=&#x22;DDY_chips chips_green size_S shape_R&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_chips ------------------------------------
+
+.DDY_chips {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &.chips_green {
+    li {
+      &.active {
+        border: 1px solid var(--clr-09AF00);
+        background-color: var(--clr-F2FDE4);
+        a {
+          font-weight: 600;
+          color: var(--clr-09AF00);
+          img {
+            display: block;
+            filter: invert(40%) sepia(98%) saturate(2391%) hue-rotate(85deg)
+              brightness(104%) contrast(103%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-09AF00);
+          background-color: var(--clr-90EE02);
+          a {
+            color: var(--clr-333333);
+            img {
+              filter: invert(0%) sepia(33%) saturate(1749%) hue-rotate(81deg)
+                brightness(95%) contrast(80%);
+            }
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- DDY_chips -------------------------------------
+
+//공통 라벨
+$(".DDY_chips li").on("click", function () {
+  $(this).toggleClass("active");
+  if ($(this).hasClass("disable")) {
+    $(this).removeClass("active");
+  }
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Neutral</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px">
+                      <ul class="DDY_chips chips_gray size_S">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                      <ul class="DDY_chips chips_black size_S shape_R">
+                        <li><a href="javascript:void(0)">Label</a></li>
+                        <li class="active">
+                          <a href="javascript:void(0)">Label</a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)">disable</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;ul class=&#x22;DDY_chips chips_gray size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+&#x3C;ul class=&#x22;DDY_chips chips_black size_S shape_R&#x22;&#x3E;
+  &#x3C;li&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;Label&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;&#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;disable&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_chips ------------------------------------
+
+.DDY_chips {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &.chips_black {
+    li {
+      &.active {
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-333333);
+        a {
+          font-weight: 600;
+          color: var(--clr-FFFFFF);
+          img {
+            display: block;
+            filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(353deg)
+              brightness(110%) contrast(104%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-333333);
+          background-color: var(--clr-1A1A1A);
+          a {
+            color: var(--clr-FFFFFF);
+            img {
+              display: block;
+              filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(353deg)
+                brightness(110%) contrast(104%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_gray {
+    li {
+      &.active {
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-EEEEEE);
+        a {
+          color: var(--clr-555555);
+          font-weight: 600;
+          img {
+            display: block;
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-333333);
+          background-color: var(--clr-E0E0E0);
+          a {
+            color: var(--clr-333333);
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- DDY_chips -------------------------------------
+
+//공통 라벨
+$(".DDY_chips li").on("click", function () {
+  $(this).toggleClass("active");
+  if ($(this).hasClass("disable")) {
+    $(this).removeClass("active");
+  }
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Icon</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px">
+                      <ul class="DDY_chips chips_blue size_S">
+                        <li>
+                          <a href="javascript:void(0)"
+                            ><img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                            />Label</a
+                          >
+                        </li>
+                        <li class="active">
+                          <a href="javascript:void(0)"
+                            ><img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                            />Label</a
+                          >
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)"
+                            ><img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                            />disable</a
+                          >
+                        </li>
+                      </ul>
+                      <ul class="DDY_chips chips_blue size_S">
+                        <li>
+                          <a href="javascript:void(0)"
+                            >Label<img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                          /></a>
+                        </li>
+                        <li class="active">
+                          <a href="javascript:void(0)"
+                            >Label<img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                          /></a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)"
+                            >disable<img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                          /></a>
+                        </li>
+                      </ul>
+                      <ul class="DDY_chips chips_blue size_S">
+                        <li>
+                          <a href="javascript:void(0)"
+                            ><img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘" />Label<img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                          /></a>
+                        </li>
+                        <li class="active">
+                          <a href="javascript:void(0)"
+                            ><img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘" />Label<img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                          /></a>
+                        </li>
+                        <li class="disable">
+                          <a href="javascript:void(0)"
+                            ><img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘" />disable<img
+                              src="/framework/assets/images/label_icon.svg"
+                              alt="라벨 체크아이콘"
+                          /></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;ul class=&#x22;DDY_chips chips_blue size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;Label
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;Label
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;disable
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+&#x3C;ul class=&#x22;DDY_chips chips_blue size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      Label&#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22;alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      Label&#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22;alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      disable&#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+&#x3C;ul class=&#x22;DDY_chips chips_blue size_S&#x22;&#x3E;
+  &#x3C;li&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+        Label
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;active&#x22;&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+        Label
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li class=&#x22;disable&#x22;&#x3E;
+    &#x3C;a href=&#x22;javascript:void(0)&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+        disable
+      &#x3C;img src=&#x22;/framework/assets/images/label_icon.svg&#x22; alt=&#x22;&#xB77C;&#xBCA8; &#xCCB4;&#xD06C;&#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_chips ------------------------------------
+
+.DDY_chips {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &.chips_blue {
+    li {
+      &.active {
+        border: 1px solid var(--clr-141E76);
+        background-color: var(--clr-EFF1FD);
+        a {
+          font-weight: 600;
+          color: var(--clr-141E76);
+          img {
+            display: block;
+            filter: invert(10%) sepia(70%) saturate(4009%) hue-rotate(233deg)
+              brightness(83%) contrast(100%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-141E76);
+          background-color: var(--clr-CED2F4);
+          a {
+            color: var(--clr-141E76);
+            img {
+              filter: invert(10%) sepia(70%) saturate(4009%) hue-rotate(233deg)
+                brightness(83%) contrast(100%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_green {
+    li {
+      &.active {
+        border: 1px solid var(--clr-09AF00);
+        background-color: var(--clr-F2FDE4);
+        a {
+          font-weight: 600;
+          color: var(--clr-09AF00);
+          img {
+            display: block;
+            filter: invert(40%) sepia(98%) saturate(2391%) hue-rotate(85deg)
+              brightness(104%) contrast(103%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-09AF00);
+          background-color: var(--clr-90EE02);
+          a {
+            color: var(--clr-333333);
+            img {
+              filter: invert(0%) sepia(33%) saturate(1749%) hue-rotate(81deg)
+                brightness(95%) contrast(80%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_navy {
+    li {
+      &.active {
+        border: 1px solid var(--clr-323DA3);
+        background-color: var(--clr-323DA3);
+        a {
+          font-weight: 600;
+          color: var(--clr-FFFFFF);
+          img {
+            display: block;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(14deg)
+              brightness(104%) contrast(101%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-141E76);
+          background-color: var(--clr-141E76);
+          a {
+            color: var(--clr-FFFFFF);
+            img {
+              filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(14deg)
+                brightness(104%) contrast(101%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_black {
+    li {
+      &.active {
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-333333);
+        a {
+          font-weight: 600;
+          color: var(--clr-FFFFFF);
+          img {
+            display: block;
+            filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(353deg)
+              brightness(110%) contrast(104%);
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-333333);
+          background-color: var(--clr-1A1A1A);
+          a {
+            color: var(--clr-FFFFFF);
+            img {
+              display: block;
+              filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(353deg)
+                brightness(110%) contrast(104%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.chips_gray {
+    li {
+      &.active {
+        border: 1px solid var(--clr-616161);
+        background-color: var(--clr-EEEEEE);
+        a {
+          color: var(--clr-555555);
+          font-weight: 600;
+          img {
+            display: block;
+          }
+        }
+
+        &:hover {
+          border: 1px solid var(--clr-333333);
+          background-color: var(--clr-E0E0E0);
+          a {
+            color: var(--clr-333333);
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- DDY_chips -------------------------------------
+
+//공통 라벨
+$(".DDY_chips li").on("click", function () {
+  $(this).toggleClass("active");
+  if ($(this).hasClass("disable")) {
+    $(this).removeClass("active");
+  }
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

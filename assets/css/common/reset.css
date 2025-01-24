@@ -1,0 +1,40 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: "SUIT", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--clr-1A1A1A);
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+em {
+  font-style: normal;
+}
+
+button,
+input {
+  font-size: 14px;
+}/*# sourceMappingURL=reset.css.map */

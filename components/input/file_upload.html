@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .preview_g #preview_list .imgWrap {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li>
+                    <a href="../select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li class="active">
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>File upload (파일 업로드)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Input (입력)</li>
+                <li>File upload (파일 업로드)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>File upload</h3>
+                <div class="guide_text">
+                  <p>
+                    • 파일 업로드는 하나 이상의 디바이스의 로컬 파일(사진첨부
+                    포함)을 선택하고 첨부하는 데 사용하는 입력 컴포넌트이다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input03_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>파일 선택 버튼 :</span>
+                      <div>
+                        <p>
+                          업로드할 파일(사진)을 선택하는 파일 선택기를 실행하는
+                          버튼
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>파일 항목 : </span>
+                      <div>
+                        <p>업로드가 완료된 파일의 이름, 확장자를 보여줌</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>사진 항목: </span>
+                      <div>
+                        <p>업로드가 완료된 사진을 보여줌</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>파일 업로드 - 단일형</h5>
+                <div class="guide_text">
+                  <p>• 단 건의 첨부파일 형식</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input03_02.png"
+                    alt="타입 이미지"
+                  />
+                </div>
+
+                <h5>파일 업로드 - 다중형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 한 개 이상의 파일 첨부인 경우 사용하며, 3건 이상부터는
+                    파일 첨부 영역 안에 세로 스크롤을 사용한다.
+                  </p>
+                  <p>• 업로드된 파일을 제거하는 아이콘 버튼 기능을 제공한다.</p>
+                  <p>
+                    • 파일명은 한줄로 처리하며 파일 항목 컨테이너를 벗어나는
+                    경우 말줄임을 사용한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input03_03.png"
+                    alt="타입 이미지"
+                  />
+                </div>
+
+                <h5>사진 업로드</h5>
+                <div class="guide_text">
+                  <p>• 사진을 업로드 할 때 사용하는 형식</p>
+                  <p>
+                    • 업로드된 사진은 가로형으로 배치한다. 가로 사이즈는 화면
+                    크기에 따라 유동적이며 화면 사이즈에 따라 가로 스크롤을
+                    사용한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input03_04.png"
+                    alt="타입 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input03_05.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 파일 유형, 파일 크기, 파일 개수 제한에 대해
+                        안내한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          업로드 가능한 문서 유형, 파일 크기, 파일 개수에 제한이
+                          있는 경우 도움말 텍스트를 사용하여 제약 사항에 대한
+                          정보를 강조하여 표시한다. 이를 통해 사용자가 잘못된
+                          형식의 파일을 업로드하거나 너무 큰 파일을 업로드하여
+                          오류가 발생하는 것을 방지할 수 있다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 사진 업로드 개수가 정해져 있을 때 최대 개수만큼
+                        업로드된 상태에서는 업로드 버튼을 비노출 처리한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          사용자가 사진을 최대로 업로드한 후에는 사진을 추가할
+                          수 없도록 사진 업로드 버튼을 비노출 시킨다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 오류 상태에 대한 구체적인 오류 메시지는 토스트 알림
+                        형태로 제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div style="padding-left: 10px">
+                        <p>
+                          사용자가 어떤 종류의 오류가 발생했는지 명확히 이해할
+                          수 있도록 구체적인 오류 메시지를 제공한다. 파일
+                          업로드에 제공할 수 있는 오류 메시지는 다음과 같다.
+                          기타 항목은 파일 업로더의 능력에 따라 선택적으로
+                          제공할 수 있는 오류 상태이다.
+                          <br />
+                          <br />
+                        </p>
+                        <p>- 선택한 파일이 없는 경우</p>
+                        <p>- 잘못된 파일 형식인 경우</p>
+                        <p>- 파일이 너무 큰 경우</p>
+                        <p>- 파일이 비어있는 경우</p>
+                        <p>- 문제가 발생하여 파일이 업로드되지 않은 경우</p>
+                        <p>
+                          - 사용자가 선택할 수 있는 파일 수에 제한이 있는 경우
+                        </p>
+                        <p>
+                          - 기타: 파일이 비밀번호로 보호되어 있는 경우, 파일에
+                          바이러스가 포함된 경우 등
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>단일형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="selectBox input_file">
+                      <input
+                        type="file"
+                        name="file"
+                        accept="image/*"
+                        id="bizFile"
+                      />
+                      <label
+                        for="bizFile"
+                        class="btn fileBtn DDY_btn default online high_M"
+                        >파일선택</label
+                      >
+                      <span id="fileName">선택된 파일없음</span>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;selectBox input_file&#x22;&#x3E;
+  &#x3C;input
+      type=&#x22;file&#x22;
+      name=&#x22;file&#x22;
+      accept=&#x22;image/*&#x22;
+      id=&#x22;bizFile&#x22;
+    /&#x3E;
+  &#x3C;label for=&#x22;bizFile&#x22; class=&#x22;btn fileBtn DDY_btn default online high_M&#x22;&#x3E;&#xD30C;&#xC77C;&#xC120;&#xD0DD;&#x3C;/label&#x3E;
+  &#x3C;span id=&#x22;fileName&#x22;&#x3E;&#xC120;&#xD0DD;&#xB41C; &#xD30C;&#xC77C;&#xC5C6;&#xC74C;&#x3C;/span&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.input_file {
+  // 택배정보 일괄 업로드
+  input[type="file"] {
+    display: none;
+  }
+  .fileBtn {
+    width: 130px;
+  }
+  #fileName {
+    display: flex;
+    align-items: center;
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- input -------------------------------------
+
+//파일 업로드 용량 제한
+$("input[type=file]").on("change", function (e) {
+  if (!$(this).val()) return;
+  const f = this.files[0];
+  const size = f.size || f.fileSize;
+  const limit = 20000000;
+
+  if (size > limit) {
+    alert("파일용량은 20mb 를 넘을수 없습니다.");
+    $(this).val("");
+    return;
+  }
+  $(this).parent().find("input[type=text]").val($(this).val());
+});
+
+//input file custom
+document.getElementById("bizFile").addEventListener("change", function () {
+  const filename = document.getElementById("fileName");
+  if (this.files[0] == undefined) {
+    filename.innerText = "선택된 파일없음";
+    return;
+  }
+  filename.innerText = this.files[0].name;
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>이미지형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="preview_g">
+                      <div id="previewWrap">
+                        <label for="fileimage"></label>
+                        <input
+                          type="file"
+                          id="fileimage"
+                          accept="image/*"
+                          onchange="setThumbnail(event);"
+                          multiple="multiple"
+                        />
+                      </div>
+                      <div id="preview_list"></div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;preview_g&#x22;&#x3E;
+  &#x3C;div id=&#x22;previewWrap&#x22;&#x3E;
+    &#x3C;label for=&#x22;fileimage&#x22;&#x3E;&#x3C;/label&#x3E;
+    &#x3C;input
+            type=&#x22;file&#x22;
+            id=&#x22;fileimage&#x22;
+            accept=&#x22;image/*&#x22;
+            onchange=&#x22;setThumbnail(event);&#x22;
+            multiple=&#x22;multiple&#x22;
+      /&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div id=&#x22;preview_list&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- 이미지 추가 --------------------------------
+
+.preview_g {
+  display: flex;
+  gap: 8px;
+
+  #previewWrap {
+    display: flex;
+    gap: 12px;
+    flex-basis: 84px;
+    cursor: pointer;
+    label {
+      cursor: pointer;
+      width: 88px;
+      height: 88px;
+      background: var(--clr-EEEEEE) url("/framework/assets/images/part_plus.svg") center
+        no-repeat;
+      border-radius: 4px;
+    }
+    input {
+      display: none;
+    }
+  }
+
+  #preview_list {
+    display: flex;
+    overflow: auto;
+    padding-bottom: 4px;
+    gap: 12px;
+    flex: 1;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--clr-EEEEEE);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--clr-333333);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--clr-333333);
+    }
+    .imgWrap {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      min-width: 88px;
+      height: 88px;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: var(--clr-EEEEEE);
+      .closeBtn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        &::before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: var(--clr-333333) url("/framework/assets/images/part_closeBtn.svg")
+            center no-repeat;
+          opacity: 0.8;
+        }
+      }
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- input -------------------------------------
+
+//파일 업로드 용량 제한
+$("input[type=file]").on("change", function (e) {
+  if (!$(this).val()) return;
+  const f = this.files[0];
+  const size = f.size || f.fileSize;
+  const limit = 20000000;
+
+  if (size > limit) {
+    alert("파일용량은 20mb 를 넘을수 없습니다.");
+    $(this).val("");
+    return;
+  }
+  $(this).parent().find("input[type=text]").val($(this).val());
+});
+
+function setThumbnail(event) {
+  // 10개 이상일때, input 이미지 추가 null
+  const selectedFiles = event.target.files;
+  if (selectedFiles.length > 10) {
+    $(event.target).val(null);
+    alert("최대 10장만 등록 가능합니다.");
+    return;
+  }
+  $.each(selectedFiles, function (index, image) {
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      //img
+      const img = $("&#x3C;img&#x3E;").attr("src", event.target.result);
+      //imgwrap
+      const imgWrap = $("&#x3C;div&#x3E;").addClass("imgWrap").append(img);
+      // closebtn
+      const closeBtn = $("&#x3C;div&#x3E;").addClass("closeBtn");
+      //imgwrap + closebtn
+      const imgClose = imgWrap.append(closeBtn);
+      // preview_list
+      const previewList = $("#preview_list");
+
+      //10개 이상시 파일추가할 경우
+      if (previewList.children().length &#x3C; 10) {
+        previewList.append(imgWrap);
+      } else if (previewList.children().length > 10) {
+        previewList.append("");
+      }
+
+      // previewList 10개이하일시 previewWrap show/hide
+      const previewWrap = $("#previewWrap");
+      if (previewList.children().length >= 10) {
+        previewWrap.hide();
+      } else {
+        previewWrap.css("display", "flex");
+      }
+
+      // imgWrap close btn click event
+      closeBtn.on("click", function () {
+        $(this).parent(".imgWrap").remove();
+        if (previewList.children().length &#x3C;= 10) {
+          previewWrap.css("display", "flex");
+        }
+      });
+    };
+    reader.readAsDataURL(image);
+  });
+}
+
+$("#file_input").on("change", setThumbnail);</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>
+
+<script>
+  //input file custom
+  document.getElementById("bizFile").addEventListener("change", function () {
+    const filename = document.getElementById("fileName");
+    if (this.files[0] == undefined) {
+      filename.innerText = "선택된 파일없음";
+      return;
+    }
+    filename.innerText = this.files[0].name;
+  });
+  //이미지형
+  function setThumbnail(event) {
+    // 10개 이상일때, input 이미지 추가 null
+    const selectedFiles = event.target.files;
+    if (selectedFiles.length > 10) {
+      $(event.target).val(null);
+      alert("최대 10장만 등록 가능합니다.");
+      return;
+    }
+    $.each(selectedFiles, function (index, image) {
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        //img
+        const img = $("<img>").attr("src", event.target.result);
+        //imgwrap
+        const imgWrap = $("<div>").addClass("imgWrap").append(img);
+        // closebtn
+        const closeBtn = $("<div>").addClass("closeBtn");
+        //imgwrap + closebtn
+        const imgClose = imgWrap.append(closeBtn);
+        // preview_list
+        const previewList = $("#preview_list");
+
+        //10개 이상시 파일추가할 경우
+        if (previewList.children().length < 10) {
+          previewList.append(imgWrap);
+        } else if (previewList.children().length > 10) {
+          previewList.append("");
+        }
+
+        // previewList 10개이하일시 previewWrap show/hide
+        const previewWrap = $("#previewWrap");
+        if (previewList.children().length >= 10) {
+          previewWrap.hide();
+        } else {
+          previewWrap.css("display", "flex");
+        }
+
+        // imgWrap close btn click event
+        closeBtn.on("click", function () {
+          $(this).parent(".imgWrap").remove();
+          if (previewList.children().length <= 10) {
+            previewWrap.css("display", "flex");
+          }
+        });
+      };
+      reader.readAsDataURL(image);
+    });
+  }
+
+  $("#file_input").on("change", setThumbnail);
+</script>

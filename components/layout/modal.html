@@ -1,0 +1,5196 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="../../../js/mobile.js"></script>
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../css/mobile_style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="/framework/assets/js/swiper/swiper-bundle.min.css"
+    />
+    <script src="/framework/assets/js/swiper/swiper-bundle.miin.js"></script>
+
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .DDY_mobile_modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+      z-index: 10;
+    }
+    .DDY_mobile_modal.active {
+      overflow: visible;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.2s;
+    }
+    .DDY_mobile_modal .modalWrap {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      padding: 32px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      transition: top 0.2s;
+    }
+    .DDY_mobile_modal .modalWrap .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .DDY_mobile_modal .modalWrap .modalTitle p {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--clr-1a1a1a);
+    }
+    .DDY_mobile_modal .modalWrap .modalTitle a img {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent {
+      margin: 24px 0 32px;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent > p {
+      font-size: 18px;
+      line-height: 26px;
+      color: var(--clr-555555);
+    }
+    .DDY_mobile_modal .modalWrap .modalContent > ul {
+      margin-bottom: 12px;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent > ul li {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 16px 0;
+      font-size: 16px;
+      color: var(--clr-1A1A1A);
+      border-bottom: 1px solid var(--clr-EEEEEE);
+    }
+    .DDY_mobile_modal .modalWrap .modalContent > ul li span {
+      width: 160px;
+      font-weight: 600;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent > ul li p {
+      width: 100%;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      max-height: 250px;
+      position: relative;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option::before {
+      content: "";
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgb(255, 255, 255) 60%
+      );
+      height: 20px;
+      width: 100%;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      height: 100%;
+      max-height: 232px;
+      overflow-y: auto;
+      padding-right: 2px;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul::-webkit-scrollbar {
+      width: 4px; /* 세로축 스크롤바 폭 너비 */
+      height: 120px; /* 가로축 스크롤바 폭 너비 */
+    }
+    .DDY_mobile_modal
+      .modalWrap
+      .modalContent
+      .option
+      ul::-webkit-scrollbar-thumb {
+      background: var(--clr-E0E0E0); /* 스크롤바 막대 색상 */
+      border-radius: 12px 12px 12px 12px;
+    }
+    .DDY_mobile_modal
+      .modalWrap
+      .modalContent
+      .option
+      ul
+      ::-webkit-scrollbar-track {
+      background: var(--clr-333333); /*스크롤바 뒷 배경 색상*/
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li {
+      padding: 9px 8px 9px 12px;
+      width: 100%;
+      line-height: 24px;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li:last-child {
+      margin-bottom: 20px;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li:hover {
+      border-radius: 4px;
+      background: var(--clr-EFF1FD)
+        url("/framework/assets/images/DDY_select_checked.svg") center right 8px /
+        auto no-repeat;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li:hover button {
+      color: var(--clr-323DA3);
+      background: none;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li.checked {
+      border-radius: 4px;
+      background: var(--clr-EFF1FD)
+        url("/framework/assets/images/DDY_select_checked.svg") center right 8px /
+        auto no-repeat;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li.checked button {
+      color: var(--clr-323DA3);
+      background: none;
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li.disable {
+      background-color: var(--clr-EEEEEE);
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li.disable button {
+      color: var(--clr-BDBDBD);
+    }
+    .DDY_mobile_modal .modalWrap .modalContent .option ul li button {
+      width: 100%;
+      height: 100%;
+      font-size: 16px;
+      text-align: left;
+      padding-right: 28px;
+    }
+    .DDY_mobile_modal .modalWrap .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .DDY_mobile_modal .modalWrap .tui-datepicker {
+      position: static;
+      border: none;
+      box-shadow: none;
+      margin-top: 0;
+    }
+    .DDY_mobile_modal .modalWrap .tui-datepicker .tui-calendar {
+      padding-top: 0;
+    }
+    .DDY_mobile_modal .modalWrap .tui-calendar {
+      border: none;
+    }
+
+    /* guide_modal_wrap */
+    .DDY_modal.guide_modal {
+      position: static !important;
+      overflow: visible !important;
+      opacity: 1;
+      visibility: visible !important;
+      transition: all 0.2s;
+      z-index: 1;
+    }
+    .DDY_modal .modalWrap.guide_modal_wrap {
+      position: static !important;
+      transform: translate(100%, 0);
+    }
+    .DDY_modal.active .modalWrap.guide_modal_wrap {
+      position: static !important;
+      transform: translate(100%, 0);
+    }
+
+    /* modal_info_table */
+    .DDY_modal .modal_info_table {
+      background-color: var(--clr-FAFAFA);
+      border-radius: 4px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .DDY_modal .modal_info_table ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .DDY_modal .modal_info_table ul li {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 0;
+    }
+    .DDY_modal .modal_info_table ul li > span {
+      width: 140px;
+      min-width: 140px;
+      font-size: 16px;
+      color: var(--clr-616161);
+    }
+    .DDY_modal .modal_info_table ul li p {
+      display: flex;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .care_mt_12 {
+      margin-top: 12px !important;
+    }
+    .DDY_modal .modalWrap .modalContent > ul > li p {
+      width: auto;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li class="active">
+                    <a href="../layout/modal.html">Modal (모달)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Modal (모달)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Modal (모달)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Modal</h3>
+                <div class="guide_text">
+                  <p>
+                    • 모달은 사용자에게 특정 작업에 대해 알리고 사용자가 결정을
+                    내려야 하는 중요한 정보를 포함하여 제공한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>오버레이 :</span>
+                      <div>
+                        <p>
+                          모달과 하단의 기본 창을 시각적으로 구분하기 위한 배경
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>타이틀 : </span>
+                      <div>
+                        <p>
+                          모달의 상단 영역으로 모달에서 제공하는 콘텐츠나
+                          요청하는 행동에 대한 간단한 요약 정보를 담은 제목,
+                          설명을 제공함
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>닫기 :</span>
+                      <div>
+                        <p>
+                          사용자가 모달을 닫을 수 있게 하는 버튼 요소로 대개 "X"
+                          아이콘으로 표현됨. <br />
+                          모달에서 데이터를 입력하여 제출하거나 행동을 확정해야
+                          하는 경우, 닫기 버튼은 모달을 닫는 동시에 취소와
+                          동일한 기능을 제공함
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>본문 : </span>
+                      <div>
+                        <p>
+                          텍스트, 이미지 또는 다른 컴포넌트 요소가 제공되는 영역
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>버튼 : </span>
+                      <div>
+                        <p>
+                          모달의 하단 영역으로 취소, 확인, 삭제, 저장 등 과업을
+                          완료하거나 중단하기 위한 주요 액션 버튼을 제공함.
+                          <br />
+                          본문에 입력폼을 제공하는 경우, 입력폼과 관련된
+                          컨트롤은 본문 영역에 배치할 수 있으나 행동을
+                          확정하거나 취소하는 액션은 항상 하단에 제공해야 함
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>기본팝업</h5>
+                <div class="guide_text">
+                  <p>• PC,모바일 공통적으로 사용하는 기본형태</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_02.png"
+                    alt="기본팝업 이미지"
+                  />
+                </div>
+                <h5>바텀시트</h5>
+                <div class="guide_text">
+                  <p>• 모바일에서만 사용하는 형태</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_03.png"
+                    alt="바텀시트 이미지"
+                  />
+                </div>
+                <h5>지도팝업</h5>
+                <div class="guide_text">
+                  <p>• PC 화면 중 지도에서 노출되는 형태</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_04.png"
+                    alt="지도팝업 이미지"
+                  />
+                </div>
+                <h5>공지팝업- 이미지형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 팝업 사이즈 : 480x600(고정), 이미지형 팝업은 여러개 등록
+                    가능하도록 이미지 롤링 처리한다.
+                  </p>
+                  <p>
+                    • 이미지 사이즈 : 440x400(고정), 이미지 사이즈 내에서
+                    자유롭게 배너 이미지 제작한다.
+                  </p>
+                  <p>
+                    • 버튼은 1개 또는 2개를 사용할 수 있으며, min-width : 150px
+                    , padding : 0 16px 값을 같도록 설정
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_05.png"
+                    alt="공지팝업- 이미지형 이미지"
+                  />
+                </div>
+                <h5>공지팝업-이미지+텍스트형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 팝업 사이즈 : 사이즈 : 480x600(고정), 타이틀 : 한줄,
+                    글자수 40자, 상세내용 : 최대 4줄, 글자수 138자. 상세 내용
+                    높이값을 고정으로 처리한다.
+                  </p>
+                  <p>
+                    • 이미지 사이즈 : 440x230(고정), 이미지 사이즈 내에서
+                    자유롭게 배너 이미지 제작한다.
+                  </p>
+                  <p>
+                    • 버튼은 1개 또는 2개를 사용할 수 있으며, min-width : 150px
+                    , padding : 0 16px 값을 같도록 설정
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_06.png"
+                    alt="공지팝업-이미지+텍스트형 이미지"
+                  />
+                </div>
+              </section>
+
+              <section>
+                <h3>사이즈</h3>
+                <h5>SM-340</h5>
+                <div class="guide_text">
+                  <p>
+                    • SM-340 사이즈 팝업은 모바일에서만 사용한다다.(컨텐츠 상/하
+                    여백은 24/32)
+                  </p>
+                  <p>
+                    • 버튼영역 : 버튼이 한개, 두개 일때 모두 좌우 여백에 맞게
+                    Fill(100%)로 처리한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_07.png"
+                    alt="SM-340 이미지"
+                  />
+                </div>
+                <h5>MD-480</h5>
+                <div class="guide_text">
+                  <p>
+                    • MD-480 사이즈 팝업은 PC버전에서만 사용한다. 컨텐츠 상/하
+                    여백은 24/32 가지며, 컨텐츠들간의 간격은 20px로 설정한다.
+                  </p>
+                  <p>
+                    • 버튼영역 : 버튼이 한개, 두개 일때 모두 min-width : 150px ,
+                    padding : 0 16px 값을 같도록 설정
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_08.png"
+                    alt="MD-480 이미지"
+                  />
+                </div>
+                <h5>LG-600</h5>
+                <div class="guide_text">
+                  <p>
+                    • LG-600 사이즈 팝업은 PC버전에서만 사용합니다. 컨텐츠 상/하
+                    여백은 24/32 가지며, 컨텐츠들간의 간격은 20px로 설정한다.
+                  </p>
+                  <p>
+                    • 버튼영역 : 버튼이 한개, 두개 일때 모두 min-width : 150px ,
+                    padding : 0 16px 값을 같도록 설정
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_09.png"
+                    alt="LG-600 이미지"
+                  />
+                </div>
+                <h5>XL-800</h5>
+                <div class="guide_text">
+                  <p>
+                    • XL-800 사이즈 팝업은 PC버전에서만 사용합니다. 컨텐츠 상/하
+                    여백은 24/32 가지며, 컨텐츠들간의 간격은 20px로 설정한다.
+                  </p>
+                  <p>
+                    • 버튼영역 : 버튼이 한개, 두개 일때 모두 min-width : 150px ,
+                    padding : 0 16px 값을 같도록 설정
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_10.png"
+                    alt="XL-800 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>스크롤</h3>
+                <div class="guide_text">
+                  <p>
+                    • 스크린 사이즈에 맞게 모달창의 높이를 조절한다. <br />
+                    모달창 높이 : max-height: calc(100vh - 80px), 스크롤 영역
+                    높이 : max-height: calc(100vh - 280px)
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout08_11.png"
+                    alt="스크롤 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 모달은 콘텐츠의 양을 고려하여 적절한 크기로
+                        제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          모달의 콘텐츠가 짧은 메시지인 경우에는 모달의 너비를
+                          최소화하여 문장 길이(line length)가 길어지는 것을
+                          피해야 하고 콘텐츠가 상대적으로 복잡한 경우에는 전체
+                          화면 너비를 차지하는 모달의 사용을 고려해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 모달은 콘텐츠의 양을 고려하여 적절한 크기로
+                        제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          모달의 콘텐츠가 짧은 메시지인 경우에는 모달의 너비를
+                          최소화하여 문장 길이(line length)가 길어지는 것을
+                          피해야 하고 콘텐츠가 상대적으로 복잡한 경우에는 전체
+                          화면 너비를 차지하는 모달의 사용을 고려해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 콘텐츠 영역에 스크롤이 필요한 경우 사용자가 스크롤
+                        영역을 인지할 수 있도록 표현하고 하단 버튼 영역이 항상
+                        표시되도록 한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          모달 콘텐츠는 간결하고 모달에서의 상호작용은 최소로
+                          제공해야 한다. 그러나 사용자별 디바이스 화면 크기
+                          차이, 모달 유형 등에 따라 불가피하게 콘텐츠 영역에
+                          세로 스크롤이 생성되는 경우 스크롤바를 제공하여
+                          사용자가 스크롤 해야 함을 인지할 수 있도록 해야 한다.
+                          또한 액션 버튼이 스크롤 한 영역의 가장 아래에 배치될
+                          경우 사용자에게 혼동을 줄 수 있으므로 액션 버튼이
+                          제공되는 푸터는 모달 영역의 하단부에 항상 표시될 수
+                          있도록 구현해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span>• 모달 내 상호작용을 최소화한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          모달 내부에 액션 버튼 외에 상호작용이 필요한 다른
+                          컴포넌트를 사용하는 것을 피해야 한다. 탭, 아코디언,
+                          입력폼 같은 컴포넌트가 모달 내부에 제공될 경우
+                          사용자는 모달과 상호작용 중인 맥락을 잊어버리기 쉽고,
+                          사용자의 이용 환경에 따라 화면 크기가 줄어드는 경우
+                          상호작용이 어렵다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal01()">
+                      Modal
+                    </button>
+                    <div class="DDY_modal DDY_modal01">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_md">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>Slot Components</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal DDY_modal01&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal_bg&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_md&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+      &#x3C;p&#x3E;Slot Components&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_modal ------------------------------------
+
+// 대대여 모달 - 배송조회
+.DDY_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 200;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //min-width: 480px;
+      padding: 24px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-radius: 16px;
+      transition: top 0.2s;
+      //test
+      max-height: calc(100vh - 80px);
+    }
+  }
+  .modal_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modalWrap {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 480px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    z-index: 1;
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 16px;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: var(--clr-1A1A1A);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin-top: 24px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+      //modal_scroll
+      &.modal_scroll {
+        //max-height: 520px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-right: 4px;
+        //test
+        max-height: calc(100vh - 280px);
+        &::-webkit-scrollbar {
+          width: 3px;
+          height: 200px;
+        }
+        &::-webkit-scrollbar-track {
+          background: var(--clr-FFFFFF);
+        }
+        &::-webkit-scrollbar-thumb {
+          background: var(--clr-EEEEEE);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--clr-EEEEEE);
+        }
+        > p {
+          padding: 24px 0 0;
+          font-size: 18px;
+          line-height: 26px;
+          color: var(--clr-555555);
+        }
+      }
+      > ul {
+        margin-bottom: 12px;
+        > li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          padding: 16px 0;
+          font-size: 16px;
+          color: var(--clr-1A1A1A);
+          border-bottom: 1px solid var(--clr-EEEEEE);
+          span {
+            width: 160px;
+            min-width: 160px;
+            font-weight: 600;
+          }
+          p {
+            width: 100%;
+          }
+
+          .preview_g {
+            width: 100%;
+            max-width: 300px;
+
+            .preview_list {
+              display: flex;
+              overflow: auto;
+              gap: 12px;
+              flex: 1;
+              &::-webkit-scrollbar {
+                width: 8px;
+                height: 2px;
+              }
+              &::-webkit-scrollbar-track {
+                background: var(--clr-EEEEEE);
+              }
+              &::-webkit-scrollbar-thumb {
+                background: var(--clr-333333);
+              }
+              &::-webkit-scrollbar-thumb:hover {
+                background: var(--clr-333333);
+              }
+              .imgWrap {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 88px;
+                min-width: 88px;
+                height: 88px;
+                border-radius: 4px;
+                overflow: hidden;
+                background-color: var(--clr-EEEEEE);
+                img {
+                  width: auto;
+                  height: auto;
+                  max-width: 100%;
+                  max-height: 100%;
+                  margin: 0 auto;
+                }
+              }
+            }
+          }
+        }
+      }
+      //textarea
+      textarea {
+        resize: none;
+        width: 100%;
+        height: 120px;
+        border: 1px solid var(--clr-616161);
+        border-radius: 4px;
+        padding: 16px 16px 10px 16px;
+        font-size: 14px;
+        line-height: 20px;
+        resize: none;
+        outline-color: var(--clr-323DA3);
+
+        &::placeholder {
+          color: var(--clr-BDBDBD);
+        }
+      }
+      //modalCon
+      .modalCon {
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        h4 {
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 26px;
+          margin-bottom: 12px;
+        }
+        .contents {
+          > p {
+            font-size: 16px;
+            line-height: 22px;
+          }
+          .modalText {
+            strong {
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 26px;
+              letter-spacing: -0.27px;
+            }
+          }
+          .description {
+            color: var(--clr-616161);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-top: 12px;
+          }
+          .modal_toggle {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              display: flex;
+              align-items: center;
+              padding: 8px 0;
+              margin-bottom: 12px;
+              &:last-child {
+                margin-bottom: 0;
+              }
+              p {
+                font-size: 16px;
+                line-height: 24px;
+                &:first-child {
+                  width: 110px;
+                  min-width: 110px;
+                  color: var(--clr-616161);
+                }
+              }
+            }
+          }
+          .barcode_modal_list {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 6px;
+              width: 100%;
+              padding: 8px 0;
+              > p {
+                font-size: 16px;
+                line-height: 22px;
+                color: var(--clr-616161);
+              }
+              ul {
+                li {
+                  width: 129px;
+                }
+              }
+              &.on {
+                > p {
+                  font-weight: 700;
+                  color: var(--clr-09AF00);
+                }
+              }
+            }
+          }
+
+          // 택배정보 일괄 업로드
+          input[type="file"] {
+            display: none;
+          }
+          .fileBtn {
+            width: 130px;
+          }
+          #fileName {
+            display: flex;
+            align-items: center;
+          }
+
+          .bgTable {
+            margin-bottom: 8px;
+            tbody {
+              tr {
+                &:hover {
+                  background-color: transparent;
+                }
+                td {
+                  &.bgtd {
+                    background-color: var(--clr-FAFAFA);
+                    font-weight: 600;
+                  }
+                  &.linetd {
+                    border-left: 1px solid var(--clr-EEEEEE);
+                  }
+                  > p {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                  }
+                  span {
+                    color: var(--clr-09AF00);
+                    font-size: 14px;
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+          }
+
+          .modalText {
+            strong {
+              em {
+                color: var(--clr-09AF00);
+              }
+            }
+          }
+
+          .textarea_wrap {
+            position: relative;
+            .textLengthWrap {
+              position: absolute;
+              top: 90px;
+              right: 18px;
+              display: flex;
+              align-items: center;
+              p {
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 18px;
+                color: var(--clr-999999);
+              }
+              &.on {
+                p {
+                  color: var(--clr-1A1A1A);
+                }
+              }
+            }
+            .errorText {
+              display: none;
+            }
+            &.error {
+              .textarea {
+                border: 2px solid var(--clr-E53935);
+                outline-color: var(--clr-E53935);
+              }
+              .errorText {
+                color: var(--clr-E53935);
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-size: 14px;
+                margin-top: 4px;
+              }
+            }
+            &.disabled {
+              background-color: var(--clr-EEEEEE);
+              border: 1px solid var(--clr-616161);
+            }
+          }
+          .c_flex {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            width: 100%;
+            > div:first-child {
+              max-width: 160px;
+            }
+          }
+        }
+      }
+      .modalInfo {
+        background-color: var(--clr-FAFAFA);
+        border-radius: 4px;
+        padding: 16px;
+        margin-bottom: 20px;
+        ul {
+          li {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 0;
+            > span {
+              width: 110px;
+              min-width: 110px;
+              font-size: 16px;
+              color: var(--clr-616161);
+            }
+            p {
+              display: flex;
+              gap: 8px;
+              font-size: 16px;
+              line-height: 24px;
+              span {
+                width: auto;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+              }
+            }
+            &:nth-child(2) {
+              p {
+                font-weight: 700;
+                color: var(--clr-09AF00);
+              }
+            }
+          }
+        }
+      }
+      #preview_list.view {
+        .imgWrap {
+          &::before {
+            content: "";
+            display: none;
+          }
+        }
+      }
+      .modal_text {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 0;
+        p {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 14px;
+          line-height: 20px;
+          color: var(--clr-616161);
+          margin-bottom: 10;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        margin-bottom: 20px;
+      }
+
+      .preview_list {
+        cursor: pointer;
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding-top: 32px;
+      button {
+        min-width: 150px;
+      }
+    }
+
+    //204_itmem_inventory 합계
+    .total {
+      padding: 16px;
+      background-color: var(--clr-FAFAFA);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      span {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--clr-09AF00);
+      }
+    }
+  }
+}
+
+// ----------------------------- modal size ------------------------------------
+
+.modal_sm {
+  min-width: 340px !important;
+  width: 340px !important;
+}
+.modal_md {
+  min-width: 480px !important;
+  width: 480px !important;
+}
+.modal_lg {
+  min-width: 600px !important;
+  width: 600px !important;
+}
+.modal_xl {
+  min-width: 800px !important;
+  width: 800px !important;
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- modal -------------------------------------
+// 모달창에서 모달영역클릭시 remove
+$(".modal_bg").on("click", function (e) {
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});
+$(".modal_bg").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".DDY_select .select").removeClass("active");
+});
+
+// ------------------------------------- inline script -------------------------------------
+function modal01() {
+  $(".DDY_modal01").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function checkModal() {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>타입</h3>
+                <h4>기본타입</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal01()">
+                      Modal(type:default)
+                    </button>
+                    <div class="DDY_modal DDY_modal01">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_md">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>Slot Components</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal DDY_modal01&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal_bg&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_md&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+      &#x3C;p&#x3E;Slot Components&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_modal ------------------------------------
+
+// 대대여 모달 - 배송조회
+.DDY_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 200;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //min-width: 480px;
+      padding: 24px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-radius: 16px;
+      transition: top 0.2s;
+      //test
+      max-height: calc(100vh - 80px);
+    }
+  }
+  .modal_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modalWrap {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 480px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    z-index: 1;
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 16px;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: var(--clr-1A1A1A);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin-top: 24px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+      //modal_scroll
+      &.modal_scroll {
+        //max-height: 520px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-right: 4px;
+        //test
+        max-height: calc(100vh - 280px);
+        &::-webkit-scrollbar {
+          width: 3px;
+          height: 200px;
+        }
+        &::-webkit-scrollbar-track {
+          background: var(--clr-FFFFFF);
+        }
+        &::-webkit-scrollbar-thumb {
+          background: var(--clr-EEEEEE);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--clr-EEEEEE);
+        }
+        > p {
+          padding: 24px 0 0;
+          font-size: 18px;
+          line-height: 26px;
+          color: var(--clr-555555);
+        }
+      }
+      > ul {
+        margin-bottom: 12px;
+        > li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          padding: 16px 0;
+          font-size: 16px;
+          color: var(--clr-1A1A1A);
+          border-bottom: 1px solid var(--clr-EEEEEE);
+          span {
+            width: 160px;
+            min-width: 160px;
+            font-weight: 600;
+          }
+          p {
+            width: 100%;
+          }
+
+          .preview_g {
+            width: 100%;
+            max-width: 300px;
+
+            .preview_list {
+              display: flex;
+              overflow: auto;
+              gap: 12px;
+              flex: 1;
+              &::-webkit-scrollbar {
+                width: 8px;
+                height: 2px;
+              }
+              &::-webkit-scrollbar-track {
+                background: var(--clr-EEEEEE);
+              }
+              &::-webkit-scrollbar-thumb {
+                background: var(--clr-333333);
+              }
+              &::-webkit-scrollbar-thumb:hover {
+                background: var(--clr-333333);
+              }
+              .imgWrap {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 88px;
+                min-width: 88px;
+                height: 88px;
+                border-radius: 4px;
+                overflow: hidden;
+                background-color: var(--clr-EEEEEE);
+                img {
+                  width: auto;
+                  height: auto;
+                  max-width: 100%;
+                  max-height: 100%;
+                  margin: 0 auto;
+                }
+              }
+            }
+          }
+        }
+      }
+      //textarea
+      textarea {
+        resize: none;
+        width: 100%;
+        height: 120px;
+        border: 1px solid var(--clr-616161);
+        border-radius: 4px;
+        padding: 16px 16px 10px 16px;
+        font-size: 14px;
+        line-height: 20px;
+        resize: none;
+        outline-color: var(--clr-323DA3);
+
+        &::placeholder {
+          color: var(--clr-BDBDBD);
+        }
+      }
+      //modalCon
+      .modalCon {
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        h4 {
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 26px;
+          margin-bottom: 12px;
+        }
+        .contents {
+          > p {
+            font-size: 16px;
+            line-height: 22px;
+          }
+          .modalText {
+            strong {
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 26px;
+              letter-spacing: -0.27px;
+            }
+          }
+          .description {
+            color: var(--clr-616161);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-top: 12px;
+          }
+          .modal_toggle {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              display: flex;
+              align-items: center;
+              padding: 8px 0;
+              margin-bottom: 12px;
+              &:last-child {
+                margin-bottom: 0;
+              }
+              p {
+                font-size: 16px;
+                line-height: 24px;
+                &:first-child {
+                  width: 110px;
+                  min-width: 110px;
+                  color: var(--clr-616161);
+                }
+              }
+            }
+          }
+          .barcode_modal_list {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 6px;
+              width: 100%;
+              padding: 8px 0;
+              > p {
+                font-size: 16px;
+                line-height: 22px;
+                color: var(--clr-616161);
+              }
+              ul {
+                li {
+                  width: 129px;
+                }
+              }
+              &.on {
+                > p {
+                  font-weight: 700;
+                  color: var(--clr-09AF00);
+                }
+              }
+            }
+          }
+
+          // 택배정보 일괄 업로드
+          input[type="file"] {
+            display: none;
+          }
+          .fileBtn {
+            width: 130px;
+          }
+          #fileName {
+            display: flex;
+            align-items: center;
+          }
+
+          .bgTable {
+            margin-bottom: 8px;
+            tbody {
+              tr {
+                &:hover {
+                  background-color: transparent;
+                }
+                td {
+                  &.bgtd {
+                    background-color: var(--clr-FAFAFA);
+                    font-weight: 600;
+                  }
+                  &.linetd {
+                    border-left: 1px solid var(--clr-EEEEEE);
+                  }
+                  > p {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                  }
+                  span {
+                    color: var(--clr-09AF00);
+                    font-size: 14px;
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+          }
+
+          .modalText {
+            strong {
+              em {
+                color: var(--clr-09AF00);
+              }
+            }
+          }
+
+          .textarea_wrap {
+            position: relative;
+            .textLengthWrap {
+              position: absolute;
+              top: 90px;
+              right: 18px;
+              display: flex;
+              align-items: center;
+              p {
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 18px;
+                color: var(--clr-999999);
+              }
+              &.on {
+                p {
+                  color: var(--clr-1A1A1A);
+                }
+              }
+            }
+            .errorText {
+              display: none;
+            }
+            &.error {
+              .textarea {
+                border: 2px solid var(--clr-E53935);
+                outline-color: var(--clr-E53935);
+              }
+              .errorText {
+                color: var(--clr-E53935);
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-size: 14px;
+                margin-top: 4px;
+              }
+            }
+            &.disabled {
+              background-color: var(--clr-EEEEEE);
+              border: 1px solid var(--clr-616161);
+            }
+          }
+          .c_flex {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            width: 100%;
+            > div:first-child {
+              max-width: 160px;
+            }
+          }
+        }
+      }
+      .modalInfo {
+        background-color: var(--clr-FAFAFA);
+        border-radius: 4px;
+        padding: 16px;
+        margin-bottom: 20px;
+        ul {
+          li {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 0;
+            > span {
+              width: 110px;
+              min-width: 110px;
+              font-size: 16px;
+              color: var(--clr-616161);
+            }
+            p {
+              display: flex;
+              gap: 8px;
+              font-size: 16px;
+              line-height: 24px;
+              span {
+                width: auto;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+              }
+            }
+            &:nth-child(2) {
+              p {
+                font-weight: 700;
+                color: var(--clr-09AF00);
+              }
+            }
+          }
+        }
+      }
+      #preview_list.view {
+        .imgWrap {
+          &::before {
+            content: "";
+            display: none;
+          }
+        }
+      }
+      .modal_text {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 0;
+        p {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 14px;
+          line-height: 20px;
+          color: var(--clr-616161);
+          margin-bottom: 10;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        margin-bottom: 20px;
+      }
+
+      .preview_list {
+        cursor: pointer;
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding-top: 32px;
+      button {
+        min-width: 150px;
+      }
+    }
+
+    //204_itmem_inventory 합계
+    .total {
+      padding: 16px;
+      background-color: var(--clr-FAFAFA);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      span {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--clr-09AF00);
+      }
+    }
+  }
+}
+
+// ----------------------------- modal size ------------------------------------
+
+.modal_sm {
+  min-width: 340px !important;
+  width: 340px !important;
+}
+.modal_md {
+  min-width: 480px !important;
+  width: 480px !important;
+}
+.modal_lg {
+  min-width: 600px !important;
+  width: 600px !important;
+}
+.modal_xl {
+  min-width: 800px !important;
+  width: 800px !important;
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- modal -------------------------------------
+// 모달창에서 모달영역클릭시 remove
+$(".modal_bg").on("click", function (e) {
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});
+$(".modal_bg").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".DDY_select .select").removeClass("active");
+});
+
+// ------------------------------------- inline script -------------------------------------
+function modal01() {
+  $(".DDY_modal01").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function checkModal() {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>바텀시트</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal08()">
+                      Modal(type:bottom)
+                    </button>
+                    <div class="DDY_mobile_modal DDY_mobile_modal08">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap">
+                        <div class="modalTitle">
+                          <p>옵션추가</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <div class="option">
+                            <ul>
+                              <li class="checked">
+                                <button type="button">
+                                  주문 완료1주문 완료1주문 완료1주문 완료1주문
+                                  완료1주문 완료1주문 완료1주문 완료1주문
+                                  완료1주문 완료1주문 완료1주문 완료1주문 완료1
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button">주문완료2</button>
+                              </li>
+                              <li>
+                                <button type="button">주문완료3</button>
+                              </li>
+                              <li>
+                                <button type="button">주문완료4</button>
+                              </li>
+                              <li>
+                                <button type="button">주문완료5</button>
+                              </li>
+                              <li>
+                                <button type="button">주문완료6</button>
+                              </li>
+                              <li>
+                                <button type="button">주문완료7</button>
+                              </li>
+                              <li>
+                                <button type="button">주문완료8</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn default high_L w100"
+                            onclick="checkModal()"
+                          >
+                            선택완료
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_mobile_modal DDY_mobile_modal08&#x22;&#x3E;
+&#x3C;div class=&#x22;modalWrap&#x22;&#x3E;
+  &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+    &#x3C;p&#x3E;&#xC635;&#xC158;&#xCD94;&#xAC00;&#x3C;/p&#x3E;
+    &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22;  alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+    &#x3C;div class=&#x22;option&#x22;&#x3E;
+      &#x3C;ul&#x3E;
+        &#x3C;li class=&#x22;checked&#x22;&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;
+            &#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38;
+            &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38;
+            &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1&#xC8FC;&#xBB38; &#xC644;&#xB8CC;1
+          &#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+        &#x3C;li&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC8FC;&#xBB38;&#xC644;&#xB8CC;2&#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+        &#x3C;li&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC8FC;&#xBB38;&#xC644;&#xB8CC;3&#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+        &#x3C;li&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC8FC;&#xBB38;&#xC644;&#xB8CC;4&#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+        &#x3C;li&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC8FC;&#xBB38;&#xC644;&#xB8CC;5&#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+        &#x3C;li&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC8FC;&#xBB38;&#xC644;&#xB8CC;6&#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+        &#x3C;li&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC8FC;&#xBB38;&#xC644;&#xB8CC;7&#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+        &#x3C;li&#x3E;
+          &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC8FC;&#xBB38;&#xC644;&#xB8CC;8&#x3C;/button&#x3E;
+        &#x3C;/li&#x3E;
+      &#x3C;/ul&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+    &#x3C;button class=&#x22;DDY_btn default high_L w100&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;&#xC120;&#xD0DD;&#xC644;&#xB8CC;&#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- DDY_mobile_modal --------------------------------
+.DDY_mobile_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 10;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+  }
+  .modalWrap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    padding: 32px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    transition: top 0.2s;
+
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--clr-1a1a1a);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin: 24px 0 32px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+      > ul {
+        margin-bottom: 12px;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          padding: 16px 0;
+          font-size: 16px;
+          color: var(--clr-1A1A1A);
+          border-bottom: 1px solid var(--clr-EEEEEE);
+          span {
+            width: 160px;
+            font-weight: 600;
+          }
+          p {
+            width: 100%;
+          }
+        }
+      }
+
+      // modal option
+      .option {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        max-height: 250px;
+
+        position: relative;
+        &::before {
+          content: "";
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgb(255, 255, 255) 60%
+          );
+          height: 20px;
+          width: 100%;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+        }
+        ul {
+          display: flex;
+          gap: 6px;
+          flex-wrap: wrap;
+          height: 100%;
+          max-height: 232px;
+          overflow-y: auto;
+          padding-right: 2px;
+
+          &::-webkit-scrollbar {
+            width: 4px; /* 세로축 스크롤바 폭 너비 */
+            height: 120px; /* 가로축 스크롤바 폭 너비 */
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: var(--clr-E0E0E0); /* 스크롤바 막대 색상 */
+            border-radius: 12px 12px 12px 12px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background: var(--clr-333333); /*스크롤바 뒷 배경 색상*/
+          }
+
+          li {
+            padding: 9px 8px 9px 12px;
+            width: 100%;
+            line-height: 24px;
+            &:last-child {
+              margin-bottom: 20px;
+            }
+            &:hover {
+              border-radius: 4px;
+              background: var(--clr-EFF1FD)
+                url("/framework/assets/images/DDY_select_checked.svg") center right 8px / auto
+                no-repeat;
+              button {
+                color: var(--clr-323DA3);
+                background: none;
+              }
+            }
+            &.checked {
+              // padding: 9px 28px 9px 12px;
+              border-radius: 4px;
+              background: var(--clr-EFF1FD)
+                url("/framework/assets/images/DDY_select_checked.svg") center right 8px / auto
+                no-repeat;
+              button {
+                color: var(--clr-323DA3);
+                background: none;
+              }
+            }
+
+            &.disable {
+              background-color: var(--clr-EEEEEE);
+              button {
+                color: var(--clr-BDBDBD);
+              }
+            }
+            button {
+              width: 100%;
+              height: 100%;
+              font-size: 16px;
+              text-align: left;
+              padding-right: 28px;
+            }
+          }
+        }
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .tui-datepicker {
+      position: static;
+      border: none;
+      box-shadow: none;
+      margin-top: 0;
+      .tui-calendar {
+        padding-top: 0;
+      }
+    }
+    .tui-calendar {
+      border: none;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// DDY modal
+$(".modalWrap").click(function (e) {
+  e.stopPropagation();
+});
+$(".DDY_mobile_modal").click(function () {
+  $(this).removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").click(function () {
+  $(".DDY_mobile_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+
+//modal button
+$(
+  ".DDY_mobile_modal03 .option button, .DDY_mobile_modal04 .option button"
+).click(function () {
+  var text = $(this).text();
+
+  $(this)
+    .parents(".DDY_mobile_modal.active")
+    .prev(".DDY_select")
+    .find(".select button")
+    .text(text);
+
+  $(".option").removeClass("active");
+
+  $(this)
+    .parents(".DDY_mobile_modal.active")
+    .prev(".DDY_select")
+    .find(".select")
+    .removeClass("active");
+
+  $(this)
+    .parents(".DDY_mobile_modal.active")
+    .prev(".DDY_select")
+    .find(".select")
+    .addClass("font_c");
+  $("li").removeClass("checked");
+  $(this).parent("li").addClass("checked");
+});
+
+$(".DDY_mobile_modal02 .option button").click(function () {
+  $(this)
+    .parents(".DDY_mobile_modal02.active")
+    .prev(".DDY_select")
+    .find(".select")
+    .addClass("font_c");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>지도팝업</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal09()">
+                      Modal(type:map)
+                    </button>
+                    <div class="partner_map_modal">
+                      <div class="modalWrap">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <ul>
+                          <li>
+                            <span>타이틀</span>
+                            <p>내용</p>
+                          </li>
+                          <li>
+                            <span>타이틀</span>
+                            <p>내용</p>
+                          </li>
+                          <li>
+                            <span>타이틀</span>
+                            <p>내용</p>
+                          </li>
+                          <li>
+                            <span>타이틀</span>
+                            <p>내용</p>
+                          </li>
+                        </ul>
+                        <div class="modalBtnWrap">
+                          <button class="DDY_btn default high_S viewInfo">
+                            button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;partner_map_modal&#x22;&#x3E;
+  &#x3C;div class=&#x22;modalWrap&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;
+        &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/span&#x3E;
+        &#x3C;p&#x3E;&#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+      &#x3C;/li&#x3E;
+      &#x3C;li&#x3E;
+        &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/span&#x3E;
+        &#x3C;p&#x3E;&#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+      &#x3C;/li&#x3E;
+      &#x3C;li&#x3E;
+        &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/span&#x3E;
+        &#x3C;p&#x3E;&#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+      &#x3C;/li&#x3E;
+      &#x3C;li&#x3E;
+        &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/span&#x3E;
+        &#x3C;p&#x3E;&#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+      &#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_S viewInfo&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- partner_map_modal --------------------------------
+
+// 파트너 맵 모달
+.partner_map_modal {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      top: -320px;
+    }
+  }
+  .modalWrap {
+    position: absolute;
+    top: -300px;
+    left: 18px;
+    transform: translate(-50%, 0);
+    min-width: 332px;
+    max-width: 332px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+      0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 32px;
+      height: 16px;
+      background: url("/framework/assets/images/part_modal_arrow.svg") top center no-repeat;
+    }
+
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 12px;
+      p {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+        color: var(--clr-1a1a1a);
+      }
+      img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      button {
+        min-width: 150px;
+      }
+    }
+    > ul {
+      padding: 16px 0 20px;
+      > li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        padding: 4px 0;
+        font-size: 14px;
+        color: var(--clr-1A1A1A);
+        > span {
+          color: var(--clr-616161);
+          width: 92px;
+          flex-basis: 100px;
+          min-width: 100px;
+          & + div {
+            flex: 1;
+          }
+        }
+        p {
+          flex: 1;
+          width: 100%;
+          line-height: 20px;
+        }
+      }
+    }
+    .tui-datepicker {
+      min-width: 300px;
+      left: -120px;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ------------------------------------- partner js -------------------------------------
+
+// localPoint 클릭시 다른 localpoint remove / this add
+$(".localPoint .imgWrap, .localPoint em").on("click", function () {
+  $(".localPoint .imgWrap").removeClass("active");
+  $(".localPoint em").removeClass("active");
+  $(".partner_map_modal").removeClass("active");
+  $(this).addClass("active");
+  $(this).addClass("active");
+  $(this).siblings(".partner_map_modal").addClass("active");
+});
+
+// localpoint영역 지정
+$(".localPoint , .mapListWrap").on("click", function (e) {
+  e.stopPropagation();
+});
+
+//x표시 클릭시 remove
+$(".closeBtn").on("click", function () {
+  $(".partner_map_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".localPoint .imgWrap, .localPoint em").removeClass("active");
+});
+
+//상세보기 클릭시 remove
+$(".viewInfo, .modalBtnWrap button").on("click", function () {
+  $(".partner_map_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".localPoint .imgWrap").removeClass("active");
+  $(".localPoint em").removeClass("active");
+});
+
+//지도클릭시 remove
+$(".mapWrap").on("click", function () {
+  $(".partner_map_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".localPoint .imgWrap").removeClass("active");
+  $(".localPoint em").removeClass("active");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>사이즈</h3>
+                <h4>SM-340</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal02()">
+                      Modal(SM-button 2)
+                    </button>
+                    <button class="DDY_btn default high_S" onclick="modal03()">
+                      Modal(SM-button 1)
+                    </button>
+                    <div class="DDY_modal DDY_modal02">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_sm">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>Slot Components</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="DDY_modal DDY_modal03">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_sm">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>Slot Components</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn default high_M w100"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal DDY_modal01&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal_bg&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_sm&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+      &#x3C;p&#x3E;Slot Components&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_modal ------------------------------------
+
+// 대대여 모달 - 배송조회
+.DDY_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 200;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //min-width: 480px;
+      padding: 24px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-radius: 16px;
+      transition: top 0.2s;
+      //test
+      max-height: calc(100vh - 80px);
+    }
+  }
+  .modal_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modalWrap {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 480px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    z-index: 1;
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 16px;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: var(--clr-1A1A1A);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin-top: 24px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding-top: 32px;
+      button {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+// ----------------------------- modal size ------------------------------------
+
+.modal_sm {
+  min-width: 340px !important;
+  width: 340px !important;
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- modal -------------------------------------
+// 모달창에서 모달영역클릭시 remove
+$(".modal_bg").on("click", function (e) {
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});
+$(".modal_bg").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".DDY_select .select").removeClass("active");
+});
+
+// ------------------------------------- inline script -------------------------------------
+function modal02() {
+  $(".DDY_modal02").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function modal03() {
+  $(".DDY_modal03").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function checkModal() {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>MD-480</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal04()">
+                      Modal(MD)
+                    </button>
+                    <div class="DDY_modal DDY_modal04">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_md">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>Slot Components</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal DDY_modal01&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal_bg&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_md&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+      &#x3C;p&#x3E;Slot Components&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_modal ------------------------------------
+
+// 대대여 모달 - 배송조회
+.DDY_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 200;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //min-width: 480px;
+      padding: 24px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-radius: 16px;
+      transition: top 0.2s;
+      //test
+      max-height: calc(100vh - 80px);
+    }
+  }
+  .modal_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modalWrap {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 480px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    z-index: 1;
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 16px;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: var(--clr-1A1A1A);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin-top: 24px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding-top: 32px;
+      button {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+// ----------------------------- modal size ------------------------------------
+
+.modal_md {
+  min-width: 480px !important;
+  width: 480px !important;
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- modal -------------------------------------
+// 모달창에서 모달영역클릭시 remove
+$(".modal_bg").on("click", function (e) {
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});
+$(".modal_bg").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".DDY_select .select").removeClass("active");
+});
+
+// ------------------------------------- inline script -------------------------------------
+function modal04() {
+  $(".DDY_modal04").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function checkModal() {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>LG-600</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal05()">
+                      Modal(LG)
+                    </button>
+                    <div class="DDY_modal DDY_modal05">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_lg">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>Slot Components</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal DDY_modal01&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal_bg&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_lg&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+      &#x3C;p&#x3E;Slot Components&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_modal ------------------------------------
+
+// 대대여 모달 - 배송조회
+.DDY_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 200;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //min-width: 480px;
+      padding: 24px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-radius: 16px;
+      transition: top 0.2s;
+      //test
+      max-height: calc(100vh - 80px);
+    }
+  }
+  .modal_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modalWrap {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 480px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    z-index: 1;
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 16px;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: var(--clr-1A1A1A);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin-top: 24px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding-top: 32px;
+      button {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+// ----------------------------- modal size ------------------------------------
+
+.modal_lg {
+  min-width: 600px !important;
+  width: 600px !important;
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- modal -------------------------------------
+// 모달창에서 모달영역클릭시 remove
+$(".modal_bg").on("click", function (e) {
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});
+$(".modal_bg").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".DDY_select .select").removeClass("active");
+});
+
+// ------------------------------------- inline script -------------------------------------
+function modal05() {
+  $(".DDY_modal05").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function checkModal() {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>XL-800</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal06()">
+                      Modal(XL)
+                    </button>
+                    <div class="DDY_modal DDY_modal06">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_xl">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>Slot Components</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal DDY_modal01&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal_bg&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_xl&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+      &#x3C;p&#x3E;Slot Components&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_modal ------------------------------------
+
+// 대대여 모달 - 배송조회
+.DDY_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 200;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //min-width: 480px;
+      padding: 24px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-radius: 16px;
+      transition: top 0.2s;
+      //test
+      max-height: calc(100vh - 80px);
+    }
+  }
+  .modal_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modalWrap {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 480px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    z-index: 1;
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 16px;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: var(--clr-1A1A1A);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin-top: 24px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding-top: 32px;
+      button {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+// ----------------------------- modal size ------------------------------------
+
+.modal_xl {
+  min-width: 800px !important;
+  width: 800px !important;
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- modal -------------------------------------
+// 모달창에서 모달영역클릭시 remove
+$(".modal_bg").on("click", function (e) {
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});
+$(".modal_bg").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".DDY_select .select").removeClass("active");
+});
+
+// ------------------------------------- inline script -------------------------------------
+function modal06() {
+  $(".DDY_modal06").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function checkModal() {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>스크롤</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal07()">
+                      Modal(scroll)
+                    </button>
+                    <div class="DDY_modal DDY_modal07">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_lg">
+                        <div class="modalTitle">
+                          <p>타이틀</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent modal_scroll">
+                          <div class="modalInfo">
+                            <ul>
+                              <li>
+                                <span>타이틀</span>
+                                <p>내용</p>
+                              </li>
+                              <li>
+                                <span>타이틀</span>
+                                <p>내용</p>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="modalCon">
+                            <h4>타이틀</h4>
+                            <div class="contents">
+                              <div class="c_flex">
+                                <div class="DDY_select w50">
+                                  <div class="select">
+                                    <button type="button">전체</button>
+                                  </div>
+                                  <div class="option">
+                                    <ul>
+                                      <li>
+                                        <button type="button">전체01</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체02</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체03</button>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="DDY_select w50">
+                                  <div class="select">
+                                    <button type="button">전체</button>
+                                  </div>
+                                  <div class="option">
+                                    <ul>
+                                      <li>
+                                        <button type="button">전체01</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체02</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체03</button>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modalCon">
+                            <h4>타이틀</h4>
+                            <div class="contents">
+                              <div class="c_flex">
+                                <div class="DDY_select w50">
+                                  <div class="select">
+                                    <button type="button">전체</button>
+                                  </div>
+                                  <div class="option">
+                                    <ul>
+                                      <li>
+                                        <button type="button">전체01</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체02</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체03</button>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="DDY_select w50">
+                                  <div class="select">
+                                    <button type="button">전체</button>
+                                  </div>
+                                  <div class="option">
+                                    <ul>
+                                      <li>
+                                        <button type="button">전체01</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체02</button>
+                                      </li>
+                                      <li>
+                                        <button type="button">전체03</button>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modalCon">
+                            <h4>타이틀</h4>
+                            <div class="contents">
+                              <div class="preview_g">
+                                <div id="previewWrap">
+                                  <label for="fileimage"></label>
+                                  <input
+                                    type="file"
+                                    id="fileimage"
+                                    accept="image/*"
+                                    onchange="setThumbnail(event);"
+                                    multiple="multiple"
+                                  />
+                                </div>
+                                <div id="preview_list"></div>
+                              </div>
+                              <p class="description">※ 설명</p>
+                            </div>
+                          </div>
+                          <div class="modalCon">
+                            <h4>타이틀</h4>
+                            <div class="contents">
+                              <div class="textarea_wrap">
+                                <div class="textLengthWrap">
+                                  <p class="textCount">0</p>
+                                  <p class="textTotal">/200자</p>
+                                </div>
+                                <textarea
+                                  class="textarea"
+                                  placeholder="메모 내용"
+                                ></textarea>
+                                <p class="errorText">
+                                  <img
+                                    src="/framework/assets/images/error_icon.svg"
+                                    alt="오류메세지"
+                                  />메모를 입력해 주세요.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            Button
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal DDY_modal07&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal_bg&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_lg&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent modal_scroll&#x22;&#x3E;
+      &#x3C;div class=&#x22;modalInfo&#x22;&#x3E;
+        &#x3C;ul&#x3E;
+          &#x3C;li&#x3E;
+            &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/span&#x3E;
+            &#x3C;p&#x3E;&#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+          &#x3C;/li&#x3E;
+          &#x3C;li&#x3E;
+            &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/span&#x3E;
+            &#x3C;p&#x3E;&#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+          &#x3C;/li&#x3E;
+        &#x3C;/ul&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/h4&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div class=&#x22;c_flex&#x22;&#x3E;
+            &#x3C;div class=&#x22;DDY_select w50&#x22;&#x3E;
+              &#x3C;div class=&#x22;select&#x22;&#x3E;
+                &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;option&#x22;&#x3E;
+                &#x3C;ul&#x3E;
+                  &#x3C;li&#x3E;
+                    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;01&#x3C;/button&#x3E;
+                  &#x3C;/li&#x3E;
+                  &#x3C;li&#x3E;
+                    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;02&#x3C;/button&#x3E;
+                  &#x3C;/li&#x3E;
+                  &#x3C;li&#x3E;
+                    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;03&#x3C;/button&#x3E;
+                  &#x3C;/li&#x3E;
+                &#x3C;/ul&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;DDY_select w50&#x22;&#x3E;
+              &#x3C;div class=&#x22;select&#x22;&#x3E;
+                &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;&#x3C;/button&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;option&#x22;&#x3E;
+                &#x3C;ul&#x3E;
+                  &#x3C;li&#x3E;
+                    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;01&#x3C;/button&#x3E;
+                  &#x3C;/li&#x3E;
+                  &#x3C;li&#x3E;
+                    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;02&#x3C;/button&#x3E;
+                  &#x3C;/li&#x3E;
+                  &#x3C;li&#x3E;
+                    &#x3C;button type=&#x22;button&#x22;&#x3E;&#xC804;&#xCCB4;03&#x3C;/button&#x3E;
+                  &#x3C;/li&#x3E;
+                &#x3C;/ul&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/h4&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div class=&#x22;preview_g&#x22;&#x3E;
+            &#x3C;div id=&#x22;previewWrap&#x22;&#x3E;
+              &#x3C;label for=&#x22;fileimage&#x22;&#x3E;&#x3C;/label&#x3E;
+              &#x3C;input type=&#x22;file&#x22; id=&#x22;fileimage&#x22; accept=&#x22;image/*&#x22; onchange=&#x22;setThumbnail(event);&#x22;multiple=&#x22;multiple&#x22;/&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div id=&#x22;preview_list&#x22;&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;p class=&#x22;description&#x22;&#x3E;&#x203B; &#xC124;&#xBA85;&#x3C;/p&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;&#xD0C0;&#xC774;&#xD2C0;&#x3C;/h4&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div class=&#x22;textarea_wrap&#x22;&#x3E;
+            &#x3C;div class=&#x22;textLengthWrap&#x22;&#x3E;
+              &#x3C;p class=&#x22;textCount&#x22;&#x3E;0&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;textTotal&#x22;&#x3E;/200&#xC790;&#x3C;/p&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;textarea class=&#x22;textarea&#x22; placeholder=&#x22;&#xBA54;&#xBAA8; &#xB0B4;&#xC6A9;&#x22;&#x3E;&#x3C;/textarea&#x3E;
+            &#x3C;p class=&#x22;errorText&#x22;&#x3E;
+              &#x3C;img src=&#x22;/framework/assets/images/error_icon.svg&#x22; alt=&#x22;&#xC624;&#xB958;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;&#xBA54;&#xBAA8;&#xB97C; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;.
+            &#x3C;/p&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;Button&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY_modal ------------------------------------
+
+// 대대여 모달 - 배송조회
+.DDY_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, overflow 0.2s;
+  z-index: 200;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+    .modalWrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //min-width: 480px;
+      padding: 24px 20px;
+      background-color: var(--clr-FFFFFF);
+      border-radius: 16px;
+      transition: top 0.2s;
+      //test
+      max-height: calc(100vh - 80px);
+    }
+  }
+  .modal_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .modalWrap {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 480px;
+    padding: 24px 20px;
+    background-color: var(--clr-FFFFFF);
+    border-radius: 16px;
+    transition: top 0.2s;
+    z-index: 1;
+    .modalTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      padding-bottom: 16px;
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: var(--clr-1A1A1A);
+      }
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .modalContent {
+      margin-top: 24px;
+      > p {
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--clr-555555);
+      }
+      //modal_scroll
+      &.modal_scroll {
+        //max-height: 520px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-right: 4px;
+        //test
+        max-height: calc(100vh - 280px);
+        &::-webkit-scrollbar {
+          width: 3px;
+          height: 200px;
+        }
+        &::-webkit-scrollbar-track {
+          background: var(--clr-FFFFFF);
+        }
+        &::-webkit-scrollbar-thumb {
+          background: var(--clr-EEEEEE);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--clr-EEEEEE);
+        }
+        > p {
+          padding: 24px 0 0;
+          font-size: 18px;
+          line-height: 26px;
+          color: var(--clr-555555);
+        }
+      }
+      > ul {
+        margin-bottom: 12px;
+        > li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          padding: 16px 0;
+          font-size: 16px;
+          color: var(--clr-1A1A1A);
+          border-bottom: 1px solid var(--clr-EEEEEE);
+          span {
+            width: 160px;
+            min-width: 160px;
+            font-weight: 600;
+          }
+          p {
+            width: 100%;
+          }
+
+          .preview_g {
+            width: 100%;
+            max-width: 300px;
+
+            .preview_list {
+              display: flex;
+              overflow: auto;
+              gap: 12px;
+              flex: 1;
+              &::-webkit-scrollbar {
+                width: 8px;
+                height: 2px;
+              }
+              &::-webkit-scrollbar-track {
+                background: var(--clr-EEEEEE);
+              }
+              &::-webkit-scrollbar-thumb {
+                background: var(--clr-333333);
+              }
+              &::-webkit-scrollbar-thumb:hover {
+                background: var(--clr-333333);
+              }
+              .imgWrap {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 88px;
+                min-width: 88px;
+                height: 88px;
+                border-radius: 4px;
+                overflow: hidden;
+                background-color: var(--clr-EEEEEE);
+                img {
+                  width: auto;
+                  height: auto;
+                  max-width: 100%;
+                  max-height: 100%;
+                  margin: 0 auto;
+                }
+              }
+            }
+          }
+        }
+      }
+      //textarea
+      textarea {
+        resize: none;
+        width: 100%;
+        height: 120px;
+        border: 1px solid var(--clr-616161);
+        border-radius: 4px;
+        padding: 16px 16px 10px 16px;
+        font-size: 14px;
+        line-height: 20px;
+        resize: none;
+        outline-color: var(--clr-323DA3);
+
+        &::placeholder {
+          color: var(--clr-BDBDBD);
+        }
+      }
+      //modalCon
+      .modalCon {
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        h4 {
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 26px;
+          margin-bottom: 12px;
+        }
+        .contents {
+          > p {
+            font-size: 16px;
+            line-height: 22px;
+          }
+          .modalText {
+            strong {
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 26px;
+              letter-spacing: -0.27px;
+            }
+          }
+          .description {
+            color: var(--clr-616161);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-top: 12px;
+          }
+          .modal_toggle {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              display: flex;
+              align-items: center;
+              padding: 8px 0;
+              margin-bottom: 12px;
+              &:last-child {
+                margin-bottom: 0;
+              }
+              p {
+                font-size: 16px;
+                line-height: 24px;
+                &:first-child {
+                  width: 110px;
+                  min-width: 110px;
+                  color: var(--clr-616161);
+                }
+              }
+            }
+          }
+          .barcode_modal_list {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 6px;
+              width: 100%;
+              padding: 8px 0;
+              > p {
+                font-size: 16px;
+                line-height: 22px;
+                color: var(--clr-616161);
+              }
+              ul {
+                li {
+                  width: 129px;
+                }
+              }
+              &.on {
+                > p {
+                  font-weight: 700;
+                  color: var(--clr-09AF00);
+                }
+              }
+            }
+          }
+
+          input[type="file"] {
+            display: none;
+          }
+          .fileBtn {
+            width: 130px;
+          }
+          #fileName {
+            display: flex;
+            align-items: center;
+          }
+
+          .bgTable {
+            margin-bottom: 8px;
+            tbody {
+              tr {
+                &:hover {
+                  background-color: transparent;
+                }
+                td {
+                  &.bgtd {
+                    background-color: var(--clr-FAFAFA);
+                    font-weight: 600;
+                  }
+                  &.linetd {
+                    border-left: 1px solid var(--clr-EEEEEE);
+                  }
+                  > p {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                  }
+                  span {
+                    color: var(--clr-09AF00);
+                    font-size: 14px;
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+          }
+
+          .modalText {
+            strong {
+              em {
+                color: var(--clr-09AF00);
+              }
+            }
+          }
+
+          .textarea_wrap {
+            position: relative;
+            .textLengthWrap {
+              position: absolute;
+              top: 90px;
+              right: 18px;
+              display: flex;
+              align-items: center;
+              p {
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 18px;
+                color: var(--clr-999999);
+              }
+              &.on {
+                p {
+                  color: var(--clr-1A1A1A);
+                }
+              }
+            }
+            .errorText {
+              display: none;
+            }
+            &.error {
+              .textarea {
+                border: 2px solid var(--clr-E53935);
+                outline-color: var(--clr-E53935);
+              }
+              .errorText {
+                color: var(--clr-E53935);
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-size: 14px;
+                margin-top: 4px;
+              }
+            }
+            &.disabled {
+              background-color: var(--clr-EEEEEE);
+              border: 1px solid var(--clr-616161);
+            }
+          }
+          .c_flex {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            width: 100%;
+            > div:first-child {
+              max-width: 160px;
+            }
+          }
+        }
+      }
+      .modalInfo {
+        background-color: var(--clr-FAFAFA);
+        border-radius: 4px;
+        padding: 16px;
+        margin-bottom: 20px;
+        ul {
+          li {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 0;
+            > span {
+              width: 110px;
+              min-width: 110px;
+              font-size: 16px;
+              color: var(--clr-616161);
+            }
+            p {
+              display: flex;
+              gap: 8px;
+              font-size: 16px;
+              line-height: 24px;
+              span {
+                width: auto;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+              }
+            }
+            &:nth-child(2) {
+              p {
+                font-weight: 700;
+                color: var(--clr-09AF00);
+              }
+            }
+          }
+        }
+      }
+      #preview_list.view {
+        .imgWrap {
+          &::before {
+            content: "";
+            display: none;
+          }
+        }
+      }
+      .modal_text {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 0;
+        p {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 14px;
+          line-height: 20px;
+          color: var(--clr-616161);
+          margin-bottom: 10;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        margin-bottom: 20px;
+      }
+
+      .preview_list {
+        cursor: pointer;
+      }
+    }
+    .modalBtnWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding-top: 32px;
+      button {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+// ----------------------------- modal size ------------------------------------
+
+.modal_lg {
+  min-width: 600px !important;
+  width: 600px !important;
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ------------------------------------- modal -------------------------------------
+// 모달창에서 모달영역클릭시 remove
+$(".modal_bg").on("click", function (e) {
+  $(".DDY_select .option").removeClass("active");
+  $(".DDY_select .select").removeClass("active");
+});
+$(".modal_bg").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+});
+$(".closeBtn").on("click", function () {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+  $(".DDY_select .select").removeClass("active");
+});
+
+// ------------------------------------- inline script -------------------------------------
+function modal07() {
+  $(".DDY_modal07").addClass("active");
+  $("html, body").addClass("hidden");
+}
+function checkModal() {
+  $(".DDY_modal").removeClass("active");
+  $("html, body").removeClass("hidden");
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>내용</h3>
+                <h4>기본내용</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_modal active guide_modal">
+                      <div class="modalWrap modal_md guide_modal_wrap">
+                        <div class="modalTitle">
+                          <p>기본 내용</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>기본내용입니다.</p>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            취소
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            확인
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal&#x22;&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_md&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xAE30;&#xBCF8; &#xB0B4;&#xC6A9;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent&#x22;&#x3E;
+      &#x3C;p&#x3E;
+        &#xAE30;&#xBCF8;&#xB0B4;&#xC6A9;&#xC785;&#xB2C8;&#xB2E4;.
+      &#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn secondary high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;
+        &#xCDE8;&#xC18C;
+      &#x3C;/button&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;
+        &#xD655;&#xC778;
+      &#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h4>추가내용</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_modal active guide_modal">
+                      <div class="modalWrap modal_lg guide_modal_wrap">
+                        <div class="modalTitle">
+                          <p>입고 처리</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent modal_scroll">
+                          <p>modalContent p 텍스트</p>
+                          <div class="modal_text">
+                            <p>modal_text p 텍스트</p>
+                          </div>
+                          <!-- modalInfo li 두번째 요소 컬러변경-->
+                          <div class="modalInfo">
+                            <ul>
+                              <li>
+                                <span>상품명</span>
+                                <p>MIRAGE7 (22D)-B</p>
+                              </li>
+                              <li>
+                                <span>바코드</span>
+                                <p>S03091004118-220700008000</p>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <!-- modal_info_table li ft_green_color 넣기-->
+                          <div class="modal_info_table">
+                            <ul>
+                              <li>
+                                <span>상담받을 연락처</span>
+                                <p
+                                  class="ft_green_color"
+                                  style="font-weight: 700"
+                                >
+                                  010-2704-5277
+                                </p>
+                              </li>
+                              <li></li>
+                              <li>
+                                <span>수급자 성명</span>
+                                <p>여숙녀</p>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- modalCon -->
+                          <div class="modalCon">
+                            <h4>modal_toggle_wrap</h4>
+                            <!-- contents -->
+                            <div class="contents">
+                              <!-- modal_toggle_wrap -->
+                              <ul class="modal_toggle">
+                                <li class="w50">
+                                  <p>작동 여부</p>
+                                  <div class="toggleWrap">
+                                    <div class="tableTabTopcustom">
+                                      <span class="on active">정상</span>
+                                      <span>비정상</span>
+                                      <div
+                                        class="bar"
+                                        style="width: 64.4844px; left: 4px"
+                                      ></div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="modalCon">
+                            <h4>h4텍스트</h4>
+                            <div class="contents">
+                              <p>p텍스트</p>
+                              <div class="modalText">
+                                <strong>strong텍스트</strong>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modalCon">
+                            <h4>창고 위치</h4>
+                            <div class="contents">
+                              <div class="c_flex">
+                                <div>c_flex</div>
+                                <div>c_flex</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modalCon">
+                            <h4>상품 이미지</h4>
+                            <div class="contents">
+                              <div class="preview_g">
+                                <div id="previewWrap">
+                                  <label for="fileimage"></label>
+                                  <input
+                                    type="file"
+                                    id="fileimage"
+                                    accept="image/*"
+                                    onchange="setThumbnail(event);"
+                                    multiple="multiple"
+                                  />
+                                </div>
+                                <div id="preview_list"></div>
+                              </div>
+                              <p class="description">※ description</p>
+                            </div>
+                          </div>
+                          <div class="modalCon">
+                            <h4>textarea</h4>
+                            <div class="contents">
+                              <div class="textarea_wrap">
+                                <div class="textLengthWrap">
+                                  <p class="textCount">0</p>
+                                  <p class="textTotal">/200자</p>
+                                </div>
+                                <textarea
+                                  class="textarea"
+                                  placeholder="하자 체크 - 작동여부 비정상 or 부품누락 있음
+              선택 상태에서는 메모 입력이 필수입니다."
+                                ></textarea>
+                                <p class="errorText">
+                                  <img
+                                    src="../images/error_icon.svg"
+                                    alt="오류메세지"
+                                  />메모를 입력해 주세요.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- modalBtnWrap -->
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal()"
+                          >
+                            저장
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_modal&#x22;&#x3E;
+  &#x3C;div class=&#x22;modalWrap modal_lg&#x22;&#x3E;
+    &#x3C;div class=&#x22;modalTitle&#x22;&#x3E;
+      &#x3C;p&#x3E;&#xC785;&#xACE0; &#xCC98;&#xB9AC;&#x3C;/p&#x3E;
+      &#x3C;a class=&#x22;closeBtn&#x22; href=&#x22;javascript:void(0)&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/xbox_icon.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+      &#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;modalContent modal_scroll&#x22;&#x3E;
+      &#x3C;p&#x3E;modalContent p &#xD14D;&#xC2A4;&#xD2B8;&#x3C;/p&#x3E;
+      &#x3C;div class=&#x22;modal_text&#x22;&#x3E;
+        &#x3C;p&#x3E;modal_text p &#xD14D;&#xC2A4;&#xD2B8;&#x3C;/p&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;!-- modalInfo li &#xB450;&#xBC88;&#xC9F8; &#xC694;&#xC18C; &#xCEEC;&#xB7EC;&#xBCC0;&#xACBD;--&#x3E;
+      &#x3C;div class=&#x22;modalInfo&#x22;&#x3E;
+        &#x3C;ul&#x3E;
+          &#x3C;li&#x3E;
+            &#x3C;span&#x3E;&#xC0C1;&#xD488;&#xBA85;&#x3C;/span&#x3E;
+            &#x3C;p&#x3E;MIRAGE7 (22D)-B&#x3C;/p&#x3E;
+          &#x3C;/li&#x3E;
+          &#x3C;li&#x3E;
+            &#x3C;span&#x3E;&#xBC14;&#xCF54;&#xB4DC;&#x3C;/span&#x3E;
+            &#x3C;p&#x3E;S03091004118-220700008000&#x3C;/p&#x3E;
+          &#x3C;/li&#x3E;
+        &#x3C;/ul&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;!-- modal_info_table li ft_green_color &#xB123;&#xAE30;--&#x3E;
+      &#x3C;div class=&#x22;modal_info_table&#x22;&#x3E;
+        &#x3C;ul&#x3E;
+          &#x3C;li&#x3E;
+            &#x3C;span&#x3E;&#xC0C1;&#xB2F4;&#xBC1B;&#xC744; &#xC5F0;&#xB77D;&#xCC98;&#x3C;/span&#x3E;
+            &#x3C;p class=&#x22;ft_green_color&#x22; style=&#x22;font-weight: 700&#x22; &#x3E;
+              010-2704-5277
+            &#x3C;/p&#x3E;
+          &#x3C;/li&#x3E;
+          &#x3C;li&#x3E;&#x3C;/li&#x3E;
+          &#x3C;li&#x3E;
+            &#x3C;span&#x3E;&#xC218;&#xAE09;&#xC790; &#xC131;&#xBA85;&#x3C;/span&#x3E;
+            &#x3C;p&#x3E;&#xC5EC;&#xC219;&#xB140;&#x3C;/p&#x3E;
+          &#x3C;/li&#x3E;
+        &#x3C;/ul&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;!-- modalCon --&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;modal_toggle_wrap&#x3C;/h4&#x3E;
+        &#x3C;!-- contents --&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;!-- modal_toggle_wrap --&#x3E;
+          &#x3C;ul class=&#x22;modal_toggle&#x22;&#x3E;
+            &#x3C;li class=&#x22;w50&#x22;&#x3E;
+              &#x3C;p&#x3E;&#xC791;&#xB3D9; &#xC5EC;&#xBD80;&#x3C;/p&#x3E;
+              &#x3C;div class=&#x22;toggleWrap&#x22;&#x3E;
+                &#x3C;div class=&#x22;tableTabTopcustom&#x22;&#x3E;
+                  &#x3C;span class=&#x22;on active&#x22;&#x3E;&#xC815;&#xC0C1;&#x3C;/span&#x3E;
+                  &#x3C;span&#x3E;&#xBE44;&#xC815;&#xC0C1;&#x3C;/span&#x3E;
+                  &#x3C;div class=&#x22;bar&#x22; style=&#x22;width: 64.4844px; left: 4px&#x22;&#x3E;&#x3C;/div&#x3E;
+                &#x3C;/div&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/li&#x3E;
+          &#x3C;/ul&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;h4&#xD14D;&#xC2A4;&#xD2B8;&#x3C;/h4&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;p&#x3E;p&#xD14D;&#xC2A4;&#xD2B8;&#x3C;/p&#x3E;
+          &#x3C;div class=&#x22;modalText&#x22;&#x3E;
+            &#x3C;strong&#x3E;strong&#xD14D;&#xC2A4;&#xD2B8;&#x3C;/strong&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;&#xCC3D;&#xACE0; &#xC704;&#xCE58;&#x3C;/h4&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div class=&#x22;c_flex&#x22;&#x3E;
+            &#x3C;div&#x3E;c_flex&#x3C;/div&#x3E;
+            &#x3C;div&#x3E;c_flex&#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;&#xC0C1;&#xD488; &#xC774;&#xBBF8;&#xC9C0;&#x3C;/h4&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div class=&#x22;preview_g&#x22;&#x3E;
+            &#x3C;div id=&#x22;previewWrap&#x22;&#x3E;
+              &#x3C;label for=&#x22;fileimage&#x22;&#x3E;&#x3C;/label&#x3E;
+              &#x3C;input type=&#x22;file&#x22; id=&#x22;fileimage&#x22; accept=&#x22;image/*&#x22; onchange=&#x22;setThumbnail(event);&#x22; multiple=&#x22;multiple&#x22;/&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div id=&#x22;preview_list&#x22;&#x3E;&#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;p class=&#x22;description&#x22;&#x3E;&#x203B; description&#x3C;/p&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modalCon&#x22;&#x3E;
+        &#x3C;h4&#x3E;textarea&#x3C;/h4&#x3E;
+        &#x3C;div class=&#x22;contents&#x22;&#x3E;
+          &#x3C;div class=&#x22;textarea_wrap&#x22;&#x3E;
+            &#x3C;div class=&#x22;textLengthWrap&#x22;&#x3E;
+              &#x3C;p class=&#x22;textCount&#x22;&#x3E;0&#x3C;/p&#x3E;
+              &#x3C;p class=&#x22;textTotal&#x22;&#x3E;/200&#xC790;&#x3C;/p&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;textarea class=&#x22;textarea&#x22; placeholder=&#x22;&#xD558;&#xC790; &#xCCB4;&#xD06C; - &#xC791;&#xB3D9;&#xC5EC;&#xBD80; &#xBE44;&#xC815;&#xC0C1; or &#xBD80;&#xD488;&#xB204;&#xB77D; &#xC788;&#xC74C;&#xC120;&#xD0DD; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294; &#xBA54;&#xBAA8; &#xC785;&#xB825;&#xC774; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.&#x22;&#x3E;&#x3C;/textarea&#x3E;
+            &#x3C;p class=&#x22;errorText&#x22;&#x3E;
+              &#x3C;img src=&#x22;../images/error_icon.svg&#x22; alt=&#x22;&#xC624;&#xB958;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;
+              &#xBA54;&#xBAA8;&#xB97C; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;.
+            &#x3C;/p&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;!-- modalBtnWrap --&#x3E;
+    &#x3C;div class=&#x22;modalBtnWrap&#x22;&#x3E;
+      &#x3C;button class=&#x22;DDY_btn default high_M&#x22; onclick=&#x22;checkModal()&#x22;&#x3E;
+        &#xC800;&#xC7A5;
+      &#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>이미지 슬라이드</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal10()">
+                      이미지 슬라이드
+                    </button>
+                    <div class="DDY_modal DDY_modal10">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_xl">
+                        <div class="modalTitle">
+                          <p>설치보고 이미지</p>
+                          <a
+                            href="javascript:void(0)"
+                            class="closeBtn"
+                            onclick="checkModal01()"
+                          >
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent modal_scroll img_swiper_wrap">
+                          <div class="swiper mySwiper img_scale_swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <div class="img_wrap">
+                                  <img
+                                    src="https://placehold.co/1000"
+                                    alt="테스트이미지"
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="img_wrap">
+                                  <img
+                                    src="https://placehold.co/1000x300"
+                                    alt="테스트이미지"
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="img_wrap">
+                                  <img
+                                    src="https://placehold.co/760x600"
+                                    alt="테스트이미지"
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="img_wrap">
+                                  <img
+                                    src="https://placehold.co/1000"
+                                    alt="테스트이미지"
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="img_wrap">
+                                  <img
+                                    src="https://placehold.co/760x300"
+                                    alt="테스트이미지"
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="img_wrap">
+                                  <img
+                                    src="https://placehold.co/360x600"
+                                    alt="테스트이미지"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper_btn swiper-prev">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="42"
+                                height="42"
+                                viewBox="0 0 42 42"
+                                fill="none"
+                              >
+                                <path
+                                  d="M27.1781 9.57192C27.6906 10.0845 27.6906 10.9155 27.1781 11.4281L17.6062 21L27.1781 30.5719C27.6906 31.0845 27.6906 31.9155 27.1781 32.4281C26.6655 32.9406 25.8345 32.9406 25.3219 32.4281L14.8219 21.9281C14.3094 21.4155 14.3094 20.5845 14.8219 20.0719L25.3219 9.57192C25.8345 9.05936 26.6655 9.05936 27.1781 9.57192Z"
+                                  fill="#616161"
+                                />
+                              </svg>
+                            </div>
+                            <div class="swiper_btn swiper-next">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="42"
+                                height="42"
+                                viewBox="0 0 42 42"
+                                fill="none"
+                              >
+                                <path
+                                  d="M14.8219 9.57192C14.3094 10.0845 14.3094 10.9155 14.8219 11.4281L24.3938 21L14.8219 30.5719C14.3094 31.0845 14.3094 31.9155 14.8219 32.4281C15.3345 32.9406 16.1655 32.9406 16.6781 32.4281L27.1781 21.9281C27.6906 21.4155 27.6906 20.5845 27.1781 20.0719L16.6781 9.57192C16.1655 9.05936 15.3345 9.05936 14.8219 9.57192Z"
+                                  fill="#616161"
+                                />
+                              </svg>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                        <!-- <div class="modalBtnWrap">
+                          <button class="DDY_btn default high_M" onclick="checkModal()">
+                            확인
+                          </button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">/html/total/office/06_shipment_complet.html - 배송조회 버튼 > 설치보고 이미지 - 참조</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h4>라인 리스트</h4>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <button class="DDY_btn default high_S" onclick="modal11()">
+                      라인 리스트
+                    </button>
+                    <div class="DDY_modal DDY_modal11">
+                      <div class="modal_bg"></div>
+                      <div class="modalWrap modal_md">
+                        <div class="modalTitle">
+                          <p>계약건이 있는 수급자 삭제 안내</p>
+                          <a class="closeBtn" href="javascript:void(0)">
+                            <img
+                              src="/framework/assets/images/xbox_icon.svg"
+                              alt="닫기"
+                            />
+                          </a>
+                        </div>
+                        <div class="modalContent">
+                          <p>
+                            홍길동 수급자는 현재 대여중인 품목이 있습니다.
+                            <br />
+                            수급자 삭제는 입원/입소/사망한 경우 또는 수급자
+                            요청시에만 가능합니다.
+                          </p>
+                          <ul class="care_mt_20">
+                            <li>
+                              <span>아이디</span>
+                              <p>본인</p>
+                            </li>
+                            <li>
+                              <span>비밀번호 입력</span>
+                              <div class="DDY_input">
+                                <input
+                                  type="password"
+                                  placeholder="비밀번호 입력"
+                                />
+                              </div>
+                            </li>
+                            <li>
+                              <span>계약 해지사유</span>
+                              <div class="DDY_select w100">
+                                <div class="select">
+                                  <button type="button">선택</button>
+                                </div>
+                                <div class="option">
+                                  <ul>
+                                    <li><button type="button">입원</button></li>
+                                    <li><button type="button">입소</button></li>
+                                    <li><button type="button">사망</button></li>
+                                    <li>
+                                      <button type="button">수급자 요청</button>
+                                    </li>
+                                    <li>
+                                      <button type="button">
+                                        계약 해지사유 선택
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="modalCon w100">
+                                <span>계약 해지사유</span>
+                                <div class="contents care_mt_12">
+                                  <div class="textarea_wrap">
+                                    <div class="textLengthWrap">
+                                      <p class="textCount">0</p>
+                                      <p class="textTotal">/50자</p>
+                                    </div>
+                                    <textarea
+                                      class="textarea"
+                                      placeholder="계약 해지사유를 상세하게 입력해 주세요."
+                                      maxlength="50"
+                                    ></textarea>
+                                    <p class="errorText">
+                                      <img
+                                        src="/img/subrental/error_icon.svg"
+                                        alt="오류메세지"
+                                      />메모를 입력해 주세요.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <div class="care_mt_20">
+                            <div class="DDY_checkBox">
+                              <input type="checkbox" id="lab04" />
+                              <label for="lab04"> 확인함</label>
+                            </div>
+                            <p class="description">
+                              수급자 삭제 시 해당 수급자와의 계약 건이 모두
+                              해지됩니다. <br />
+                              계약 해지 이력은 ‘계약서 관리'에서 확인할 수
+                              있습니다.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="modalBtnWrap">
+                          <button
+                            class="DDY_btn secondary high_M"
+                            onclick="checkModal()"
+                          >
+                            취소
+                          </button>
+                          <button
+                            class="DDY_btn default high_M"
+                            onclick="checkModal(), Alert()"
+                          >
+                            삭제
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">/html/total/recipient/402_info.html - 수급자 삭제 버튼 - 참조</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>
+<script>
+  //guide 전용
+  function modal01() {
+    $(".DDY_modal01").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal02() {
+    $(".DDY_modal02").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal03() {
+    $(".DDY_modal03").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal04() {
+    $(".DDY_modal04").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal05() {
+    $(".DDY_modal05").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal06() {
+    $(".DDY_modal06").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal07() {
+    $(".DDY_modal07").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal08() {
+    $(".DDY_mobile_modal08").addClass("active");
+    $("html, body").addClass("hidden");
+    $("nav").addClass("on");
+  }
+
+  function modal09() {
+    $(".partner_map_modal").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal10() {
+    $(".DDY_modal10").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function modal11() {
+    $(".DDY_modal11").addClass("active");
+    $("html, body").addClass("hidden");
+  }
+  function checkModal() {
+    $(".DDY_modal").removeClass("active");
+    $("html, body").removeClass("hidden");
+    $(".DDY_mobile_modal").removeClass("active");
+    $(".partner_map_modal").removeClass("active");
+    $("nav").removeClass("on");
+  }
+
+  $(".DDY_mobile_modal .closeBtn").click(function () {
+    $("nav").removeClass("on");
+    $(".DDY_mobile_modal").removeClass("active");
+  });
+  $(".DDY_mobile_modal").click(function () {
+    $("nav").removeClass("on");
+    $(".DDY_mobile_modal").removeClass("active");
+  });
+</script>
+<script>
+  //swiper 슬라이드
+  var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
+    },
+  });
+</script>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/badge.html"
+                      >Badge (배지)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../../components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/label.html"
+                      >Label (레이블)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/modal.html"
+                      >Modal (모달)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/layout/tab.html">Tab (탭)</a>
+                  </li>
+                  <li>
+                    <a href="../../components/layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/action/button.html"
+                      >Button (버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../../components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/select/switch.html"
+                      >Switch (토글)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../../components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../../components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li>
+                <a href="../../patterns/search.html">Search (검색)</a>
+              </li>
+              <li>
+                <a href="../../patterns/message.html">Message (알림)</a>
+              </li>
+              <li>
+                <a href="../../patterns/error.html">Error (오류)</a>
+              </li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../order/list.html"> 상품리스트</a>
+                  </li>
+                  <li><a href="../order/detail.html">상품상세</a></li>
+                  <li><a href="../order/check.html">주문정보확인</a></li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li class="active">
+                    <a href="../tables/mix.html">조합형</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>테이블_조합형</h2>
+              <ul class="indicator">
+                <li>Patterns</li>
+                <li>Tables (테이블)</li>
+                <li>조합형</li>
+              </ul>
+            </div>
+          </div>
+
+          <section>
+            <h3>조합형</h3>
+            <div class="guide_text">
+              <p>
+                • 데이터 조합형 테이블은 사용자가 데이터를 입력하거나 수정할 수
+                있는 입력형 테이블과 데이터 값을 조회할 수 있는 테이블과 조합된
+                형태로 구성된다.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h3>구조</h3>
+            <h4>테이블 조합형</h4>
+            <div class="guide_text">
+              <p>• 데이터 입력형과 동일한 규칙을 따른다.</p>
+              <p>
+                • 테이블 셀(td)안에 들어갈 수 있도록 입력 텍스트 수를 지정해야
+                한다. (두 줄 X)
+              </p>
+              <p>
+                • 테이블 셀(td) 안에 들어가는 텍스트를 고려하여 사이즈를
+                고려하여 텍스트가 잘리지 않도록 해야 한다.
+              </p>
+              <p>
+                • 입력폼을 사용할 경우 스크롤이 생기지 않도록 고려해야 한다.
+              </p>
+            </div>
+            <!-- a -->
+            <h5>a. 세로형_데이터 입력형</h5>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/tables/table03_01.png"
+                alt="세로형_데이터"
+              />
+            </div>
+
+            <!-- b -->
+            <h5>b. 가로형_데이터 입력형</h5>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/tables/table03_02.png"
+                alt="가로형_데이터"
+              />
+            </div>
+          </section>
+
+          <section>
+            <h3>사용법</h3>
+            <div class="guide_list">
+              <ul>
+                <li>
+                  <span>
+                    • 세로형 테이블에서 유효성 검사시, 에러가 있을 때 토스트
+                    알럿으로 오류를 표시한다.
+                  </span>
+                </li>
+                <li>
+                  <div>
+                    <p class="pl10">
+                      에러가 발생한 셀에 에러 표시(빨간색 테두리)를 하여 오류가
+                      발생한 셀을 강조합니다.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/tables/table03_03.png"
+                alt="사용법"
+              />
+            </div>
+            <div class="guide_list">
+              <ul>
+                <li>
+                  <span>
+                    • 가로형 테이블에서 유효성 검사시, 에러가 발생한 셀 하단에
+                    오류메시지를 표시한다.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/tables/table03_04.png"
+                alt="사용법02"
+              />
+            </div>
+            <div class="guide_list">
+              <ul>
+                <li>
+                  <span
+                    >• 테이블 섹션 타이틀의 경우 테이블 버튼은 최대 4개까지만
+                    노출한다.
+                  </span>
+                </li>
+                <li>
+                  <div>
+                    <p class="pl10">
+                      버튼 개수는 최소한 적게 사용하는 것을 원칙으로 한다.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/patterns/tables/table03_05.png"
+                alt="사용법03"
+              />
+            </div>
+            <div class="guide_list">
+              <ul>
+                <li>
+                  <span
+                    >• 테이블 페이지네이션 조건은 데이터 개수가 20개를 초과하는
+                    경우에만 노출한다.
+                  </span>
+                </li>
+                <li>
+                  <div class="pl10">
+                    <p>
+                      페이지네이션에 대한 자세한 내용은 페이지네이션 컴포넌트
+                      참고 (<em style="font-weight: 700">페이지네이션</em>
+                      <a
+                        href="../../components/navigation/pagination.html"
+                        class="Tcolor_R Tunline"
+                        >컴포넌트 바로가기</a
+                      >)
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <span
+                    >• 데이터 조합형 테이블은 링크 요소를 포함하지 않도록 한다.
+                  </span>
+                </li>
+                <li>
+                  <div class="pl10">
+                    <p>
+                      한 테이블안에 입력형 요소와 링크가 함꼐 있으면 사용자는 각
+                      요소가 어떤 기능을 하는지 명확하게 파악하기 어려울 수
+                      있으므로 같이 사용하지 않도록 한다.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

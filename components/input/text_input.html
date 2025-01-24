@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li>
+                    <a href="../select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li class="active">
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Text input (텍스트 입력 필드)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Input (입력)</li>
+                <li>Text input (텍스트 입력 필드)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Text input</h3>
+                <div class="guide_text">
+                  <p>
+                    텍스트 입력 필드는 사용자가 키보드로 글자, 숫자, 기호 등이
+                    조합된 한 줄의 짧은 텍스트를 입력하는 경우에 사용하는
+                    요소이다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input02_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>레이블 : </span>
+                      <div>
+                        <p>
+                          사용자가 어떤 텍스트를 입력해야 하는지를 안내하는 문구
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>입력 필드 : </span>
+                      <div>
+                        <p>
+                          텍스트가 입력되는 영역으로 배경과 입력 필드를 구분하여
+                          사용자가 텍스트 입력 필드임을 인지할 수 있게 함
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>도움 텍스트 : </span>
+                      <div>
+                        <p>입력에 필요한 정보, 에러메시지를 노출</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>플레이스홀더 :</span>
+                      <div>
+                        <p>
+                          어떤 값을 입력해야 하는지에 대한 힌트 또는 예시를
+                          제공함
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>상태</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input02_02.png"
+                    alt="상태 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>Inactive :</span>
+                      <div>
+                        <p>선택되지 않은 선택</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>Default :</span>
+                      <div>
+                        <p>입력이 완료된 상태</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>Focused :</span>
+                      <div>
+                        <p>선택되거나 입력중인 상태</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>Disabled : </span>
+                      <div>
+                        <p>비활성화</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>5</em>Error :</span>
+                      <div>
+                        <p>에러</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input02_03.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input02_04.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 입력 필드는 텍스트의 길이를 고려하여 적절한 크기로
+                        제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          기본적으로 텍스트 입력 필드의 크기를 그리드, 화면
+                          크기에 따라 유동적이나 전체 섹션 영역을 차지하도록
+                          구현한다. 그러나 이름, 우편번호, 전화번호 등 입력값의
+                          길이를 예측할 수 있는 경우 최대 길이에 맞추어 입력
+                          필드의 너비를 고정하고, 사용자가 더 작은 크기의
+                          화면에서도 잘림 없이 입력값을 확인할 수 있는지를
+                          점검해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input02_05.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 모든 텍스트 입력 필드에는 레이블을 제공한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          텍스트 입력 필드에 레이블이 제공되지 않으면 사용자는
+                          어떤 정보를 입력해야 하는지 알 수 없다. <br />
+                          레이블을 생략하고자 하는 경우에는 레이블 없이도
+                          사용자가 값을 선택하는 데 문제가 없다는 근거가
+                          명확해야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 입력 타입(글자, 숫자, 기호 )에 따른 표기형식을
+                        사용한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          숫자의 경우 천 단위 구분 기호 “,”를 표기하며 날짜를
+                          입력 표기는 “YYYY-MM-DD”, 핸드폰 표기는 “-”를
+                          사용한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input02_06.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• Inactive 상태일 때, MO과 PC 상태 값이 다르므로
+                        구분해서 사용해야 한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          MO일 때 선 색상은 Color/border/primary(#BDBDBD)와 같은
+                          값을 가지며, PC일 때는
+                          Color/border/Primitive/Sedondary(#616161)값을 가진다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/input/input02_07.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_input" style="width: 200px">
+                      <p>label</p>
+                      <input
+                        type="text"
+                        placeholder="이름을 입력해 주세요"
+                        maxlength="7"
+                      />
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input&#x22;&#x3E;
+  &#x3C;p&#x3E;label&#x3C;/p&#x3E;
+  &#x3C;input
+        type=&#x22;text&#x22;
+        placeholder=&#x22;&#xC774;&#xB984;&#xC744; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;&#x22;
+        maxlength=&#x22;7&#x22;
+    /&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  width: 100%;
+
+  .btnWrap {
+    position: relative;
+    input {
+      padding-right: 41px;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translate(0, -50%);
+      height: 25px;
+    }
+    &.search {
+      input {
+        padding-left: 41px;
+      }
+    }
+    .search_icon {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translate(0, -50%);
+      height: 25px;
+    }
+  }
+  
+  input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid var(--clr-616161);
+    background: var(--clr-FFFFFF);
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline-color: var(--clr-323DA3);
+    &::placeholder {
+      color: var(--clr-BDBDBD);
+    }
+    &.font_c::placeholder {
+      color: var(--clr-333333);
+    }
+    &:disabled {
+      background-color: var(--clr-EEEEEE);
+      border: 1px solid var(--clr-BDBDBD);
+      color: var(--clr-BDBDBD);
+      outline: 0;
+    }
+  }
+  p {
+    display: none;
+  }
+  &.error {
+    input {
+      border: 2px solid var(--clr-E53935);
+      outline: var(--clr-E53935);
+    }
+    p.errorText {
+      display: flex;
+      gap: 4px;
+      margin-top: 4px;
+      color: var(--clr-E53935);
+      font-size: 14px;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  &.input_text {
+    p:first-child {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--clr-616161);
+    }
+  }
+
+  &.disabled {
+    .btnWrap {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--clr-EEEEEE);
+        opacity: 0;
+        z-index: 1;
+      }
+      .search_icon {
+        img {
+          filter: invert(84%) sepia(0%) saturate(0%) hue-rotate(190deg)
+            brightness(93%) contrast(85%);
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ----------------------------- DDY_input ------------------------------------
+// DDY_input
+//전체삭제 버튼
+$(".DDY_input button").on("click", function () {
+  $(this).parent().find("input").val("");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Disabled</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_input" style="width: 200px">
+                      <p>label</p>
+                      <input
+                        type="text"
+                        placeholder="이름을 입력해 주세요"
+                        maxlength="7"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input&#x22;&#x3E;
+  &#x3C;p&#x3E;label&#x3C;/p&#x3E;
+    &#x3C;input
+        type=&#x22;text&#x22;
+        placeholder=&#x22;&#xC774;&#xB984;&#xC744; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;&#x22;
+        maxlength=&#x22;7&#x22;
+        disabled
+    /&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  width: 100%;  
+
+  input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid var(--clr-616161);
+    background: var(--clr-FFFFFF);
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline-color: var(--clr-323DA3);
+    &::placeholder {
+      color: var(--clr-BDBDBD);
+    }
+    &.font_c::placeholder {
+      color: var(--clr-333333);
+    }
+    &:disabled {
+      background-color: var(--clr-EEEEEE);
+      border: 1px solid var(--clr-BDBDBD);
+      color: var(--clr-BDBDBD);
+      outline: 0;
+    }
+  }
+  p {
+    display: none;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>라벨형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_input input_text" style="width: 200px">
+                      <p>Label</p>
+                      <input
+                        type="text"
+                        placeholder="이름을 입력해 주세요"
+                        maxlength="7"
+                      />
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input input_text&#x22;&#x3E;
+  &#x3C;p&#x3E;Label&#x3C;/p&#x3E;
+    &#x3C;input
+        type=&#x22;text&#x22;
+        placeholder=&#x22;&#xC774;&#xB984;&#xC744; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;&#x22;
+        maxlength=&#x22;7&#x22;
+    /&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  width: 100%;
+  
+  &.input_text {
+    p:first-child {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--clr-616161);
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>삭제형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_input" style="width: 200px">
+                      <div class="btnWrap">
+                        <input type="text" placeholder="입력창" />
+                        <button>
+                          <img
+                            src="/framework/assets/images/input_close_btn.svg"
+                            alt="닫기"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input&#x22;&#x3E;
+  &#x3C;div class=&#x22;btnWrap&#x22;&#x3E;
+    &#x3C;input type=&#x22;text&#x22; placeholder=&#x22;&#xC785;&#xB825;&#xCC3D;&#x22; /&#x3E;
+    &#x3C;button&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/input_close_btn.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  width: 100%;
+
+  .btnWrap {
+    position: relative;
+    input {
+      padding-right: 41px;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translate(0, -50%);
+      height: 25px;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ----------------------------- DDY_input ------------------------------------
+// DDY_input
+//전체삭제 버튼
+$(".DDY_input button").on("click", function () {
+  $(this).parent().find("input").val("");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>검색아이콘</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_input" style="width: 200px">
+                      <div class="btnWrap search">
+                        <div class="search_icon">
+                          <img
+                            src="/framework/assets/images/input_search_icon.svg"
+                            alt="검색 아이콘"
+                          />
+                        </div>
+                        <input
+                          type="text"
+                          placeholder="입력창"
+                          value="기본값"
+                        />
+                        <button>
+                          <img
+                            src="/framework/assets/images/input_close_btn.svg"
+                            alt="닫기"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input&#x22;&#x3E;
+  &#x3C;div class=&#x22;btnWrap search&#x22;&#x3E;
+    &#x3C;div class=&#x22;search_icon&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/input_search_icon.svg&#x22; alt=&#x22;&#xAC80;&#xC0C9; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;input
+        type=&#x22;text&#x22;
+        placeholder=&#x22;&#xC785;&#xB825;&#xCC3D;&#x22;
+        value=&#x22;&#xAE30;&#xBCF8;&#xAC12;&#x22;
+    /&#x3E;
+    &#x3C;button&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/input_close_btn.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  width: 100%;
+
+  .btnWrap {
+    position: relative;
+    input {
+      padding-right: 41px;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translate(0, -50%);
+      height: 25px;
+    }
+    &.search {
+      input {
+        padding-left: 41px;
+      }
+    }
+    .search_icon {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translate(0, -50%);
+      height: 25px;
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ----------------------------- DDY_input ------------------------------------
+// DDY_input
+//전체삭제 버튼
+$(".DDY_input button").on("click", function () {
+  $(this).parent().find("input").val("");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>검색아이콘 Disabled</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_input disabled" style="width: 200px">
+                      <div class="btnWrap search">
+                        <div class="search_icon">
+                          <img
+                            src="/framework/assets/images/input_search_icon.svg"
+                            alt="검색 아이콘"
+                          />
+                        </div>
+                        <input
+                          type="text"
+                          placeholder="입력창"
+                          value="기본값"
+                          disabled
+                        />
+                        <button>
+                          <img
+                            src="/framework/assets/images/input_close_btn.svg"
+                            alt="닫기"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input disabled&#x22;&#x3E;
+  &#x3C;div class=&#x22;btnWrap search&#x22;&#x3E;
+    &#x3C;div class=&#x22;search_icon&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/input_search_icon.svg&#x22; alt=&#x22;&#xAC80;&#xC0C9; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;input
+              type=&#x22;text&#x22;
+              placeholder=&#x22;&#xC785;&#xB825;&#xCC3D;&#x22;
+              value=&#x22;&#xAE30;&#xBCF8;&#xAC12;&#x22;
+              disabled
+        /&#x3E;
+    &#x3C;button&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/input_close_btn.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  input {
+    &:disabled {
+      background-color: var(--clr-EEEEEE);
+      border: 1px solid var(--clr-BDBDBD);
+      color: var(--clr-BDBDBD);
+      outline: 0;
+    }
+  }
+  &.disabled {
+    .btnWrap {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--clr-EEEEEE);
+        opacity: 0;
+        z-index: 1;
+      }
+      .search_icon {
+        img {
+          filter: invert(84%) sepia(0%) saturate(0%) hue-rotate(190deg)
+            brightness(93%) contrast(85%);
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ----------------------------- DDY_input ------------------------------------
+// DDY_input
+//전체삭제 버튼
+$(".DDY_input button").on("click", function () {
+  $(this).parent().find("input").val("");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Error</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="DDY_input error" style="width: 200px">
+                      <input
+                        type="text"
+                        placeholder="이름을 입력해 주세요"
+                        maxlength="7"
+                      />
+                      <p class="errorText">
+                        <img
+                          src="/framework/assets/images/error_icon.svg"
+                          alt="오류메세지"
+                        />{항목명} 내용을 입력해 주세요.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input error&#x22;&#x3E;
+  &#x3C;input
+        type=&#x22;text&#x22;
+        placeholder=&#x22;&#xC774;&#xB984;&#xC744; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;&#x22;
+        maxlength=&#x22;7&#x22;
+  /&#x3E;
+  &#x3C;p class=&#x22;errorText&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/error_icon.svg&#x22;  alt=&#x22;&#xC624;&#xB958;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;
+    {&#xD56D;&#xBAA9;&#xBA85;} &#xB0B4;&#xC6A9;&#xC744; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;.
+  &#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  &.error {
+    input {
+      border: 2px solid var(--clr-E53935);
+      outline: var(--clr-E53935);
+    }
+    p.errorText {
+      display: flex;
+      gap: 4px;
+      margin-top: 4px;
+      color: var(--clr-E53935);
+      font-size: 14px;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>조합형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div
+                      class="DDY_input input_text error"
+                      style="width: 200px"
+                    >
+                      <p>Label</p>
+                      <div class="btnWrap search">
+                        <div class="search_icon">
+                          <img
+                            src="/framework/assets/images/input_search_icon.svg"
+                            alt="검색 아이콘"
+                          />
+                        </div>
+                        <input type="text" placeholder="입력창" />
+                        <button>
+                          <img
+                            src="/framework/assets/images/input_close_btn.svg"
+                            alt="닫기"
+                          />
+                        </button>
+                      </div>
+                      <p class="errorText">
+                        <img
+                          src="/framework/assets/images/error_icon.svg"
+                          alt="오류메세지"
+                        />{항목명} 내용을 입력해 주세요.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;DDY_input input_text error&#x22;&#x3E;
+  &#x3C;p&#x3E;Label&#x3C;/p&#x3E;
+  &#x3C;div class=&#x22;btnWrap search&#x22;&#x3E;
+    &#x3C;div class=&#x22;search_icon&#x22;&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/input_search_icon.svg&#x22; alt=&#x22;&#xAC80;&#xC0C9; &#xC544;&#xC774;&#xCF58;&#x22;/&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;input type=&#x22;text&#x22; placeholder=&#x22;&#xC785;&#xB825;&#xCC3D;&#x22; /&#x3E;
+    &#x3C;button&#x3E;
+      &#x3C;img src=&#x22;/framework/assets/images/input_close_btn.svg&#x22; alt=&#x22;&#xB2EB;&#xAE30;&#x22;/&#x3E;
+    &#x3C;/button&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;p class=&#x22;errorText&#x22;&#x3E;
+    &#x3C;img src=&#x22;/framework/assets/images/error_icon.svg&#x22; alt=&#x22;&#xC624;&#xB958;&#xBA54;&#xC138;&#xC9C0;&#x22;/&#x3E;
+    {&#xD56D;&#xBAA9;&#xBA85;} &#xB0B4;&#xC6A9;&#xC744; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;.
+  &#x3C;/p&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- DDY input ------------------------------------
+.DDY_input {
+  width: 100%;
+
+  .btnWrap {
+    position: relative;
+    input {
+      padding-right: 41px;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translate(0, -50%);
+      height: 25px;
+    }
+    &.search {
+      input {
+        padding-left: 41px;
+      }
+    }
+    .search_icon {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translate(0, -50%);
+      height: 25px;
+    }
+  }
+  
+  input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid var(--clr-616161);
+    background: var(--clr-FFFFFF);
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline-color: var(--clr-323DA3);
+    &::placeholder {
+      color: var(--clr-BDBDBD);
+    }
+    &.font_c::placeholder {
+      color: var(--clr-333333);
+    }
+    &:disabled {
+      background-color: var(--clr-EEEEEE);
+      border: 1px solid var(--clr-BDBDBD);
+      color: var(--clr-BDBDBD);
+      outline: 0;
+    }
+  }
+  p {
+    display: none;
+  }
+  &.error {
+    input {
+      border: 2px solid var(--clr-E53935);
+      outline: var(--clr-E53935);
+    }
+    p.errorText {
+      display: flex;
+      gap: 4px;
+      margin-top: 4px;
+      color: var(--clr-E53935);
+      font-size: 14px;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  &.input_text {
+    p:first-child {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--clr-616161);
+    }
+  }
+
+  &.disabled {
+    .btnWrap {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--clr-EEEEEE);
+        opacity: 0;
+        z-index: 1;
+      }
+      .search_icon {
+        img {
+          filter: invert(84%) sepia(0%) saturate(0%) hue-rotate(190deg)
+            brightness(93%) contrast(85%);
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">  // ----------------------------- DDY_input ------------------------------------
+// DDY_input
+//전체삭제 버튼
+$(".DDY_input button").on("click", function () {
+  $(this).parent().find("input").val("");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

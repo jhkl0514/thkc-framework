@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Overview</a></li>
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li><a href="./color.html">Color (색상)</a></li>
+              <li class="active">
+                <a href="./typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="./shape.html">Shape (형태)</a></li>
+              <li><a href="./layout.html">Layout (배치)</a></li>
+              <li><a href="./system_icon.html">System Icon (아이콘)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/badge.html">Badge (배지)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/label.html">Label (레이블)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/modal.html">Modal (모달)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../components/layout/tab.html">Tab (탭)</a></li>
+                  <li>
+                    <a href="../components/layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../components/action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/switch.html">Switch (토글)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../patterns/forms.html">Forms (입력폼)</a></li>
+              <li><a href="../patterns/card_mob.html">Card(카드_모바일)</a></li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/order/list.html"> 상품리스트</a></li>
+                  <li><a href="../patterns/order/detail.html">상품상세</a></li>
+                  <li>
+                    <a href="../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/tables/default.html">기본형</a></li>
+                  <li>
+                    <a href="../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../page/error.html">Error</a></li>
+              <li><a href="../page/nodata.html">NoData</a></li>
+              <li><a href="../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Typography (서체)</h2>
+              <ul class="indicator">
+                <li>Foundation</li>
+                <li>Typography (서체)</li>
+              </ul>
+            </div>
+          </div>
+
+          <section>
+            <h3>Typeface</h3>
+            <div class="guide_text">
+              <p>
+                국문/영문/숫자 모두 SUIT 폰트를 사용합니다. 타이포그래피 토큰
+                이름은 4가지 요소로 구성됩니다. Figma 및 CSS 라이브러리에서는
+                동일한 요소 이름이 공유되지만, 사용에는 약간의 차이가 있다. 
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation02_01.png"
+                alt="Typeface 이미지"
+              />
+            </div>
+            <table class="dataTable">
+              <colgroup>
+                <col width="120px" />
+                <col width="120px" />
+                <col width="auto" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="Tcenter">No.</th>
+                  <th>범주</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="Tcenter">1</td>
+                  <td>폰트</td>
+                  <td>사용한 폰트명을 노출한다.</td>
+                </tr>
+                <tr>
+                  <td class="Tcenter">2</td>
+                  <td>타입</td>
+                  <td>제목, 본문, 캡션에 사용하는 폰트를 나타낸다.</td>
+                </tr>
+                <tr>
+                  <td class="Tcenter">3</td>
+                  <td>폰트 크기</td>
+                  <td>
+                    알파벳 문자를 사용하여 인쇄 시스템의 상대적 크기를 나타낸다.
+                    (XXL,XL, LG, MD, SM, SS, XS 사용)
+                  </td>
+                </tr>
+                <tr>
+                  <td class="Tcenter">4</td>
+                  <td>폰트 두께</td>
+                  <td>
+                    폰트 두께를 나타낸다. *CSS 표기 : Regular(400), Medium(500),
+                    Semibold(600), Bold(700),Heavy(900)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3>Type scale</h3>
+            <div class="guide_text">
+              <p>
+                • 다양한 크기의 텍스트를 일관되게 사용할 수 있도록 스타일에 따라
+                구분하여 정의한다.
+              </p>
+              <p>• 본문 기본폰트 사이즈는 16px</p>
+            </div>
+            <table class="dataTable">
+              <colgroup>
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>유형</th>
+                  <th>형태</th>
+                  <th class="Tcenter">Size</th>
+                  <th class="Tcenter">Line height</th>
+                  <th class="Tcenter">Letter Spacing</th>
+                  <th class="Tcenter">Font-weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="10">Heading</td>
+                  <td>XXL/Heavy</td>
+                  <td class="Tcenter">36px</td>
+                  <td class="Tcenter">46px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr class="line">
+                  <td>XXL/Bold</td>
+                  <td class="Tcenter">36px</td>
+                  <td class="Tcenter">46px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+                <tr>
+                  <td>XL/Heavy</td>
+                  <td class="Tcenter">32px</td>
+                  <td class="Tcenter">42px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr class="line">
+                  <td>XL/Bold</td>
+                  <td class="Tcenter">32px</td>
+                  <td class="Tcenter">42px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+                <tr>
+                  <td>LG/Heavy</td>
+                  <td class="Tcenter">28px</td>
+                  <td class="Tcenter">38px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr class="line">
+                  <td>LG/Bold</td>
+                  <td class="Tcenter">28px</td>
+                  <td class="Tcenter">38px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+
+                <tr>
+                  <td>MD/Heavy</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">34px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr class="line">
+                  <td>MD/Bold</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">34px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+                <tr>
+                  <td>SM/Heavy</td>
+                  <td class="Tcenter">20px</td>
+                  <td class="Tcenter">30px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr class="line">
+                  <td>SM/Bold</td>
+                  <td class="Tcenter">20px</td>
+                  <td class="Tcenter">30px</td>
+                  <td class="Tcenter">-2%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+                <!-- title -->
+                <tr>
+                  <td rowspan="16">Body(+Title)</td>
+                  <td>MD/Heavy</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">26px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr>
+                  <td>MD/Bold</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">26px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+                <tr>
+                  <td>MD/SemiBold</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">26px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">600</td>
+                </tr>
+                <tr>
+                  <td>MD/Regular</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">26px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">400</td>
+                </tr>
+                <tr>
+                  <td>MD/Underline</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">26px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">400</td>
+                </tr>
+                <tr class="line">
+                  <td>MD/Strike-through</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">26px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">400</td>
+                </tr>
+                <!-- sm -->
+                <tr>
+                  <td>SM/Heavy</td>
+                  <td class="Tcenter">16px</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr>
+                  <td>SM/Bold</td>
+                  <td class="Tcenter">16px</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+                <tr>
+                  <td>SM/SemiBold</td>
+                  <td class="Tcenter">16px</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">600</td>
+                </tr>
+                <tr>
+                  <td>SM/Regular</td>
+                  <td class="Tcenter">16px</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">400</td>
+                </tr>
+                <tr class="line">
+                  <td>SM/Underline</td>
+                  <td class="Tcenter">16px</td>
+                  <td class="Tcenter">24px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">400</td>
+                </tr>
+                <!-- ss -->
+                <tr>
+                  <td>SS/Heavy</td>
+                  <td class="Tcenter">14px</td>
+                  <td class="Tcenter">20px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">900</td>
+                </tr>
+                <tr>
+                  <td>SS/Bold</td>
+                  <td class="Tcenter">14px</td>
+                  <td class="Tcenter">20px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">700</td>
+                </tr>
+                <tr>
+                  <td>SS/SemiBold</td>
+                  <td class="Tcenter">14px</td>
+                  <td class="Tcenter">20px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">600</td>
+                </tr>
+                <tr>
+                  <td>SS/Regular</td>
+                  <td class="Tcenter">14px</td>
+                  <td class="Tcenter">20px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">400</td>
+                </tr>
+                <tr class="line">
+                  <td>SS/Underline</td>
+                  <td class="Tcenter">14px</td>
+                  <td class="Tcenter">20px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">400</td>
+                </tr>
+                <!-- caption -->
+                <tr>
+                  <td rowspan="2">Caption</td>
+                  <td>XS</td>
+                  <td class="Tcenter">12px</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">500</td>
+                </tr>
+                <tr class="line">
+                  <td>XS/Strike-through</td>
+                  <td class="Tcenter">12px</td>
+                  <td class="Tcenter">18px</td>
+                  <td class="Tcenter">-1.5%</td>
+                  <td class="Tcenter">500</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3>Font weight</h3>
+            <div class="guide_text">
+              <p>
+                • 폰트 두께는 Regular, Medium, Semibold, Bold, Heavy 5가지로
+                사용한다.
+              </p>
+              <p>
+                • Medium은 Caption 유형에서만 사용되며, Heavy는 상품명, 숫자
+                강조시 사용한다.
+              </p>
+            </div>
+            <div class="imgWrap">
+              <img
+                src="/framework/assets/images/guide/foundation/foundation02_02.png"
+                alt="Font weight 이미지"
+              />
+            </div>
+          </section>
+
+          <section>
+            <h4>Line height</h4>
+            <div class="guide_text">
+              <p>• 가독성을 위해 폰트 사이즈의 1.3~1.5배를 권장한다.</p>
+            </div>
+          </section>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

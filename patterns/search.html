@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/badge.html">Badge (배지)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/card.html">Card (카드)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/layout/label.html">Label (레이블)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/modal.html">Modal (모달)</a>
+                  </li>
+                  <li>
+                    <a href="../components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../components/layout/tab.html">Tab (탭)</a></li>
+                  <li>
+                    <a href="../components/layout/table.html">Table (표)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../components/action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/chips.html">Chips (칩)</a>
+                  </li>
+                  <li>
+                    <a href="../components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/select/switch.html">Switch (토글)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="active">
+                <a href="../patterns/search.html">Search (검색)</a>
+              </li>
+              <li>
+                <a href="../patterns/message.html">Message (알림)</a>
+              </li>
+              <li><a href="../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../patterns/forms.html">Forms (입력폼)</a></li>
+              <li><a href="../patterns/card_mob.html">Card(카드_모바일)</a></li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/order/list.html"> 상품리스트</a></li>
+                  <li><a href="../patterns/order/detail.html">상품상세</a></li>
+                  <li>
+                    <a href="../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../patterns/tables/default.html">기본형</a></li>
+                  <li>
+                    <a href="../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../page/error.html">Error</a></li>
+              <li><a href="../page/nodata.html">NoData</a></li>
+              <li><a href="../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Search (검색)</h2>
+              <ul class="indicator">
+                <li>Patterns</li>
+                <li>Search (검색)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">PC</span>
+              <span>Mobile</span>
+            </div>
+
+            <div class="tabCon">
+              <section>
+                <h3>Search</h3>
+                <div class="guide_text">
+                  <p>
+                    검색은 사용자가 큰 데이터 집합에서 원하는 정보를 찾을 수
+                    있도록 도와주는 기능이다. <br />탐색 수단을 통해 원하는
+                    콘텐츠를 찾지 못하는 상황에는 특정 정보와 관련된 단서를
+                    제공함으로써 사용자가 필요한 콘텐츠를 쉽게 찾을 수 있도록
+                    해준다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>유형</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 통합검색:</span>
+                      <div>
+                        <p>
+                          검색을 통해 서비스의 데이터 구조와 활용할 수 있는
+                          정보를 더 쉽게 파악할 수 있으며, 일반적으로 헤더
+                          영역에 배치되며, 검색 결과는 별도의 결과 화면에서
+                          제공된다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 부분검색: </span>
+                      <div>
+                        <p>
+                          단일 화면 서비스, 특정 정보 목록, 표와 같은 소규모
+                          데이터 집합을 검색하는 데 사용하며, 데이터 집합 상단에
+                          배치되며, 검색 결과는 데이터 집합에 직접 반영된다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>검색 기능</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 검색어 입력: </span>
+                      <div>
+                        <p>
+                          검색어를 입력하는 과정에서 참고할 수 있는 정보를
+                          제공받고 활용하는 과정 이다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span>• 상세 검색: </span>
+                      <div>
+                        <p>
+                          상세 검색, 정렬/필터링 수단에 대한 탐색 수행하며, 검색
+                          결과 목록을 원하는 범위로 좁히기 위해 상세 조건을 설정
+                          후 적용 결과를 확인 한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>
+                          • 현재
+                          <em class="Tcolor_R"
+                            >신규 UI에서는 “상세 검색" 기능만 제공</em
+                          >하고 있다. (※ 신규 UI 추가 시 업데이트 예정)
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>구조 (상세검색)</h3>
+                <h5>a. 필터 + 검색어 검색</h5>
+                <div class="guide_text">
+                  <p>
+                    • 기본 정렬 및 필터 컨트롤을 사용하고 검색과 검색어
+                    입력하여, 세부 필터 유형과 수에 따라 목록 상단에 배치되는
+                    패널형태로 제공한다.
+                  </p>
+                  <p>
+                    • <em class="Tunline">검색 조건이 많을 경우,</em> 첫 줄에
+                    필드값과 상세 버튼을 노출한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search01_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>접기 (Default):</span>
+                      <div>
+                        <p>
+                          상세검색
+                          <em class="Tunline">기본은 “접기" 형태</em>이며,
+                          [상세] 버튼을 누르면 ‘상세'화면이 펼쳐진다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>펼치기 (Detail):</span>
+                      <div>
+                        <p>
+                          필터 컨트롤 및 검색어 입력 후 [검색] 버튼을 누르 ‘검색
+                          결과 목록’이 표시된다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2a</em>선 (line) 표시 방법:</span>
+                      <div>
+                        <p>
+                          패널 영역 첫 번째 상단의 하단 라인은
+                          <em class="Tunline"
+                            >‘접기 상태 > 선 숨기기’, ‘펼침 상태 > 선 표시’</em
+                          >
+                          로 제공한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2b</em>검색 버튼:</span>
+                      <div>
+                        <p>
+                          [초기화], [검색] 버튼 순으로 배치하며, [초기화] 버튼은
+                          ‘line' 형태, [검색] 버튼은 ‘Filled’ 형태로 제공한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- b -->
+
+                <h5>b. 드롭다운 검색 (* 체크 요소 확인 필요!)</h5>
+                <div class="guide_text">
+                  <p>
+                    • <em class="Tunline">콘텐츠 영역이 좁을 경우,</em> ‘검색'
+                    타이틀과 ‘드롭다운' 아이콘을 노출한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search01_02.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>드롭다운 표시:</span>
+                      <div>
+                        <p>
+                          콘텐츠 영역이 좁을 경우, ‘검색' 타이틀과 ‘드롭다운'
+                          아이콘을 노출한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>혼합 검색:</span>
+                      <div>
+                        <p>
+                          타이틀, 열, 버튼 등 다른 요소들과 조금씩 기준이 다름
+                          (이유 : 콘텐츠 영역이 좁아 별외 내용이 적용 됨)
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- c -->
+                <h5>c. 필터 + 태그칩 검색</h5>
+                <div class="guide_text">
+                  <p>
+                    • 사용자가 검색 옵션을 간편하게 선택하고 원하는 정보를
+                    빠르게 찾을 수 있도록 돕는 강력한 형태입니다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search01_03.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>필터 검색:</span>
+                      <div>
+                        <p>
+                          셀렉트 필드를 직관적으로 선택 후 [검색] 버튼을 누르면
+                          검색 데이터가 표시된다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>태그칩 검색:</span>
+                      <div>
+                        <p>
+                          검색 결과와 관련된 키워드나 태그를 표시하는 칩으로
+                          사용자가 이 칩을 클릭하여 해당 키워드나 태그로 검색
+                          결과를 좁힐 수 있다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- d -->
+                <h5>d. 태그칩 검색</h5>
+                <div class="guide_text">
+                  <p>
+                    • 사용자가 검색 옵션을 간편하게 선택하고 원하는 정보를
+                    빠르게 찾을 수 있도록 돕는 강력한 형태입니다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search01_04.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격 (상세검색)</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search01_05.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search01_06.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>고정값 요소 : </span>
+                      <div>
+                        <p>타이틀 120px, 셀렉트 필트 160px</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>외부 패딩 값:</span>
+                      <div>
+                        <p>전체 패널 16px</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>내부 패딩 값:</span>
+                      <div>
+                        <p>
+                          li 요소 : 12px, li Gap: 12px, 셀렉트 + 인풋 Gap 12px,
+                          버튼 Gap: 8px
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>버튼 사이즈:</span>
+                      <div>
+                        <p>전체 검색 : 130 x 36 (px), 필드 검색 : 상대값</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search01_07.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>고정값 요소 : </span>
+                      <div>
+                        <p>타이틀 100px, 셀렉트 필트 100px</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>외부 패딩 값:</span>
+                      <div>
+                        <p>
+                          상단 검색 전체 패널 16px, 하단 검색 조건 패널 8px,
+                          16px, 12px, 16px
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>내부 패딩 값:</span>
+                      <div>
+                        <p>
+                          li요소 위/아래 8px, 선택필드 Gap 16px, 셀렉트 + 인풋
+                          Gap 12px,
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>버튼 사이즈:</span>
+                      <div>
+                        <p>전체 검색 : 108 x 36 (px)</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="tabCon">
+              <section>
+                <h3>Search</h3>
+                <div class="guide_text">
+                  <p>
+                    검색은 사용자가 큰 데이터 집합에서 원하는 정보를 찾을 수
+                    있도록 도와주는 기능이다. <br />
+                    탐색 수단을 통해 원하는 콘텐츠를 찾지 못하는 상황에는 특정
+                    정보와 관련된 단서를 제공함으로써 사용자가 필요한 콘텐츠를
+                    쉽게 찾을 수 있도록 해준다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조 (상세검색)</h3>
+                <h5>a. 검색 필터형(다중)</h5>
+                <div class="guide_text">
+                  <p>
+                    • 검색 필터가 2개 이상일 경우 해당 영역에 노출하여 검색하는
+                    방식
+                  </p>
+                  <p>
+                    • 선택된 조건값은 하단 검색값 노출 영역에 표시한다. 필터 내
+                    모든 조건을 초기화 할 수 있는 초기화 버튼을 제공한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search02_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>카테고리 필터:</span>
+                      <div>
+                        <p>검색에 필요한 카테고리 필터들이 노출된다.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>검색 버튼:</span>
+                      <div>
+                        <p>검색 가능한 모든 필터 항목이 노출된다.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>선택된 필터 값 노출 :</span>
+                      <div>
+                        <p>
+                          내가 선택한 조건값이 노출된다. 단일 삭제도 가능하다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>초기화 버튼:</span>
+                      <div>
+                        <p>모든 조건값을 초기화 할 수 있다.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- b -->
+
+                <h5>b. 단일 검색형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 검색 필터가 1개인 경우 카운트 영역 오른쪽에 셀렉트 영역을
+                    터치하여 검색하는 방식
+                  </p>
+                  <p>
+                    • 선택된 조건값은 셀렉트박스 텍스트 영역에 노출하여
+                    보여준다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search02_02.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>검색 건수 노출 : </span>
+                      <div>
+                        <p>조건값에 따라 검색된 결과값을 노출한다.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>검색필터 영역:</span>
+                      <div>
+                        <p>셀렉박스를 터치하여 검색 조건값을 설정할 수 있다.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search02_03.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search02_04.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 필터 선택 시, 정보 선택가능한 바텀시트를 노출하여
+                        조건을 선택 및 검색 할 수 있다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          각각의 필터를 선택할 때도 해당하는 내용의 바텀시트를
+                          노출한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search02_05.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 검색 필터가 1개+검색 영역이 있을 경우, 검색 필터형을
+                        사용한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          검색 필터가 1개이지만 직접 입력 할 수 있는 검색 영역이
+                          있을 경우는 2개의 검색 조건값으로 본다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search02_06.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 전체 초기화를 할 경우, 검색 조건값 영역이 비
+                        노출된다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          검색 조건값을 하나씩 삭제하여 조건값이 0개가 되었을
+                          때, 초기화 버튼을 눌러 초기화를 했을 때는 해당 영역을
+                          비 노출 처리한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/patterns/search/search02_07.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

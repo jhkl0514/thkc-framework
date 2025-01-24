@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li class="active">
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Accordion (아코디언)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Accordion (아코디언)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Accordion</h3>
+                <div class="guide_text">
+                  <p>
+                    • 아코디언은 섹션의 중요한 세부 사항을 먼저 강조 표시하고
+                    확장되면 더 많은 세부 정보를 표시하여 점진적으로 정보를
+                    공개한다. 컨텐츠 전체를 읽는 것이 중요하지 않은 경우
+                    아코디언을 사용하여 페이지 스크롤을 줄일 수 있다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout01_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>패널 : </span>
+                      <div>
+                        <p>콘텐츠를 감싸고 있는 영역</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>타이틀 : </span>
+                      <div>
+                        <p>콘텐츠의 주요 내용이나 제목</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>펼침/접힘 버튼: </span>
+                      <div>
+                        <p>펼침/접힘 상태를 나타냄</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>내용: </span>
+                      <div>
+                        <p>텍스트 또는 컴포넌트를 조합하여 표현</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>스타일</h3>
+                <h5>텍스트형</h5>
+                <div class="guide_text">
+                  <p>
+                    • 타이틀 영역과 내용 영역이 하나의 콘텐츠 섹션으로 인지될 수
+                    있게 표현한 형태이다.
+                  </p>
+                  <p>• 내용영역에는 주로 텍스트만 사용한다.</p>
+                  <p>
+                    • 연속해서 아코디언을 배치할 경우 하단 라인(#E0E0E0)을
+                    사용할 수 있다.(선택)
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout01_02.png"
+                    alt="스타일 이미지"
+                  />
+                </div>
+                <h5>박스형(Outlined)</h5>
+                <div class="guide_text">
+                  <p>
+                    • 타이틀 영역과 내용 영역을 분리시킨 형태로 내용이 많은 경우
+                    주로 사용한다.
+                  </p>
+                  <p>
+                    • 내용 영역에는 텍스트 및 컴포넌트들을 조합하여 사용할 수
+                    있다.
+                  </p>
+                  <p>
+                    • 필요에 따라 패널 간의 여백을 조정할 수 있으며, 그림자를
+                    사용할 수 있다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout01_03.png"
+                    alt="박스형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>타입</h3>
+                <h5>텍스트형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout01_04.png"
+                    alt="타입 이미지"
+                  />
+                </div>
+                <h5>컴포넌트 조합형</h5>
+                <div class="guide_text">
+                  <p>• 텍스트와 컴포넌트를 조합해 사용하는 유형이다.</p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout01_05.png"
+                    alt="컴포넌트 조합형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <h5>기본형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout01_06.png"
+                    alt="기본형 이미지"
+                  />
+                </div>
+                <h5>박스형</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout01_07.png"
+                    alt="박스형 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 접힘 상태를 기본으로 한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          단, 외부 링크에서 랜딩하여 특정 아코디언 패널로 진입한
+                          경우, 내용이 꼭 노출되어야 할 경우 펼침 상태를
+                          기본으로 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 여러 개의 아코디언 패널이 사용될 경우, 패널을 1개씩
+                        펼치고 접을 수 있다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          펼친 패널은 접기 전까지 펼쳐진 상태를 유지하고 있으나
+                          다른 패널을 펼치면 현재 펼쳐진 패널은 자동으로 접히게
+                          된다. <br />
+                          단, 패널간의 내용의 비교가 필요한 경우는 수동으로
+                          접히게 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span>• 타이틀은 최대 1줄까지 기재할 것을 권장한다.</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          타이틀 외 텍스트는 패널 영역이 펼쳐졌을 때 노출한다.
+                          패널이 접힌 상태에서는 버튼을 배치하지 않는다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형태</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <ul class="accordionBox">
+                      <li class="on">
+                        <div class="accordionBox_title">
+                          <span>타이틀 영역</span>
+                          <p>타이틀 영역</p>
+                        </div>
+                        <div class="accordionBox_table">텍스트 영역</div>
+                      </li>
+                      <li>
+                        <div class="accordionBox_title">
+                          <span>타이틀 영역</span>
+                          <p>타이틀 영역</p>
+                        </div>
+                        <div class="accordionBox_table">텍스트 영역</div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;ul class=&#x22;accordionBox&#x22;&#x3E;
+  &#x3C;li class=&#x22;on&#x22;&#x3E;
+    &#x3C;div class=&#x22;accordionBox_title&#x22;&#x3E;
+      &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0; &#xC601;&#xC5ED;&#x3C;/span&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0; &#xC601;&#xC5ED;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;accordionBox_table&#x22;&#x3E;&#xD14D;&#xC2A4;&#xD2B8; &#xC601;&#xC5ED;&#x3C;/div&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li&#x3E;
+    &#x3C;div class=&#x22;accordionBox_title&#x22;&#x3E;
+      &#x3C;span&#x3E;&#xD0C0;&#xC774;&#xD2C0; &#xC601;&#xC5ED;&#x3C;/span&#x3E;
+      &#x3C;p&#x3E;&#xD0C0;&#xC774;&#xD2C0; &#xC601;&#xC5ED;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;accordionBox_table&#x22;&#x3E;&#xD14D;&#xC2A4;&#xD2B8; &#xC601;&#xC5ED;&#x3C;/div&#x3E;
+  &#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- accordion ------------------------------------
+.accordionBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 0;
+  width: 100%;
+  li {
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--clr-FFFFFF);
+    .accordionBox_title {
+      position: relative;
+      padding: 8px 16px;
+      border: 1px solid var(--clr-BDBDBD);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translate(0, -50%);
+        width: 24px;
+        height: 24px;
+        background: url("/framework/assets/images/select_arrow.svg") no-repeat;
+      }
+      span {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &.on {
+      .accordionBox_title {
+        &::before {
+          transform: translate(0, -50%) rotate(180deg);
+        }
+      }
+      .accordionBox_table {
+        display: block;
+      }
+    }
+  }
+  .accordionBox_table {
+    display: none;
+    padding: 16px;
+    margin-top: 4px;
+    background-color: var(--clr-FAFAFA);
+    border: 1px solid var(--clr-BDBDBD);
+    border-radius: 4px;
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">// ----------------------------- accordion ------------------------------------
+//accordionBox
+$(".accordionBox_title").click(function () {
+  $(this).parent("li").toggleClass("on");
+});</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

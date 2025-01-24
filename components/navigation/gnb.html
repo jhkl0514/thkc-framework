@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li class="active">
+                    <a href="../navigation/gnb.html">GNB (헤더, 네비)</a>
+                  </li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../action/button.html">Button (버튼)</a></li>
+                  <li><a href="../action/link.html">Link (링크)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>GNB (헤더/네비)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Navigation (탐색)</li>
+                <li>GNB (헤더/네비)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>GNB</h3>
+                <div class="guide_text">
+                  <p>
+                    • 사용자가 웹사이트에 접속하자마자 마주하게 되는 화면의
+                    최상단 영역으로 서비스의 브랜드 이미지를 전달하는 핵심
+                    영역이다.
+                  </p>
+                  <p>
+                    • 모든 화면에 일관성 있게 배치되며 통합검색, 메인 메뉴 등
+                    서비스 정보를 탐색하고 이동할 수 있는 핵심 탐색 수단을
+                    제공한다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation02_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation02_02.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <!-- <li>
+                      <span><em>1</em>헤더 영역</span>
+                      <div>
+                        <p>
+                          주요 메뉴, 서비스 식별정보, 사용자 정보를 제공하는
+                          영역
+                        </p>
+                        <div>
+                          <p>
+                            <span>a.헤더 영역</span>
+                            주요 메뉴, 서비스 식별정보, 사용자 정보를 제공하는
+                            영역
+                          </p>
+
+                          <p>
+                            <span>a.헤더 영역</span>
+                            주요 메뉴, 서비스 식별정보, 사용자 정보를 제공하는
+                            영역
+                          </p>
+                        </div>
+                      </div>
+                    </li> -->
+                    <li>
+                      <span><em>1</em>헤더 영역</span>
+                      <div>
+                        <p>
+                          주요 메뉴, 서비스 식별정보, 사용자 정보를 제공하는
+                          영역
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>전체 메뉴 버튼</span>
+                      <div>
+                        <p>
+                          버튼을 클릭하면 ‘전체 메뉴'가 나타나거나 숨길수 있어
+                          공간활용이 용이한 버튼
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>브랜드 로고</span>
+                      <div>
+                        <p>
+                          브랜드 로고를 배치하여 서비스 채널의 정체성을 전달함
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>4</em>사용자 정보(아바타)</span>
+                      <div>
+                        <p>사용자 정보 및 로그아웃 링크를 제공함</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 및 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation02_03.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation02_04.png"
+                    alt="사이즈 및 간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용성 가이드</h3>
+
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 화면을 스크롤 했을 때 헤더를 뷰포트 상단에
+                        고정한다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          사용자가 긴 화면을 스크롤 하면서도 헤더에서 제공하는
+                          탐색 및 유틸리티에 계속 접근 가능하도록 헤더를
+                          고정하여 제공한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 기본 디바이스 사이즈는 width 100%로 제공한다.</span
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <span
+                        >• 화면의 너비가 콘텐츠 사이즈보다 작을 경우 햄버거 버튼
+                        모양이 바뀌면서 사이드 메뉴가 사라진다.</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          작은 화면에서는 사용자가 본문 콘텐츠에 집중할 수
+                          있도록 사이드 메뉴를 숨기고 햄버거 메뉴 버튼를
+                          이용하여 메뉴를 플로팅형태로 보여준다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>PC GNB</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <header>
+                      <div class="h_left">
+                        <div class="hambar">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <div class="logoWrap">
+                          <div class="logo">
+                            <img
+                              src="/framework/assets/images/part_logo.svg"
+                              src="/framework/assets/images/part_logo.svg"
+                              alt="이로움로고"
+                            />
+                          </div>
+                          <h1>일정관리</h1>
+                        </div>
+                      </div>
+                      <div class="h_right">
+                        <!-- <a href="#">공지사항</a> -->
+                        <div class="userWrap">
+                          <div class="imgWrap">
+                            <img
+                              src="/framework/assets/images/part_user_icon.svg"
+                              alt="유저이미지"
+                            />
+                          </div>
+                          <div class="userInfo">
+                            <div class="userTextWrap">
+                              <div class="imgWrap">
+                                <img
+                                  src="/framework/assets/images/part_user_icon.svg"
+                                  alt="유저이미지"
+                                />
+                              </div>
+                              <div class="userText">
+                                <strong>관리자님</strong>
+                                <p>CMK</p>
+                              </div>
+                            </div>
+                            <div class="logout">
+                              <a href="#"
+                                ><img
+                                  src="/framework/assets/images/part_logout.svg"
+                                  alt="로그아웃"
+                                />로그아웃</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </header>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;header&#x3E;
+  &#x3C;div class=&#x22;h_left&#x22;&#x3E;
+    &#x3C;div class=&#x22;hambar&#x22;&#x3E;
+      &#x3C;span&#x3E;&#x3C;/span&#x3E;
+      &#x3C;span&#x3E;&#x3C;/span&#x3E;
+      &#x3C;span&#x3E;&#x3C;/span&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;logoWrap&#x22;&#x3E;
+      &#x3C;div class=&#x22;logo&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/part_logo.svg&#x22; alt=&#x22;&#xC774;&#xB85C;&#xC6C0;&#xB85C;&#xACE0;&#x22;&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;h1&#x3E;&#xC77C;&#xC815;&#xAD00;&#xB9AC;&#x3C;/h1&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;h_right&#x22;&#x3E;
+    &#x3C;!-- &#x3C;a href=&#x22;#&#x22;&#x3E;&#xACF5;&#xC9C0;&#xC0AC;&#xD56D;&#x3C;/a&#x3E; --&#x3E;
+    &#x3C;div class=&#x22;userWrap&#x22;&#x3E;
+      &#x3C;div class=&#x22;imgWrap&#x22;&#x3E;
+        &#x3C;img src=&#x22;/framework/assets/images/part_user_icon.svg&#x22; alt=&#x22;&#xC720;&#xC800;&#xC774;&#xBBF8;&#xC9C0;&#x22;&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;userInfo&#x22;&#x3E;
+        &#x3C;div class=&#x22;userTextWrap&#x22;&#x3E;
+          &#x3C;div class=&#x22;imgWrap&#x22;&#x3E;
+            &#x3C;img src=&#x22;/framework/assets/images/part_user_icon.svg&#x22; alt=&#x22;&#xC720;&#xC800;&#xC774;&#xBBF8;&#xC9C0;&#x22;&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;div class=&#x22;userText&#x22;&#x3E;
+            &#x3C;strong&#x3E;&#xAD00;&#xB9AC;&#xC790;&#xB2D8;&#x3C;/strong&#x3E;
+            &#x3C;p&#x3E;CMK&#x3C;/p&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;logout&#x22;&#x3E;
+          &#x3C;a href=&#x22;#&#x22;&#x3E;&#x3C;img src=&#x22;/framework/assets/images/part_logout.svg&#x22; alt=&#x22;&#xB85C;&#xADF8;&#xC544;&#xC6C3;&#x22;&#x3E;&#xB85C;&#xADF8;&#xC544;&#xC6C3;&#x3C;/a&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/header&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- header --------------------------------
+
+header {
+  width: 100%;
+  height: 56px;
+  padding: 8px 20px;
+  background-color: var(--clr-323DA3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  .h_left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .h_right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    > a {
+      font-weight: 600;
+      color: var(--clr-FFFFFF);
+    }
+  }
+}
+
+// -------------------------------- userWrap --------------------------------
+
+.userWrap {
+  position: relative;
+  .imgWrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    background-color: var(--clr-F5F5F5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--clr-EEEEEE);
+  }
+  .userInfo {
+    top: 52px;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+    width: 200px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--clr-FFFFFF);
+    border: 1px solid var(--clr-333333);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12),
+      0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+    &.active {
+      overflow: visible;
+      visibility: visible;
+      opacity: 1;
+    }
+    > .userTextWrap {
+      padding: 8px 8px 14px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--clr-F5F5F5);
+      > .userText {
+        strong {
+          display: block;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        p {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--clr-616161);
+        }
+      }
+    }
+    .logout {
+      padding: 8px 12px;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+  }
+}
+
+// -------------------------------- logoWrap --------------------------------
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  color: var(--clr-FFFFFF);
+  gap: 17px;
+  .logo {
+    position: relative;
+    height: 24px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      transform: translate(0, -50%);
+      width: 1px;
+      height: 16px;
+      opacity: 0.2;
+      background: var(--clr-FFFFFF);
+    }
+    img {
+      height: 100%;
+    }
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--clr-FFFFFF);
+  }
+}
+
+// -------------------------------- hambar --------------------------------
+
+.hambar {
+  width: 16px;
+  height: 11px;
+  position: relative;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  span {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    border-radius: 100px;
+    background-color: var(--clr-FFFFFF);
+    transition: all 0.3s;
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 5.5px;
+      left: 0;
+      width: 16px;
+      overflow: visible;
+    }
+    &:nth-child(3) {
+      top: 11px;
+    }
+  }
+  &.on {
+    span {
+      &:nth-child(2) {
+        left: 0;
+        width: 8px;
+        overflow: hidden;
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">
+  // -------------------------------------  hambar  -------------------------------------
+
+  //hambar
+  $(".hambar").on("click", function () {
+    $(this).toggleClass("on");
+    $("nav").toggleClass("on");
+    $("main").toggleClass("on");
+  });
+  
+  // -------------------------------------  userimg  -------------------------------------
+
+  //userimg
+  $(".userWrap > .imgWrap").on("click", function () {
+    $(".userInfo").toggleClass("active");
+  });</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Mobile GNB</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <header class="header">
+                      <div class="h_left">
+                        <div class="hambar">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <div class="logoWrap">
+                          <h1>일정관리</h1>
+                        </div>
+                      </div>
+                    </header>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                      <span>JAVASCRIPT</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;header class=&#x22;header&#x22;&#x3E;
+  &#x3C;div class=&#x22;h_left&#x22;&#x3E;
+    &#x3C;div class=&#x22;hambar&#x22;&#x3E;
+      &#x3C;span&#x3E;&#x3C;/span&#x3E;
+      &#x3C;span&#x3E;&#x3C;/span&#x3E;
+      &#x3C;span&#x3E;&#x3C;/span&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;logoWrap&#x22;&#x3E;
+      &#x3C;h1&#x3E;&#xC77C;&#xC815;&#xAD00;&#xB9AC;&#x3C;/h1&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/header&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// -------------------------------- header --------------------------------
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  padding: 8px 20px;
+  background-color: var(--clr-323DA3);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 100;
+  transition: top 0.3s;
+
+  .h_left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &.active {
+    position: fixed;
+    top: -57px;
+  }
+  .logoWrap {
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--clr-FFFFFF);
+    }
+  }
+  &.sub_header {
+    position: static;
+    background-color: var(--clr-FFFFFF);
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--clr-EEEEEE);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .h_left {
+      img {
+        vertical-align: middle;
+      }
+    }
+    .logoWrap {
+      h1 {
+        color: var(--clr-1A1A1A);
+      }
+    }
+    .h_right {
+      a {
+        display: block;
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- item03 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-javascript">
+  // -------------------------------------  hambar  -------------------------------------
+
+  //hambar
+  $(".hambar").on("click", function () {
+    $(this).toggleClass("on");
+    $("nav").toggleClass("on");
+    $("main").toggleClass("on");
+  });</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

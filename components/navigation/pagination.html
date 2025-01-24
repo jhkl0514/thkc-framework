@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .item_view .DDY_select .select.offline button {
+      border: none;
+      color: var(--clr-1A1A1A);
+    }
+    .item_view .DDY_select .select::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 24px;
+      height: 25px;
+      transform: translate(0, -50%);
+      background: url(/framework/assets/images/select_arrow.svg) center
+        no-repeat;
+      cursor: pointer;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/gnb.html">GNB (헤더, 네비)</a>
+                  </li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li class="active">
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li>
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../action/button.html">Button (버튼)</a></li>
+                  <li><a href="../action/link.html">Link (링크)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Pagination (페이지네이션)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Navigation (탐색)</li>
+                <li>Pagination (페이지네이션)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Pagination</h3>
+                <div class="guide_text">
+                  <p>
+                    • 페이지네이션은 많은 양의 콘텐츠를 탐색하기 쉽도록 여러
+                    화면에 나누고, 분할된 화면을 탐색하는 데 사용되는 요소이다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="guide_text">
+                  <p>• 분할된 화면의 순서를 숫자로 표시한다.</p>
+                  <p>
+                    • 숫자 링크를 눌러 원하는 순서의 화면 목록으로 직접
+                    이동하거나 이전/다음 버튼을 눌러 화면을 순차적으로 탐색할 수
+                    있다.
+                  </p>
+                  <p>
+                    • 첫 화면과 마지막 화면 숫자 링크가 항상 표시되므로 사용자는
+                    목록의 시작이나 끝으로 빠르게 이동할 수 있다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation04_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>이전/다음 버튼</span>
+                      <div>
+                        <p>화면 목록을 앞/뒤로 탐색하는 데 사용되는 버튼</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>숫자 링크 목록</span>
+                      <div>
+                        <p>표시된 숫자의 화면으로 이동할 수 있는 링크</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>상태</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation04_02.png"
+                    alt="상태 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>Inactive</span>
+                      <div>
+                        <p>선택되지 않은 기본상태</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>Hover:Pressed:Active</span>
+                      <div>
+                        <p>호버/눌림/선택</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>Active</span>
+                      <div>
+                        <p>현재 위치(선택됨)</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
+                <h3>조합</h3>
+                <div class="guide_text">
+                  <p>
+                    • 기본 배치 : 페이지 목록은 가운데 배치하며 단독으로
+                    사용한다.
+                  </p>
+                  <p>
+                    • 총 데이터 개수 표시 + 페이지당 데이터 개수 선택 : 페이지
+                    목록을 가운데 기준으로 좌/우 배치한다.
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation04_03.png"
+                    alt="조합 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>페이지 목록</span>
+                      <div>
+                        <p>선택되지 않은 기본상태</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>총 데이터 개수 표시</span>
+                      <div>
+                        <p>전체 데이터 목록에 포함된 데이터 개수를 표시</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>페이지당 데이터 개수 선택</span>
+                      <div>
+                        <p>
+                          사용자가 한 페이지에 표시되는 데이터 개수를 선택할 수
+                          있도록 셀렉트 형태로 제공 (20개씩, 50개씩, 100개씩..)
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>사이즈 & 간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation04_04.png"
+                    alt="사이즈 이미지"
+                  />
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation04_05.png"
+                    alt="간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>노출 조건</h3>
+                <h5>• 리스트 : 10개 초과</h5>
+                <h5>• 테이블 : 20개 초과</h5>
+                <h5>• 썸네일 : 4X3 -> 12개 초과</h5>
+
+                <h5>a. 페이지 수 7개 이하</h5>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation04_06.png"
+                    alt=" 페이지 수 7개 이하 이미지"
+                  />
+                </div>
+                <h5>b. 페이지 수 7개 초과(8개부터)</h5>
+                <div class="guide_text">
+                  <p>
+                    • 최대 노출 가능한 페이지 수 이상일 경우 뒤에서 2번째 페이지
+                    번호를 생략하고 말줄임표를 사용해 마지막 화면을 제공한다.
+                  </p>
+                  <p>
+                    • 말줄임표는 페이지 번호 이동에 따라 가변적으로 적용된다
+                  </p>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/navigation/navigation04_07.png"
+                    alt="페이지 수 7개 초과 이미지"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="pagination">
+                      <div class="prevArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/prev_arrow.svg"
+                            alt="이전"
+                        /></a>
+                      </div>
+                      <ul>
+                        <li class="on"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                      </ul>
+                      <div class="nextArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/next_arrow.svg"
+                            alt="다음"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;pagination&#x22;&#x3E;
+  &#x3C;div class=&#x22;prevArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/prev_arrow.svg&#x22; alt=&#x22;&#xC774;&#xC804;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;ul&#x3E;
+    &#x3C;li class=&#x22;on&#x22;&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;2&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;3&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;4&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;5&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;6&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;7&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+  &#x3C;div class=&#x22;nextArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/next_arrow.svg&#x22; alt=&#x22;&#xB2E4;&#xC74C;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 48px 0;
+
+  div {
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover {
+      background-color: var(--clr-E3E5F5);
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 2px;
+
+    li {
+      a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 32px;
+        color: var(--clr-1A1A1A);
+        text-align: center;
+      }
+      &:hover {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.on {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.removeDot {
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background-color: transparent;
+          color: var(--clr-1A1A1A);
+          cursor: default;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>기본형 - 10개 초과 첫번째 번호</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="pagination">
+                      <div class="prevArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/prev_arrow.svg"
+                            alt="이전"
+                        /></a>
+                      </div>
+                      <ul>
+                        <li class="on"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li class="removeDot">
+                          <span>...</span>
+                        </li>
+                        <li><a href="#">15</a></li>
+                      </ul>
+                      <div class="nextArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/next_arrow.svg"
+                            alt="다음"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;pagination&#x22;&#x3E;
+  &#x3C;div class=&#x22;prevArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/prev_arrow.svg&#x22; alt=&#x22;&#xC774;&#xC804;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;ul&#x3E;
+    &#x3C;li class=&#x22;on&#x22;&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;2&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;3&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;4&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;5&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;removeDot&#x22;&#x3E;&#x3C;span&#x3E;...&#x3C;/span&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;15&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+  &#x3C;div class=&#x22;nextArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/next_arrow.svg&#x22; alt=&#x22;&#xB2E4;&#xC74C;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 48px 0;
+
+  div {
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover {
+      background-color: var(--clr-E3E5F5);
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 2px;
+
+    li {
+      a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 32px;
+        color: var(--clr-1A1A1A);
+        text-align: center;
+      }
+      &:hover {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.on {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.removeDot {
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background-color: transparent;
+          color: var(--clr-1A1A1A);
+          cursor: default;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>기본형 - 10개 초과 마지막 번호</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="pagination">
+                      <div class="prevArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/prev_arrow.svg"
+                            alt="이전"
+                        /></a>
+                      </div>
+                      <ul>
+                        <li><a href="#">1</a></li>
+                        <li class="removeDot">
+                          <span>...</span>
+                        </li>
+                        <li><a href="#">11</a></li>
+                        <li><a href="#">12</a></li>
+                        <li><a href="#">13</a></li>
+                        <li><a href="#">14</a></li>
+                        <li class="on"><a href="#">15</a></li>
+                      </ul>
+                      <div class="nextArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/next_arrow.svg"
+                            alt="다음"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;pagination&#x22;&#x3E;
+  &#x3C;div class=&#x22;prevArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/prev_arrow.svg&#x22; alt=&#x22;&#xC774;&#xC804;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;ul&#x3E;
+    &#x3C;li class=&#x22;on&#x22;&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;removeDot&#x22;&#x3E;&#x3C;span&#x3E;...&#x3C;/span&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;11&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;12&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;13&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;14&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;15&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+  &#x3C;div class=&#x22;nextArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/next_arrow.svg&#x22; alt=&#x22;&#xB2E4;&#xC74C;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 48px 0;
+
+  div {
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover {
+      background-color: var(--clr-E3E5F5);
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 2px;
+
+    li {
+      a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 32px;
+        color: var(--clr-1A1A1A);
+        text-align: center;
+      }
+      &:hover {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.on {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.removeDot {
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background-color: transparent;
+          color: var(--clr-1A1A1A);
+          cursor: default;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>기본형 - 10개 초과 중간 번호</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="pagination">
+                      <div class="prevArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/prev_arrow.svg"
+                            alt="이전"
+                        /></a>
+                      </div>
+                      <ul>
+                        <li><a href="#">1</a></li>
+                        <li class="removeDot">
+                          <span>...</span>
+                        </li>
+                        <li><a href="#">8</a></li>
+                        <li class="on"><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li class="removeDot"><span>...</span></li>
+                        <li><a href="#">30</a></li>
+                      </ul>
+                      <div class="nextArrow">
+                        <a href="#"
+                          ><img
+                            src="/framework/assets/images/next_arrow.svg"
+                            alt="다음"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;pagination&#x22;&#x3E;
+  &#x3C;div class=&#x22;prevArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/prev_arrow.svg&#x22; alt=&#x22;&#xC774;&#xC804;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;ul&#x3E;
+    &#x3C;li class=&#x22;on&#x22;&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;removeDot&#x22;&#x3E;&#x3C;span&#x3E;...&#x3C;/span&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;8&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;9&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;10&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li class=&#x22;removeDot&#x22;&#x3E;&#x3C;span&#x3E;...&#x3C;/span&#x3E;&#x3C;/li&#x3E;
+    &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;30&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+  &#x3C;/ul&#x3E;
+  &#x3C;div class=&#x22;nextArrow&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22;
+      &#x3E;&#x3C;img src=&#x22;/framework/assets/images/next_arrow.svg&#x22; alt=&#x22;&#xB2E4;&#xC74C;&#x22;
+    /&#x3E;&#x3C;/a&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 48px 0;
+
+  div {
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover {
+      background-color: var(--clr-E3E5F5);
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 2px;
+
+    li {
+      a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 32px;
+        color: var(--clr-1A1A1A);
+        text-align: center;
+      }
+      &:hover {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.on {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.removeDot {
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background-color: transparent;
+          color: var(--clr-1A1A1A);
+          cursor: default;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>조합형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <div class="pagination_wrap" style="width: 600px">
+                      <div class="countAll">전체 20/100</div>
+                      <div class="pagination">
+                        <div class="prevArrow">
+                          <a href="#"
+                            ><img
+                              src="/framework/assets/images/prev_arrow.svg"
+                              alt="이전"
+                          /></a>
+                        </div>
+                        <ul>
+                          <li class="on"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                        </ul>
+                        <div class="nextArrow">
+                          <a href="#"
+                            ><img
+                              src="/framework/assets/images/next_arrow.svg"
+                              alt="다음"
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="DDY_select">
+                        <div class="select offline">
+                          <button type="button">20개</button>
+                        </div>
+                        <div class="option">
+                          <ul>
+                            <li><button type="button">5개</button></li>
+                            <li><button type="button">10개</button></li>
+                            <li><button type="button">20개</button></li>
+                            <li><button type="button">50개</button></li>
+                            <li><button type="button">100개</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;div class=&#x22;pagination_wrap&#x22;&#x3E;
+  &#x3C;div class=&#x22;countAll&#x22;&#x3E;&#xC804;&#xCCB4; 20/100&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;pagination&#x22;&#x3E;
+    &#x3C;div class=&#x22;prevArrow&#x22;&#x3E;
+      &#x3C;a href=&#x22;#&#x22;
+        &#x3E;&#x3C;img
+          src=&#x22;/framework/assets/images/prev_arrow.svg&#x22;
+          alt=&#x22;&#xC774;&#xC804;&#x22;
+      /&#x3E;&#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li class=&#x22;on&#x22;&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;1&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;2&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;3&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;4&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;5&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+    &#x3C;div class=&#x22;nextArrow&#x22;&#x3E;
+      &#x3C;a href=&#x22;#&#x22;
+        &#x3E;&#x3C;img
+          src=&#x22;/framework/assets/images/next_arrow.svg&#x22;
+          alt=&#x22;&#xB2E4;&#xC74C;&#x22;
+      /&#x3E;&#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;DDY_select&#x22;&#x3E;
+    &#x3C;div class=&#x22;select offline&#x22;&#x3E;
+      &#x3C;button type=&#x22;button&#x22;&#x3E;20&#xAC1C;&#x3C;/button&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;option&#x22;&#x3E;
+      &#x3C;ul&#x3E;
+        &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;5&#xAC1C;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;10&#xAC1C;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;20&#xAC1C;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;50&#xAC1C;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+        &#x3C;li&#x3E;&#x3C;button type=&#x22;button&#x22;&#x3E;100&#xAC1C;&#x3C;/button&#x3E;&#x3C;/li&#x3E;
+      &#x3C;/ul&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- pagination ------------------------------------
+.pagination_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+
+  .countAll {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    p {
+      color: var(--clr-616161);
+    }
+  }
+
+  .DDY_select {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    .select {
+      min-width: 90px;
+      width: auto;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 48px 0;
+
+  div {
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover {
+      background-color: var(--clr-E3E5F5);
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 2px;
+
+    li {
+      a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 32px;
+        color: var(--clr-1A1A1A);
+        text-align: center;
+      }
+      &:hover {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.on {
+        a {
+          background-color: var(--clr-E3E5F5);
+          color: var(--clr-141E76);
+        }
+      }
+      &.removeDot {
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background-color: transparent;
+          color: var(--clr-1A1A1A);
+          cursor: default;
+        }
+      }
+    }
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

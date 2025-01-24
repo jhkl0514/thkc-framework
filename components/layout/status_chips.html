@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="/framework/assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="/framework/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="/framework/assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="/framework/assets/css/style.css" />
+    <link rel="stylesheet" href="/framework/assets/css/guide/guide.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="/framework/assets/css/prism.css" />
+    <script src="/framework/assets/js/prism.js"></script>
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../foundation/color.html">Color (색상)</a></li>
+              <li>
+                <a href="../../foundation/typography.html">Typography (서체)</a>
+              </li>
+              <li><a href="../../foundation/shape.html">Shape (형태)</a></li>
+              <li><a href="../../foundation/layout.html">Layout (배치)</a></li>
+              <li>
+                <a href="../../foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="on">
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul class="showOn">
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li><a href="../navigation/gnb.html">GNB (헤더, 네비)</a></li>
+                  <li>
+                    <a href="../navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul class="showOn">
+                  <li>
+                    <a href="../layout/accordion.html">Accordion (아코디언)</a>
+                  </li>
+                  <li>
+                    <a href="../layout/avatar.html">Avatar (아바타)</a>
+                  </li>
+                  <li><a href="../layout/badge.html">Badge (배지)</a></li>
+                  <li><a href="../layout/calendar.html">Calendar (달력)</a></li>
+                  <li><a href="../layout/card.html">Card (카드)</a></li>
+                  <li>
+                    <a href="../layout/carousel.html">Carousel (캐러셀)</a>
+                  </li>
+                  <li><a href="../layout/label.html">Label (레이블)</a></li>
+                  <li><a href="../layout/modal.html">Modal (모달)</a></li>
+                  <li class="active">
+                    <a href="../layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li><a href="../layout/tab.html">Tab (탭)</a></li>
+                  <li><a href="../layout/table.html">Table (표)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../action/button.html">Button (버튼)</a>
+                  </li>
+                  <li>
+                    <a href="../action/link.html">Link (링크)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../select/checkbox.html">Checkbox (체크박스)</a>
+                  </li>
+                  <li><a href="../select/chips.html">Chips (칩)</a></li>
+                  <li>
+                    <a href="../select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../select/select_button.html">Select (셀렉트)</a>
+                  </li>
+                  <li><a href="../select/switch.html">Switch (토글)</a></li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../input/textarea.html">Textarea (텍스트 영역)</a>
+                  </li>
+                  <li>
+                    <a href="../input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../feedback/loading.html">Loading (로딩) </a>
+                  </li>
+                  <li>
+                    <a href="../feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li><a href="../message/toast.html">Toast (토스트)</a></li>
+                  <li><a href="../message/tooltip.html">Tooltip (툴팁)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../patterns/search.html">Search (검색)</a></li>
+              <li><a href="../../patterns/message.html">Message (알림)</a></li>
+              <li><a href="../../patterns/error.html">Error (오류)</a></li>
+              <li><a href="../../patterns/forms.html">Forms (입력폼)</a></li>
+              <li>
+                <a href="../../patterns/card_mob.html">Card(카드_모바일)</a>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/order/list.html"> 상품리스트</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/order/check.html">주문정보확인</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="/framework/assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="../../patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="../../patterns/tables/data.html">데이터 입력형</a>
+                  </li>
+                  <li><a href="../../patterns/tables/mix.html">조합형</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="/framework/assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="../../page/error.html">Error</a></li>
+              <li><a href="../../page/nodata.html">NoData</a></li>
+              <li><a href="../../page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <div class="DDY_title">
+            <div>
+              <h2>Status Chips (상태 칩)</h2>
+              <ul class="indicator">
+                <li>Components</li>
+                <li>Layout (레이아웃)</li>
+                <li>Status Chips (상태 칩)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="DDY_list">
+            <div class="tabTop">
+              <span class="active">Design</span>
+              <span>Code</span>
+            </div>
+
+            <!-- Design -->
+            <div class="tabCon">
+              <section>
+                <h3>Status Chips</h3>
+                <div class="guide_text">
+                  <p>
+                    • Status Chip은 주문완료, 출고대기, 주문완료와 같이 상태가
+                    변하는 값에 사용하는 값이다.
+                  </p>
+                </div>
+              </section>
+              <section>
+                <h3>구조</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout09_01.png"
+                    alt="구조 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span><em>1</em>컨데이너 : </span>
+                      <div>
+                        <p>배경과 구분하는 윤곽선 또는 배경색</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>2</em>아이콘 : </span>
+                      <div>
+                        <p>레이블과 관련된 아이콘</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span><em>3</em>레이블 : </span>
+                      <div>
+                        <p>상태칩을 통해 전달하고자 하는 데이터</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section>
+                <h3>사이즈&간격</h3>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout09_02.png"
+                    alt="사이즈&간격 이미지"
+                  />
+                </div>
+              </section>
+              <section>
+                <h3>사용법</h3>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 상태/ 스타일에 따라 구분하여 사용</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          상태값은 6개(Info, Success, Error, Default, BrandSub,
+                          Caution), 스타일은 3개(Filled, Transparent, Outline)로
+                          구분되어 있다. <br />
+                          상태값에 맞는 상태칩을 사용하는 것을 권장한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout09_03.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span>• 레이블 앞 아이콘 비노출 가능</span>
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          레이블 앞 아이콘의 경우 필요에 따라 비노출 처리하여
+                          텍스트 형태로만 사용가능하다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="imgWrap">
+                  <img
+                    src="/framework/assets/images/guide/components/layout/layout09_04.png"
+                    alt="사용법 이미지"
+                  />
+                </div>
+                <div class="guide_list">
+                  <ul>
+                    <li>
+                      <span
+                        >• 상태 칩은 하나의 영역 안에서 한개만 사용 가능</span
+                      >
+                    </li>
+                    <li>
+                      <div>
+                        <p class="pl10">
+                          현재 상태를 나타내는 값을 표현하는 칩이므로 하나의
+                          영역안에서는 한개 칩만 사용이 가능하다. 두개 이상을
+                          노출하고자 할때는 배지를 활용하여 표현하는 방법이
+                          있다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <!-- Code -->
+            <div class="tabCon">
+              <section>
+                <h3>기본형</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="status_chips info">Status chip</span>
+                    <span class="status_chips info_trans">Status chip</span>
+                    <span class="status_chips info_outline">Status chip</span>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;status_chips info&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips info_trans&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips info_outline&#x22;&#x3E;Status chip&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- status_chips ------------------------------------
+
+.status_chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  //info
+  &.info {
+    color: var(--clr-FFFFFF);
+    background-color: var(--clr-1D4ED8);
+  }
+  &.info_trans {
+    background-color: #eff6ff;
+    color: #1e40af;
+  }
+  &.info_outline {
+    background-color: var(--clr-FFFFFF);
+    color: #1e40af;
+    border: 1px solid #1477f8;
+  }
+  //suces
+  &.suces {
+    color: var(--clr-FFFFFF);
+    background-color: #15803d;
+  }
+  &.suces_trans {
+    color: #166534;
+    background-color: #e8f5e9;
+  }
+  &.suces_outline {
+    color: #166534;
+    border: 1px solid #43a047;
+    background-color: var(--clr-FFFFFF);
+  }
+  //error
+  &.error {
+    color: var(--clr-FFFFFF);
+    background-color: #d32f2f;
+  }
+  &.error_trans {
+    color: #c62828;
+    background-color: #ffebee;
+  }
+  &.error_outline {
+    color: #c62828;
+    border: 1px solid #c62828;
+    background-color: var(--clr-FFFFFF);
+  }
+  //default
+  &.default {
+    color: var(--clr-FFFFFF);
+    background-color: #141e76;
+  }
+  &.default_trans {
+    color: #141e76;
+    background-color: #eff1fd;
+  }
+  &.default_outline {
+    color: #141e76;
+    border: 1px solid #141e76;
+    background-color: var(--clr-FFFFFF);
+  }
+  //brandsub
+  &.brandsub {
+    background-color: #90ee02;
+  }
+  &.brandsub_trans {
+    color: #09af00;
+    background-color: #f2fde4;
+  }
+  &.brandsub_outline {
+    color: #09af00;
+    border: 1px solid #09af00;
+    background-color: var(--clr-FFFFFF);
+  }
+  //caution
+  &.caution {
+    background-color: #ffa000;
+  }
+  &.caution_trans {
+    color: #ff8f00;
+    background-color: #fff8e1;
+  }
+  &.caution_outline {
+    color: #ff8f00;
+    border: 1px solid #ff8f00;
+    background-color: var(--clr-FFFFFF);
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h3>Filled</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="status_chips info">Status chip</span>
+                    <span class="status_chips suces">Status chip</span>
+                    <span class="status_chips error">Status chip</span>
+                    <span class="status_chips default">Status chip</span>
+                    <span class="status_chips brandsub">Status chip</span>
+                    <span class="status_chips caution">Status chip</span>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;status_chips info&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips suces&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips error&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips default&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips brandsub&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips caution&#x22;&#x3E;Status chip&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- status_chips ------------------------------------
+
+.status_chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  //info
+  &.info {
+    color: var(--clr-FFFFFF);
+    background-color: var(--clr-1D4ED8);
+  }
+  //suces
+  &.suces {
+    color: var(--clr-FFFFFF);
+    background-color: #15803d;
+  }
+  //error
+  &.error {
+    color: var(--clr-FFFFFF);
+    background-color: #d32f2f;
+  }
+  //default
+  &.default {
+    color: var(--clr-FFFFFF);
+    background-color: #141e76;
+  }
+  //brandsub
+  &.brandsub {
+    background-color: #90ee02;
+  }
+  //caution
+  &.caution {
+    background-color: #ffa000;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h3>Transparent</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="status_chips info_trans">Status chip</span>
+                    <span class="status_chips suces_trans">Status chip</span>
+                    <span class="status_chips error_trans">Status chip</span>
+                    <span class="status_chips default_trans">Status chip</span>
+                    <span class="status_chips brandsub_trans">Status chip</span>
+                    <span class="status_chips caution_trans">Status chip</span>
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;status_chips info_trans&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips suces_trans&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips error_trans&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips default_trans&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips brandsub_trans&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips caution_trans&#x22;&#x3E;Status chip&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- status_chips ------------------------------------
+
+.status_chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  //info
+  &.info_trans {
+    background-color: #eff6ff;
+    color: #1e40af;
+  }
+  //suces
+  &.suces_trans {
+    color: #166534;
+    background-color: #e8f5e9;
+  }
+  //error
+  &.error_trans {
+    color: #c62828;
+    background-color: #ffebee;
+  }
+  //default
+  &.default_trans {
+    color: #141e76;
+    background-color: #eff1fd;
+  }
+  //brandsub
+  &.brandsub_trans {
+    color: #09af00;
+    background-color: #f2fde4;
+  }
+  //caution
+  &.caution_trans {
+    color: #ff8f00;
+    background-color: #fff8e1;
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h3>Outline</h3>
+                <div class="guide_item_view">
+                  <div class="item_view">
+                    <span class="status_chips info_outline">Status chip</span>
+                    <span class="status_chips suces_outline">Status chip</span>
+                    <span class="status_chips error_outline">Status chip</span>
+                    <span class="status_chips default_outline"
+                      >Status chip</span
+                    >
+                    <span class="status_chips brandsub_outline"
+                      >Status chip</span
+                    >
+                    <span class="status_chips caution_outline"
+                      >Status chip</span
+                    >
+                  </div>
+                  <div class="code">
+                    코드보기
+                    <img
+                      src="/framework/assets/images/guide/code_arrow.svg"
+                      alt="코드보기"
+                    />
+                  </div>
+
+                  <div class="guide_tab_wrap">
+                    <div class="guide_tabTop">
+                      <span class="active">HTML</span>
+                      <span>SCSS</span>
+                    </div>
+                    <!-- item01 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-markup">&#x3C;span class=&#x22;status_chips info_outline&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips suces_outline&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips error_outline&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips default_outline&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips brandsub_outline&#x22;&#x3E;Status chip&#x3C;/span&#x3E;
+&#x3C;span class=&#x22;status_chips caution_outline&#x22;&#x3E;Status chip&#x3C;/span&#x3E;</code></pre>
+                    </div>
+                    <!-- item02 -->
+                    <div class="guide_item">
+                      <pre
+                        class="line-numbers"
+                      ><code class="language-scss">// ----------------------------- status_chips ------------------------------------
+
+.status_chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  //info
+  &.info_outline {
+    background-color: var(--clr-FFFFFF);
+    color: #1e40af;
+    border: 1px solid #1477f8;
+  }
+  //suces
+  &.suces_outline {
+    color: #166534;
+    border: 1px solid #43a047;
+    background-color: var(--clr-FFFFFF);
+  }
+  //error
+  &.error_outline {
+    color: #c62828;
+    border: 1px solid #c62828;
+    background-color: var(--clr-FFFFFF);
+  }
+  //default
+  &.default_outline {
+    color: #141e76;
+    border: 1px solid #141e76;
+    background-color: var(--clr-FFFFFF);
+  }
+  //brandsub
+  &.brandsub_outline {
+    color: #09af00;
+    border: 1px solid #09af00;
+    background-color: var(--clr-FFFFFF);
+  }
+  //caution
+  &.caution_outline {
+    color: #ff8f00;
+    border: 1px solid #ff8f00;
+    background-color: var(--clr-FFFFFF);
+  }
+}</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>

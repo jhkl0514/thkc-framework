@@ -1,0 +1,337 @@
+table th span.table_sort {
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+}
+table th span.table_sort::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  transform: translate(0, -50%);
+  width: 8px;
+  height: 16px;
+  background: url("/framework/assets/images/sorting.svg") no-repeat;
+}
+table th span.table_sort.asc::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  transform: translate(0, -50%);
+  width: 8px;
+  height: 16px;
+  background: url("/framework/assets/images/sorting_asc.svg") no-repeat;
+}
+table th span.table_sort.desc::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  transform: translate(0, -50%);
+  width: 8px;
+  height: 16px;
+  background: url("/framework/assets/images/sorting_desc.svg") no-repeat;
+}
+
+.dataTable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--clr-1A1A1A);
+}
+.dataTable > thead > tr {
+  border-bottom: 1px solid var(--clr-BDBDBD);
+  background-color: var(--clr-F5F5F5);
+}
+.dataTable > thead > tr th {
+  padding: 0 12px;
+  font-weight: 600;
+  word-break: keep-all;
+  height: 52px;
+}
+.dataTable > tbody > tr {
+  border-bottom: 1px solid var(--clr-EEEEEE);
+}
+.dataTable > tbody > tr:hover {
+  background-color: var(--clr-EFF1FD);
+}
+.dataTable > tbody > tr.add {
+  background-color: var(--clr-F2FDE4);
+}
+.dataTable > tbody > tr.on {
+  background-color: var(--clr-EFF1FD);
+}
+.dataTable > tbody > tr td {
+  padding: 0 12px;
+  height: 52px;
+}
+.dataTable > tbody > tr td .selectBox {
+  gap: 8px;
+}
+.dataTable > tbody > tr td .selectBox .DDY_select {
+  width: 100%;
+}
+.dataTable > tbody > tr td .selectBox .DDY_select .select {
+  min-width: 0;
+}
+.dataTable > tbody > tr td > em {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.dataTable .table_delete {
+  cursor: pointer;
+}
+.dataTable .table_delete img {
+  vertical-align: middle;
+}
+.dataTable.size_SM .DDY_checkBox label {
+  margin: 0;
+  padding-left: 20px;
+}
+.dataTable.size_SM thead {
+  border-bottom: 1px solid var(--clr-BDBDBD);
+}
+.dataTable.size_SM thead th {
+  background-color: var(--clr-F5F5F5);
+  font-weight: 700;
+  padding: 0 8px;
+  height: 44px;
+}
+.dataTable.size_SM thead th a {
+  font-weight: 700;
+}
+.dataTable.size_SM thead th a img {
+  vertical-align: top;
+}
+.dataTable.size_SM tbody tr {
+  border-bottom: 1px solid var(--clr-EEEEEE);
+  height: 44px;
+  cursor: pointer;
+}
+.dataTable.size_SM tbody tr td {
+  padding: 0 8px;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow: hidden;
+}
+.dataTable.size_SM tbody tr td .call_Y {
+  display: inline-block;
+  width: 25px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: var(--clr-323DA3);
+  color: var(--clr-FFFFFF);
+  line-height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+.dataTable.size_SM tbody tr td .call_N {
+  display: inline-block;
+  width: 25px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: var(--clr-F5F5F5);
+  border: 1px solid var(--clr-EEEEEE);
+  line-height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+.dataTable.size_SM tbody tr:hover {
+  background-color: var(--clr-EFF1FD);
+}
+.dataTable.size_SM tbody tr:hover .call_N {
+  background-color: var(--clr-EFF1FD);
+  border: 1px solid var(--clr-CED2F4);
+  color: var(--clr-323DA3);
+}
+.dataTable.size_SM tbody tr.on {
+  background-color: var(--clr-EFF1FD);
+}
+
+.divideTable {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.divideTable > table {
+  z-index: 1;
+}
+.divideTable > table.shadow {
+  box-shadow: 10px -2px 14px 2px rgba(0, 0, 0, 0.1);
+}
+.divideTable.removeHover table tbody tr.hover td {
+  cursor: default;
+}
+.divideTable table thead th {
+  font-weight: 600;
+  border-bottom: 1px solid var(--clr-BDBDBD);
+}
+.divideTable table thead tr.Tbg_R td {
+  background-color: #ffebee;
+}
+.divideTable table tbody tr.hover td {
+  background-color: var(--clr-EFF1FD);
+  cursor: pointer;
+}
+.divideTable table tbody tr.Tbg_R td {
+  background-color: #ffebee;
+}
+.divideTable table tbody tr.Tbg_R.on td {
+  background-color: #ffebee;
+}
+.divideTable table tbody tr.on td {
+  background-color: var(--clr-EFF1FD);
+}
+.divideTable table tbody tr td {
+  border-bottom: 1px solid var(--clr-EEEEEE);
+}
+.divideTable table tbody tr td em {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.divideTable table tbody tr td.Tcolor_R {
+  color: #e53935;
+}
+.divideTable table tbody tr td.Tcolor_R em {
+  color: #e53935;
+}
+.divideTable table tbody tr td.Tcolor_R em a {
+  color: #e53935;
+}
+.divideTable table td,
+.divideTable table th {
+  width: 110px;
+  background-color: var(--clr-F5F5F5);
+  height: 52px;
+  padding: 0 12px;
+  line-height: 20px;
+}
+.divideTable > table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.divideTable > table tbody td {
+  background-color: var(--clr-FFFFFF);
+  margin-top: 1px;
+}
+.divideTable .tableDiv {
+  overflow-x: auto;
+}
+.divideTable .tableDiv::-webkit-scrollbar {
+  width: 8px;
+  height: 2px;
+}
+.divideTable .tableDiv::-webkit-scrollbar-track {
+  background: var(--clr-EEEEEE);
+}
+.divideTable .tableDiv::-webkit-scrollbar-thumb {
+  background: var(--clr-333333);
+}
+.divideTable .tableDiv::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-333333);
+}
+.divideTable .tableDiv table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+.divideTable .tableDiv table tbody td {
+  background-color: var(--clr-FFFFFF);
+}
+.divideTable .tableDiv .DDY_badge {
+  min-width: 52px;
+}
+.divideTable .tableDiv .DDY_checkBox {
+  padding-left: 20px;
+  margin-right: 0;
+}
+.divideTable .tableDiv .drag_prevent {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.table_ref {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.table_ref p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--clr-616161);
+}
+
+.bgTable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--clr-1A1A1A);
+}
+.bgTable thead tr {
+  border-bottom: 1px solid var(--clr-BDBDBD);
+  background-color: var(--clr-F5F5F5);
+}
+.bgTable thead tr th {
+  padding: 16px 12px;
+  font-weight: 600;
+  word-break: keep-all;
+  height: 52px;
+}
+.bgTable thead tr th.bgCon {
+  background-color: var(--clr-E3E5F5);
+}
+.bgTable thead tr th.bgValue {
+  background-color: var(--clr-CED2F4);
+}
+.bgTable tbody tr {
+  border-bottom: 1px solid var(--clr-EEEEEE);
+}
+.bgTable tbody tr:hover {
+  background-color: var(--clr-EFF1FD);
+}
+.bgTable tbody tr td {
+  padding: 12px;
+  height: 52px;
+}
+.bgTable tbody tr td .selectBox {
+  gap: 4px;
+}
+.bgTable tbody tr td em {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reportTable {
+  width: 100%;
+  margin-bottom: 16px;
+  border-collapse: collapse;
+}
+.reportTable tbody > tr {
+  border-bottom: 1px solid var(--clr-BDBDBD);
+  display: flex;
+  align-items: center;
+}
+.reportTable tbody > tr > th {
+  width: 138px;
+  height: 52px;
+  line-height: 52px;
+  font-weight: 600;
+  padding: 0 12px;
+  background-color: var(--clr-F5F5F5);
+}
+.reportTable tbody > tr > td {
+  flex: 1;
+  padding: 0 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}/*# sourceMappingURL=table.css.map */

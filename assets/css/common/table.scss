@@ -1,0 +1,412 @@
+// ----------------------------- table ------------------------------------
+
+table {
+  th {
+    span {
+      &.table_sort {
+        font-weight: 600;
+        position: relative;
+        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -16px;
+          transform: translate(0, -50%);
+          width: 8px;
+          height: 16px;
+          background: url("/framework/assets/images/sorting.svg") no-repeat;
+        }
+        &.asc {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -16px;
+            transform: translate(0, -50%);
+            width: 8px;
+            height: 16px;
+            background: url("/framework/assets/images/sorting_asc.svg") no-repeat;
+          }
+        }
+        &.desc {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -16px;
+            transform: translate(0, -50%);
+            width: 8px;
+            height: 16px;
+            background: url("/framework/assets/images/sorting_desc.svg") no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------- dataTable ------------------------------------
+
+.dataTable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--clr-1A1A1A);
+  > thead {
+    > tr {
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      background-color: var(--clr-F5F5F5);
+      th {
+        padding: 0 12px;
+        font-weight: 600;
+        word-break: keep-all;
+        height: 52px;
+      }
+    }
+  }
+  > tbody {
+    > tr {
+      border-bottom: 1px solid var(--clr-EEEEEE);
+      &:hover {
+        background-color: var(--clr-EFF1FD);
+      }
+      &.add {
+        background-color: var(--clr-F2FDE4);
+      }
+      &.on {
+        background-color: var(--clr-EFF1FD);
+      }
+      td {
+        padding: 0 12px;
+        height: 52px;
+        .selectBox {
+          gap: 8px;
+          .DDY_select {
+            width: 100%;
+            .select {
+              min-width: 0;
+            }
+          }
+        }
+        > em {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .table_delete {
+    cursor: pointer;
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  //추가
+  &.size_SM {
+    .DDY_checkBox {
+      label {
+        margin: 0;
+        padding-left: 20px;
+      }
+    }
+    thead {
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      th {
+        background-color: var(--clr-F5F5F5);
+        font-weight: 700;
+        padding: 0 8px;
+        height: 44px;
+        a {
+          font-weight: 700;
+          img {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid var(--clr-EEEEEE);
+        height: 44px;
+        cursor: pointer;
+        td {
+          padding: 0 8px;
+          text-overflow: ellipsis;
+          text-wrap: nowrap;
+          overflow: hidden;
+
+          .call_Y {
+            display: inline-block;
+            width: 25px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: var(--clr-323DA3);
+            color: var(--clr-FFFFFF);
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+          }
+          .call_N {
+            display: inline-block;
+            width: 25px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: var(--clr-F5F5F5);
+            border: 1px solid var(--clr-EEEEEE);
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+          }
+        }
+
+        &:hover {
+          background-color: var(--clr-EFF1FD);
+          .call_N {
+            background-color: var(--clr-EFF1FD);
+            border: 1px solid var(--clr-CED2F4);
+            color: var(--clr-323DA3);
+          }
+        }
+        &.on {
+          background-color: var(--clr-EFF1FD);
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------- divideTable ------------------------------------
+
+.divideTable {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  overflow: hidden;
+  > table {
+    z-index: 1;
+    &.shadow {
+      box-shadow: 10px -2px 14px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &.removeHover {
+    table {
+      tbody {
+        tr {
+          &.hover {
+            td {
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+  }
+  table {
+    thead {
+      th {
+        font-weight: 600;
+        border-bottom: 1px solid var(--clr-BDBDBD);
+      }
+      tr {
+        &.Tbg_R {
+          td {
+            background-color: #ffebee;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        &.hover {
+          td {
+            background-color: var(--clr-EFF1FD);
+            cursor: pointer;
+          }
+        }
+        &.Tbg_R {
+          td {
+            background-color: #ffebee;
+          }
+          &.on {
+            td {
+              background-color: #ffebee;
+            }
+          }
+        }
+        &.on {
+          td {
+            background-color: var(--clr-EFF1FD);
+          }
+        }
+        td {
+          border-bottom: 1px solid var(--clr-EEEEEE);
+          em {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+          &.Tcolor_R {
+            color: #e53935;
+            em {
+              color: #e53935;
+              a {
+                color: #e53935;
+              }
+            }
+          }
+        }
+      }
+    }
+    td,
+    th {
+      width: 110px;
+      background-color: var(--clr-F5F5F5);
+      height: 52px;
+      padding: 0 12px;
+      line-height: 20px;
+    }
+  }
+  > table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    tbody {
+      td {
+        background-color: var(--clr-FFFFFF);
+        margin-top: 1px;
+      }
+    }
+  }
+  .tableDiv {
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--clr-EEEEEE);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--clr-333333);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--clr-333333);
+    }
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      width: 100%;
+      tbody {
+        td {
+          background-color: var(--clr-FFFFFF);
+        }
+      }
+    }
+    .DDY_badge {
+      min-width: 52px;
+    }
+    .DDY_checkBox {
+      padding-left: 20px;
+      margin-right: 0;
+    }
+    .drag_prevent {
+      -ms-user-select: none;
+      -moz-user-select: -moz-none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+    }
+  }
+}
+
+.table_ref {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+  p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--clr-616161);
+  }
+}
+// ----------------------------- bgTable ------------------------------------
+
+.bgTable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--clr-1A1A1A);
+  thead {
+    tr {
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      background-color: var(--clr-F5F5F5);
+      th {
+        padding: 16px 12px;
+        font-weight: 600;
+        word-break: keep-all;
+        height: 52px;
+        &.bgCon {
+          background-color: var(--clr-E3E5F5);
+        }
+        &.bgValue {
+          background-color: var(--clr-CED2F4);
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--clr-EEEEEE);
+      &:hover {
+        background-color: var(--clr-EFF1FD);
+      }
+      td {
+        padding: 12px;
+        height: 52px;
+        .selectBox {
+          gap: 4px;
+        }
+        em {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------- reportTable ------------------------------------
+
+.reportTable {
+  width: 100%;
+  margin-bottom: 16px;
+  border-collapse: collapse;
+  tbody {
+    > tr {
+      border-bottom: 1px solid var(--clr-BDBDBD);
+      display: flex;
+      align-items: center;
+      > th {
+        width: 138px;
+        height: 52px;
+        line-height: 52px;
+        font-weight: 600;
+        padding: 0 12px;
+        background-color: var(--clr-F5F5F5);
+      }
+      > td {
+        flex: 1;
+        padding: 0 12px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+    }
+  }
+}

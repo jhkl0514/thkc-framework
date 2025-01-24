@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="./assets/images/DDY_favicon.png" />
+    <!-- jquery -->
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <!-- js -->
+    <script src="./assets/js/common.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/guide/guide.css" />
+    <title>이로움케어 프레임워크 가이드</title>
+  </head>
+  <style>
+    .c_flex {
+      width: 100%;
+    }
+  </style>
+  <body class="hidden">
+    <header>
+      <div class="h_left">
+        <div class="hambar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logoWrap">
+          <h1><a href="/framework/index.html">EroumCare</a></h1>
+        </div>
+        <div class="DDY_select">
+          <div class="select offline">
+            <button type="button">Ver 1.0.0</button>
+          </div>
+          <div class="option">
+            <ul>
+              <li><button type="button">Ver 1.0.0</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="h_right">
+        <div class="DDY_input">
+          <input
+            type="text"
+            placeholder="검색"
+            class="high_S"
+            id="guide_keyword"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="partner_wrap">
+      <nav>
+        <ul>
+          <li class="active"><a href="index.html">Overview</a></li>
+          <li>
+            <a href="javascript: void(0);"
+              >Foundation
+              <img
+                src="./assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li>
+                <a href="/framework/foundation/color.html">Color (색상)</a>
+              </li>
+              <li>
+                <a href="/framework/foundation/typography.html"
+                  >Typography (서체)</a
+                >
+              </li>
+              <li>
+                <a href="/framework/foundation/shape.html">Shape (형태)</a>
+              </li>
+              <li>
+                <a href="/framework/foundation/layout.html">Layout (배치)</a>
+              </li>
+              <li>
+                <a href="/framework/foundation/system_icon.html"
+                  >System Icon (아이콘)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Components
+              <img
+                src="./assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Navigation (탐색)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/components/navigation/breadcrumb.html"
+                      >Breadcrumb (브레드크럼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/navigation/gnb.html"
+                      >GNB (헤더, 네비)</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/framework/components/navigation/side_navigation.html"
+                      >Side Navigation (사이드 메뉴)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/navigation/pagination.html"
+                      >Pagination (페이지네이션)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Layout (레이아웃)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/components/layout/accordion.html"
+                      >Accordion (아코디언)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/avatar.html"
+                      >Avatar (아바타)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/badge.html"
+                      >Badge (배지)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/calendar.html"
+                      >Calendar (달력)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/card.html"
+                      >Card (카드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/carousel.html"
+                      >Carousel (캐러셀)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/label.html"
+                      >Label (레이블)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/modal.html"
+                      >Modal (모달)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/status_chips.html"
+                      >Status Chips(상태 칩)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/tab.html">Tab (탭)</a>
+                  </li>
+                  <li>
+                    <a href="/framework/components/layout/table.html"
+                      >Table (표)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Action (액션)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/components/action/button.html"
+                      >Button (버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/action/link.html"
+                      >Link (링크)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Select (선택)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/components/select/checkbox.html"
+                      >Checkbox (체크박스)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/select/chips.html"
+                      >Chips (칩)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/select/radio_button.html"
+                      >Radio button (라디오 버튼)</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/framework/components/select/segmented_control.html"
+                      >Segmented Control (세그먼트 컨트롤)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/select/select_button.html"
+                      >Select (셀렉트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/select/switch.html"
+                      >Switch (토글)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Input (입력)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/components/input/textarea.html"
+                      >Textarea (텍스트 영역)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/input/text_input.html"
+                      >Text input (텍스트 입력 필드)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/input/file_upload.html"
+                      >File upload (파일 업로드)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Feedback (피드백)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/components/feedback/loading.html"
+                      >Loading (로딩)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/framework/components/feedback/step_indicator.html"
+                      >Step indicator (단계 표시기)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Message (알림)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/components/message/toast.html"
+                      >Toast (토스트)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/components/message/tooltip.html"
+                      >Tooltip (툴팁)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Patterns
+              <img
+                src="./assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li>
+                <a href="/framework/patterns/search.html">Search (검색)</a>
+              </li>
+              <li>
+                <a href="/framework/patterns/message.html">Message (알림)</a>
+              </li>
+              <li><a href="/framework/patterns/error.html">Error (오류)</a></li>
+              <li>
+                <a href="/framework/patterns/forms.html">Forms (입력폼)</a>
+              </li>
+              <li>
+                <a href="/framework/patterns/card_mob.html"
+                  >Card(카드_모바일)</a
+                >
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)"
+                  >Order (주문)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/patterns/order/list.html">
+                      상품리스트</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/patterns/order/detail.html">상품상세</a>
+                  </li>
+                  <li>
+                    <a href="/framework/patterns/order/check.html"
+                      >주문정보확인</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="show on">
+                <a href="javascript:void(0)">
+                  Tables (테이블)<img
+                    src="./assets/images/part_nav_arrow.svg"
+                    alt="네비게이션 화살표"
+                /></a>
+                <ul>
+                  <li>
+                    <a href="/framework/patterns/tables/default.html">기본형</a>
+                  </li>
+                  <li>
+                    <a href="/framework/patterns/tables/data.html"
+                      >데이터 입력형</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/framework/patterns/tables/mix.html">조합형</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);"
+              >Page
+              <img
+                src="./assets/images/part_nav_arrow.svg"
+                alt="네비게이션 화살표"
+            /></a>
+            <ul>
+              <li><a href="/framework/page/error.html">Error</a></li>
+              <li><a href="/framework/page/nodata.html">NoData</a></li>
+              <li><a href="/framework/page/ready.html">빈화면</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p>ⓒEroumcare All rights reserved.</p>
+      </nav>
+      <main>
+        <!-- s -->
+        <div class="guide_wrap">
+          <p class="main_error_message">
+            <img
+              src="./assets/images/guide/main_error_message.svg"
+              alt="경고아이콘"
+            />이 사이트는 PC 환경에 최적화되어 있습니다.
+          </p>
+          <section class="main_banner">
+            <div class="main_text">
+              <strong>이로움케어 프레임워크</strong>
+              <p>
+                장기요양기관 통합관리 플랫폼 '이로움Care'의 UI/UX를 위한 <br />
+                가이드라인으로, 일관성 있는 디자인과 효율적인 구축을 지원합니다.
+              </p>
+            </div>
+            <img
+              src="./assets/images/guide/overView/main/main01.svg"
+              alt="이로움케어 프레임워크"
+            />
+          </section>
+          <section>
+            <h4>주요 가이드</h4>
+            <ul class="view_list">
+              <li>
+                <a href="/framework/foundation/color.html">
+                  <div class="imgWrap">
+                    <img
+                      src="./assets/images/guide/overView/main/img01.svg"
+                      alt="파운데이션 이미지"
+                    />
+                  </div>
+                  <strong>파운데이션</strong>
+                  <span>Foundation</span>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/navigation/breadcrumb.html">
+                  <div class="imgWrap">
+                    <img
+                      src="./assets/images/guide/overView/main/img02.svg"
+                      alt="컴포넌트 이미지"
+                    />
+                  </div>
+                  <strong>컴포넌트</strong>
+                  <span>Components</span>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/search.html">
+                  <div class="imgWrap">
+                    <img
+                      src="./assets/images/guide/overView/main/img03.svg"
+                      alt="패턴 이미지"
+                    />
+                  </div>
+                  <strong>패턴</strong>
+                  <span>Pattern</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>가이드 검색</h4>
+            <div class="guide_input_wrap">
+              <div class="DDY_input">
+                <div class="btnWrap search">
+                  <div class="search_icon">
+                    <img
+                      src="./assets/images/input_search_icon.svg"
+                      alt="검색 아이콘"
+                    />
+                  </div>
+                  <input type="text" placeholder="검색어 입력" value="" />
+                </div>
+              </div>
+            </div>
+            <ul class="icon_list">
+              <li>
+                <a href="/framework/foundation/color.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/color.svg"
+                      alt="색상 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>색상</strong>
+                    <span>Color</span>
+                    <p>
+                      이로움케어 서비스를 상징하며 스타일을 표현하고 의미를
+                      전달한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Green"
+                        >파운데이션</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >스타일</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/foundation/typography.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/typo.svg"
+                      alt="서체 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>서체</strong>
+                    <span>Typography</span>
+                    <p>
+                      서체 사용의 원칙을 지켜, 콘텐츠를 일관적으로 보여지도록
+                      한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Green"
+                        >파운데이션</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >스타일</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/foundation/shape.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/shape.svg"
+                      alt="형태 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>형태</strong>
+                    <span>Shape</span>
+                    <p>형태의 고유 특징을 나타내어 UI를 개성있게 유지한다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Green"
+                        >파운데이션</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >스타일</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/foundation/layout.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/layout.svg"
+                      alt="배치 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>배치</strong>
+                    <span>Layout</span>
+                    <p>
+                      간격과 구분에 대한 기준을 제시해서 특유의 일관성을
+                      부여한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Green"
+                        >파운데이션</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >스타일</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/foundation/system_icon.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/menu.svg"
+                      alt="아이콘 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>아이콘</strong>
+                    <span>System Icon</span>
+                    <p>
+                      간단한 동작, 기능을 나타내며 효율적으로 정보를 전달한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Green"
+                        >파운데이션</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >스타일</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+              <li>
+                <a href="/framework/components/navigation/breadcrumb.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/breadcrumb.svg"
+                      alt="브레드크럼 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>브레드크럼</strong>
+                    <span>Breadcrumb</span>
+                    <p>
+                      탐색 계층 구조를 표시하여 사용자가 현재 위치를 파악하게
+                      해준다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">탐색</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/navigation/gnb.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/header.svg"
+                      alt="헤더/네비 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>헤더/네비</strong>
+                    <span>GNB</span>
+                    <p>
+                      탐색 계층 구조를 표시하여 사용자가 현재 위치를 파악하게
+                      해준다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">탐색</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/navigation/side_navigation.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/side.svg"
+                      alt="사이드 메뉴 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>사이드 메뉴</strong>
+                    <span>Side Navigation</span>
+                    <p>서브 화면 내에서의 이동을 위해 사용하는 메뉴이다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">탐색</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/navigation/pagination.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/pagenation.svg"
+                      alt="페이지네이션 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>페이지네이션</strong>
+                    <span>Pagination</span>
+                    <p>
+                      많은 콘텐츠를 탐색하기 쉽게 여러 화면에 나누고, 탐색하는
+                      데 사용한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">탐색</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/accordion.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/accordion.svg"
+                      alt="아코디언 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>아코디언</strong>
+                    <span>Accordion</span>
+                    <p>
+                      중요한 세부 사항을 먼저 표시하고 확장되면 더 많은 세부
+                      정보를 표시해 점진적으로 정보를 공개
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/avatar.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/avatar.svg"
+                      alt="아바타 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>아바타</strong>
+                    <span>Avatar</span>
+                    <p>사용자에 관한 정보를 제공하는 역할로 사용된다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+              <li>
+                <a href="/framework/components/layout/badge.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/badge.svg"
+                      alt="배지 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>배지</strong>
+                    <span>Badge</span>
+                    <p>
+                      컴포넌트에 대한 빠른 인지와 탐색을 돕기 위한, 작은
+                      데이터이다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/calendar.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/calendar.svg"
+                      alt="달력 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>달력</strong>
+                    <span>Calendar</span>
+                    <p>날짜와 관련된 정보와 기능을 제공하는 데 사용한다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/card.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/_card.svg"
+                      alt="카드 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>카드</strong>
+                    <span>Card</span>
+                    <p>정보 제공을 목적으로 한 컨테이너이다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="/framework/components/layout/carousel.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/carousel.svg"
+                      alt="캐러셀 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>캐러셀</strong>
+                    <span>Carousel</span>
+                    <p>
+                      하나의 콘텐츠 영역 내에 여러 개의 서로 다른 콘텐츠를
+                      표시한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/label.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/label.svg"
+                      alt="레이블 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>레이블</strong>
+                    <span>Label</span>
+                    <p>
+                      관련 구성요소에 대한 설명 텍스트를 제공하여 사용자 이해를
+                      돕는다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/modal.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/modal.svg"
+                      alt="모달 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>모달</strong>
+                    <span>Modal</span>
+                    <p>
+                      별도의 화면을 통해 중요 정보를 전달하거나 작업을
+                      완료하도록 돕는다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/status_chips.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/chip.svg"
+                      alt="상태 칩 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>상태 칩</strong>
+                    <span>Status Chips</span>
+                    <p>
+                      주문완료, 출고대기, 주문완료와 같이 상태가 변하는 값에
+                      사용한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/tab.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/tab.svg"
+                      alt="탭 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>탭</strong>
+                    <span>Tabs</span>
+                    <p>
+                      동일 계층의 콘텐츠를 그룹화해 화면 이동 없이 빠른 탐색을
+                      돕는다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/layout/table.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/table.svg"
+                      alt="표 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>표</strong>
+                    <span>Table</span>
+                    <p>
+                      데이터를 열과 행으로 구성된 그리드에 표시해, 효율적으로
+                      정리한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >레이아웃</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/action/button.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/button.svg"
+                      alt="버튼 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>버튼</strong>
+                    <span>Button</span>
+                    <p>
+                      선택을 통해 상호작용을 유도하거나 작업을 수행할 수 있다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">액션</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/action/link.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/_link.svg"
+                      alt="링크 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>링크</strong>
+                    <span>Link</span>
+                    <p>
+                      다른 서비스나 다른화면, 다른 섹션 등으로 이동하는데
+                      사용된다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">액션</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/select/checkbox.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/check-1.svg"
+                      alt="체크박스 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>체크박스</strong>
+                    <span>Checkbox</span>
+                    <p>
+                      사용자가 여러 개의 옵션 중 한 개 이상의 값을 선택할 수
+                      있도록 한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">선택</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/select/chips.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/chip02.svg"
+                      alt="칩 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>칩</strong>
+                    <span>Chips</span>
+                    <p>
+                      사용자로 하여금 정보, 선택, 콘텐츠의 필터링과 특정 액션을
+                      유도한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">선택</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+
+              <li>
+                <a href="/framework/components/select/radio_button.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/radio.svg"
+                      alt="라디오 버튼 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>라디오 버튼</strong>
+                    <span>Radio button</span>
+                    <p>
+                      사용자가 여러 옵션 중 한 개의 값을 선택할 수 있도록 한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">선택</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/select/segmented_control.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/segment.svg"
+                      alt="세그먼트 컨트롤 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>세그먼트 컨트롤</strong>
+                    <span>Segmented Control</span>
+                    <p>
+                      라디오 버튼과 유사한 기능을 제공하며, 일반적으로 상호
+                      배타적인 옵션을 표시한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">선택</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/select/select_button.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/select.svg"
+                      alt="셀렉트 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>셀렉트</strong>
+                    <span>Select</span>
+                    <p>
+                      사용자가 여러 옵션 중 하나를 선택할 수 있게 목록을
+                      팝업으로 제공한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">선택</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/select/switch.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/toggle.svg"
+                      alt="스위치/토글 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>스위치/토글</strong>
+                    <span>Switch/Toggle</span>
+                    <p>
+                      사용자가 두 가지 상호 배타적인 옵션 중 하나를 선택하도록
+                      돕는다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">선택</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+              <li>
+                <a href="/framework/components/input/textarea.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/textarea.svg"
+                      alt="텍스트 영역 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>텍스트 영역</strong>
+                    <span>Textarea</span>
+                    <p>
+                      사용자가 두 줄 이상의 텍스트를 입력하는 경우에 사용하는
+                      요소이다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">입력</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/input/text_input.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/input.svg"
+                      alt="텍스트 입력 필드 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>텍스트 입력 필드</strong>
+                    <span>Text input</span>
+                    <p>
+                      글자, 숫자, 기호 등이 조합된 한 줄의 짧은 텍스트를
+                      입력하는 경우에 사용한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">입력</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/input/file_upload.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/upload.svg"
+                      alt="파일 업로드 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>파일 업로드</strong>
+                    <span>File upload</span>
+                    <p>
+                      하나 이상의 디바이스의 로컬 파일을 선택하고 첨부하는 데
+                      사용한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">입력</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/feedback/loading.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/loading.svg"
+                      alt="로딩 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>로딩</strong>
+                    <span>Loading</span>
+                    <p>
+                      화면이나 데이터에 접근하기 위해 대기해야 함을 사용자에게
+                      안내한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >피드백</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+              <li>
+                <a href="/framework/components/feedback/step_indicator.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/step.svg"
+                      alt="단계표시기 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>단계표시기</strong>
+                    <span>Step indicator</span>
+                    <p>
+                      서비스 이용을 위해 거쳐야하는 진행 단계를 시각화하여
+                      표현한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >피드백</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/message/toast.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/_toast.svg"
+                      alt="토스트 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>토스트</strong>
+                    <span>Toast</span>
+                    <p>
+                      간단한 알림 메시지로 즉각적이고 일시적인 피드백을
+                      제공한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">알림</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/components/message/tooltip.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/tooltip.svg"
+                      alt="툴팁 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>툴팁</strong>
+                    <span>Tooltip</span>
+                    <p>특정 영역에 대한 도움말이나 부가 정보를 제공한다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Navy"
+                        >컴포넌트</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">알림</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/search.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/search.svg"
+                      alt="검색 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>검색</strong>
+                    <span>Search</span>
+                    <p>
+                      사용자가 큰 데이터 집합에서 원하는 정보를 찾을 수 있도록
+                      도와준다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue">검색</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+              <li>
+                <a href="/framework/patterns/message.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/info.svg"
+                      alt="알림 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>알림</strong>
+                    <span>Message</span>
+                    <p>
+                      사용자에게 정보를 전달하거나 상호작용을 유도하기 위해
+                      사용한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue">알림</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/error.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/error-1.svg"
+                      alt="오류 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>오류</strong>
+                    <span>Error</span>
+                    <p>
+                      사용자가 요청한 작업을 완료하지 못하는 문제가 발생했을 때
+                      제공된다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue">오류</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/forms.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/form.svg"
+                      alt="입력폼 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>입력폼</strong>
+                    <span>Forms</span>
+                    <p>
+                      데이터를 입력하여 서버로 전송하는 데 사용하는 콘텐츠
+                      섹션이다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >입력폼</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/order/list.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/item_list.svg"
+                      alt="상품리스트 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>상품리스트</strong>
+                    <span>Item List</span>
+                    <p>
+                      다양한 상품을 탐색하고 선택하여 구매할 수 있도록 돕는다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue">주문</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+
+              <li>
+                <a href="/framework/patterns/order/detail.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/itemDetail.svg"
+                      alt="상품상세 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>상품상세</strong>
+                    <span>Item detail</span>
+                    <p>
+                      사용자의 구매 결정을 위해, 상품에 대한 자세한 정보를
+                      제공한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue">주문</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/order/check.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/order.svg"
+                      alt="주문정보확인 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>주문정보확인</strong>
+                    <span>Order</span>
+                    <p>
+                      사용자의 주문 내용을 상세히 검토하고 최종 확인을 위한
+                      페이지이다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue">주문</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/tables/default.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/table.svg"
+                      alt="테이블_기본형 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>테이블_기본형</strong>
+                    <span>&nbsp;</span>
+                    <p>데이터나 정보를 구조적으로 정리해 놓은 표이다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >테이블</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/tables/data.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/tableI2.svg"
+                      alt="테이블_데이터 입력형 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>테이블_데이터 입력형</strong>
+                    <span>&nbsp;</span>
+                    <p>
+                      사용자가 데이터를 입력하거나 수정할 수 있도록 구성된
+                      테이블이다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >테이블</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!--  -->
+              <li>
+                <a href="/framework/patterns/tables/data.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/table3.svg"
+                      alt="테이블_조합형 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>테이블_조합형</strong>
+                    <span>&nbsp;</span>
+                    <p>기본형과 데이터 입력형이 합쳐진 형태의 표이다.</p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >테이블</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/patterns/card_mob.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/card_list.svg"
+                      alt="카드_모바일 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>카드_모바일</strong>
+                    <span>Card</span>
+                    <p>
+                      모바일 웹에서의 콘텐츠를 시각적으로 분리된 카드 형태로
+                      구성한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Red">패턴</em>
+                      <em class="DDY_badge squre_line DDY_badge_Blue">카드</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/page/error.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/error-1.svg"
+                      alt="오류 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>오류</strong>
+                    <span>Error</span>
+                    <p>
+                      사용자가 요청한 작업을 완료하지 못하는 문제가 발생했을 때
+                      제공된다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Orange"
+                        >패턴</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue">오류</em>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/framework/page/ready.html">
+                  <div class="iconWrap">
+                    <img
+                      src="./assets/images/guide/overView/empty.svg"
+                      alt="빈화면 아이콘"
+                    />
+                  </div>
+                  <div>
+                    <strong>빈화면</strong>
+                    <span>Blank screen </span>
+                    <p>
+                      콘텐츠가 아직 들어가지 않은 경우, 오류라고 느끼지 않도록
+                      안내한다.
+                    </p>
+                    <div class="c_flex">
+                      <em class="DDY_badge squre_line DDY_badge_Orange"
+                        >페이지</em
+                      >
+                      <em class="DDY_badge squre_line DDY_badge_Blue"
+                        >빈화면</em
+                      >
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <!-- e -->
+      </main>
+    </div>
+  </body>
+</html>
